@@ -6,12 +6,12 @@ export const Container = styled.div`
     background-color: ${({ theme }) => theme.colors.bottomBar.background};
     text-align: center;
     margin-top: 1rem;
-    padding:1.5rem;
+    padding:1rem;
     align-items: center;
 `
 
 export const Title = styled.h1`
-    font-size: 14px;
+    font-size: 12px;
     width: 300;
     margin-bottom: .5rem;
 `
@@ -32,7 +32,7 @@ export const CopDiv = styled.div`
 export const CopTitle = styled.h1`
     font-size: 11px;
     font-weight: 600;
-    margin-bottom: .5rem;
+    margin-bottom: .2rem;
 `   
 
 export const CopDescription = styled.h1`

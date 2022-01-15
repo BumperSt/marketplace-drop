@@ -4,7 +4,7 @@
             "id": "D-007",
             "name": "default",
             "colors": {
-                "body": "#DADADA",
+                "body": "#F1F1F1",
                 "head":{
                     "background": "#F1F1F1"
                 },
@@ -12,7 +12,7 @@
                     "background": "#959595"
                 },
                 "search":{
-                    "background" : "rgba(104, 104, 104, 0.15)"
+                    "background" : "#CDCDCD"
                 },
                 "input":{
                     "background" : "#FFF",
@@ -27,20 +27,6 @@
                 "link": {
                     "text" : "#fffff"
                 }
-            },
-            "fontSize": {
-                "verySmall": ".5rem",
-                "small": ".8rem",
-                "normal": "1rem",
-                "normal1": "1.2rem",
-                "large": "1.5rem",
-                "extraLarge": "2rem",
-                "extraVeryLarge": "2.5rem"
-            },
-            "borderSize": {
-                "verySmall": "1px",
-                "medium": "3px",
-                "large": "5px"
             },
             "font": ""
         },
@@ -71,20 +57,6 @@
                 "link": {
                     "text" : "#fffff"
                 }
-            },
-            "fontSize": {
-                "verySmall": ".5rem",
-                "small": ".8rem",
-                "normal": "1rem",
-                "normal1": "1.2rem",
-                "large": "1.5rem",
-                "extraLarge": "2rem",
-                "extraVeryLarge": "2.5rem"
-            },
-            "borderSize": {
-                "verySmall": "1px",
-                "medium": "3px",
-                "large": "5px"
             },
             "font": ""
         }

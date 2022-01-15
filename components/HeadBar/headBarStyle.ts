@@ -10,7 +10,7 @@ export const HeadBarContainer = styled.div`
 `
 
 export const LoginButton = styled.button`
-    padding-inline: 1.4rem;
+    padding-inline: 1rem;
     border-radius: 24px;
     font-weight: 500;
 `

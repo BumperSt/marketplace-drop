@@ -25,13 +25,13 @@ export const InputDiv = styled.div`
     padding-inline:.5rem;
     width: 65%;
     align-items:center;
-    border-radius: 5px;
+    border-radius: 6px;
 `
 
 export const SearchContentTitle = styled.h1`
     max-width: 65%;
     font-weight: 700;
-    margin-top:1.5rem;
+    margin-top:1rem;
     margin-bottom:0.8rem;
 
 `
@@ -43,4 +43,5 @@ export const SearchInput = styled.input `
     padding-block:.5rem;
     width: 100%;
     font-size: 13px;
+    font-family: roboto,;
 `

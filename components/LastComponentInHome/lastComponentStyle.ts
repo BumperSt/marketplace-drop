@@ -6,7 +6,6 @@ export const ListComponentContainer = styled.div`
     margin-inline: 1rem;
 `
 export const ItemDiv = styled.div`
-    width: 90%;
     align-self: center;
     position: relative;
 `
