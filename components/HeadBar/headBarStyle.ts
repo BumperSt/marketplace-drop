@@ -7,10 +7,11 @@ export const HeadBarContainer = styled.div`
     justify-content: space-between;
     padding: .7rem;
     background-color: ${({ theme }) => theme.colors.head.background};
+    position: sticky;
+    top: 0;
+    z-index: 99;
 `
 
 export const LoginButton = styled.button`
     padding-inline: 1rem;
-    border-radius: 24px;
-    font-weight: 500;
 `

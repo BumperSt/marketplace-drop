@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const ListHorizontaltemsContainer = styled.div`
     display:flex;
     flex-direction:column;
@@ -33,7 +34,7 @@ export const ItemCard  = styled.div<{Large?:boolean}>`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    min-width:${(props) => props.Large ? '6rem' : '4.5rem'};
+    min-width:${({Large}) => Large ? '6rem' : '4.5rem'};
     margin-right: 1rem;
 `
 

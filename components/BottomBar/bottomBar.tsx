@@ -14,7 +14,6 @@ export const BottomBar = ({}) => {
             <CopDiv>
                 <CopTitle>Lorem ipsum.</CopTitle>
                 <CopDescription>2022. Ut ac risus sit amet nibh varius fermentum. Curabitur in velit sapien. Aenean eu ligula nisi.</CopDescription>
-
             </CopDiv>
         </Container>
     )

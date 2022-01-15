@@ -26,6 +26,11 @@
                 },
                 "link": {
                     "text" : "#fffff"
+                },
+                "modal":{
+                    "background" : "#F1F1F1",
+                    "descriptionTextFirst" : "#FF3D00",
+                    "descriptionTextSecond" : "#0057FF"
                 }
             },
             "font": ""
@@ -56,6 +61,11 @@
                 },
                 "link": {
                     "text" : "#fffff"
+                },
+                "modal":{
+                    "background" : "#F1F1F1",
+                    "descriptionTextFirst" : "#FF3D00",
+                    "descriptionTextSecond" : "#0057FF"
                 }
             },
             "font": ""

@@ -34,6 +34,9 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.button.background};
     color: ${({ theme }) => theme.colors.button.text};
     font-family: ${({ theme }) => theme.font};
+    border-radius: 12px;
+    font-weight: 500;
   }
+
 
 `
