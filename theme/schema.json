@@ -1,0 +1,92 @@
+{
+    "data": {
+        "default": {
+            "id": "D-007",
+            "name": "default",
+            "colors": {
+                "body": "#DADADA",
+                "head":{
+                    "background": "#F1F1F1"
+                },
+                "bottomBar":{
+                    "background": "#959595"
+                },
+                "search":{
+                    "background" : "rgba(104, 104, 104, 0.15)"
+                },
+                "input":{
+                    "background" : "#FFF",
+                    "text" : "#000000"
+
+                },
+                "text": "black",
+                "button" : {
+                    "background" : "#FF4100",
+                    "text" : "#FFFFFF"
+                },
+                "link": {
+                    "text" : "#fffff"
+                }
+            },
+            "fontSize": {
+                "verySmall": ".5rem",
+                "small": ".8rem",
+                "normal": "1rem",
+                "normal1": "1.2rem",
+                "large": "1.5rem",
+                "extraLarge": "2rem",
+                "extraVeryLarge": "2.5rem"
+            },
+            "borderSize": {
+                "verySmall": "1px",
+                "medium": "3px",
+                "large": "5px"
+            },
+            "font": ""
+        },
+        "light": {
+            "id": "L-007",
+            "name": "light",
+            "colors": {
+                "body": "#0C0C0C",
+                "head":{
+                    "background": "#1F1F1F"
+                },
+                "bottomBar":{
+                    "background": "#959595"
+                },
+                "search":{
+                    "background" : "rgba(104, 104, 104, 0.15)"
+                },
+                "input":{
+                    "background" : "rgba(255, 255, 255, 0.43)",
+                    "text" : "#000000"
+
+                },
+                "text": "#FFFFFF",
+                "button" : {
+                    "background" : "#FF4100",
+                    "text" : "#FFFFFF"
+                },
+                "link": {
+                    "text" : "#fffff"
+                }
+            },
+            "fontSize": {
+                "verySmall": ".5rem",
+                "small": ".8rem",
+                "normal": "1rem",
+                "normal1": "1.2rem",
+                "large": "1.5rem",
+                "extraLarge": "2rem",
+                "extraVeryLarge": "2.5rem"
+            },
+            "borderSize": {
+                "verySmall": "1px",
+                "medium": "3px",
+                "large": "5px"
+            },
+            "font": ""
+        }
+    }
+}
