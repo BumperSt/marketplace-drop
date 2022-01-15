@@ -13,7 +13,6 @@ const HomePage = () => {
         <ListHorizontaltems ListType="Small"/>
         <ListHorizontaltems ListType="Large"/>
         <LastComponentInHome/>
-
     </Container>
   )
 }
