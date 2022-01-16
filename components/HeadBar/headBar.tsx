@@ -5,8 +5,8 @@ import { AlignRow, HeadBarContainer, LoggedTitle, LoggedTitleColor, LoginButton 
 
 export const HeadBar = () => {
 
-  const [stateLoginModal, setStateLoginModal] = useState(false);
-  const [logged, setLogged] = useState(false)
+  const [stateLoginModal, setStateLoginModal] = useState<Boolean>(false);
+  const [logged, setLogged] = useState<Boolean>(false);
 
   return (
     <>
@@ -27,7 +27,7 @@ export const HeadBar = () => {
         </HeadBarContainer>
         
         {stateLoginModal && 
-            <ModalLogin setModalState={setStateLoginModal} />
+            <ModalLogin  setModalState={setStateLoginModal} />
         }
     </>
   );

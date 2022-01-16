@@ -64,6 +64,7 @@ export const ModalTextDescription = styled.h1<{FirstColor?: boolean}>`
             color: ${theme.colors.modal.descriptionTextSecond};
         `
     } 
+
 `
 
 export const LineStyled = styled.hr`

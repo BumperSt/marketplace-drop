@@ -37,7 +37,7 @@ export const ModalInfos = ({setModalState}: Props) => {
                 <Input value={distrit} setValue={setDistrit}  Title="Bairro *"></Input>
             </InputsContainer>
             <AlignRowButtons>
-                <ModalButton>Sair</ModalButton>
+                <ModalButton onClick={() => setModalState(false)}>Sair</ModalButton>
                 <ModalButton>Salvar</ModalButton>
             </AlignRowButtons>
 
