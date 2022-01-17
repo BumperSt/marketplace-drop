@@ -58,7 +58,7 @@ export const ModalButton = styled.button`
 export const ModalTextDescription = styled.h1<{FirstColor?: boolean}>`
     font-size: 14px;
     ${({FirstColor,theme}) => FirstColor ? `
-            color: ${theme.colors.modal.descriptionTextFirst};
+            color: ${theme.colors.texts.description};
         `:
         `
             color: ${theme.colors.modal.descriptionTextSecond};

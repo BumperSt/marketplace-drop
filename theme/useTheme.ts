@@ -30,9 +30,6 @@ export const UseTheme = () => {
         selectTheme(themes.data[themeName])
     }
 
-    
-
-
     return { theme, themeLoaded, setTheme };
 
 

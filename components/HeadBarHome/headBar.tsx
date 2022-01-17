@@ -1,12 +1,20 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ModalLogin } from "../Modal/modalLogin";
 import { AlignRow, HeadBarContainer, LoggedTitle, LoggedTitleColor, LoginButton } from "./headBarStyle";
+import {useRouter} from 'next/router'
+export const HeadBarHome = () => {
 
-export const HeadBar = () => {
+    const route = useRouter()
+    const [stateLoginModal, setStateLoginModal] = useState<Boolean>(false);
+    const [logged, setLogged] = useState<Boolean>(false);
 
-  const [stateLoginModal, setStateLoginModal] = useState<Boolean>(false);
-  const [logged, setLogged] = useState<Boolean>(false);
+
+  useEffect(() => {
+    if(logged) {
+        setStateLoginModal(false)
+    }
+  }, [logged])
 
   return (
     <>
@@ -17,7 +25,7 @@ export const HeadBar = () => {
                 !logged ? 
                 <LoginButton onClick={() => setStateLoginModal(true)}>Entrar</LoginButton>
                 :
-                <AlignRow>
+                <AlignRow onClick={() => route.push('userPanel')}>
                     <LoggedTitle>Olá,<LoggedTitleColor>Jonas</LoggedTitleColor></LoggedTitle>
                     <Image src="/temporary/headIcon.png" width="32" height="32"/>
                 </AlignRow>
@@ -27,7 +35,7 @@ export const HeadBar = () => {
         </HeadBarContainer>
         
         {stateLoginModal && 
-            <ModalLogin  setModalState={setStateLoginModal} />
+            <ModalLogin tempSetLoged={setLogged} setModalState={setStateLoginModal} />
         }
     </>
   );

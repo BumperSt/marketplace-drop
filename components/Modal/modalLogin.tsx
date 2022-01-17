@@ -4,11 +4,12 @@ import { useState } from "react"
 import { Input } from "../Inputs/input"
 
 interface Props {
-    setModalState:any
+    setModalState:any,
+    tempSetLoged: any
 }
 
 
-export const ModalLogin = ({setModalState}: Props) => {
+export const ModalLogin = ({setModalState, tempSetLoged}: Props) => {
 
     const [login, setLogin] = useState<string>("")
     const [password, setPassword] = useState<string>("")
@@ -26,7 +27,7 @@ export const ModalLogin = ({setModalState}: Props) => {
                 <ModalInput value={login} onChange={(e) => setLogin(e.target.value)} placeholder="Email"/>
                 <ModalInput value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="Senha"/>
     
-                <ModalButton>Acessar</ModalButton>
+                <ModalButton onClick={() => tempSetLoged(true)}>Acessar</ModalButton>
     
                 <ModalTextDescription onClick={(() => setModalType('Register'))} style={{
                     marginTop:'1rem'

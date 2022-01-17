@@ -6,7 +6,8 @@
             "colors": {
                 "body": "#F1F1F1",
                 "head":{
-                    "background": "#F1F1F1"
+                    "background": "#F1F1F1",
+                    "textAndIcons": "#474747"
                 },
                 "bottomBar":{
                     "background": "#959595"
@@ -17,9 +18,11 @@
                 "input":{
                     "background" : "#FFF",
                     "text" : "#000000"
-
                 },
-                "text": "black",
+                "texts":{
+                    "default" : "black",
+                    "description": "#FF3D00"
+                },
                 "button" : {
                     "background" : "#FF4100",
                     "text" : "#FFFFFF"
@@ -29,7 +32,6 @@
                 },
                 "modal":{
                     "background" : "#F1F1F1",
-                    "descriptionTextFirst" : "#FF3D00",
                     "descriptionTextSecond" : "#0057FF"
                 }
             },
@@ -54,7 +56,10 @@
                     "text" : "#000000"
 
                 },
-                "text": "#FFFFFF",
+                "texts":{
+                    "default" : "#FFFFFF",
+                    "description": "#FF3D00"
+                },
                 "button" : {
                     "background" : "#FF4100",
                     "text" : "#FFFFFF"
@@ -64,7 +69,6 @@
                 },
                 "modal":{
                     "background" : "#F1F1F1",
-                    "descriptionTextFirst" : "#FF3D00",
                     "descriptionTextSecond" : "#0057FF"
                 }
             },

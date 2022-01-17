@@ -1,13 +1,12 @@
-import { createGlobalStyle} from "styled-components";
+import styled, { createGlobalStyle} from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }:any) =>  theme.colors.body};
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.texts.default};
     font-family: ${({ theme }) => theme.font};
     transition: all 0.50s linear;
     margin:0;
-
   }
 
   *{
@@ -24,8 +23,8 @@ export const GlobalStyles = createGlobalStyle`
 
   textarea:focus, input:focus{
     outline: none;
-  
   }
+
   button {
     border: 0;
     display: inline-block;
@@ -34,9 +33,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.button.background};
     color: ${({ theme }) => theme.colors.button.text};
     font-family: ${({ theme }) => theme.font};
-    border-radius: 12px;
+    border-radius: 10px;
     font-weight: 500;
   }
-
-
 `
