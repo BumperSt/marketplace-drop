@@ -14,7 +14,9 @@ export const Container = styled.div`
 `
 
 export const ProfilePicture = styled.div`
-    
+    display:flex;   
+    flex-direction:column;
+    text-align:center;
 `
 
 export const ProfileName = styled.h1`

@@ -5,7 +5,9 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: .5rem;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+
     width: 95%;
     text-align:center;
 `
@@ -14,6 +16,8 @@ export const NotificationsTitle = styled.h1`
     @media (max-width: 300px){
         font-size: .8rem;
     }
+    font-weight: 700;
+
 `
 
 export const ContainerNotifications = styled.div`

@@ -23,5 +23,6 @@ export const InputStyled = styled.input`
 export const InputTitle = styled.h1`
     font-size: 14px;
     font-weight: bold;
+    color:black;
     width: 100%;
 `

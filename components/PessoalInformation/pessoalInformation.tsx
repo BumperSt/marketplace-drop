@@ -1,11 +1,14 @@
+import { useRouter } from "next/router"
 import { AlignRow, Container, ContainerInformation, EditIcon, InformationAlignCollum, InformationTitle, InformationValue, InfromationAlignRow, PessoalInformationTitle } from "./pessoalInformationSyles"
 
 export const PessoalInformation = () => {
+    const router = useRouter()
     return(
         <Container>
             <AlignRow>
+                <EditIcon onClick={() => router.push('/editProfile')} size={20}/>
+
                 <PessoalInformationTitle>Informações pessoais</PessoalInformationTitle>
-                <EditIcon size={16}/>
             </AlignRow>
             <ContainerInformation>
                 <InfromationAlignRow>

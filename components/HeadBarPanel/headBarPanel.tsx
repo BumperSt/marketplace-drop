@@ -10,7 +10,8 @@ export const HeadBarPanel = () => {
     const [myUrl, setMyUrl] = useState('')
     const router = useRouter()
     const MyUrlName = {
-        '/userPanel' : 'Painel de usuário'
+        '/userPanel' : 'Painel de usuário',
+        '/editProfile' : 'Editar Perfil'
     }
 
 
@@ -23,7 +24,11 @@ export const HeadBarPanel = () => {
             <AlignRow>
                 <BackIcon onClick={() => router.back()} size='30'/>
                 <CenterText>{MyUrlName[myUrl]}</CenterText>
-                <LogoutIcon size='26'/>
+                {
+                    myUrl == '/userPanel' &&
+                        <LogoutIcon size='26'/>
+
+                }
             </AlignRow>
         </HeadBarContainer>
     )

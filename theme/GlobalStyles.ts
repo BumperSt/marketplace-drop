@@ -28,12 +28,12 @@ export const GlobalStyles = createGlobalStyle`
   button {
     border: 0;
     display: inline-block;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
     background-color: ${({ theme }) => theme.colors.button.background};
     color: ${({ theme }) => theme.colors.button.text};
     font-family: ${({ theme }) => theme.font};
     border-radius: 10px;
-    font-weight: 500;
+    font-weight: 700;
   }
 `

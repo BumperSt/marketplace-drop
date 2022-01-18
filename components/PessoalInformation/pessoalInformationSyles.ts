@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: .5rem;
+    margin-top: 1rem;
     width: 95%;
 `
 
@@ -12,6 +12,8 @@ export const PessoalInformationTitle = styled.h1`
     @media (max-width: 300px){
         font-size: .8rem;
     }
+    font-weight: 700;
+
 `
 export const AlignRow = styled.div`
     display:flex;
