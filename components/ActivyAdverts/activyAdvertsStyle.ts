@@ -28,14 +28,15 @@ export const AdvertsContainer = styled.div`
 `
 
 export const AdvertButton = styled.button`
-    margin-top: 1rem;
-    padding-block:.3rem;
-    padding-inline:.5rem;
+    margin-top: .5rem;
+    padding-block: 0.5rem;
+    padding-inline: 0.9rem;
+
 `
 
 export const AdvertsScroll = styled.div`
     width: 100%;
     overflow-y: auto;
     max-height:9rem;
-
+    padding-inline:.5rem;
 `

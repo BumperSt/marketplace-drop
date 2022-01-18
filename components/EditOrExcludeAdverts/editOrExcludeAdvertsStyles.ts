@@ -46,12 +46,10 @@ export const EditIcon = styled(FiEdit)`
 export const DeleteIcon = styled(RiDeleteBinLine)`
     justify-self: flex-end;
     margin-right: .5rem;
-
 `
 
 export const AlignIcon = styled.div`
     display:flex;
     flex-direction:row;
-
 `
 

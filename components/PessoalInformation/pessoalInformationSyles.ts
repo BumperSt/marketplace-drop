@@ -51,7 +51,6 @@ export const InformationValue = styled.h1`
     font-size:14px;
     font-weight: 600;
     margin-bottom:.8rem;
-    padding-left: .1rem;
 
 `
 
