@@ -16,6 +16,9 @@ export const CenterText = styled.h1`
     color:${({ theme }) => theme.colors.head.textAndIcons};
     width:100%;
     position: absolute;
+    @media (max-width: 300px){
+        font-size:.8rem;
+    }
 `
 
 export const BackIcon = styled(MdKeyboardBackspace)`

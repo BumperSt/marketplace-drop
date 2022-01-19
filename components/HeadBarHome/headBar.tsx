@@ -26,7 +26,7 @@ export const HeadBarHome = () => {
                 <LoginButton onClick={() => setStateLoginModal(true)}>Entrar</LoginButton>
                 :
                 <AlignRow onClick={() => route.push('userPanel')}>
-                    <LoggedTitle>Olá,<LoggedTitleColor>Jonas</LoggedTitleColor></LoggedTitle>
+                    <LoggedTitle>Olá, <LoggedTitleColor>Jonas</LoggedTitleColor></LoggedTitle>
                     <Image src="/temporary/headIcon.png" width="32" height="32"/>
                 </AlignRow>
 

@@ -22,6 +22,9 @@ export const ProfilePicture = styled.div`
 export const ProfileName = styled.h1`
     font-weight: 600;
     margin-bottom: 0.3rem;
+    @media (max-width: 300px){
+        font-size: .6rem;
+    }
 
 `
 

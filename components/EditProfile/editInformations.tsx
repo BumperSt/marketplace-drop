@@ -6,6 +6,15 @@ import Image from "next/image"
 export const EditInformations = () => {
 
     const [exibicionName, setExibicionName] = useState('')
+    const [name, setName] = useState('')
+    const [andress, setAndress] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [email, setEmail] = useState('')
+    const [birthDate, setBirthDate] = useState('')
+    const [actualPassword, setActualPassword] = useState('')
+    const [newPassword, setNewPassword] = useState('')
+    const [newPasswordConfirmation, setNewPasswordConfirmation] = useState()
+
 
     return(
         <Container>
@@ -24,15 +33,15 @@ export const EditInformations = () => {
                         width: '65%',
                     }} Title="Nome de exibiçaõ" value={exibicionName} setValue={setExibicionName}/>
                 </AlignRow>
-                <Input Title="Nome completo" value={exibicionName} setValue={setExibicionName}/>
-                <Input Title="Endereço" value={exibicionName} setValue={setExibicionName}/>
-                <Input Title="Telefone" value={exibicionName} setValue={setExibicionName}/>
-                <Input Title="Email" value={exibicionName} setValue={setExibicionName}/>
-                <Input Title="Data de nascimento" value={exibicionName} setValue={setExibicionName}/>
+                <Input Title="Nome completo" value={name} setValue={setName}/>
+                <Input Title="Endereço" value={andress} setValue={setAndress}/>
+                <Input Title="Telefone" value={phoneNumber} setValue={setPhoneNumber}/>
+                <Input Title="Email" value={email} setValue={setEmail}/>
+                <Input Title="Data de nascimento" value={birthDate} setValue={setBirthDate}/>
                 <SaveInfosButton>Salvar</SaveInfosButton>
-                <Input Title="Senha atual" value={exibicionName} setValue={setExibicionName}/>
-                <Input Title="Nova senha" value={exibicionName} setValue={setExibicionName}/>
-                <Input Title="Confirmar nova senha" value={exibicionName} setValue={setExibicionName}/>
+                <Input Title="Senha atual" value={actualPassword} setValue={setActualPassword}/>
+                <Input Title="Nova senha" value={newPassword} setValue={setNewPassword}/>
+                <Input Title="Confirmar nova senha" value={newPasswordConfirmation} setValue={setNewPasswordConfirmation}/>
                 <SaveInfosButton>Salvar</SaveInfosButton>
 
             </ContainerEditInfo>

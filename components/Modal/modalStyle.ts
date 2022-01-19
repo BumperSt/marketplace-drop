@@ -30,6 +30,10 @@ export const ModalTitle = styled.h1`
     font-size: 26px;
     font-weight: bold;
     max-width: 75%;
+    @media (max-width: 300px){
+        font-size: 20px;
+
+    }
 `
 
 export const ModalSubTitle = styled.h1`

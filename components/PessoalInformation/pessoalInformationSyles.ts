@@ -46,6 +46,10 @@ export const InformationTitle = styled.h1`
     margin-bottom:.4rem;
     font-weight: 400;
     margin-top:.8rem;
+    @media (max-width: 300px){
+        font-size:11px;
+    }
+
 
 `
 
@@ -53,7 +57,9 @@ export const InformationValue = styled.h1`
     font-size:14px;
     font-weight: 600;
     margin-bottom:.8rem;
-
+    @media (max-width: 300px){
+        font-size:12px;
+    }
 `
 
 export const InformationAlignCollum = styled.div`
