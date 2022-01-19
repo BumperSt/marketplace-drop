@@ -22,17 +22,16 @@ export const ModalToManageAdvert = ({setModalState}) => {
     const [advertSizes, setAdvertSizes] = useState(null)
     const [advertPhotos, setAdvertPhotos] = useState(null)
 
-    const photoObject = {
-        'url' : '/temporary/advertPhoto.png'
-    }
+
 
     useEffect(() => {
         let tempArray = []
         let photoArray = []
         for (let index = 32; index <= 46;) {
-            index += 2
             tempArray.push(index)
-            photoArray.push({...photoObject, key:index})
+            photoArray.push({'url' : '/temporary/advertPhoto.png', 'key':index-20})
+            index += 2
+
         }
         setAdvertSizes(tempArray)
         setAdvertPhotos(photoArray)
@@ -52,7 +51,7 @@ export const ModalToManageAdvert = ({setModalState}) => {
                     {
                         advertSizes&&
                         advertSizes.map((size) => (
-                            <SizeButton>{size}</SizeButton>
+                            <SizeButton key={size}>{size}</SizeButton>
 
                         ))
                     }
@@ -68,8 +67,8 @@ export const ModalToManageAdvert = ({setModalState}) => {
                     {
                         advertPhotos&&
                         advertPhotos.map((photo) => (
-                            <PhotoDiv>
-                                <Image key={photo.key} src={photo.url} width="69" height="59"/>
+                            <PhotoDiv key={photo.key}>
+                                <Image  src={photo.url} width="69" height="59"/>
                             </PhotoDiv>
                         ))
                     }
