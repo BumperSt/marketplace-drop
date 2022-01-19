@@ -2,11 +2,11 @@ import { InputContainer, InputStyled, InputTitle } from "./inputsStyles"
 
 
 interface Props {
-    Title: string;
-    Style?: any;
+    Title: string,
+    Style?: any,
     StyleInput?:any,
-    value: string;
-    setValue: any;
+    value: string,
+    setValue: any,
 }
 
 export const Input = ({Title, Style, value, setValue, StyleInput}: Props) => {

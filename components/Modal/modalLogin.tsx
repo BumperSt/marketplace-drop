@@ -29,9 +29,7 @@ export const ModalLogin = ({setModalState, tempSetLoged}: Props) => {
     
                 <ModalButton onClick={() => tempSetLoged(true)}>Acessar</ModalButton>
     
-                <ModalTextDescription onClick={(() => setModalType('Register'))} style={{
-                    marginTop:'1rem'
-                }} FirstColor={true}>Criar conta</ModalTextDescription>
+                <ModalTextDescription onClick={(() => setModalType('Register'))} FirstColor={true}>Criar conta</ModalTextDescription>
     
                 <LineStyled/>
     
@@ -53,7 +51,7 @@ export const ModalLogin = ({setModalState, tempSetLoged}: Props) => {
                 </InputsContainer>
 
                 <ModalTextDescription onClick={(() => setModalType('Login'))} style={{
-                    marginTop:'1rem'
+                    marginTop:'.7rem'
                 }} FirstColor={true}>Acessar conta</ModalTextDescription>
                 <LineStyled/>
 

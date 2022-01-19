@@ -10,7 +10,7 @@ import { useState } from "react"
 
 const HomePage = () => {
 
-  const [tempStateInfo, setTempStateInfo] = useState(false)
+  const [tempStateInfo, setTempStateInfo] = useState(true)
 
   return (
     <Container>

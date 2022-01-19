@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
-    width: 95%;
+    width: 90%;
 `
 
 export const PessoalInformationTitle = styled.h1`

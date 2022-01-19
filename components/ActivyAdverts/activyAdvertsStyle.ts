@@ -5,8 +5,9 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
-    width: 95%;
     text-align: center;
+    width: 90%;
+
 `
 
 export const ActivyAdvertsTitle = styled.h1`
@@ -17,7 +18,7 @@ export const ActivyAdvertsTitle = styled.h1`
 `
 
 export const AdvertsContainer = styled.div`
-    padding-inline:1rem;
+    padding-inline:.8rem;
     padding-block:.5rem;
     margin-top: .5rem;
     background-color:white;
@@ -49,7 +50,6 @@ export const AdvertsScroll = styled.div`
 export const AdvertContainer = styled.div`
     display: flex;
     flex-direction:row;
-    justify-content: space-between;
     align-items: center;
     padding: .3rem;
     background-color:#EEEEEE;
@@ -57,12 +57,16 @@ export const AdvertContainer = styled.div`
     border-radius: 10px;
     margin-bottom: .5rem;
     text-align: start;
+    min-width: 90%;
+
 `
 
 export const AdvertProductImage = styled.div`
+    display: flex;
     span{
         border-radius: 10px;
     }
+    margin-right: .5rem;
 `
 
 export const AdvertProductTitle = styled.h1`
@@ -71,6 +75,8 @@ export const AdvertProductTitle = styled.h1`
     @media (max-width: 300px){
         font-size:10px;
     }
+    margin-right: 1rem;
+
 `
 
 export const AdvertProductPrice = styled.h1`

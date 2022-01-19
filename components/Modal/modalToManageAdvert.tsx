@@ -13,7 +13,7 @@ interface Props {
 
 
 
-export const ModalToManageAdvert = ({setModalState}) => {
+export const ModalToManageAdvert = ({setModalState}: Props) => {
 
     const [advertName, setAdvertName] = useState("")
     const [advertSubTitle, setAdvertSubTitle] = useState("")

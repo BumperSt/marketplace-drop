@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: .5rem;
-    width: 95%;
+    width: 90%;
 `
 
 export const ContainerEditInfo = styled.div`

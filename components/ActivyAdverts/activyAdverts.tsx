@@ -2,10 +2,12 @@ import { ActivyAdvertsTitle, AdvertButton, AdvertsContainer, AdvertsScroll, Cont
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import { ModalToManageAdvert } from "../Modal/modalToManageAdvert"
+import { ModalExcludeAdvert } from "../Modal/modalExcludeAdvert"
 export const ActivyAdverts = () => {
 
     const [anuncios, SetAnuncions] = useState(null)
     const [openEditAdvert, setOpenEditAdvert] = useState(false)
+    const [openExcludeAdvert, setOpenExcludeAdvert] = useState(false)
 
     useEffect(() => {
         let tempAnuncions = []
@@ -38,7 +40,7 @@ export const ActivyAdverts = () => {
                                 </AlignColumn>
                                 <AlignIcon>
                                     <EditIcon onClick={() => setOpenEditAdvert(anuncio)} size="16"/>
-                                    <DeleteIcon  size="16"/>
+                                    <DeleteIcon onClick={() => setOpenExcludeAdvert(anuncio)} size="16"/>
                                 </AlignIcon>
                             </AdvertContainer>
                 
@@ -48,7 +50,10 @@ export const ActivyAdverts = () => {
                 {
                 openEditAdvert &&
                     <ModalToManageAdvert setModalState={setOpenEditAdvert}/>
-                
+                }
+                {
+                    openExcludeAdvert && 
+                    <ModalExcludeAdvert anuncio={openExcludeAdvert} setModalState={setOpenExcludeAdvert}/>
                 }
                 <AdvertButton>Anunciar</AdvertButton>
             </AdvertsContainer>

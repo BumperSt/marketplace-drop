@@ -9,21 +9,21 @@ export const ModalBackground = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     z-index: 99;
 `
 
 export const ModalContainer = styled.div`
     background-color: ${({ theme }) => theme.colors.modal.background};
-    width: 80%;
+    width: 90%;
     overflow: auto;
-    max-height: 100%;
+    max-height: 80%;
     border-radius:10px;
     display: flex;
     flex-direction: column;
     padding: 1rem;
     align-items: center;
     text-align: center;
+    margin-top: 30%;
 `
 
 export const ModalTitle = styled.h1`
@@ -54,9 +54,10 @@ export const ModalInput = styled.input`
 
 export const ModalButton = styled.button`
     margin-block: 0.7rem;
-    padding-inline: 1rem;
-    font-weight: 600;
+    margin-inline: 1rem;
+    padding-inline: 0.5rem;
     padding-block: 0.3rem;
+    font-weight: 600;
 `
 
 export const ModalTextDescription = styled.h1<{FirstColor?: boolean}>`
@@ -81,14 +82,12 @@ export const InputsContainer = styled.div`
     display:flex;
     flex-direction: column;
     margin-top: 1rem;
-    width:90%;
+    width: 90%;
 `
 
 export const AlignRowButtons = styled.div`
     display:flex;
     flex-direction: row;
-    width: 60%; 
-    justify-content: space-between;
 `
 
 export const AlignRowInputs = styled.div`

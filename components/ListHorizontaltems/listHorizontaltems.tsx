@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { useRouter } from "next/router"
 import { ItemBackgroud, ItemCard, ItemsScrollList, ItemTitle, ListHorizontaltemsContainer, ListItemContainer, ListItemsTitle } from "./listHorizontaltemsStyle"
 
 interface Props {
@@ -6,6 +7,9 @@ interface Props {
 }
 
 export const ListHorizontaltems = ({ListType}: Props) => {
+
+    const router = useRouter()
+
     return(
         <ListHorizontaltemsContainer>
             {
@@ -15,7 +19,7 @@ export const ListHorizontaltems = ({ListType}: Props) => {
                     <ItemsScrollList>
                         {
                             [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].map((item) => (
-                                <ItemCard key={item}>
+                                <ItemCard key={item} onClick={() => router.push('/productPage')}>
                                 <ItemBackgroud>
                                         <Image alt="teste" title="teste" width="104" height="92" src="/temporary/itens.png"></Image>
                                     </ItemBackgroud>
