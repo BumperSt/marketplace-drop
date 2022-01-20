@@ -19,11 +19,15 @@ export const AlignRowSizes = styled.div`
     padding-block:.5rem;
 `
 
-export const SizeButton = styled.button`
+export const SizeButton = styled.button<{active:boolean}>`
     margin-inline:.1rem;
     padding-inline:.4rem;
     padding-block:.2rem;
     font-size: 13px;
+    ${({active})=> active && `
+        background-color:#474747
+
+    `}
 `
 
 export const DivTitle = styled.h1`

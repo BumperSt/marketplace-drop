@@ -59,7 +59,6 @@ export const ProductPriceContainer = styled.div`
     justify-content: center;
     min-width: 100%;
     overflow-y: auto;
-
 `
 
 export const PriceDiv = styled.div`
@@ -102,8 +101,8 @@ export const ProductDescreptionDiv = styled.div`
     border-radius:10px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
     justify-content: center;
-    min-width: 90%;
     overflow-y: auto;
+    width: 100%;
 `
 
 export const AlignPrices = styled.div`
@@ -118,10 +117,28 @@ export const AlignColumn = styled.div`
     margin-top:.5rem;
 `
 
+
+
 export const DescreptionTitle = styled.h1`
-    font-weight: 700;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 12px;
 `
 export const DescreptionText = styled(DescreptionTitle)`
     font-weight: 400;
+`
+
+export const CommentsTitle = styled.div`
+    font-size: 12px;
+    font-weight: 700;
+    width: 100%;
+    text-align: start;
+    margin-top: 1rem;
+`
+
+export const CommentsDiv = styled(ProductDescreptionDiv)`
+    margin-top:.5rem;
+`
+
+export const CommentTextArea = styled.textarea`
+
 `

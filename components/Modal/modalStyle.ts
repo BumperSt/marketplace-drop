@@ -9,6 +9,7 @@ export const ModalBackground = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     z-index: 99;
 `
 
@@ -23,7 +24,7 @@ export const ModalContainer = styled.div`
     padding: 1rem;
     align-items: center;
     text-align: center;
-    margin-top: 30%;
+
 `
 
 export const ModalTitle = styled.h1`

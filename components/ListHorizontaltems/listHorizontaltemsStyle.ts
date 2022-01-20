@@ -27,6 +27,7 @@ export const ItemsScrollList = styled.div`
     flex-direction:row;
     overflow: auto;
     margin-top:.5rem;
+    padding-block: .3rem;
 `
 
 export const ItemCard  = styled.div<{Large?:boolean}>`

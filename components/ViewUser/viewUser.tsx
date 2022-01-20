@@ -1,6 +1,6 @@
 import Image from "next/image"
-import { AlignColumn, AlignRow, AvaliationValue, Container, ProfileName, ProfilePicture, Star } from "./viewUserStyled"
-
+import { AlignColumn, Container, ProfileName, ProfilePicture } from "./viewUserStyled"
+import {AvaliationStarts} from '@/components/AvalationStars/avaliationStarts'
 export const ViewUser = () => {
     return(
         <Container>
@@ -9,14 +9,8 @@ export const ViewUser = () => {
             </ProfilePicture>
             <AlignColumn>
                 <ProfileName>Jonas Lanches</ProfileName>
-                <AlignRow>
-                    <Star size="15"/>
-                    <Star size="15"/>
-                    <Star size="15"/>
-                    <Star size="15"/>
-                    <Star size="15"/>
-                    <AvaliationValue>4.7</AvaliationValue>
-                </AlignRow>
+                <AvaliationStarts avaliationValue={4.7}/>
+
             </AlignColumn>
             <Image src="/temporary/headIcon.png" width="32" height="32"/>
         </Container>

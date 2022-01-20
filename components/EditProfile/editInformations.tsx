@@ -31,7 +31,7 @@ export const EditInformations = () => {
                     <Input Style={{
                         margimTop:'0px',
                         width: '65%',
-                    }} Title="Nome de exibiçaõ" value={exibicionName} setValue={setExibicionName}/>
+                    }} Title="Nome de exibição" value={exibicionName} setValue={setExibicionName}/>
                 </AlignRow>
                 <Input Title="Nome completo" value={name} setValue={setName}/>
                 <Input Title="Endereço" value={andress} setValue={setAndress}/>

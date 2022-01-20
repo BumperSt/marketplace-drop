@@ -21,7 +21,7 @@ export const ModalToManageAdvert = ({setModalState}: Props) => {
     const [advertPrice, setAdvertPrice] = useState("")
     const [advertSizes, setAdvertSizes] = useState(null)
     const [advertPhotos, setAdvertPhotos] = useState(null)
-
+    const [sizeButtonPressed, setSizeButtonPressed] = useState([])
 
 
     useEffect(() => {
@@ -51,7 +51,7 @@ export const ModalToManageAdvert = ({setModalState}: Props) => {
                     {
                         advertSizes&&
                         advertSizes.map((size) => (
-                            <SizeButton key={size}>{size}</SizeButton>
+                            <SizeButton active={sizeButtonPressed.includes(size)} onClick={() => sizeButtonPressed.includes(size)  ?  setSizeButtonPressed(sizeButtonPressed.filter(item => item !== size)    ) : setSizeButtonPressed([...sizeButtonPressed, size])} key={size}>{size}</SizeButton>
 
                         ))
                     }

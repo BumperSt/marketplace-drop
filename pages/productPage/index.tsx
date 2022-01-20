@@ -1,12 +1,16 @@
 import { HeadBarHome } from "@/components/HeadBarHome/headBar"
 import { ListHorizontaltems } from "@/components/ListHorizontaltems/listHorizontaltems"
+import { ModalOffer } from "@/components/Modal/modalOffer"
 import { AlignColumn, AlignIcons, AlignPrices, BackIcon, Container, ContainerProductPage, DescreptionText, DescreptionTitle, PlusIcon, PriceDiv, PriceValue, ProductDescreptionDiv, ProductImage, ProductPriceContainer, ProductTitle, ShareIcon, SizeButton } from "@/components/ProductPage/productPageStyle"
 import Image from "next/image"
 import { useRouter } from "next/router"
+import { useState } from "react"
 
 const ProductPage = () => {
 
     const router = useRouter()
+    const [openOfferModal, setOpenOfferModal] = useState(false)
+
 
     return(
         <Container>
@@ -24,7 +28,7 @@ const ProductPage = () => {
                     <PriceDiv>
                         <SizeButton>46</SizeButton>
                         <PriceValue>R$ 999,99</PriceValue>
-                        <PlusIcon size="20"/>
+                        <PlusIcon size="20" onClick={() => setOpenOfferModal(true)}/>
                     </PriceDiv>
                     <PriceDiv>
                         <SizeButton>46</SizeButton>
@@ -77,7 +81,10 @@ const ProductPage = () => {
 
             </ContainerProductPage>
             <ListHorizontaltems ListType="Small"/>
-
+            {
+                openOfferModal &&
+                <ModalOffer setModalState={setOpenOfferModal}/>
+            }
         </Container>
     )
 }
