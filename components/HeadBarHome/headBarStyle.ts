@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeadBarContainer = styled.div`
+export const HeadBarContainer = styled.div<{otherBackgroundColor: boolean}>`
     position: sticky;
     top: 0;
     z-index: 99;
@@ -9,7 +9,7 @@ export const HeadBarContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     padding: .7rem;
-    background-color: ${({ theme }) => theme.colors.head.background};
+    background-color: ${({theme,otherBackgroundColor }) => otherBackgroundColor ? theme.colors.sellerPage.background : theme.colors.body};
     min-height: 10%;
     max-height: 10%;
 `

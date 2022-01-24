@@ -14,9 +14,9 @@ export const InputStyled = styled.input`
     margin-block:.3rem;
     padding:.3rem;
     font-size:14px;
-    color:#474747;
+    color:${({ theme }) => theme.colors.detalhes};
     font-weight: 300;
-    border: solid 1px #CDCDCD;
+    border: solid 1px ${({ theme }) => theme.colors.stroke};;
     width: 95%;
 `
 

@@ -25,7 +25,7 @@ export const SizeButton = styled.button<{active:boolean}>`
     padding-block:.2rem;
     font-size: 13px;
     ${({active})=> active && `
-        background-color:#474747
+        background-color:${({ theme }) => theme.colors.detalhes}
 
     `}
 `

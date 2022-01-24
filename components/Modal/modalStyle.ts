@@ -28,9 +28,9 @@ export const ModalContainer = styled.div`
 `
 
 export const ModalTitle = styled.h1`
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
-    max-width: 75%;
+    max-width: 100%;
     @media (max-width: 300px){
         font-size: 20px;
 
@@ -48,16 +48,16 @@ export const ModalInput = styled.input`
     padding:.3rem;
     font-size:14px;
     width:80%;
-    color:#474747;
+    color:${({ theme }) => theme.colors.detalhes};
     font-weight: 300;
-    border: solid 1px #CDCDCD;
+    border: solid 1px ${({ theme }) => theme.colors.stroke};;
 `
 
 export const ModalButton = styled.button`
-    margin-block: 0.7rem;
+    margin-block: 1rem;
     margin-inline: 1rem;
-    padding-inline: 0.5rem;
-    padding-block: 0.3rem;
+    padding: 0.5rem;
+
     font-weight: 600;
 `
 

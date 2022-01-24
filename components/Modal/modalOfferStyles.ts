@@ -36,6 +36,7 @@ export const ImageDiv = styled.div`
 
 export const AlignRow = styled.div`
     display:flex;
+    
     flex-direction:row;
     margin-top: .5rem;
     align-items:center;
@@ -55,7 +56,7 @@ export const ProductTitle = styled.h1`
 `
 
 export const ShareIcon = styled(FiShare2)`
-    color:${({ theme }) => theme.colors.head.textAndIcons};
+    color:${({ theme }) => theme.colors.detalhes};
     z-index: 50;
 
 `
@@ -87,8 +88,7 @@ export const BuyButton = styled.button`
 `
 
 export const ProductDescreptionDiv = styled.div`
-    padding-inline:.8rem;
-    padding-block:.5rem;
+    padding:.5rem;
     margin-top: 1rem;
     background-color:${({ theme }) => theme.colors.productPrice.descreptionDiv};
     display:flex;
@@ -105,6 +105,115 @@ export const DescreptionTitle = styled.h1`
     margin-bottom:.5rem;
 `
 
+
+export const CommentsTitle = styled.div`
+    font-size: 12px;
+    font-weight: 700;
+    width: 100%;
+    text-align: start;
+    margin-top: 1rem;
+`
+
+export const CommentsDiv = styled(ProductDescreptionDiv)`
+    overflow-y: unset;
+`
+
+export const CommentTextArea = styled.textarea`
+
+`
+
+
 export const DescreptionText = styled(DescreptionTitle)`
     font-weight: 400;
+`
+
+export const Title = styled.h1`
+    font-size: 14px;
+    font-weight: 700;
+    text-align: start;
+    margin-top:.5rem;
+
+`
+
+export const QuestionInput = styled.input`
+    border-radius: 15px;
+    border:3px solid ${({ theme }) => theme.colors.stroke};
+    font-size: 12px;
+    padding:.2rem;
+`
+
+export const QuestionAligRow = styled.div`
+    display:flex;
+    flex-direction: row;
+    margin-top: .5rem;
+`
+
+export const QuestionButton = styled.button`
+    width:25%;
+    margin-left:.25rem;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 15px;
+`
+
+export const QuestionDiv = styled(ProductDescreptionDiv)`
+    background-color:white;
+    border:3px solid ${({ theme }) => theme.colors.stroke};
+    box-shadow:none;
+    display: flex;
+    flex-direction: column;
+    margin-top: .5rem;
+    overflow-y: auto;
+    max-height:20vh;
+`
+
+export const QuestionCommentDiv = styled.div`
+    display:flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+`
+
+export const QuestionText = styled.h1`
+    font-size: 10px;
+    font-weight:400;
+`
+
+export const QuestionResponseText = styled.h1`
+    font-size: 9px;
+    font-weight:400;
+    border-left: 1px solid black;
+    padding-left:.3rem;
+    margin-left:.2rem;
+    color:${({ theme }) => theme.colors.texts.detalhes};
+    margin-top:.1rem;
+`
+
+export const YouAvaliationDiv = styled.div`
+    display:flex;
+    flex-direction: row;
+    border:3px solid ${({ theme }) => theme.colors.stroke};
+    background-color:white;
+    border-radius: 15px;
+    width: 60%;
+    padding: .2rem;
+    align-items: center;
+    justify-content: center;
+`
+
+export const AvaliationTextArea = styled.textarea`
+    font-size:10px;
+    padding-inline:.5rem;
+    padding-block:.25rem;
+    border:3px solid ${({ theme }) => theme.colors.stroke};
+    border-radius:15px;
+    min-height:3rem;
+    margin-top:.5rem;
+`
+
+
+export const AlignAvaliationRow = styled.div`
+    margin-top: .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 `

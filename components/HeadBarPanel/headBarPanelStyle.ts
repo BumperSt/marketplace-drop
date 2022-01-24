@@ -13,21 +13,22 @@ export const AlignRow = styled.div`
 `
 
 export const CenterText = styled.h1`
-    color:${({ theme }) => theme.colors.head.textAndIcons};
+    color:${({ theme }) => theme.colors.detalhes};
     width:100%;
     position: absolute;
+    font-size: 18px;
     @media (max-width: 300px){
         font-size:.8rem;
     }
 `
 
 export const BackIcon = styled(MdKeyboardBackspace)`
-    color:${({ theme }) => theme.colors.head.textAndIcons};
+    color:${({ theme }) => theme.colors.detalhes};
     z-index: 99;
 
 `
 export const LogoutIcon = styled(RiShutDownLine)`
-    color:${({ theme }) => theme.colors.head.textAndIcons};
+    color:${({ theme }) => theme.colors.detalhes};
     z-index: 99;
 
 `

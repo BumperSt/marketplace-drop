@@ -47,7 +47,7 @@ export const NotificationDiv = styled.div`
     align-items: center;
     text-align: start;
     background-color:#EEEEEE;
-    border: 1px solid #CDCDCD;
+    border: 1px solid ${({ theme }) => theme.colors.stroke};;
     border-radius: 10px;
     margin-bottom: .5rem;
     padding:.5rem;
@@ -67,7 +67,7 @@ export const QuestionIcon = styled(BsQuestionCircle)`
 export const NotificationDescreptions = styled.h1`
     font-size: 9px;
     font-weight: 400;
-    color:#474747;
+    color:${({ theme }) => theme.colors.detalhes};
     max-width: 70%;
 
 `
@@ -79,7 +79,7 @@ export const NotificationDate = styled(NotificationDescreptions)`
 export const UserNameQuestion = styled.span`
     font-size: 9px;
     font-weight: 600;
-    color:#474747;
+    color:${({ theme }) => theme.colors.detalhes};
     color:${({ theme }) => theme.colors.texts.description};
 `
 

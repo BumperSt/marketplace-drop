@@ -24,13 +24,13 @@ export const AlignIcons = styled.div`
 `
 
 export const BackIcon = styled(IoMdArrowBack)`
-    color:${({ theme }) => theme.colors.head.textAndIcons};
+    color:${({ theme }) => theme.colors.detalhes};
     z-index: 50;
 
 `
 
 export const ShareIcon = styled(FiShare2)`
-    color:${({ theme }) => theme.colors.head.textAndIcons};
+    color:${({ theme }) => theme.colors.detalhes};
     z-index: 50;
 
 `
@@ -125,20 +125,4 @@ export const DescreptionTitle = styled.h1`
 `
 export const DescreptionText = styled(DescreptionTitle)`
     font-weight: 400;
-`
-
-export const CommentsTitle = styled.div`
-    font-size: 12px;
-    font-weight: 700;
-    width: 100%;
-    text-align: start;
-    margin-top: 1rem;
-`
-
-export const CommentsDiv = styled(ProductDescreptionDiv)`
-    margin-top:.5rem;
-`
-
-export const CommentTextArea = styled.textarea`
-
 `

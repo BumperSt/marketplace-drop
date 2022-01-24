@@ -6,8 +6,8 @@ export const AlignRow = styled.div`
     flex-direction: row;
 `
 
-export const Star = styled(AiTwotoneStar)`
-    color:#FF7A00;
+export const Star = styled(AiTwotoneStar)<{disabled:boolean}>`
+    color: ${({disabled}) => disabled ? `#FF7A00` : `black`} ;
 `
 
 export const AvaliationValue = styled.h1`

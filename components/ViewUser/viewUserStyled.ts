@@ -10,13 +10,13 @@ export const Container = styled.div`
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
     width:80%;
     padding:.5rem;
-    justify-content: space-around;
 `
 
 export const ProfilePicture = styled.div`
     display:flex;   
     flex-direction:column;
     text-align:center;
+    margin-right: .5rem;
 `
 
 export const ProfileName = styled.h1`
@@ -25,11 +25,12 @@ export const ProfileName = styled.h1`
     @media (max-width: 300px){
         font-size: .6rem;
     }
+    margin-right: .5rem;
 
 `
 
 export const AlignColumn = styled.div`
     display:flex;
     flex-direction: column;
-
+    
 `

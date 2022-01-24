@@ -4,6 +4,7 @@ import { AlignRow, BackIcon, CenterText, LogoutIcon } from "./headBarPanelStyle"
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { ShareIcon } from "../Modal/modalOfferStyles";
 
 export const HeadBarPanel = () => {
 
@@ -11,7 +12,8 @@ export const HeadBarPanel = () => {
     const router = useRouter()
     const MyUrlName = {
         '/userPanel' : 'Painel de usuário',
-        '/editProfile' : 'Editar Perfil'
+        '/editProfile' : 'Editar Perfil',
+        '/sellerProfile' : 'Perfil do vendedor'
     }
 
 
@@ -20,7 +22,7 @@ export const HeadBarPanel = () => {
     }, [])
 
     return(
-        <HeadBarContainer>
+        <HeadBarContainer otherBackgroundColor={myUrl === '/sellerProfile'}>
             <AlignRow>
                 <BackIcon onClick={() => router.back()} size='30'/>
                 <CenterText>{MyUrlName[myUrl]}</CenterText>
@@ -28,6 +30,10 @@ export const HeadBarPanel = () => {
                     myUrl == '/userPanel' &&
                         <LogoutIcon size='26'/>
 
+                }
+                {
+                    myUrl == '/sellerProfile' &&
+                        <ShareIcon size='26'/>
                 }
             </AlignRow>
         </HeadBarContainer>

@@ -29,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
   button {
     border: 0;
     display: inline-block;
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
     background-color: ${({ theme }) => theme.colors.button.background};
     color: ${({ theme }) => theme.colors.button.text};

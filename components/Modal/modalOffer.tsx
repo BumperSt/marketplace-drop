@@ -1,8 +1,7 @@
 import {Modal} from "./modal"
-import { AlignColumn, AlignRow, BuyButton, DescreptionText, DescreptionTitle, ImageDiv, ListImage, ProductDescreptionDiv, ProductImagensDiv, ProductPrice, ProductSize, ProductSubTitle, ProductTitle, ShareIcon, SmallImageDiv } from "./modalOfferStyles"
+import { AlignColumn, AlignRow, BuyButton, CommentsDiv, DescreptionText, DescreptionTitle, ImageDiv, ListImage, ProductDescreptionDiv, ProductImagensDiv, ProductPrice, ProductSize, ProductSubTitle, ProductTitle, QuestionAligRow, QuestionButton, QuestionDiv, QuestionInput, Title, ShareIcon, SmallImageDiv, QuestionText, QuestionResponseText, QuestionCommentDiv, AvaliationTextArea, YouAvaliationDiv, AlignAvaliationRow } from "./modalOfferStyles"
 import Image from "next/image"
 import { AvaliationStarts } from "../AvalationStars/avaliationStarts"
-import { CommentsDiv, CommentsTitle } from "../ProductPage/productPageStyle"
 
 
 interface Props {
@@ -57,10 +56,66 @@ export const ModalOffer = ({setModalState}: Props) => {
                 Donec ligula quam, accumsan a cursus eu, 
                 ullamcorper eu lorem.</DescreptionText>
             </ProductDescreptionDiv>
-            <CommentsTitle>Comentários</CommentsTitle>
 
             <CommentsDiv>
+                <Title>Faça uma pergunta</Title>
+                <QuestionAligRow>
+                    <QuestionInput style={{
+                        width:'100%'
+                    }}/>
+                    <QuestionButton>Postar</QuestionButton>
 
+                </QuestionAligRow>
+                <QuestionDiv>
+                    <QuestionCommentDiv>
+                        <QuestionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus. RJOAO6598</QuestionText>
+                        <QuestionResponseText>Donec gravida luctus accumsan. Fusce pharetra posuere iaculis. Nam sodales purus nibh, sit amet pharetra massa pulvinar non.</QuestionResponseText>
+                    </QuestionCommentDiv>
+                    <QuestionCommentDiv>
+                        <QuestionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus. RJOAO6598</QuestionText>
+                        <QuestionResponseText>Donec gravida luctus accumsan. Fusce pharetra posuere iaculis. Nam sodales purus nibh, sit amet pharetra massa pulvinar non.</QuestionResponseText>
+                    </QuestionCommentDiv>
+                    <QuestionCommentDiv>
+                        <QuestionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus. RJOAO6598</QuestionText>
+                        <QuestionResponseText>Donec gravida luctus accumsan. Fusce pharetra posuere iaculis. Nam sodales purus nibh, sit amet pharetra massa pulvinar non.</QuestionResponseText>
+                    </QuestionCommentDiv>
+                    <QuestionCommentDiv>
+                        <QuestionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus. RJOAO6598</QuestionText>
+                        <QuestionResponseText>Donec gravida luctus accumsan. Fusce pharetra posuere iaculis. Nam sodales purus nibh, sit amet pharetra massa pulvinar non.</QuestionResponseText>
+                    </QuestionCommentDiv>
+                    <QuestionCommentDiv>
+                        <QuestionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus. RJOAO6598</QuestionText>
+                        <QuestionResponseText>Donec gravida luctus accumsan. Fusce pharetra posuere iaculis. Nam sodales purus nibh, sit amet pharetra massa pulvinar non.</QuestionResponseText>
+                    </QuestionCommentDiv>
+                </QuestionDiv>
+            </CommentsDiv>
+
+            <CommentsDiv>
+                <Title>Avaliações</Title>
+                <QuestionDiv>
+                    <QuestionCommentDiv>
+
+                        <QuestionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus. RJOAO6598 <AvaliationStarts avaliationValue={3} size={10}/></QuestionText>
+                        <QuestionResponseText>Donec gravida luctus accumsan. Fusce pharetra posuere iaculis. Nam sodales purus nibh, sit amet pharetra massa pulvinar non.</QuestionResponseText>
+                    </QuestionCommentDiv>
+
+
+                </QuestionDiv>
+                <Title>Avalie o produto</Title>
+                <AvaliationTextArea placeholder="escreva um comentario"/>
+                <AlignAvaliationRow>
+                    <YouAvaliationDiv>
+                        <QuestionText style={{
+                            marginRight:'.2rem'
+                        }}>Sua avaliação</QuestionText>
+                        <AvaliationStarts avaliationValue={0} size={10}/>
+
+                    </YouAvaliationDiv>
+
+                    <QuestionButton>Postar</QuestionButton>
+
+                </AlignAvaliationRow>
+               
             </CommentsDiv>
             
         </Modal>

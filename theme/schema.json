@@ -5,9 +5,10 @@
             "name": "default",
             "colors": {
                 "body": "#F1F1F1",
-                "head":{
-                    "background": "#F1F1F1",
-                    "textAndIcons": "#474747"
+                "detalhes":"#474747",
+                "stroke":"#CDCDCD",
+                "botoes":{
+                    "background":"#FF3D00"
                 },
                 "bottomBar":{
                     "background": "#959595"
@@ -36,6 +37,9 @@
                 },
                 "productPrice":{
                     "descreptionDiv" : "#DCDCDC"
+                },
+                "sellerPage":{
+                    "background" : "#FFFF"
                 }
             },
             "font": ""
@@ -45,8 +49,11 @@
             "name": "light",
             "colors": {
                 "body": "#0C0C0C",
-                "head":{
-                    "background": "#1F1F1F"
+                "detalhes":"#474747",
+                "stroke":"#CDCDCD",
+
+                "botoes":{
+                    "background":"#FF3D00"
                 },
                 "bottomBar":{
                     "background": "#959595"
@@ -73,6 +80,12 @@
                 "modal":{
                     "background" : "#F1F1F1",
                     "descriptionTextSecond" : "#0057FF"
+                },
+                "productPrice":{
+                    "descreptionDiv" : "#DCDCDC"
+                },
+                "sellerPage":{
+                    "background" : "#FFFF"
                 }
             },
             "font": ""

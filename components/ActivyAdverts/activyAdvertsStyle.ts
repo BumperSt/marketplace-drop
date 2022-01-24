@@ -53,7 +53,7 @@ export const AdvertContainer = styled.div`
     align-items: center;
     padding: .3rem;
     background-color:#EEEEEE;
-    border: 1px solid #CDCDCD;
+    border: 1px solid ${({ theme }) => theme.colors.stroke};;
     border-radius: 10px;
     margin-bottom: .5rem;
     text-align: start;

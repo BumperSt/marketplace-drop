@@ -1,19 +1,35 @@
+import { useEffect, useState } from "react"
 import { AlignRow, AvaliationValue, Star } from "./avaliationStartsStyle"
 
 interface Props{
-    avaliationValue:Number
+    avaliationValue:Number,
+    size?:number
 }
 
 
-export const AvaliationStarts = ({avaliationValue}) => {
+export const AvaliationStarts = ({avaliationValue,size} : Props) => {
+
+    const stars = [0, 1, 2, 3, 4]
+    const [sizeHere, setSize] = useState(size)
+
+    useEffect(() => {
+        if(!sizeHere){
+            setSize(15)
+        }
+    }, [])
+
     return(
         <AlignRow>
-            <Star size="15"/>
-            <Star size="15"/>
-            <Star size="15"/>
-            <Star size="15"/>
-            <Star size="15"/>
-            <AvaliationValue>{avaliationValue}</AvaliationValue>
+            {
+                stars.map((star) => (
+                    <Star key={star} size={sizeHere} disabled={(star+1) <= avaliationValue}/>
+                ))
+            }
+            {
+                !sizeHere &&
+                <AvaliationValue>{avaliationValue}</AvaliationValue>
+
+            }
         </AlignRow>
     )
 }
