@@ -11,6 +11,9 @@ export const ModalBackground = styled.div`
     align-items: center;
     justify-content: center;
     z-index: 99;
+    @media (min-width: 768px) {
+        justify-content: flex-start;
+    }
 `
 
 export const ModalContainer = styled.div`
@@ -24,22 +27,29 @@ export const ModalContainer = styled.div`
     padding: 1rem;
     align-items: center;
     text-align: center;
+    @media (min-width: 768px) {
+        margin-top: 1.5rem;
+        padding: .7rem;
+        width: 60%;
 
+    }
 `
 
 export const ModalTitle = styled.h1`
-    font-size: 24px;
     font-weight: bold;
     max-width: 100%;
     @media (max-width: 300px){
         font-size: 20px;
-
     }
 `
 
 export const ModalSubTitle = styled.h1`
     font-size: 14px;
     margin-block:.5rem;
+    @media(min-width: 768px){
+        font-size: 36px;
+        margin-block:.3rem;
+    }
 `
 
 export const ModalInput = styled.input`
@@ -51,14 +61,30 @@ export const ModalInput = styled.input`
     color:${({ theme }) => theme.colors.detalhes};
     font-weight: 300;
     border: solid 1px ${({ theme }) => theme.colors.stroke};;
+    @media (min-width: 768px) {
+        margin-block:.2rem;
+        border: solid 5px ${({ theme }) => theme.colors.stroke};;
+        border-radius: 25px;
+        
+        font-size: 24px;
+
+    }
 `
 
-export const ModalButton = styled.button`
+export const ModalButton = styled.button<{otherColor?:boolean}>`
     margin-block: 1rem;
     margin-inline: 1rem;
     padding: 0.5rem;
-
     font-weight: 600;
+    background-color: ${({otherColor, theme }) => otherColor && theme.colors.detalhes};
+    @media (min-width: 768px) {
+        margin-block: .5rem;
+        padding-block: 0.2rem;
+        padding-inline: 0.8rem;
+
+        border-radius:60px;
+        font-size: 36px;
+    }
 `
 
 export const ModalTextDescription = styled.h1<{FirstColor?: boolean}>`
@@ -68,8 +94,21 @@ export const ModalTextDescription = styled.h1<{FirstColor?: boolean}>`
         `:
         `
             color: ${theme.colors.modal.descriptionTextSecond};
+            margin-bottom:1rem;
         `
     } 
+    @media (min-width: 768px) {
+        font-size: 24px;
+
+        ${({FirstColor}) => FirstColor ? 
+            `
+            `
+            :`
+                margin-bottom:0rem;
+            `    
+        }
+        
+    }
 
 `
 
@@ -77,7 +116,12 @@ export const LineStyled = styled.hr`
     width: 60%;
     text-align:left;
     margin-block:.3rem;
-    color:#959595;
+    color:${({theme}) => theme.colors.bottomBar};
+    background-color:${({theme}) => theme.colors.bottomBar};
+    @media (min-width: 768px) {
+        margin-block:.2rem;
+        height: 4px;
+    }
 `
 export const InputsContainer = styled.div`
     display:flex;

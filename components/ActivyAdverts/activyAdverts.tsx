@@ -7,6 +7,8 @@ export const ActivyAdverts = () => {
 
     const [anuncios, SetAnuncions] = useState(null)
     const [openEditAdvert, setOpenEditAdvert] = useState(false)
+    const [openPublisherAdvert, setOpenPublisherAdvert] = useState(false)
+
     const [openExcludeAdvert, setOpenExcludeAdvert] = useState(false)
 
     useEffect(() => {
@@ -55,7 +57,11 @@ export const ActivyAdverts = () => {
                     openExcludeAdvert && 
                     <ModalExcludeAdvert anuncio={openExcludeAdvert} setModalState={setOpenExcludeAdvert}/>
                 }
-                <AdvertButton>Anunciar</AdvertButton>
+                <AdvertButton onClick={() => setOpenPublisherAdvert(true)}>Anunciar</AdvertButton>
+                {
+                    openPublisherAdvert && 
+                    <ModalToManageAdvert modalType={'create'} setModalState={setOpenPublisherAdvert}/>
+                }
             </AdvertsContainer>
         </Container>
     )

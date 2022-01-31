@@ -24,9 +24,7 @@ export const ModalExcludeAdvert = ({setModalState, anuncio}: Props) => {
             </AdvertContainer>
             <AlignRowButtons>
 
-                <ModalButton style={{
-                    backgroundColor:'${({ theme }) => theme.colors.detalhes}'
-                }}>Sim, deletar</ModalButton>
+                <ModalButton otherColor={true}>Sim, deletar</ModalButton>
                 <ModalButton>Voltar</ModalButton>
 
             </AlignRowButtons>

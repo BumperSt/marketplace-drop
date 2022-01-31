@@ -19,6 +19,11 @@ export const ListItemContainer = styled.div`
 
 export const ListItemsTitle = styled.h1`
     font-weight: 700;
+    
+    @media (min-width: 768px){
+        font-size: 64px;
+    }
+    
 ;
 `
 
@@ -37,6 +42,7 @@ export const ItemCard  = styled.div<{Large?:boolean}>`
     box-sizing: border-box;
     min-width:${({Large}) => Large ? '6rem' : '4.5rem'};
     margin-right: 1rem;
+    
 `
 
 export const ItemBackgroud = styled.div`
@@ -46,7 +52,8 @@ export const ItemBackgroud = styled.div`
 
 export const ItemTitle = styled.h1`
     font-size:12px;
+    @media (min-width: 768px){
+        font-size:24px;
+    }
     margin-top:.3rem;
-
-
 `

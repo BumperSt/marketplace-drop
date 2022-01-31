@@ -15,6 +15,10 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 24px;
     margin:0;
     box-sizing: border-box;
+    @media (min-width: 768px) {
+      font-size:64px;
+
+    }
   }
 
   a {

@@ -21,7 +21,7 @@ export const ListHorizontaltems = ({ListType}: Props) => {
                             [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].map((item) => (
                                 <ItemCard key={item} onClick={() => router.push('/productPage')}>
                                 <ItemBackgroud>
-                                        <Image alt="teste" title="teste" width="110" height="90" src="/temporary/itens.png"></Image>
+                                        <Image alt="teste" title="teste" width="268" height="238" src="/temporary/itens.png"></Image>
                                     </ItemBackgroud>
                                     <ItemTitle>Lorem Ipuso</ItemTitle>
                                 </ItemCard>
@@ -37,7 +37,7 @@ export const ListHorizontaltems = ({ListType}: Props) => {
                             [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].map((item) => (
                                 <ItemCard Large={true} key={item}>
                                     <ItemBackgroud>
-                                        <Image alt="teste" title="teste" width="155" height="244" src="/temporary/itensLarge.png"></Image>
+                                        <Image alt="teste" title="teste" width="384" height="607" src="/temporary/itensLarge.png"></Image>
                                     </ItemBackgroud>
                                 </ItemCard>
                             ))

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeadBarContainer = styled.div<{otherBackgroundColor: boolean}>`
+export const HeadBarContainer = styled.div<{otherBackgroundColor?: boolean}>`
     position: sticky;
     top: 0;
     z-index: 99;
@@ -16,6 +16,11 @@ export const HeadBarContainer = styled.div<{otherBackgroundColor: boolean}>`
 
 export const LoginButton = styled.button`
     padding-inline: 1rem;
+    @media (min-width: 768px){
+        padding-inline: 1rem;
+        padding-block: .2rem;
+        font-size: 36px;
+    }
 `
 
 export const AlignRow = styled.div`

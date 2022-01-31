@@ -1,5 +1,5 @@
 import {Modal} from "./modal"
-import { AlignColumn, AlignRow, BuyButton, CommentsDiv, DescreptionText, DescreptionTitle, ImageDiv, ListImage, ProductDescreptionDiv, ProductImagensDiv, ProductPrice, ProductSize, ProductSubTitle, ProductTitle, QuestionAligRow, QuestionButton, QuestionDiv, QuestionInput, Title, ShareIcon, SmallImageDiv, QuestionText, QuestionResponseText, QuestionCommentDiv, AvaliationTextArea, YouAvaliationDiv, AlignAvaliationRow } from "./modalOfferStyles"
+import { AlignColumn, AlignRow, BuyButton, CommentsDiv, DescreptionText, DescreptionTitle, ImageDiv, ListImage, ProductDescreptionDiv, ProductImagensDiv, ProductPrice, ProductSize, ProductSubTitle, ProductTitle, QuestionAligRow, QuestionButton, QuestionDiv, QuestionInput, Title, ShareIcon, SmallImageDiv, QuestionText, QuestionResponseText, QuestionCommentDiv, AvaliationTextArea, YouAvaliationDiv, AlignAvaliationRow, ToReportDiv, ToReportIcon, ToReportText } from "./modalOfferStyles"
 import Image from "next/image"
 import { AvaliationStarts } from "../AvalationStars/avaliationStarts"
 
@@ -117,7 +117,10 @@ export const ModalOffer = ({setModalState}: Props) => {
                 </AlignAvaliationRow>
                
             </CommentsDiv>
-            
+            <ToReportDiv>
+                <ToReportIcon/>
+                <ToReportText>Reportar anúncio</ToReportText>
+            </ToReportDiv>
         </Modal>
 
     )

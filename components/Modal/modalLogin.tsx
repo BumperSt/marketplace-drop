@@ -33,9 +33,7 @@ export const ModalLogin = ({setModalState, tempSetLoged}: Props) => {
     
                 <LineStyled/>
     
-                <ModalTextDescription style={{
-                    marginBottom:'1rem'
-                }}>Maecenas iaculis lobortis ultricies?</ModalTextDescription>
+                <ModalTextDescription>Maecenas iaculis lobortis ultricies?</ModalTextDescription>
             </Modal>
         )
     }else{

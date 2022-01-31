@@ -5,7 +5,7 @@ export const Search = () => {
         <SearchContainer>
             <SearchContentTitle>Proin ut enim tempus, aliquet tellus non, pulvinar est.</SearchContentTitle>
             <InputDiv>
-                <SearchIcon size='20px'/>
+                <SearchIcon size='40'/>
                 <SearchInput placeholder="Lorem ipsum dolor sit amet..."/>
             </InputDiv>
         </SearchContainer>

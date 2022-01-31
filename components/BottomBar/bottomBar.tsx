@@ -5,11 +5,11 @@ export const BottomBar = ({}) => {
     return(
         <Container>
             <Title>Quisque efficitur enim vel gravida sagittis.</Title>
-            <Image title="Logo" alt="Logo Seliga no drop" width="155" height="55" src="/temporary/logo.png"></Image>
+            <Image title="Logo" alt="Logo Seliga no drop" width="408" height="145" src="/imagens/logo-bottomBar.webp"></Image>
             <DivColumn>
-                <Image title="Iconei Discord" alt="Redirecionar Discord" width="23" height="23" src="/temporary/Discord.png"></Image>
+                <Image title="Iconei Discord" alt="Redirecionar Discord" width="82" height="82" src="/icons/discord.webp"></Image>
 
-                <Image title="Iconei Instagram" alt="Redirecionar Instagram" width="23" height="23" src="/temporary/Instagram.png"></Image>
+                <Image title="Iconei Instagram" alt="Redirecionar Instagram" width="82" height="82" src="/icons/instagram.webp"></Image>
             </DivColumn>
             <CopDiv>
                 <CopTitle>Lorem ipsum.</CopTitle>

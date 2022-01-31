@@ -18,6 +18,9 @@ export const InputStyled = styled.input`
     font-weight: 300;
     border: solid 1px ${({ theme }) => theme.colors.stroke};;
     width: 95%;
+    @media (min-width: 768px){
+        font-size: 24px;
+    }
 `
 
 export const InputTitle = styled.h1`

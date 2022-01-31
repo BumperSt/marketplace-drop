@@ -9,11 +9,12 @@ import { ModalButton, ModalTitle } from "./modalStyle"
 
 interface Props {
     setModalState:any,
+    modalType?:'create',
 }
 
 
 
-export const ModalToManageAdvert = ({setModalState}: Props) => {
+export const ModalToManageAdvert = ({setModalState, modalType}: Props) => {
 
     const [advertName, setAdvertName] = useState("")
     const [advertSubTitle, setAdvertSubTitle] = useState("")
@@ -39,7 +40,7 @@ export const ModalToManageAdvert = ({setModalState}: Props) => {
 
     return(
         <Modal setModalState={setModalState}>
-            <ModalTitle>Gerenciar Anuncio</ModalTitle>
+            <ModalTitle>{modalType == 'create' ? 'Criar Anuncio' : 'Gerenciar Anuncio'}</ModalTitle>
             <Input Title="Nome" value={advertName} setValue={setAdvertName}/>
             <Input Title="Subtitulo" value={advertSubTitle} setValue={setAdvertSubTitle}/>
             <Input Title="Descrição" value={advertDescription} setValue={setAdvertDescription} StyleInput={{

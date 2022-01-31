@@ -33,6 +33,10 @@ export const SearchContentTitle = styled.h1`
     font-weight: 700;
     margin-top:1rem;
     margin-bottom:0.8rem;
+    @media (min-width: 768px){
+        font-size: 72px;
+        max-width: 70%;
+    }
 
 `
 
@@ -43,5 +47,9 @@ export const SearchInput = styled.input `
     padding-block:.5rem;
     width: 100%;
     font-size: 13px;
-    font-family: roboto,;
+    font-family: roboto;
+    font-style: italic;
+    @media (min-width: 768px) {
+        font-size: 36px;
+    }
 `

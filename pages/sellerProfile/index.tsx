@@ -1,6 +1,8 @@
+import { AvaliationStarts } from "@/components/AvalationStars/avaliationStarts"
 import { HeadBarPanel } from "@/components/HeadBarPanel/headBarPanel"
+import { ListHorizontaltems } from "@/components/ListHorizontaltems/listHorizontaltems"
 import { SellerAvalaiton } from "@/components/SellerPage/sellerAvalaiton"
-import { CenterDiv, Container, PageTitles, SellerDescription } from "@/components/SellerPage/sellerPageStyled"
+import { CenterDiv, Container, OpinioDate, OpinionName, OpinionsDiv, OpinionText, OpnionDiv, PageTitles, SeeMoreOpinion, SellerDescription } from "@/components/SellerPage/sellerPageStyled"
 import { ViewUser } from "@/components/ViewUser/viewUser"
 import { useRouter } from "next/router"
 import { useState } from "react"
@@ -24,9 +26,25 @@ const SellerPage = () => {
                 <SellerDescription>Nam scelerisque metus ac laoreet dignissim. Nullam iaculis metus in iaculis consequat. </SellerDescription>
                 <SellerAvalaiton/>
                 <PageTitles>Opiniões</PageTitles>
+                <OpinionsDiv>
+                    <OpnionDiv>
+                        <OpinioDate>01/01/2022</OpinioDate>
+                        <OpinionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus.<OpinionName>RJOAO6598</OpinionName></OpinionText>
+                        <AvaliationStarts size={10} avaliationValue={3}/>
+                    </OpnionDiv>
+                    <OpnionDiv>
+                        <OpinioDate>01/01/2022</OpinioDate>
+                        <OpinionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus.<OpinionName>RJOAO6598</OpinionName></OpinionText>
+                        <AvaliationStarts size={10} avaliationValue={3}/>
+
+                    </OpnionDiv>
+                    <SeeMoreOpinion>Ver mais opiniões</SeeMoreOpinion>
+                </OpinionsDiv>
+
 
             </CenterDiv>
-
+            <ListHorizontaltems ListType="Small"/>
+                <ListHorizontaltems ListType="Small"/>
         </Container>
     )
 }

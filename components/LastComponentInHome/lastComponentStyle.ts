@@ -19,11 +19,26 @@ export const Descreption = styled.h1`
     font-weight:300;
     max-width: 60%;
     margin-top: .5rem;
+    border-radius: 15px;
+    @media (min-width: 768px) {
+        font-size: 36px;
+        max-width: 80%;
+        bottom: 5%;
+        left:2%;
 
+
+    }
 `
 
 
 export const LastComponentTitle = styled.h1`
     font-weight: 700;
     margin-block: .5rem;
+    @media (min-width: 768px) {
+        font-size: 64px;
+        margin-top: 1rem;
+
+        
+
+    }
 `

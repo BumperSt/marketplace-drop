@@ -19,7 +19,7 @@ export const HeadBarHome = () => {
   return (
     <>
         <HeadBarContainer>
-            <Image onClick={() => route.push('/')} title="Logo" alt="Logo" width="32" height="30" src="/icons/logo.webp"/>
+            <Image onClick={() => route.push('/')} title="Logo" alt="Logo" width="80" height="80" src="/icons/logo.webp"/>
 
             {
                 !logged ? 

@@ -7,11 +7,9 @@
                 "body": "#F1F1F1",
                 "detalhes":"#474747",
                 "stroke":"#CDCDCD",
+                "bottomBar" : "#959595",
                 "botoes":{
                     "background":"#FF3D00"
-                },
-                "bottomBar":{
-                    "background": "#959595"
                 },
                 "search":{
                     "background" : "#CDCDCD"
@@ -51,12 +49,9 @@
                 "body": "#0C0C0C",
                 "detalhes":"#474747",
                 "stroke":"#CDCDCD",
-
+                "bottomBar" : "#959595",
                 "botoes":{
                     "background":"#FF3D00"
-                },
-                "bottomBar":{
-                    "background": "#959595"
                 },
                 "search":{
                     "background" : "rgba(104, 104, 104, 0.15)"

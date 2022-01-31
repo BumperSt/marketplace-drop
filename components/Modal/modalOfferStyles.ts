@@ -1,5 +1,6 @@
 import { AiTwotoneStar } from "react-icons/ai";
 import { FiShare2 } from "react-icons/fi";
+import { MdReportProblem } from "react-icons/md";
 import styled from "styled-components";
 
 export const ProductImagensDiv = styled.div`
@@ -216,4 +217,19 @@ export const AlignAvaliationRow = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+`
+
+export const ToReportDiv = styled.div`
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-block:1rem;
+`
+
+export const ToReportIcon = styled(MdReportProblem)`
+
+`
+
+export const ToReportText = styled.h1`
+    font-size:12px;
 `
