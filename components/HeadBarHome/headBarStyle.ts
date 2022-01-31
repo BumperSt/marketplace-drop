@@ -27,14 +27,23 @@ export const AlignRow = styled.div`
     display:flex;
     flex-direction: row;
     align-items: center;
+    :hover{
+        cursor: pointer;
+    }
 `
 
 export const LoggedTitle = styled.h1`
     margin-right: 0.2rem;
     font-size: 16px;
+    @media (min-width: 768px) {
+        font-size:36px;
+    }
 `
 
 export const LoggedTitleColor = styled.span`
     color:orange;
     font-size: 16px;
+    @media (min-width: 768px) {
+        font-size:36px;
+    }
 `

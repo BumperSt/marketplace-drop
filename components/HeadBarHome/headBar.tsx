@@ -27,7 +27,7 @@ export const HeadBarHome = () => {
                 :
                 <AlignRow onClick={() => route.push('userPanel')}>
                     <LoggedTitle>Olá, <LoggedTitleColor>Jonas</LoggedTitleColor></LoggedTitle>
-                    <Image src="/temporary/headIcon.png" width="32" height="32"/>
+                    <Image src="/temporary/headIcon.png" width="60" height="60"/>
                 </AlignRow>
 
             }

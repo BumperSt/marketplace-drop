@@ -99,7 +99,6 @@ export const ModalTextDescription = styled.h1<{FirstColor?: boolean}>`
     } 
     @media (min-width: 768px) {
         font-size: 24px;
-
         ${({FirstColor}) => FirstColor ? 
             `
             `
@@ -107,9 +106,10 @@ export const ModalTextDescription = styled.h1<{FirstColor?: boolean}>`
                 margin-bottom:0rem;
             `    
         }
-        
     }
-
+    :hover{
+        cursor: pointer;
+    }
 `
 
 export const LineStyled = styled.hr`
@@ -125,9 +125,15 @@ export const LineStyled = styled.hr`
 `
 export const InputsContainer = styled.div`
     display:flex;
-    flex-direction: column;
+    flex-direction:row;
+    flex-wrap: wrap;
     margin-top: 1rem;
     width: 90%;
+    justify-content: space-between;
+    @media (min-width: 768px) {
+        margin-top: .5rem;
+    }   
+
 `
 
 export const AlignRowButtons = styled.div`

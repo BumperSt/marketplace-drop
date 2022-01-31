@@ -4,6 +4,7 @@ import styled from "styled-components"
 export const AlignRow = styled.div`
     display:flex;
     flex-direction: row;
+    align-items: center;
 `
 
 export const Star = styled(AiTwotoneStar)<{disabled:boolean}>`
@@ -13,5 +14,7 @@ export const Star = styled(AiTwotoneStar)<{disabled:boolean}>`
 export const AvaliationValue = styled.h1`
     color:#FF7A00;
     font-size:12px;
-
+    @media (min-width: 768px) {
+        font-size:36px;
+    }
 `

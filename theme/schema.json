@@ -42,9 +42,9 @@
             },
             "font": ""
         },
-        "light": {
+        "dark": {
             "id": "L-007",
-            "name": "light",
+            "name": "dark",
             "colors": {
                 "body": "#0C0C0C",
                 "detalhes":"#474747",

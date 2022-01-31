@@ -6,6 +6,11 @@ export const Container = styled.div`
     flex-direction: column;
     margin-top: 1rem;
     width: 90%;
+    @media (min-width: 768px) {
+        width: 60%;
+        margin-top: 0rem;
+
+    }
 `
 
 export const PessoalInformationTitle = styled.h1`
@@ -39,6 +44,7 @@ export const ContainerInformation = styled.div`
     align-items: center;
     border-radius:10px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+
 `
 
 export const InformationTitle = styled.h1`
@@ -48,6 +54,12 @@ export const InformationTitle = styled.h1`
     margin-top:.8rem;
     @media (max-width: 300px){
         font-size:11px;
+
+    }
+    @media (min-width: 768px) {
+        margin-top: 0rem;
+        font-size:24px;
+
     }
 
 
@@ -59,6 +71,10 @@ export const InformationValue = styled.h1`
     margin-bottom:.8rem;
     @media (max-width: 300px){
         font-size:12px;
+    }
+    @media (min-width: 768px) {
+        font-size:26px;
+
     }
 `
 

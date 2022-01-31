@@ -1,12 +1,43 @@
 import styled from "styled-components";
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.div<{inputType : string, createAccont:boolean}>`
     display:flex;
     flex-direction: column;
     align-items: center;
     text-align: start;
     margin-top: .5rem;
     width: 100%;
+    padding-inline: .5rem;
+
+    ${({inputType}) => 
+
+        inputType == 'uf' ? {
+            width:'30%'
+        } 
+        : 
+        inputType == 'city' &&  {
+            width:'70%'
+        }
+
+    }
+
+    @media (min-width: 768px) {
+        margin-top: .3rem;
+
+        width: 50%;
+        ${({inputType}) => 
+            inputType == 'uf' ? {
+                width:'30%'
+            }
+            :
+            inputType == 'andress' && {
+                width:'70%'
+            }
+        }
+        ${({createAccont}) => createAccont && {
+            width:'100%'
+        }}
+    }
 `
 
 export const InputStyled = styled.input`
@@ -17,9 +48,13 @@ export const InputStyled = styled.input`
     color:${({ theme }) => theme.colors.detalhes};
     font-weight: 300;
     border: solid 1px ${({ theme }) => theme.colors.stroke};;
-    width: 95%;
+    width: 100%;
+    
     @media (min-width: 768px){
         font-size: 24px;
+        border: solid 5px ${({ theme }) => theme.colors.stroke};;
+        padding:.2rem;
+
     }
 `
 

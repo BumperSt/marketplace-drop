@@ -24,16 +24,16 @@ export const HeadBarPanel = () => {
     return(
         <HeadBarContainer otherBackgroundColor={myUrl === '/sellerProfile'}>
             <AlignRow>
-                <BackIcon onClick={() => router.back()} size='30'/>
+                <BackIcon onClick={() => router.back()} size='50'/>
                 <CenterText>{MyUrlName[myUrl]}</CenterText>
                 {
                     myUrl == '/userPanel' &&
-                        <LogoutIcon size='26'/>
+                        <LogoutIcon size='50'/>
 
                 }
                 {
                     myUrl == '/sellerProfile' &&
-                        <ShareIcon size='26'/>
+                        <ShareIcon size='50'/>
                 }
             </AlignRow>
         </HeadBarContainer>

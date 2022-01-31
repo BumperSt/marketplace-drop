@@ -54,3 +54,18 @@ export const CopDescription = styled.h1`
         font-size: 36px;
     }
 `
+
+export const AlignRow = styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+`
+
+export const ToglleThemeDiv = styled.div`
+    align-items:center;
+    display:flex;
+    flex-direction: row;
+    border: solid 1px white;
+    border-radius: 40px;
+    padding-inline: .1rem;
+`

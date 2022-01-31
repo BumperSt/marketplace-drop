@@ -25,12 +25,11 @@ export const AvaliationStarts = ({avaliationValue,size} : Props) => {
                 ))
             }
             {
-                
-                size == 15 &&
+                size == 15 ?
                 <AvaliationValue>{avaliationValue}</AvaliationValue>
-
-              
-
+                :
+                size == 30 && 
+                <AvaliationValue>{avaliationValue}</AvaliationValue>
             }
         </AlignRow>
     )

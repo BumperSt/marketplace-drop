@@ -10,15 +10,22 @@ export const AlignRow = styled.div`
     width: 100%;
     text-align: center;
     position:relative;
+    @media (min-width: 768px) {
+        padding-inline: 2rem;
+    }
 `
 
 export const CenterText = styled.h1`
     color:${({ theme }) => theme.colors.detalhes};
     width:100%;
+    left: 0;
     position: absolute;
     font-size: 18px;
     @media (max-width: 300px){
         font-size:.8rem;
+    }
+    @media (min-width: 768px) {
+        font-size:48px;
     }
 `
 

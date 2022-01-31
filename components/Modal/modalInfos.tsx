@@ -22,18 +22,15 @@ export const ModalInfos = ({setModalState}: Props) => {
     
     return(
         <Modal setModalState={setModalState}>
-            <ModalTitle>Lorem ipsum dolor sit amet.</ModalTitle>
-
+            <ModalTitle>Nam convallis vehicula ipsum congue pellentesque.</ModalTitle>
             <InputsContainer>
                 <Input value={birthDate} setValue={setBirthDate}  Title="Data de Nascimento *"></Input>
                 <Input value={phoneNumber} setValue={setphoneNumber}  Title="Telefone *"></Input>
                 <Input value={cpf} setValue={setCpf}  Title="CPF *"></Input>
                 <Input value={cep} setValue={setCep}  Title="CEP"></Input>
-                <Input value={andress} setValue={setAndress}  Title="Endereço *"></Input>
-                <AlignRowInputs>
-                    <Input value={state} setValue={setState}  Style={{width:'20%'}} Title="UF *"></Input>
-                    <Input  value={city} setValue={setCity}  Style={{width:'70%'}} Title="Cidade *"></Input>
-                </AlignRowInputs>
+                <Input value={andress} setValue={setAndress} type='andress' Title="Endereço *"></Input>
+                <Input value={state} setValue={setState}  type='uf' Title="UF *"></Input>
+                <Input  value={city} setValue={setCity}  type='city' Title="Cidade *"></Input>
                 <Input value={distrit} setValue={setDistrit}  Title="Bairro *"></Input>
             </InputsContainer>
             <AlignRowButtons>

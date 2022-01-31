@@ -42,10 +42,10 @@ export const ModalLogin = ({setModalState, tempSetLoged}: Props) => {
                 <ModalTitle>Lorem ipsum dolor sit amet.</ModalTitle>
     
                 <InputsContainer>
-                    <Input value={email} setValue={setEmail} Title="E-mail"></Input>
-                    <Input value={confirmEmail} setValue={setConfirmEmail} Title="Confirme o e-mail"></Input>
-                    <Input value={password} setValue={setPassword} Title="Senha"></Input>
-                    <Input value={confirmPassword} setValue={setConfirmPassword} Title="Confirme a senha"></Input>
+                    <Input createAccont={true} value={email} setValue={setEmail} Title="E-mail"></Input>
+                    <Input createAccont={true} value={confirmEmail} setValue={setConfirmEmail} Title="Confirme o e-mail"></Input>
+                    <Input createAccont={true} value={password} setValue={setPassword} Title="Senha"></Input>
+                    <Input createAccont={true} value={confirmPassword} setValue={setConfirmPassword} Title="Confirme a senha"></Input>
                 </InputsContainer>
 
                 <ModalTextDescription onClick={(() => setModalType('Login'))} style={{
