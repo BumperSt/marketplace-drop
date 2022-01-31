@@ -11,11 +11,12 @@ export const AvaliationStarts = ({avaliationValue,size} : Props) => {
 
     const stars = [0, 1, 2, 3, 4]
 
-    useState(() => {
-        if(!size){
-            size = 15
-        }
-    }, [size])
+    if(!size){
+        size = 15
+    }
+
+
+
     return(
         <AlignRow>
             {
