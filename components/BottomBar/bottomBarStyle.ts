@@ -47,6 +47,8 @@ export const CopTitle = styled.h1`
     }
 `   
 
+
+
 export const CopDescription = styled.h1`
     font-size:9px;
     max-width:60%;

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ModalLogin } from "../Modal/modalLogin";
-import { AlignRow, HeadBarContainer, LoggedTitle, LoggedTitleColor, LoginButton } from "./headBarStyle";
+import { AlignRow, HeadBarContainer, LoggedTitle, LoggedTitleColor, LoginButton, LogoImagem } from "./headBarStyle";
 import {useRouter} from 'next/router'
 export const HeadBarHome = () => {
 
@@ -19,7 +19,10 @@ export const HeadBarHome = () => {
   return (
     <>
         <HeadBarContainer>
-            <Image onClick={() => route.push('/')} title="Logo" alt="Logo" width="80" height="80" src="/icons/logo.webp"/>
+            <LogoImagem>
+                <Image onClick={() => route.push('/')} title="Logo" alt="Logo" layout="fill" src="/icons/logo.webp"/>
+            </LogoImagem>
+            
 
             {
                 !logged ? 

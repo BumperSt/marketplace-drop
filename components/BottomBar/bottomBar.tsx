@@ -43,6 +43,7 @@ export const BottomBar = ({setSelectedTheme} : props) => {
     return(
         <Container>
             <Title>Quisque efficitur enim vel gravida sagittis.</Title>
+            
             <Image title="Logo" alt="Logo Seliga no drop" width="408" height="145" src="/imagens/logo-bottomBar.webp"></Image>
             <DivColumn>
                 <Image title="Iconei Discord" alt="Redirecionar Discord" width="82" height="82" src="/icons/discord.webp"></Image>

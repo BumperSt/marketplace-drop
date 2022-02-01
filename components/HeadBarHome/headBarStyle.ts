@@ -47,3 +47,25 @@ export const LoggedTitleColor = styled.span`
         font-size:36px;
     }
 `
+
+export const LogoImagem = styled.div`
+
+    width: 40px;
+    
+    @media (min-width: 768px) {
+        width: 80px;
+        
+    }
+    span {
+    position: unset !important;
+        img {
+        object-fit: contain;
+        width: 40px !important;
+        @media (min-width: 768px) {
+            width: 80px;
+        }
+        position: relative !important;
+        height: unset !important;
+        }
+    }
+`
