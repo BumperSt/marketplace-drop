@@ -3,17 +3,16 @@ import { AlignRow, AvaliationValue, Star } from "./avaliationStartsStyle"
 
 interface Props{
     avaliationValue:Number,
-    size?:number
+    size?:string,
+    seeValue?:boolean
 }
 
 
-export const AvaliationStarts = ({avaliationValue,size} : Props) => {
+export const AvaliationStarts = ({avaliationValue,size, seeValue} : Props) => {
 
     const stars = [0, 1, 2, 3, 4]
 
-    if(!size){
-        size = 15
-    }
+
 
 
 
@@ -25,12 +24,10 @@ export const AvaliationStarts = ({avaliationValue,size} : Props) => {
                 ))
             }
             {
-                size == 15 ?
-                <AvaliationValue>{avaliationValue}</AvaliationValue>
-                :
-                size == 30 && 
+                seeValue &&
                 <AvaliationValue>{avaliationValue}</AvaliationValue>
             }
+            
         </AlignRow>
     )
 }

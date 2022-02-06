@@ -1,5 +1,5 @@
 import {Modal} from "./modal"
-import { AlignColumn, AlignRow, BuyButton, CommentsDiv, DescreptionText, DescreptionTitle, ImageDiv, ListImage, ProductDescreptionDiv, ProductImagensDiv, ProductPrice, ProductSize, ProductSubTitle, ProductTitle, QuestionAligRow, QuestionButton, QuestionDiv, QuestionInput, Title, ShareIcon, SmallImageDiv, QuestionText, QuestionResponseText, QuestionCommentDiv, AvaliationTextArea, YouAvaliationDiv, AlignAvaliationRow, ToReportDiv, ToReportIcon, ToReportText } from "./modalOfferStyles"
+import { AlignColumn, AlignRow, BuyButton, CommentsDiv, DescreptionText, DescreptionTitle, ImageDiv, ListImage, ProductDescreptionDiv, ProductImagensDiv, ProductPrice, ProductSize, ProductSubTitle, ProductTitle, QuestionAligRow, QuestionButton, QuestionDiv, QuestionInput, Title, ShareIcon, SmallImageDiv, QuestionText, QuestionResponseText, QuestionCommentDiv, AvaliationTextArea, YouAvaliationDiv, AlignAvaliationRow, ToReportDiv, ToReportIcon, ToReportText, AlignCollum, AlignCollumReverseDesktop, AlingRowInDesktop } from "./modalOfferStyles"
 import Image from "next/image"
 import { AvaliationStarts } from "../AvalationStars/avaliationStarts"
 
@@ -15,38 +15,45 @@ export const ModalOffer = ({setModalState}: Props) => {
     
     return(
         <Modal setModalState={setModalState}>
-            <ProductImagensDiv>
-                    <ImageDiv>
-                        <Image width="200" height="180" src="/temporary/productImage.png"/>
-                    </ImageDiv>
-                    <ListImage>
-                        <SmallImageDiv>                        
-                            <Image width="50" height="40" src="/temporary/productImage.png"/>
-                        </SmallImageDiv>
-                        <SmallImageDiv>                        
-                            <Image width="50" height="48" src="/temporary/productImage.png"/>
-                        </SmallImageDiv>                        <SmallImageDiv>                        
-                            <Image width="50" height="48" src="/temporary/productImage.png"/>
-                        </SmallImageDiv>
-                    </ListImage>
-            </ProductImagensDiv>
-            <AlignColumn>
-                <AvaliationStarts avaliationValue={4.7}/>
-                <AlignRow>
-                    <ProductTitle>MIKE LAIR 2 RED HOT SPECIAL EDITION</ProductTitle>
-                    <ShareIcon/>
-                </AlignRow>
-                <ProductSubTitle>Aliquam at rhoncus diam</ProductSubTitle>
-                <AlignRow>
-                    <ProductSize>38</ProductSize>
-                    <ProductSize>40</ProductSize>
-                    <ProductSize>42</ProductSize>
-                    <ProductSize>44</ProductSize>
-                </AlignRow>
-                <ProductPrice>R$ 1299,99</ProductPrice>
-                <BuyButton>Comprar</BuyButton>
+            <AlingRowInDesktop>
+                <ProductImagensDiv>
+                        <ImageDiv>
+                            <Image layout='fill' src="/temporary/productImage.png"/>
+                        </ImageDiv>
+                        <ListImage>
+                            <SmallImageDiv>                        
+                                <Image layout='fill' src="/temporary/productImage.png"/>
+                            </SmallImageDiv>
+                            <SmallImageDiv>                        
+                                <Image layout='fill' src="/temporary/productImage.png"/>
+                            </SmallImageDiv>                        <SmallImageDiv>                        
+                                <Image layout='fill' src="/temporary/productImage.png"/>
+                            </SmallImageDiv>
+                        </ListImage>
+                </ProductImagensDiv>
+                <AlignColumn>
+                    <AlignCollumReverseDesktop>
+                        <AvaliationStarts size={'.5rem'} seeValue={true} avaliationValue={4.7}/>
+                        <AlignCollum>
+                            <AlignRow>
+                                <ProductTitle>MIKE LAIR 2 RED HOT SPECIAL EDITION</ProductTitle>
+                                <ShareIcon/>
+                            </AlignRow>
+                            <ProductSubTitle>Aliquam at rhoncus diam</ProductSubTitle>
+                        </AlignCollum>
+                    </AlignCollumReverseDesktop>
 
-            </AlignColumn>
+                    <AlignRow>
+                        <ProductSize>38</ProductSize>
+                        <ProductSize>40</ProductSize>
+                        <ProductSize>42</ProductSize>
+                        <ProductSize>44</ProductSize>
+                    </AlignRow>
+                    <ProductPrice>R$ 1299,99</ProductPrice>
+                    <BuyButton>Comprar</BuyButton>
+
+                </AlignColumn>
+            </AlingRowInDesktop>
             <ProductDescreptionDiv>
                 <DescreptionTitle>LOREM IPSUM</DescreptionTitle>
                 <DescreptionText>Interdum et malesuada fames ac 
@@ -102,13 +109,13 @@ export const ModalOffer = ({setModalState}: Props) => {
 
                 </QuestionDiv>
                 <Title>Avalie o produto</Title>
-                <AvaliationTextArea placeholder="escreva um comentario"/>
+                <AvaliationTextArea placeholder="escreva um review..."/>
                 <AlignAvaliationRow>
                     <YouAvaliationDiv>
                         <QuestionText style={{
                             marginRight:'.2rem'
                         }}>Sua avaliação</QuestionText>
-                        <AvaliationStarts avaliationValue={0} size={10}/>
+                        <AvaliationStarts avaliationValue={0} size={'.5rem'}/>
 
                     </YouAvaliationDiv>
 

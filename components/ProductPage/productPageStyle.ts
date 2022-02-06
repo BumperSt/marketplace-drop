@@ -104,7 +104,9 @@ export const PriceValue = styled.h1`
 `
 
 export const PlusIcon = styled(BsPlusLg)`
-
+    :hover{
+        cursor:pointer;
+    }
 `
 
 export const ProductDescreptionDiv = styled.div`

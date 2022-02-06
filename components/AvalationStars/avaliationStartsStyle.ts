@@ -5,6 +5,7 @@ export const AlignRow = styled.div`
     display:flex;
     flex-direction: row;
     align-items: center;
+    margin-top:.2rem;
 `
 
 export const Star = styled(AiTwotoneStar)<{disabled:boolean}>`

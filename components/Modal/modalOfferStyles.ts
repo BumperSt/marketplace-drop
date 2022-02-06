@@ -8,13 +8,27 @@ export const ProductImagensDiv = styled.div`
     flex-direction:row;
     width: 100%;
     padding-inline: 1rem;
+    @media (min-width: 768px){
+        flex-direction:column;
+        align-items:center;
+        padding-inline:0rem;
+
+    }
 `
 
 export const ListImage = styled.div`
     display:flex;
     flex-direction:column;
     margin-left: 1rem;
+
     justify-content: center;
+    @media (min-width: 768px){
+        flex-direction:row;
+        margin-left: 0rem;
+        justify-content: space-between;
+        width: 7.5rem;
+
+    }
 `
 
 export const AlignColumn = styled.div`
@@ -22,22 +36,34 @@ export const AlignColumn = styled.div`
     flex-direction:column;
     text-align: start;
     align-items: start;
+    position:relative;
     width:100%;
     padding-inline: 1rem;
+    @media (min-width: 768px){
+        padding-left: 1rem;
+
+
+
+    }
     
 `
 
 export const ImageDiv = styled.div`
     display: flex;
     span{border-radius: 10px;}
-    margin-bottom: .5rem;
-    margin-top: .5rem;
+    margin-block: .5rem;
+    @media(min-width: 768px){
+        margin-block:.1rem;
+    }
+    position:relative;
+    width: 7.5rem;
+    height: 7rem;
+    
 
 `
 
 export const AlignRow = styled.div`
     display:flex;
-    
     flex-direction:row;
     margin-top: .5rem;
     align-items:center;
@@ -48,23 +74,42 @@ export const SmallImageDiv = styled.div`
     display:flex;
     flex-direction:column;
     margin-block: .2rem;
+    position:relative;
+    width: 2rem;
+    height: 1.8rem;
+    @media (min-width: 768px) {
+        width: 2.2rem;
+        height: 2rem;
+
+    }
 `
 
 export const ProductTitle = styled.h1`
     font-size: 18px;
     font-weight: 700;
     max-width: 90%;
+    @media (min-width:768px){
+        font-size: 48px;
+        max-width: 100%;
+
+    }
 `
 
 export const ShareIcon = styled(FiShare2)`
     color:${({ theme }) => theme.colors.detalhes};
     z-index: 50;
+    @media (min-width:768px){
+        display:none;
+    }
 
 `
 
 export const ProductSubTitle = styled.h1`
     font-size: 12px;
     font-weight: 400;
+    @media (min-width:768px){
+        font-size:36px;
+    }
 `
 
 export const ProductSize = styled.button`
@@ -78,14 +123,24 @@ export const ProductSize = styled.button`
 export const ProductPrice = styled.h1`
     font-size: 36px;
     margin-top: .5rem;
+    @media (min-width:768px){
+        font-size: 72px;
+    }
 `
 
 export const BuyButton = styled.button`
     border-radius: 10px;
     padding-inline: 2rem;
     padding-block: .3rem;
-    margin-top:.5rem;
-    align-self: center;
+    align-self: center; 
+    margin-top: 0.5rem;
+    @media (min-width: 768px) {
+        font-size:36px;
+        position: absolute;
+        bottom: 0;
+        margin-top: 0rem;
+
+    }
 `
 
 export const ProductDescreptionDiv = styled.div`
@@ -104,6 +159,9 @@ export const DescreptionTitle = styled.h1`
     font-weight: 700;
     font-size: 14px;
     margin-bottom:.5rem;
+    @media (min-width:768px){
+        font-size: 36px;
+    }
 `
 
 
@@ -126,6 +184,9 @@ export const CommentTextArea = styled.textarea`
 
 export const DescreptionText = styled(DescreptionTitle)`
     font-weight: 400;
+    @media (min-width:768px){
+        font-size: 24px;
+    }
 `
 
 export const Title = styled.h1`
@@ -133,7 +194,9 @@ export const Title = styled.h1`
     font-weight: 700;
     text-align: start;
     margin-top:.5rem;
-
+    @media (min-width:768px){
+        font-size: 36px;
+    }
 `
 
 export const QuestionInput = styled.input`
@@ -177,6 +240,9 @@ export const QuestionCommentDiv = styled.div`
 export const QuestionText = styled.h1`
     font-size: 10px;
     font-weight:400;
+    @media (min-width:768px){
+        font-size: 24px;
+    }
 `
 
 export const QuestionResponseText = styled.h1`
@@ -187,6 +253,9 @@ export const QuestionResponseText = styled.h1`
     margin-left:.2rem;
     color:${({ theme }) => theme.colors.texts.detalhes};
     margin-top:.1rem;
+    @media (min-width:768px){
+        font-size: 18px;
+    }
 `
 
 export const YouAvaliationDiv = styled.div`
@@ -199,6 +268,9 @@ export const YouAvaliationDiv = styled.div`
     padding: .2rem;
     align-items: center;
     justify-content: center;
+    @media (min-width: 768px){
+        width: 40%;
+    }
 `
 
 export const AvaliationTextArea = styled.textarea`
@@ -209,6 +281,10 @@ export const AvaliationTextArea = styled.textarea`
     border-radius:15px;
     min-height:3rem;
     margin-top:.5rem;
+    font-style: italic;
+    @media (min-width:768px){
+        font-size: 24px;
+    }
 `
 
 
@@ -232,4 +308,29 @@ export const ToReportIcon = styled(MdReportProblem)`
 
 export const ToReportText = styled.h1`
     font-size:12px;
+`
+
+
+export const AlignCollum = styled.div`
+    display:flex;
+    flex-direction:column;
+`
+
+export const AlignCollumReverseDesktop = styled.div`
+    display:flex;
+    flex-direction:column;
+    @media(min-width: 768px){
+        flex-direction:column-reverse;
+    }
+`
+
+export const AlingRowInDesktop = styled.div`
+    display:flex;
+    flex-direction:column;
+    @media(min-width: 768px){
+        flex-direction:row-reverse;
+        width:100%;
+        justify-content:center;
+        text-align: center;
+    }
 `
