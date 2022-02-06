@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { AdvertContainer, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn } from "../ActivyAdverts/activyAdvertsStyle"
+import { AdvertContainer, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn, AlingRow } from "../ActivyAdverts/activyAdvertsStyle"
 import { Modal } from "./modal"
 import { AlignRowButtons, ModalButton, ModalSubTitle, ModalTitle } from "./modalStyle"
 
@@ -14,18 +14,21 @@ export const ModalExcludeAdvert = ({setModalState, anuncio}: Props) => {
             <ModalTitle>Nulla tempus interdum tellus vel placerat?</ModalTitle>
             <ModalSubTitle>Donec facilisis cursus augue, vel convallis dolor volutpat eu.</ModalSubTitle>
             <AdvertContainer key={anuncio.id}>
-                <AdvertProductImage>
-                    <Image width="50" height="40" src="/temporary/itens.png"/>
-                </AdvertProductImage>
-                <AlignColumn>
-                    <AdvertProductTitle>{anuncio.title}</AdvertProductTitle>
-                    <AdvertProductPrice>R$ {anuncio.price}</AdvertProductPrice>
-                </AlignColumn>
+                <AlingRow>
+                    <AdvertProductImage>
+                        <Image  layout='fill' src="/temporary/itens.png"/>
+                    </AdvertProductImage>
+                    <AlignColumn>
+                        <AdvertProductTitle>{anuncio.title}</AdvertProductTitle>
+                        <AdvertProductPrice>R$ {anuncio.price}</AdvertProductPrice>
+                    </AlignColumn>
+                </AlingRow>
+
             </AdvertContainer>
             <AlignRowButtons>
 
                 <ModalButton otherColor={true}>Sim, deletar</ModalButton>
-                <ModalButton>Voltar</ModalButton>
+                <ModalButton onClick={() => setModalState(false)}>Voltar</ModalButton>
 
             </AlignRowButtons>
         </Modal>

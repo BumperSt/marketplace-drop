@@ -6,6 +6,7 @@ export const Container = styled.div`
     flex-direction: column;
     margin-top: 1rem;
     text-align: center;
+    align-items: center;
     width: 90%;
 
 `
@@ -28,6 +29,9 @@ export const AdvertsContainer = styled.div`
     border-radius:10px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
     justify-content: center;
+    @media (min-width: 768px){
+        width: 80%;
+    }
 `
 
 export const AdvertButton = styled.button`
@@ -41,7 +45,11 @@ export const AdvertsScroll = styled.div`
     width: 100%;
     overflow-y: auto;
     max-height:9rem;
+    display: flex;
+    flex-direction: column;
     padding-inline:.5rem;
+    align-items: center;
+
 `
 
 
@@ -58,25 +66,38 @@ export const AdvertContainer = styled.div`
     margin-bottom: .5rem;
     text-align: start;
     min-width: 90%;
+    justify-content: space-between;
+
 
 `
 
 export const AdvertProductImage = styled.div`
     display: flex;
-    span{
-        border-radius: 10px;
-    }
     margin-right: .5rem;
+    width: 2rem;
+    height: 1.5rem;
+    @media (max-width: 768px) {
+        span{
+            border-radius: 10px;
+        }
+    }
+    @media (min-width: 768px){
+        width: 2rem;
+
+    }
+    position: relative;
 `
 
 export const AdvertProductTitle = styled.h1`
     font-size: 12px;
     font-weight: 700;
+    margin-right: 1rem;
     @media (max-width: 300px){
         font-size:10px;
     }
-    margin-right: 1rem;
-
+    @media (min-width: 768px){
+        font-size: 24px;
+    }
 `
 
 export const AdvertProductPrice = styled.h1`
@@ -86,6 +107,9 @@ export const AdvertProductPrice = styled.h1`
     color:${({ theme }) => theme.colors.texts.description};
     @media (max-width: 300px){
         font-size:10px;
+    }
+    @media (min-width: 768px){
+        font-size: 24px;
     }
 `
 
@@ -97,12 +121,18 @@ export const AlignColumn = styled.div`
 export const EditIcon = styled(FiEdit)`
     justify-self: flex-end;
     margin-right: .5rem;
+    :hover{
+        cursor: pointer;
+    }
 
 `
 
 export const DeleteIcon = styled(RiDeleteBinLine)`
     justify-self: flex-end;
     margin-right: .5rem;
+    :hover{
+        cursor: pointer;
+    }
 `
 
 export const AlignIcon = styled.div`
@@ -110,3 +140,9 @@ export const AlignIcon = styled.div`
     flex-direction:row;
 `
 
+
+export const AlingRow = styled.div`
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+`

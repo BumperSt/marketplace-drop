@@ -16,6 +16,7 @@ const HomePage = () => {
     <Container>
         <HeadBarHome/>
         <Search/>
+        
         {tempStateInfo &&
           <ModalInfos setModalState={setTempStateInfo}/>
         }

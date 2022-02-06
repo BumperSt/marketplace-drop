@@ -6,8 +6,7 @@ export const PessoalInformation = () => {
     return(
         <Container>
             <AlignRow>
-                <EditIcon onClick={() => router.push('/editProfile')} size={20}/>
-
+                <EditIcon onClick={() => router.push('/editProfile')} size='1rem'/>
                 <PessoalInformationTitle>Informações pessoais</PessoalInformationTitle>
             </AlignRow>
             <ContainerInformation>

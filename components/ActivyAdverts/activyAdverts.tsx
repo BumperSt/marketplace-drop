@@ -1,4 +1,4 @@
-import { ActivyAdvertsTitle, AdvertButton, AdvertsContainer, AdvertsScroll, Container, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn, AlignIcon, AdvertContainer, DeleteIcon, EditIcon } from "./activyAdvertsStyle"
+import { ActivyAdvertsTitle, AdvertButton, AdvertsContainer, AdvertsScroll, Container, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn, AlignIcon, AdvertContainer, DeleteIcon, EditIcon, AlingRow } from "./activyAdvertsStyle"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import { ModalToManageAdvert } from "../Modal/modalToManageAdvert"
@@ -33,16 +33,18 @@ export const ActivyAdverts = () => {
                         anuncios &&
                         anuncios.map((anuncio) => (
                             <AdvertContainer key={anuncio.id}>
-                                <AdvertProductImage>
-                                    <Image width="50" height="40" src="/temporary/itens.png"/>
-                                </AdvertProductImage>
-                                <AlignColumn>
-                                    <AdvertProductTitle>{anuncio.title}</AdvertProductTitle>
-                                    <AdvertProductPrice>R$ {anuncio.price}</AdvertProductPrice>
-                                </AlignColumn>
+                                <AlingRow>
+                                    <AdvertProductImage>
+                                        <Image layout="fill" objectFit="cover" src="/temporary/itens.png"/>
+                                    </AdvertProductImage>
+                                    <AlignColumn>
+                                        <AdvertProductTitle>{anuncio.title}</AdvertProductTitle>
+                                        <AdvertProductPrice>R$ {anuncio.price}</AdvertProductPrice>
+                                    </AlignColumn>
+                                </AlingRow>
                                 <AlignIcon>
-                                    <EditIcon onClick={() => setOpenEditAdvert(anuncio)} size="16"/>
-                                    <DeleteIcon onClick={() => setOpenExcludeAdvert(anuncio)} size="16"/>
+                                    <EditIcon onClick={() => setOpenEditAdvert(anuncio)} size='.8rem'/>
+                                    <DeleteIcon onClick={() => setOpenExcludeAdvert(anuncio)} size='.8rem'/>
                                 </AlignIcon>
                             </AdvertContainer>
                 

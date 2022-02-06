@@ -4,7 +4,7 @@ import { UseTheme } from "@/theme/useTheme";
 import themes from '@/theme/schema.json';
 import Switch from "react-switch";
 
-import { Container, CopDescription, CopDiv, CopTitle, DivColumn, Title,AlignRow, ToglleThemeDiv } from "./bottomBarStyle"
+import { Container, CopDescription, CopDiv, CopTitle, DivColumn, Title,AlignRow, ToglleThemeDiv, LogoImage, IconImage } from "./bottomBarStyle"
 import { useEffect, useState } from "react";
 
 
@@ -18,6 +18,19 @@ export const BottomBar = ({setSelectedTheme} : props) => {
 
 
     const {theme, themeLoaded, setTheme} = UseTheme();
+
+
+    const [innerWidth, setInnerWidth] = useState(null)
+    const [innerHeight, setInnerHeight] = useState(null)
+
+
+    useEffect(()=> {
+        window.addEventListener('resize', ()=> {
+            setInnerWidth(window.innerWidth)
+            setInnerHeight(window.innerHeight)
+        })
+    }, [])
+
 
     const DefTheme = (event) => {
         setChangeTheme(event)
@@ -43,12 +56,22 @@ export const BottomBar = ({setSelectedTheme} : props) => {
     return(
         <Container>
             <Title>Quisque efficitur enim vel gravida sagittis.</Title>
+            <LogoImage>
+                <Image title="Logo" alt="Logo Seliga no drop" layout="fill" src="/imagens/logo-bottomBar.webp"/>
+            </LogoImage>
             
-            <Image title="Logo" alt="Logo Seliga no drop" width="408" height="145" src="/imagens/logo-bottomBar.webp"></Image>
             <DivColumn>
-                <Image title="Iconei Discord" alt="Redirecionar Discord" width="82" height="82" src="/icons/discord.webp"></Image>
+                <IconImage style={{
+                    marginRight:'1rem'
+                }}>
+                    <Image title="Iconei Discord" alt="Redirecionar Discord"  layout="fill"src="/icons/discord.webp"/>
+                </IconImage>
+                
+                <IconImage>
 
-                <Image title="Iconei Instagram" alt="Redirecionar Instagram" width="82" height="82" src="/icons/instagram.webp"></Image>
+                <Image title="Iconei Instagram" alt="Redirecionar Instagram"  layout="fill" src="/icons/instagram.webp"/>
+                </IconImage>
+
             </DivColumn>
 
 
@@ -56,9 +79,12 @@ export const BottomBar = ({setSelectedTheme} : props) => {
                 <CopTitle>Lorem ipsum.</CopTitle>
                 <AlignRow>
                     <CopDescription>2022. Ut ac risus sit amet nibh varius fermentum. Curabitur in velit sapien. Aenean eu ligula nisi.</CopDescription>
+
                     <ToglleThemeDiv>
-                        <Switch onColor='#959595' offColor='#959595' uncheckedIcon={false} checkedIcon={false} height={62} width={120} onChange={(e) => DefTheme(e)} checked={changeTheme} />  
+                            <Switch  onColor='#959595' offColor='#959595' uncheckedIcon={false} checkedIcon={false} height={28} width={100} onChange={(e) => DefTheme(e)} checked={changeTheme} />   
+                     
                     </ToglleThemeDiv>
+
                 </AlignRow>
             </CopDiv>
         </Container>

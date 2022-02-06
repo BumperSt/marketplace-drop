@@ -1,13 +1,35 @@
 import { AiOutlineCamera } from "react-icons/ai";
 import styled from "styled-components";
 
-export const DivContainer = styled.div`
+export const AlingCollum = styled.div`
     display:flex;
     flex-direction: column;
+    width: 100%;
+    @media (min-width: 768px){
+        flex-direction: column-reverse;
+        width: 40%;
+        align-self: start;
+
+
+    }
+`
+
+export const AlingCollumInputs = styled.div`
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+`
+
+export const AlignTitleAndContent = styled.div`
+    display:flex;
+    flex-direction: column;
+    width: 100%;
     align-items: center;
+    
     text-align: start;
     margin-top: .5rem;
-    width: 100%;
+
+
 `
 
 export const AlignRowSizes = styled.div`
@@ -67,4 +89,12 @@ export const PhotoDiv = styled.div`
     align-items: center;
     border-radius: 6px;
     margin-right: .5rem;
+`
+
+export const AlingRowInDesktop = styled.div`
+    display:flex;
+    flex-direction: column;
+    @media (min-width: 768px){
+        flex-direction: row;
+    }
 `

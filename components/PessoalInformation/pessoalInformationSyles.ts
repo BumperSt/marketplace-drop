@@ -9,13 +9,26 @@ export const Container = styled.div`
     @media (min-width: 768px) {
         width: 60%;
         margin-top: 0rem;
-
+        height: 100%;
     }
 `
 
 export const PessoalInformationTitle = styled.h1`
     @media (max-width: 300px){
         font-size: .8rem;
+    }
+    @media(min-width: 768px){
+        padding: .5rem;
+        background-color:white;
+        width: 100%;
+        text-align: center;
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+        font-size:36px;
+        text-align:start;
+        padding-inline:1rem;
+        
+        
     }
     font-weight: 700;
 
@@ -25,6 +38,7 @@ export const AlignRow = styled.div`
     flex-direction: row;
     align-items:center;
     justify-content: center;
+    
     position:relative;
 `
 
@@ -32,10 +46,13 @@ export const EditIcon = styled(FiEdit)`
     justify-self: flex-end;
     position: absolute;
     right:.5rem;
+    :hover{
+        cursor: pointer;
+    }
 `
 
 export const ContainerInformation = styled.div`
-    padding-inline:1.5rem;
+    padding-inline:1rem;
     padding-block:.5rem;
     margin-top: .5rem;
     background-color:white;
@@ -44,6 +61,13 @@ export const ContainerInformation = styled.div`
     align-items: center;
     border-radius:10px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+    @media (min-width: 768px) {
+        margin-top:0px;
+        border-top-left-radius:0px;
+        border-top-right-radius:0px;
+        height: 100%;
+
+    }
 
 `
 

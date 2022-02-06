@@ -3,7 +3,7 @@ import { Container, ContainerNotifications, NotificationDate, NotificationsScrol
 const AlertNotification = ({text, date}) => {
     return(
         <NotificationDiv>
-            <AlertIcon size="20"/>
+            <AlertIcon size='1.5rem'/>
 
             <NotificationDescreptions>{text}</NotificationDescreptions>
 
@@ -16,7 +16,7 @@ const AlertNotification = ({text, date}) => {
 const InterectNotification = ({text, date}) => {
     return(
         <NotificationDiv>
-            <QuestionIcon size="20"/>
+            <QuestionIcon size='1.5rem'/>
                 <NotificationDescreptions><UserNameQuestion>RJOA06896</UserNameQuestion> perguntou em <ProductNameQuestion>NIKE SNEAKERS PRO...</ProductNameQuestion> Cras ultricies turpis mi, non ultrices orci gravi...</NotificationDescreptions>
             <NotificationDate>{date}</NotificationDate>
         </NotificationDiv>

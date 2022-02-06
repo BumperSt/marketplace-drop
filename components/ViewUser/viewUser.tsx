@@ -5,12 +5,13 @@ import {AvaliationStarts} from '@/components/AvalationStars/avaliationStarts'
 interface Props {
     style?:any,
     noIcon?:boolean,
+    disableInDesktop?:boolean
 }
 
 
-export const ViewUser = ({style, noIcon} : Props) => {
+export const ViewUser = ({style, noIcon, disableInDesktop} : Props) => {
     return(
-        <Container style={style}>
+        <Container style={style} disableInDesktop={disableInDesktop}>
             <ProfilePicture>
                 <Image src="/temporary/Profile.png" width="160" height="160"/>
             </ProfilePicture>

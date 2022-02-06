@@ -23,7 +23,7 @@ export const Title = styled.h1`
 export const DivColumn = styled.div`
     margin-top: .8rem;
     width:20%;
-    justify-content: space-around;
+    justify-content: center;
     display:flex;
     flex-direction: row;
     @media (min-width: 768px){
@@ -70,4 +70,24 @@ export const ToglleThemeDiv = styled.div`
     border: solid 1px white;
     border-radius: 40px;
     padding-inline: .1rem;
+    height: 1.5rem;
+    @media (min-width: 768px){
+        height: 1rem;
+
+    }
+`
+
+export const LogoImage = styled.div`
+    position:relative;
+    width:5rem;
+    height:2rem;
+`
+
+export const IconImage = styled.div`
+    position:relative;
+    width:1rem;
+    height:1rem;
+    :hover{
+        cursor: pointer;
+    }
 `

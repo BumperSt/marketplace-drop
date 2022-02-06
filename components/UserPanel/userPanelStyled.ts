@@ -13,12 +13,14 @@ export const CenterDiv = styled.div`
 `
 
 export const AlignRowInDesktop = styled.div`
+
     display:flex;
     flex-direction: column;
     width:100%;
     align-items: center;
-
+    position:relative;
     @media(min-width: 768px){
+        margin-top:1rem;
         align-items: start;
         flex-direction: row;
         justify-content:space-between;

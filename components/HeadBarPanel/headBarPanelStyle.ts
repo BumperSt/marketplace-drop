@@ -32,10 +32,16 @@ export const CenterText = styled.h1`
 export const BackIcon = styled(MdKeyboardBackspace)`
     color:${({ theme }) => theme.colors.detalhes};
     z-index: 99;
+    :hover{
+        cursor: pointer;
+    }
 
 `
 export const LogoutIcon = styled(RiShutDownLine)`
     color:${({ theme }) => theme.colors.detalhes};
     z-index: 99;
+    :hover{
+        cursor: pointer;
+    }
 
 `

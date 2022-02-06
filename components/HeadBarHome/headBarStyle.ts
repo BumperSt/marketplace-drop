@@ -12,6 +12,10 @@ export const HeadBarContainer = styled.div<{otherBackgroundColor?: boolean}>`
     background-color: ${({theme,otherBackgroundColor }) => otherBackgroundColor ? theme.colors.sellerPage.background : theme.colors.body};
     min-height: 10%;
     max-height: 10%;
+    @media (min-width: 768px) {
+        padding: .5rem;
+
+    }
 `
 
 export const LoginButton = styled.button`
@@ -49,7 +53,9 @@ export const LoggedTitleColor = styled.span`
 `
 
 export const LogoImagem = styled.div`
-
+    :hover{
+        cursor: pointer;
+    }
     width: 40px;
     
     @media (min-width: 768px) {

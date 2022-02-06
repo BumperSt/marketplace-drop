@@ -9,6 +9,7 @@ export const AlignRow = styled.div`
 
 export const Star = styled(AiTwotoneStar)<{disabled:boolean}>`
     color: ${({disabled}) => disabled ? `#FF7A00` : `black`} ;
+    
 `
 
 export const AvaliationValue = styled.h1`

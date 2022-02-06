@@ -9,6 +9,7 @@ export const Container = styled.div`
     margin-bottom: .5rem;
     width: 90%;
     text-align:center;
+    align-items: center;
 `
 
 export const NotificationsTitle = styled.h1`
@@ -28,6 +29,10 @@ export const ContainerNotifications = styled.div`
     align-items: center;
     border-radius:10px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+    @media (min-width: 768px){
+        width: 80%;
+        
+    }
 `
 
 export const NotificationsScroll = styled.div`
@@ -45,6 +50,7 @@ export const NotificationDiv = styled.div`
     display: flex;
     flex-direction:row;
     align-items: center;
+    justify-content:space-around;
     text-align: start;
     background-color:#EEEEEE;
     border: 1px solid ${({ theme }) => theme.colors.stroke};;
@@ -54,13 +60,11 @@ export const NotificationDiv = styled.div`
 `
 
 export const AlertIcon = styled(FiAlertTriangle)`
-    margin-inline:.8rem;
-
+    
 
 `  
 
 export const QuestionIcon = styled(BsQuestionCircle)`
-    margin-inline:.8rem;
 
 `
 
@@ -69,11 +73,17 @@ export const NotificationDescreptions = styled.h1`
     font-weight: 400;
     color:${({ theme }) => theme.colors.detalhes};
     max-width: 70%;
+    @media (min-width: 768px){
+        font-size:24px;
+    }
 
 `
 
 export const NotificationDate = styled(NotificationDescreptions)`
     font-size: 10px;
+    @media (min-width: 768px){
+        font-size:24px;
+    }
 `
 
 export const UserNameQuestion = styled.span`
@@ -81,6 +91,12 @@ export const UserNameQuestion = styled.span`
     font-weight: 600;
     color:${({ theme }) => theme.colors.detalhes};
     color:${({ theme }) => theme.colors.texts.description};
+    @media (min-width: 768px){
+        font-size:24px;
+    }
+    :hover{
+        cursor: pointer;
+    }
 `
 
 export const ProductNameQuestion = styled(UserNameQuestion)`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { AiTwotoneStar } from 'react-icons/ai';
 
-export const Container = styled.div`
+export const Container = styled.div<{disableInDesktop: boolean}>`
     background-color:white;
     display:flex;
     flex-direction: row;
@@ -11,23 +11,57 @@ export const Container = styled.div`
     width:80%;
     padding:.5rem;
     @media (min-width: 768px) {
-        width:30%;
+        margin-right: 1rem;
+        width:40%;
+        min-height: 100%;
         flex-direction: column;
         text-align: center;
         align-items: center;
+        ${({disableInDesktop}) => disableInDesktop&& `
+            display:none;
+        `}
     }
 `
 
-export const ProfilePicture = styled.div`
+export const ProfilePicture = styled.div<{position?: 'absolute'}>`
     display:flex;   
     flex-direction:column;
     text-align:center;
+    align-items:center;
     margin-right: .5rem;
+    span{
+        border-radius:120px;
+    }
     @media (min-width: 768px) {
         margin-right: 0rem;
 
+        ${({position}) => position === 'absolute' && `
+            position: absolute;
+            right: 20%;
+            top: 30%;
+        `}
+
     }
     
+    
+`
+
+export const ProfileImageDiv = styled.div`
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    @media (max-width: 768px) {
+        span{
+            border-radius: 10px;
+        }
+    }
+    @media (min-width: 768px){
+        width: 3rem;
+        height: 3rem;
+
+    }
+    
+    position: relative;
 `
 
 export const ProfileName = styled.h1`
@@ -41,6 +75,7 @@ export const ProfileName = styled.h1`
     }
     @media (min-width: 768px) {
         margin-right: 0rem;
+        font-size: 36px;
 
     }
 

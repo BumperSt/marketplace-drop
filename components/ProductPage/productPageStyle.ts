@@ -26,25 +26,40 @@ export const AlignIcons = styled.div`
 export const BackIcon = styled(IoMdArrowBack)`
     color:${({ theme }) => theme.colors.detalhes};
     z-index: 50;
+    :hover{
+        cursor: pointer;
+    }
 
 `
 
 export const ShareIcon = styled(FiShare2)`
     color:${({ theme }) => theme.colors.detalhes};
     z-index: 50;
+    :hover{
+        cursor: pointer;
+    }
 
 `
 
 export const ProductImage = styled.div`
     display: flex;
     margin-top:.5rem;
+    position: relative;
+    width:10rem;
+    height:8rem;
 
+    @media(min-width: 768px){
+        height:8rem;
+    }
 `
 
 export const ProductTitle = styled.h1`
     text-align: center;
     max-width:80%;
     margin-top:.5rem;
+    @media (min-width: 768px) {
+        max-width: 100%;
+    }
 `
 
 export const ProductPriceContainer = styled.div`
@@ -57,8 +72,9 @@ export const ProductPriceContainer = styled.div`
     border-radius:10px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
     justify-content: center;
-    min-width: 100%;
+    width: 100%;
     overflow-y: auto;
+
 `
 
 export const PriceDiv = styled.div`
@@ -125,4 +141,34 @@ export const DescreptionTitle = styled.h1`
 `
 export const DescreptionText = styled(DescreptionTitle)`
     font-weight: 400;
+`
+
+
+export const AlingRowDesktop = styled.div<{direction?:string}>`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    @media(min-width: 768px){
+        align-items: flex-start;
+        flex-direction: row-reverse;
+        ${({direction}) => direction != '' && `
+            flex-direction: ${direction};
+        `}
+        
+    }
+    
+`
+
+export const AlingCollumDesktop = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    @media(min-width: 768px){
+        flex-direction: column;
+        margin-right:2rem;
+        width:80%;
+
+        
+    }
+    
 `

@@ -1,7 +1,7 @@
-import {Container, ContainerEditInfo, ChangeImageText,AlignRow, SaveInfosButton } from "./editInformationStyle"
+import {Container, ContainerEditInfo, ChangeImageText,AlignRow, SaveInfosButton, AlingRowInDesktop, ContainerPassword, Title, ContainerEditInfoPassword } from "./editInformationStyle"
 import {Input} from '../Inputs/input'
 import { useState } from "react"
-import { ProfilePicture } from "../ViewUser/viewUserStyled"
+import { ProfileImageDiv, ProfilePicture } from "../ViewUser/viewUserStyled"
 import Image from "next/image"
 export const EditInformations = () => {
 
@@ -17,34 +17,49 @@ export const EditInformations = () => {
 
 
     return(
-        <Container>
-            <ContainerEditInfo>
-                <AlignRow>
-                        <ProfilePicture style={{
-                            marginRight:'1rem'
-                        }}>
-                            <Image src="/temporary/Profile.png" width="80" height="80"/>
-                            <ChangeImageText>Trocar foto</ChangeImageText>
+        <>
+            <Container>
+                <ContainerEditInfo>
+                    <AlignRow>
+                            <ProfilePicture position="absolute" style={{
+                                marginRight:'1rem'
+                            }}>
+                                <ProfileImageDiv>
+                                    <Image src="/temporary/Profile.png" layout="fill"/>
+                                </ProfileImageDiv>
+                                
+                                <ChangeImageText>Trocar foto</ChangeImageText>
+                                <Title>Jonas Lanches</Title>
 
-                        </ProfilePicture>
+                            </ProfilePicture>
 
-                    <Input Style={{
-                        margimTop:'0px',
-                        width: '65%',
-                    }} Title="Nome de exibição" value={exibicionName} setValue={setExibicionName}/>
-                </AlignRow>
-                <Input Title="Nome completo" value={name} setValue={setName}/>
-                <Input Title="Endereço" value={andress} setValue={setAndress}/>
-                <Input Title="Telefone" value={phoneNumber} setValue={setPhoneNumber}/>
-                <Input Title="Email" value={email} setValue={setEmail}/>
-                <Input Title="Data de nascimento" value={birthDate} setValue={setBirthDate}/>
-                <SaveInfosButton>Salvar</SaveInfosButton>
-                <Input Title="Senha atual" value={actualPassword} setValue={setActualPassword}/>
-                <Input Title="Nova senha" value={newPassword} setValue={setNewPassword}/>
-                <Input Title="Confirmar nova senha" value={newPasswordConfirmation} setValue={setNewPasswordConfirmation}/>
-                <SaveInfosButton>Salvar</SaveInfosButton>
+                        <Input Style={{
+                            margimTop:'0px',
+                        }} Title="Nome de exibição" value={exibicionName} setValue={setExibicionName}/>
+                    </AlignRow>
+                    <Input Title="Nome completo" value={name} setValue={setName}/>
+                    <Input Title="Endereço" value={andress} setValue={setAndress}/>
+                    <Input Title="Telefone" value={phoneNumber} setValue={setPhoneNumber}/>
+                    <Input Title="Email" value={email} setValue={setEmail}/>
+                    <Input Title="Data de nascimento" value={birthDate} setValue={setBirthDate}/>
+                    <SaveInfosButton>Salvar</SaveInfosButton>
 
-            </ContainerEditInfo>
-        </Container>
+                    
+
+                </ContainerEditInfo>
+            </Container>
+            <ContainerPassword>
+                <Title>Redefinir senha</Title>
+                <ContainerEditInfoPassword>
+                        <AlingRowInDesktop>
+                            <Input Title="Senha atual" value={actualPassword} setValue={setActualPassword}/>
+                            <Input Title="Nova senha" value={newPassword} setValue={setNewPassword}/>
+                            <Input Title="Confirmar nova senha" value={newPasswordConfirmation} setValue={setNewPasswordConfirmation}/>
+                            <SaveInfosButton>Salvar</SaveInfosButton>
+                        </AlingRowInDesktop>
+                    </ContainerEditInfoPassword>
+            </ContainerPassword>
+
+        </>
     )
 }

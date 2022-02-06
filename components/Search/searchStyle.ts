@@ -9,6 +9,9 @@ export const SearchContainer = styled.div`
     background-color: ${({ theme }) => theme.colors.search.background};
     align-items:center;
     text-align: center;
+    @media (min-width: 768px) {
+        padding-block:.5rem;
+    }
 `
 
 export const SearchIcon = styled(BsSearch)`

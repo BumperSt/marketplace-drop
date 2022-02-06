@@ -9,7 +9,6 @@ interface Props {
 
 
 
-
 export const Modal = ({children, setModalState}:Props) => {
 
     const ref = useRef(null)

@@ -28,9 +28,9 @@ export const ModalContainer = styled.div`
     align-items: center;
     text-align: center;
     @media (min-width: 768px) {
-        margin-top: 1.5rem;
+        margin-top: 5%;
         padding: .7rem;
-        width: 60%;
+        max-width: 80%;
 
     }
 `
@@ -81,8 +81,8 @@ export const ModalButton = styled.button<{otherColor?:boolean}>`
         margin-block: .5rem;
         padding-block: 0.2rem;
         padding-inline: 0.8rem;
-
         border-radius:60px;
+        align-self:center;
         font-size: 36px;
     }
 `
