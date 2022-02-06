@@ -3,7 +3,7 @@ import { AlignRow, AvaliationValue, Star } from "./avaliationStartsStyle"
 
 interface Props{
     avaliationValue:Number,
-    size?:string,
+    size?:string|number,
     seeValue?:boolean
 }
 
