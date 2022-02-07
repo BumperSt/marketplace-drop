@@ -38,6 +38,10 @@ export const ModalToManageAdvert = ({setModalState, modalType}: Props) => {
         setAdvertPhotos(photoArray)
     }, [])
 
+    useEffect(() => {
+        console.log(sizeButtonPressed)
+    }, [sizeButtonPressed])
+
     return(
         <Modal setModalState={setModalState}>
             <ModalTitle>{modalType == 'create' ? 'Criar Anuncio' : 'Gerenciar Anuncio'}</ModalTitle>

@@ -7,10 +7,8 @@ export const AlingCollum = styled.div`
     width: 100%;
     @media (min-width: 768px){
         flex-direction: column-reverse;
-        width: 40%;
+        width: 50%;
         align-self: start;
-
-
     }
 `
 
@@ -39,6 +37,12 @@ export const AlignRowSizes = styled.div`
     max-width: 100%;
     overflow-x: auto;
     padding-block:.5rem;
+    @media (min-width: 768px){
+        max-width: 100%;
+        margin-top: 0rem;
+        padding-block:.25rem;
+
+    }
 `
 
 export const SizeButton = styled.button<{active:boolean}>`
@@ -46,9 +50,13 @@ export const SizeButton = styled.button<{active:boolean}>`
     padding-inline:.4rem;
     padding-block:.2rem;
     font-size: 13px;
-    ${({active})=> active && `
-        background-color:${({ theme }) => theme.colors.detalhes}
-
+    @media (min-width: 768px){
+        padding-inline:.1rem;
+        padding-block:0rem;
+        font-size: 24px;
+    }
+    ${({active, theme})=> active && `
+        background-color:${theme.colors.detalhes}
     `}
 `
 
@@ -68,6 +76,7 @@ export const AlignPhotos = styled.div`
     max-width: 100%;
     overflow-x: auto;
     padding-block:.5rem;
+
 `
 
 export const AddPhotosIcon = styled(AiOutlineCamera)`

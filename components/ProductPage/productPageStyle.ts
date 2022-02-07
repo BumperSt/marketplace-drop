@@ -74,6 +74,10 @@ export const ProductPriceContainer = styled.div`
     justify-content: center;
     width: 100%;
     overflow-y: auto;
+    @media (max-height: 600px) {
+        padding-inline:.2rem;
+
+    }
 
 `
 
@@ -112,7 +116,6 @@ export const PlusIcon = styled(BsPlusLg)`
 export const ProductDescreptionDiv = styled.div`
     padding-inline:.8rem;
     padding-block:.5rem;
-    margin-top: 1rem;
     background-color:${({ theme }) => theme.colors.productPrice.descreptionDiv};
     display:flex;
     flex-direction: column;
@@ -126,23 +129,35 @@ export const ProductDescreptionDiv = styled.div`
 export const AlignPrices = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 `
 
 export const AlignColumn = styled.div`
     display:flex;
     flex-direction: column;
     margin-top:.5rem;
+    margin-inline:.2rem;
+
 `
 
+export const AlignRowInDesktop = styled.div`
+    display:flex;
+    flex-direction: column;
+    @media (min-width: 768px){
+        flex-direction: row-reverse;
+    }
+`
 
 
 export const DescreptionTitle = styled.h1`
     font-weight: 500;
     font-size: 12px;
+    @media (min-width: 768px) {
+        font-size:24px;
+    }
 `
 export const DescreptionText = styled(DescreptionTitle)`
     font-weight: 400;
+    margin-top: .2rem;
 `
 
 
@@ -161,14 +176,17 @@ export const AlingRowDesktop = styled.div<{direction?:string}>`
     
 `
 
-export const AlingCollumDesktop = styled.div`
+export const AlingCollumDesktop = styled.div<{margin?:boolean}>`
     display:flex;
     flex-direction: column;
     align-items: center;
     @media(min-width: 768px){
         flex-direction: column;
-        margin-right:2rem;
         width:80%;
+        ${({margin}) => margin && `
+            margin-right:2rem;
+        `}
+        
 
         
     }

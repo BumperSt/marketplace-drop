@@ -1,7 +1,9 @@
 import {Modal} from "./modal"
-import { AlignColumn, AlignRow, BuyButton, CommentsDiv, DescreptionText, DescreptionTitle, ImageDiv, ListImage, ProductDescreptionDiv, ProductImagensDiv, ProductPrice, ProductSize, ProductSubTitle, ProductTitle, QuestionAligRow, QuestionButton, QuestionDiv, QuestionInput, Title, ShareIcon, SmallImageDiv, QuestionText, QuestionResponseText, QuestionCommentDiv, AvaliationTextArea, YouAvaliationDiv, AlignAvaliationRow, ToReportDiv, ToReportIcon, ToReportText, AlignCollum, AlignCollumReverseDesktop, AlingRowInDesktop } from "./modalOfferStyles"
+import { AlignColumn, AlignRow, BuyButton, CommentsDiv, DescreptionText, DescreptionTitle, ProductDescreptionDiv, ProductPrice, ProductSize, ProductSubTitle, ProductTitle, QuestionAligRow, QuestionButton, QuestionDiv, QuestionInput, Title, ShareIcon, QuestionText, QuestionResponseText, QuestionCommentDiv, AvaliationTextArea, YouAvaliationDiv, AlignAvaliationRow, ToReportDiv, ToReportIcon, ToReportText, AlignCollum, AlignCollumReverseDesktop, AlingRowInDesktop } from "./modalOfferStyles"
 import Image from "next/image"
 import { AvaliationStarts } from "../AvalationStars/avaliationStarts"
+import ShowAdvertImagens from "../ShowAdvertImagens/showAdvertImagens"
+import { useState } from "react"
 
 
 interface Props {
@@ -11,26 +13,12 @@ interface Props {
 
 export const ModalOffer = ({setModalState}: Props) => {
 
-
+    const [starValue, setStarValue] = useState(0)
     
     return(
         <Modal setModalState={setModalState}>
             <AlingRowInDesktop>
-                <ProductImagensDiv>
-                        <ImageDiv>
-                            <Image layout='fill' src="/temporary/productImage.png"/>
-                        </ImageDiv>
-                        <ListImage>
-                            <SmallImageDiv>                        
-                                <Image layout='fill' src="/temporary/productImage.png"/>
-                            </SmallImageDiv>
-                            <SmallImageDiv>                        
-                                <Image layout='fill' src="/temporary/productImage.png"/>
-                            </SmallImageDiv>                        <SmallImageDiv>                        
-                                <Image layout='fill' src="/temporary/productImage.png"/>
-                            </SmallImageDiv>
-                        </ListImage>
-                </ProductImagensDiv>
+                <ShowAdvertImagens/>
                 <AlignColumn>
                     <AlignCollumReverseDesktop>
                         <AvaliationStarts size={'.5rem'} seeValue={true} avaliationValue={4.7}/>
@@ -115,7 +103,7 @@ export const ModalOffer = ({setModalState}: Props) => {
                         <QuestionText style={{
                             marginRight:'.2rem'
                         }}>Sua avaliação</QuestionText>
-                        <AvaliationStarts avaliationValue={0} size={'.5rem'}/>
+                        <AvaliationStarts getStarSelected={setStarValue} avaliationValue={starValue} size={'.5rem'}/>
 
                     </YouAvaliationDiv>
 

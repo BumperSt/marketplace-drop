@@ -1,15 +1,17 @@
-import { AiTwotoneStar } from "react-icons/ai"
+import { AiFillStar } from "react-icons/ai"
 import styled from "styled-components"
 
 export const AlignRow = styled.div`
     display:flex;
     flex-direction: row;
     align-items: center;
-    margin-top:.2rem;
 `
 
-export const Star = styled(AiTwotoneStar)<{disabled:boolean}>`
+export const Star = styled(AiFillStar)<{disabled:boolean}>`
     color: ${({disabled}) => disabled ? `#FF7A00` : `black`} ;
+    :hover{
+        cursor:pointer;
+    }
     
 `
 

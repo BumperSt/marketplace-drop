@@ -17,7 +17,7 @@ export const ViewUser = ({style, noIcon, disableInDesktop} : Props) => {
             </ProfilePicture>
             <AlignColumn >
                 <ProfileName>Jonas Lanches</ProfileName>
-                <AvaliationStarts  avaliationValue={4.7}/>
+                <AvaliationStarts size={'.8rem'}seeValue={true}  avaliationValue={4.7}/>
             </AlignColumn>
             {
                 !noIcon &&

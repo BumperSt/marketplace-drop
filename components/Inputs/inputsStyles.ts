@@ -54,6 +54,7 @@ export const InputStyled = styled.input`
         font-size: 24px;
         border: solid 5px ${({ theme }) => theme.colors.stroke};;
         padding:.2rem;
+        border-radius: 25px;    
 
     }
 `

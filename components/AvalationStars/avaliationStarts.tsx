@@ -2,16 +2,22 @@ import { useEffect, useState } from "react"
 import { AlignRow, AvaliationValue, Star } from "./avaliationStartsStyle"
 
 interface Props{
-    avaliationValue:Number,
+    avaliationValue:number,
     size?:string|number,
-    seeValue?:boolean
+    seeValue?:boolean,
+    getStarSelected?:any,
 }
 
 
-export const AvaliationStarts = ({avaliationValue,size, seeValue} : Props) => {
+export const AvaliationStarts = ({avaliationValue,size, seeValue, getStarSelected} : Props) => {
 
-    const stars = [0, 1, 2, 3, 4]
+    const stars = [1, 2, 3, 4, 5]
 
+    const [avalationValueHere, setAvaliationValueHere] = useState(0)
+
+    useEffect(() => {
+        setAvaliationValueHere(avaliationValue)
+    }, [getStarSelected])
 
 
 
@@ -20,7 +26,7 @@ export const AvaliationStarts = ({avaliationValue,size, seeValue} : Props) => {
         <AlignRow>
             {
                 stars.map((star) => (
-                    <Star key={star} size={size} disabled={(star+1) <= avaliationValue}/>
+                    <Star onClick={() =>  avalationValueHere == 1 && star == 1 ? setAvaliationValueHere(0) : setAvaliationValueHere(star)} key={star} size={size} disabled={getStarSelected ? (star) <= avalationValueHere : (star) <= avaliationValue}/>
                 ))
             }
             {
