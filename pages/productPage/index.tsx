@@ -64,27 +64,27 @@ const ProductPage = () => {
                             <PriceDiv>
                                 <SizeButton>46</SizeButton>
                                 <PriceValue>R$ 999,99</PriceValue>
-                                <PlusIcon size=".5rem"/>
+                                <PlusIcon size=".5rem" onClick={() => setOpenOfferModal(true)}/>
                             </PriceDiv>
                             <PriceDiv>
                                 <SizeButton>46</SizeButton>
                                 <PriceValue>R$ 999,99</PriceValue>
-                                <PlusIcon size=".5rem"/>
+                                <PlusIcon size=".5rem" onClick={() => setOpenOfferModal(true)}/>
                             </PriceDiv>
                             <PriceDiv>
                                 <SizeButton>46</SizeButton>
                                 <PriceValue>R$ 999,99</PriceValue>
-                                <PlusIcon size=".5rem"/>
+                                <PlusIcon size=".5rem" onClick={() => setOpenOfferModal(true)}/>
                             </PriceDiv>
                             <PriceDiv>
                                 <SizeButton>46</SizeButton>
                                 <PriceValue>R$ 999,99</PriceValue>
-                                <PlusIcon size=".5rem"/>
+                                <PlusIcon size=".5rem" onClick={() => setOpenOfferModal(true)}/>
                             </PriceDiv>
                             <PriceDiv>
                                 <SizeButton>46</SizeButton>
                                 <PriceValue>R$ 999,99</PriceValue>
-                                <PlusIcon size=".5rem"/>
+                                <PlusIcon size=".5rem" onClick={() => setOpenOfferModal(true)}/>
                             </PriceDiv>
                         </ProductPriceContainer>
 

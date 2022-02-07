@@ -26,7 +26,7 @@ export const AvaliationStarts = ({avaliationValue,size, seeValue, getStarSelecte
         <AlignRow>
             {
                 stars.map((star) => (
-                    <Star onClick={() =>  avalationValueHere == 1 && star == 1 ? setAvaliationValueHere(0) : setAvaliationValueHere(star)} key={star} size={size} disabled={getStarSelected ? (star) <= avalationValueHere : (star) <= avaliationValue}/>
+                    <Star onClick={() =>  star == avalationValueHere ? setAvaliationValueHere(0) : setAvaliationValueHere(star)} key={star} size={size} disabled={getStarSelected ? (star) <= avalationValueHere : (star) <= avaliationValue}/>
                 ))
             }
             {

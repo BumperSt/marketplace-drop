@@ -7,7 +7,6 @@ export const AvaliationContainer = styled.div`
     display:flex;
     flex-direction: column;
     padding-block:.5rem;
-    margin-block:.5rem;
     justify-content: center;
     
 `
@@ -26,7 +25,6 @@ export const LineStyled = styled.hr`
     text-align:left;
     background-color:black;
     height:.1rem;
-    margin-block:.3rem;
     color:#959595;
 `
 
@@ -35,6 +33,11 @@ export const ColorsDiv = styled.div`
     height:.5rem;
     display:flex;
     flex-direction: row;
+    @media(min-width:768px){
+        height:.2rem;
+        min-width:50vw;
+
+    }
 `
 
 export const ColorDiv = styled.div<{color: string}>`
@@ -47,6 +50,9 @@ export const AvaliationSub = styled.h1<{color: string}>`
     font-size: 12px;
     text-align:center;
     width: 80%;
+    @media only screen and (min-width: 768px){
+        font-size:24px;
+    }
 `
 
 export const AvalaitonMedals = styled.div`
@@ -71,6 +77,9 @@ export const AvalaitonMedalTitle = styled.h1`
     font-weight: 300;
     margin-top:.3rem;
     font-size: 10px;
+    @media(min-width: 768px){
+        font-size:24px;
+    }
 `
 
 export const TriangleIcon = styled(IoTriangle)`

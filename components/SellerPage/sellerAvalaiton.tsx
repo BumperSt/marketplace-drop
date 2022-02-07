@@ -14,21 +14,21 @@ export const SellerAvalaiton = () => {
             </ColorsDiv>
             <AlignAvaliationLine>
                 <LineStyled/>
-                <TriangleIcon size="16"/>
+                <TriangleIcon size=".5rem"/>
             </AlignAvaliationLine>
         </AvaliationContainer>       
         <AvaliationSub color="#17A500">Aliquam ac lectus id mi porttitor aliquet sed sed ligula.</AvaliationSub>
         <AvalaitonMedals>
             <AvalaitonMedalDiv>
-                <MedalIcon size='30'/>
+                <MedalIcon size='1.5rem'/>
                 <AvalaitonMedalTitle>donec sollicitudin luctus faucibus.</AvalaitonMedalTitle>
             </AvalaitonMedalDiv>
             <AvalaitonMedalDiv>
-                <MedalIcon size='30'/>
+                <MedalIcon size='1.5rem'/>
                 <AvalaitonMedalTitle>donec sollicitudin luctus faucibus.</AvalaitonMedalTitle>
             </AvalaitonMedalDiv>
             <AvalaitonMedalDiv>
-                <MedalIcon size='30'/>
+                <MedalIcon size='1.5rem'/>
                 <AvalaitonMedalTitle>donec sollicitudin luctus faucibus.</AvalaitonMedalTitle>
             </AvalaitonMedalDiv>
         </AvalaitonMedals>

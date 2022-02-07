@@ -33,6 +33,9 @@ export const PageTitles = styled.h1`
     font-size:14px;
     width: 85%;
     margin-block:.5rem;
+    @media(min-width: 768px){
+        display:none;
+    }
 `
 
 export const SellerDescription = styled.h1`
@@ -42,6 +45,9 @@ export const SellerDescription = styled.h1`
     text-align: center;
     font-size: 14px;
     color:${({ theme }) => theme.colors.detalhes};
+    @media(min-width: 768px){
+        display:none;
+    }
 `
 
 export const OpinionsDiv = styled.div`
@@ -69,16 +75,26 @@ export const OpnionDiv = styled.div`
 export const OpinioDate = styled.h1`
     font-size: 9px;
     font-weight: 300;
+    @media (min-width: 768px) {
+        font-size:18px;
+    }
 `
 
 export const OpinionText = styled.h1`
     font-size:10px;
     font-weight:400px;
+    @media (min-width: 768px) {
+        font-size:36px;
+    }
 `
 
 export const OpinionName = styled.span`
     font-size:10px;
     font-weight: 600;
+    @media (min-width: 768px) {
+        font-size:36px;
+    }
+
 `
 export const SeeMoreOpinion = styled.h1`
     width:100%;
@@ -86,4 +102,10 @@ export const SeeMoreOpinion = styled.h1`
     font-size:10px;
     font-weight: 600;
     margin-top: .5rem;
+    :hover{
+        cursor:pointer;
+    }
+    @media (min-width: 768px) {
+        font-size:18px;
+    }
 `

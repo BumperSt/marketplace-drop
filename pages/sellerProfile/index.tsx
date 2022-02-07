@@ -30,12 +30,12 @@ const SellerPage = () => {
                     <OpnionDiv>
                         <OpinioDate>01/01/2022</OpinioDate>
                         <OpinionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus.<OpinionName>RJOAO6598</OpinionName></OpinionText>
-                        <AvaliationStarts size={10} avaliationValue={3}/>
+                        <AvaliationStarts size='.5rem' avaliationValue={3}/>
                     </OpnionDiv>
                     <OpnionDiv>
                         <OpinioDate>01/01/2022</OpinioDate>
                         <OpinionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus.<OpinionName>RJOAO6598</OpinionName></OpinionText>
-                        <AvaliationStarts size={10} avaliationValue={3}/>
+                        <AvaliationStarts size='.5rem' avaliationValue={3}/>
 
                     </OpnionDiv>
                     <SeeMoreOpinion>Ver mais opiniões</SeeMoreOpinion>

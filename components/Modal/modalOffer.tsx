@@ -90,7 +90,7 @@ export const ModalOffer = ({setModalState}: Props) => {
                 <QuestionDiv>
                     <QuestionCommentDiv>
 
-                        <QuestionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus. RJOAO6598 <AvaliationStarts avaliationValue={3} size={10}/></QuestionText>
+                        <QuestionText>Sed orci massa, facilisis lacinia massa quis, laoreet sodales metus. RJOAO6598 <AvaliationStarts avaliationValue={3} size='.3rem'/></QuestionText>
                         <QuestionResponseText>Donec gravida luctus accumsan. Fusce pharetra posuere iaculis. Nam sodales purus nibh, sit amet pharetra massa pulvinar non.</QuestionResponseText>
                     </QuestionCommentDiv>
 
