@@ -30,7 +30,13 @@ const HomePage = () => {
         <ListHorizontaltems ListType="Large"/>
         <ListHorizontalCategorys/>
         <LastAdvertsHorizontalList/>
+        <div style={{
+          display:'flex',
+          marginTop:'1rem'
+        }}>
         <Image width="1249" height="900" src="/temporary/itensLarge.jpg"/>
+
+        </div>
         <LastAdvertsHorizontalList/>
 
     </Container>

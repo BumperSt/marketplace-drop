@@ -23,7 +23,7 @@ export const ListHorizontalCategorys = () => {
                                         </CategoryImage>
                                     </CategoryImageDiv>
                                     
-                                    <Image alt="teste" title="teste" width="268" height="238" src="/temporary/adidas.png"></Image>
+                                    <Image alt="teste" title="teste" width="200" height="150" src="/home/category.png"></Image>
                                 </ItemBackgroud>
                             </ItemCard>
                         ))
