@@ -66,13 +66,17 @@ export const BottomBar = ({setSelectedTheme} : props) => {
                 <CopTitle>Lorem ipsum.</CopTitle>
                 <AlignRow>
                     <CopDescription>2022. Ut ac risus sit amet nibh varius fermentum. Curabitur in velit sapien. Aenean eu ligula nisi.</CopDescription>
-                    <AlingRowToggleTheme>
+                    {
+                        theme&&
+                        <AlingRowToggleTheme>
                         <SunIcon color="white"/>
                         <ToglleThemeDiv>
                             <Switch  onColor={theme.colors.bottomBarBackgroud} offColor={theme.colors.bottomBarBackgroud}  uncheckedIcon={false} checkedIcon={false} height={28} width={60} onChange={(e) => DefTheme(e)} checked={changeTheme} />   
                         </ToglleThemeDiv>
                         <MoonIcon color="white"/>
-                    </AlingRowToggleTheme>                            
+                    </AlingRowToggleTheme>  
+                    }
+                          
 
 
 
