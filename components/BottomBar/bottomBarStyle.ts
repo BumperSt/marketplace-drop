@@ -75,13 +75,25 @@ export const ToglleThemeDiv = styled.div`
     flex-direction: row;
     border: solid 1px white;
     border-radius: 40px;
-    padding-inline: .1rem;
-    height: 1.5rem;
-    margin-inline:.4rem;
+    padding: .2rem;
+    width: 50px;
+    margin-inline:.2rem;
     @media (min-width: 768px){
         height: 1rem;
 
     }
+`
+
+export const SwitchBall = styled.div<{checked:boolean}>`
+    width:12px;
+    height:12px;
+    background-color:white;
+    border-radius:12px;
+
+    transition:all .2s ;
+    ${({checked}) => checked && `
+        margin-left: 70%;
+    `}
 `
 
 export const LogoImage = styled.div`
@@ -109,7 +121,6 @@ export const MoreInfoButton = styled.button`
 `
 
 export const MoonIcon = styled(FaMoon)`
-        fill:'white'
 `
 
 export const SunIcon = styled(FaSun)`

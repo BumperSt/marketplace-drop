@@ -4,7 +4,7 @@ import { UseTheme } from "@/theme/useTheme";
 import themes from '@/theme/schema.json';
 import Switch from "react-switch";
 
-import { Container, CopDescription, CopDiv, CopTitle, DivColumn, Title,AlignRow, ToglleThemeDiv, LogoImage, IconImage, MoreInfoButton, AlingRowToggleTheme, MoonIcon, SunIcon } from "./bottomBarStyle"
+import { Container, CopDescription, CopDiv, CopTitle, DivColumn, Title,AlignRow, ToglleThemeDiv, LogoImage, IconImage, MoreInfoButton, AlingRowToggleTheme, MoonIcon, SunIcon, SwitchBall } from "./bottomBarStyle"
 import { useEffect, useState } from "react";
 
 
@@ -14,11 +14,10 @@ interface props{
 
 export const BottomBar = ({setSelectedTheme} : props) => {
     
-    const [changeTheme, setChangeTheme] = useState(false)
-
 
     const {theme, themeLoaded, setTheme} = UseTheme();
 
+    const [controlTheme, setControlTheme] = useState(false)
 
     const [innerWidth, setInnerWidth] = useState(null)
     const [innerHeight, setInnerHeight] = useState(null)
@@ -33,10 +32,13 @@ export const BottomBar = ({setSelectedTheme} : props) => {
 
 
     const DefTheme = (event) => {
-        setChangeTheme(event)
-        let name = 'default'
-        if(event){
-            name = 'dark'
+
+        let name = 'dark'
+        if(theme.name == 'dark'){
+            name = 'default'
+            setControlTheme(false)
+        }else{
+            setControlTheme(true)
         }
         setTheme(name)
         setSelectedTheme(themes.data[name])
@@ -45,7 +47,7 @@ export const BottomBar = ({setSelectedTheme} : props) => {
     useEffect(() => {
         if(themeLoaded){
             if(theme.name == 'dark'){
-                setChangeTheme(true)
+                setControlTheme(true)
             }
         }
         
@@ -69,11 +71,12 @@ export const BottomBar = ({setSelectedTheme} : props) => {
                     {
                         theme&&
                         <AlingRowToggleTheme>
-                        <SunIcon color="white"/>
-                        <ToglleThemeDiv>
-                            <Switch  onColor={theme.colors.bottomBarBackgroud} offColor={theme.colors.bottomBarBackgroud}  uncheckedIcon={false} checkedIcon={false} height={28} width={60} onChange={(e) => DefTheme(e)} checked={changeTheme} />   
+                        <SunIcon size="15" color="white"/>
+                        <ToglleThemeDiv  onClick={(e) => DefTheme(e)}>
+                            <SwitchBall checked={controlTheme}/>
+                            {/* <Switch height={0} onColor={theme.colors.bottomBarBackgroud} offColor={theme.colors.bottomBarBackgroud}  uncheckedIcon={false} checkedIcon={false}  onChange={(e) => DefTheme(e)} checked={changeTheme} />    */}
                         </ToglleThemeDiv>
-                        <MoonIcon color="white"/>
+                        <MoonIcon size="15" color="white"/>
                     </AlingRowToggleTheme>  
                     }
                           

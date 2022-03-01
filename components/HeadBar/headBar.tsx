@@ -27,14 +27,15 @@ export const HeadBar = ({backHeaderType, backState} : props) => {
       return(
         <HeadBarContainer style={{
             width: '100%',
-            padding:'0px',
+            paddingLeft:'0px',
+
             paddingRight:'50%',
         }}>
             <BackIcon onClick={() => backState(false) }size="32"/>
             <LogoImagem style={{
                 transform: 'translateX(50%)'
             }}>
-                <Image onClick={() => route.push('/')} title="Logo" alt="Logo" layout="fill" src="/icons/logo.webp"/>
+                <Image onClick={() => route.push('/')} title="Logo" alt="Logo" layout="fill" src="/logos/LogoHeader.png"/>
             </LogoImagem>
         </HeadBarContainer>
       )
@@ -46,7 +47,7 @@ export const HeadBar = ({backHeaderType, backState} : props) => {
                 <MenuIcon size='32'/>
     
                 <LogoImagem>
-                    <Image onClick={() => route.push('/')} title="Logo" alt="Logo" layout="fill" src="/icons/logo.webp"/>
+                    <Image onClick={() => route.push('/')} title="Logo" alt="Logo" layout="fill" src="/logos/LogoHeader.png"/>
                 </LogoImagem>
     
                 <SearchIcon onClick={() => setOpenSearch(true)} size='32'/>
