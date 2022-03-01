@@ -41,7 +41,7 @@ export const ItemsScrollList = styled.div`
 
 export const ItemBackgroud = styled.div`
     width: 7rem;
-    height:  7rem;
+    height:  auto;
     position: relative;
 `
 

@@ -26,9 +26,13 @@ export const HeadBar = ({backHeaderType, backState} : props) => {
   if(backHeaderType){
       return(
         <HeadBarContainer style={{
+            width: '100%',
+            padding:'0px',
+            paddingRight:'50%',
         }}>
             <BackIcon onClick={() => backState(false) }size="32"/>
             <LogoImagem style={{
+                transform: 'translateX(50%)'
             }}>
                 <Image onClick={() => route.push('/')} title="Logo" alt="Logo" layout="fill" src="/icons/logo.webp"/>
             </LogoImagem>

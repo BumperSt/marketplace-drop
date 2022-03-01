@@ -89,4 +89,5 @@ export const SearchIcon = styled(BiSearchAlt2)`
 `
 
 export const BackIcon = styled(BiArrowBack)`
+    margin-left: 10%;
 `

@@ -15,7 +15,7 @@ export const ImageContent = styled.div`
 `
 
 export const ClickNextImage = styled(IoIosArrowBack)<{rigth?:boolean}>`
-    z-index: 100;
+    z-index: 1;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

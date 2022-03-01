@@ -13,6 +13,8 @@ export const SearchContainer = styled.div`
     position: absolute;
     top:0;
     left:0;
+    overflow-y: auto;
+
 `
 
 export const SearchIcon = styled(BsSearch)`
@@ -27,7 +29,7 @@ export const InputDiv = styled.div`
     background-color: ${({ theme }) => theme.colors.input.background};
     margin-bottom: 2rem;
     padding-inline:.5rem;
-    width: 80%;
+    width: 90%;
     align-items:center;
     border-radius: 15px;
     margin-top: 1rem;
@@ -51,10 +53,17 @@ export const SearchInput = styled.input `
     color:${({ theme }) => theme.colors.input.text};
     padding-block:.5rem;
     width: 100%;
-    font-size: 13px;
+    font-size: 14px;
     font-family: roboto;
     font-style: italic;
     @media (min-width: 768px) {
         font-size: 36px;
     }
+`
+export const ContainerSearch = styled.div`
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom:5rem;
 `
