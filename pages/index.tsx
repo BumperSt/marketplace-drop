@@ -1,4 +1,4 @@
-import { HeadBarHome } from "@/components/HeadBarHome/headBar"
+import { HeadBar } from "@/components/HeadBar/headBar"
 import { Container } from "@/components/HomePage/styleHomePage"
 import HomeCarrousel from "@/components/ImageCarrousel/homeCarrousel"
 import { LastAdvertsHorizontalList } from "@/components/LastAdvertsHorizontalList/LastAdvertsHorizontalList"
@@ -6,7 +6,6 @@ import LastComponentInHome from "@/components/LastComponentInHome/lastComponentI
 import { ListHorizontalCategorys } from "@/components/ListHorizontalCategorys/ListHorizontalCategorys"
 import { ListHorizontaltems } from "@/components/ListHorizontaltems/listHorizontaltems"
 import { ModalInfos } from "@/components/Modal/modalInfos"
-import { Search } from "@/components/Search/search"
 import Image from "next/image"
 import { useState } from "react"
 
@@ -18,9 +17,8 @@ const HomePage = () => {
 
   return (
     <Container>
-        <HeadBarHome/>
+        <HeadBar />
         <HomeCarrousel/>
-        {/* <Search/> */}
         
         {tempStateInfo &&
           <ModalInfos setModalState={setTempStateInfo}/>

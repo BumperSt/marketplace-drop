@@ -4,7 +4,7 @@
             "id": "D-007",
             "name": "default",
             "colors": {
-                "body": "#F1F1F1",
+                "body": "#FFFFFF",
                 "detalhes":"#474747",
                 "stroke":"#CDCDCD",
                 "shoesSizeBackground"  : "#FF3D00",
@@ -17,7 +17,7 @@
                     "background" : "#CDCDCD"
                 },
                 "input":{
-                    "background" : "#FFF",
+                    "background" : "#EEEEEE",
                     "text" : "#000000"
                 },
                 "texts":{

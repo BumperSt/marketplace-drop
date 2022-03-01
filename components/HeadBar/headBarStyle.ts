@@ -1,10 +1,11 @@
-import { BiMenu, BiSearchAlt2 } from "react-icons/bi";
+import { BiArrowBack, BiMenu, BiSearchAlt2 } from "react-icons/bi";
 import styled from "styled-components";
 
 export const HeadBarContainer = styled.div<{otherBackgroundColor?: boolean}>`
     position: sticky;
     top: 0;
     z-index: 99;
+    width: 100%;
     color:${({ theme }) => theme.colors.texts.default};
     display:flex;
     flex-direction: row;
@@ -85,4 +86,7 @@ export const MenuIcon = styled(BiMenu)`
 
 export const SearchIcon = styled(BiSearchAlt2)`
     
+`
+
+export const BackIcon = styled(BiArrowBack)`
 `

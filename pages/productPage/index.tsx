@@ -1,4 +1,4 @@
-import { HeadBarHome } from "@/components/HeadBarHome/headBar"
+import { HeadBar } from "@/components/HeadBar/headBar"
 import { ListHorizontaltems } from "@/components/ListHorizontaltems/listHorizontaltems"
 import { ModalOffer } from "@/components/Modal/modalOffer"
 import { AlignColumn, AlignIcons, AlignPrices, AlignRowInDesktop, AlingCollumDesktop, AlingRowDesktop, BackIcon, Container, ContainerProductPage, DescreptionText, DescreptionTitle, PlusIcon, PriceDiv, PriceValue, ProductDescreptionDiv, ProductImage, ProductPriceContainer, ProductTitle, ShareIcon, SizeButton } from "@/components/ProductPage/productPageStyle"
@@ -15,7 +15,7 @@ const ProductPage = () => {
 
     return(
         <Container>
-            <HeadBarHome/>
+            <HeadBar/>
             <ContainerProductPage>
                 <AlignIcons>
                     <BackIcon onClick={() => router.back()} size='1rem'/>

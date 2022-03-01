@@ -6,12 +6,13 @@ import { BsSearch } from 'react-icons/bs';
 export const SearchContainer = styled.div`
     display:flex;
     flex-direction: column;
-    background-color: ${({ theme }) => theme.colors.search.background};
-    align-items:center;
-    text-align: center;
-    @media (min-width: 768px) {
-        padding-block:.5rem;
-    }
+    width: 100vw;
+    height: 100vh;    
+    background-color:white;
+    align-items: center;
+    position: absolute;
+    top:0;
+    left:0;
 `
 
 export const SearchIcon = styled(BsSearch)`
@@ -26,9 +27,10 @@ export const InputDiv = styled.div`
     background-color: ${({ theme }) => theme.colors.input.background};
     margin-bottom: 2rem;
     padding-inline:.5rem;
-    width: 65%;
+    width: 80%;
     align-items:center;
-    border-radius: 6px;
+    border-radius: 15px;
+    margin-top: 1rem;
 `
 
 export const SearchContentTitle = styled.h1`

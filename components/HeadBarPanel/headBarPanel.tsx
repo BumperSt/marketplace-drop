@@ -1,4 +1,4 @@
-import { HeadBarContainer } from "../HeadBarHome/headBarStyle"
+import { HeadBarContainer } from "../HeadBar/headBarStyle"
 import { AlignRow, BackIcon, CenterText, LogoutIcon } from "./headBarPanelStyle"
 
 
