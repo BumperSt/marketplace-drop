@@ -1,3 +1,4 @@
+import { BiMenu, BiSearchAlt2 } from "react-icons/bi";
 import styled from "styled-components";
 
 export const HeadBarContainer = styled.div<{otherBackgroundColor?: boolean}>`
@@ -7,7 +8,6 @@ export const HeadBarContainer = styled.div<{otherBackgroundColor?: boolean}>`
     color:${({ theme }) => theme.colors.texts.default};
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
     padding: .7rem;
     background-color: ${({theme,otherBackgroundColor }) => otherBackgroundColor ? theme.colors.sellerPage.background : theme.colors.body};
     min-height: 10%;
@@ -16,6 +16,8 @@ export const HeadBarContainer = styled.div<{otherBackgroundColor?: boolean}>`
         padding: .5rem;
 
     }
+    align-items: center;
+    justify-content: space-between;
 `
 
 export const LoginButton = styled.button`
@@ -74,4 +76,13 @@ export const LogoImagem = styled.div`
         height: unset !important;
         }
     }
+`
+
+export const MenuIcon = styled(BiMenu)`
+    
+`
+
+
+export const SearchIcon = styled(BiSearchAlt2)`
+    
 `

@@ -15,6 +15,7 @@ export const ListItemContainer = styled.div`
     display:flex;
     flex-direction:column;
     margin-top: .5rem;
+
 `
 
 export const ListItemsTitle = styled.h1`

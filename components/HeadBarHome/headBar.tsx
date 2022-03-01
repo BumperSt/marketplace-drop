@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ModalLogin } from "../Modal/modalLogin";
-import { AlignRow, HeadBarContainer, LoggedTitle, LoggedTitleColor, LoginButton, LogoImagem } from "./headBarStyle";
+import { AlignRow, HeadBarContainer, LoggedTitle, LoggedTitleColor, LoginButton, LogoImagem, MenuIcon, SearchIcon } from "./headBarStyle";
 import {useRouter} from 'next/router'
 export const HeadBarHome = () => {
 
@@ -19,12 +19,14 @@ export const HeadBarHome = () => {
   return (
     <>
         <HeadBarContainer>
+            <MenuIcon size='32'/>
             <LogoImagem>
                 <Image onClick={() => route.push('/')} title="Logo" alt="Logo" layout="fill" src="/icons/logo.webp"/>
             </LogoImagem>
+            <SearchIcon size='32'/>
             
 
-            {
+            {/* {
                 !logged ? 
                 <LoginButton onClick={() => setStateLoginModal(true)}>Entrar</LoginButton>
                 :
@@ -33,7 +35,7 @@ export const HeadBarHome = () => {
                     <Image src="/temporary/headIcon.png" width="60" height="60"/>
                 </AlignRow>
 
-            }
+            } */}
 
         </HeadBarContainer>
         

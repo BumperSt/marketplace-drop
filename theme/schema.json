@@ -7,7 +7,9 @@
                 "body": "#F1F1F1",
                 "detalhes":"#474747",
                 "stroke":"#CDCDCD",
-                "bottomBar" : "#959595",
+                "shoesSizeBackground"  : "#FF3D00",
+                "vipAnuncioBackground" : "#EEEEEE",
+                "bottomBarBackgroud" : "#2A2A2A",
                 "botoes":{
                     "background":"#FF3D00"
                 },
@@ -49,7 +51,10 @@
                 "body": "#0C0C0C",
                 "detalhes":"#474747",
                 "stroke":"#CDCDCD",
-                "bottomBar" : "#959595",
+                "shoesSizeBackground"  : "#FF3D00",
+                "vipAnuncioBackground" : "#EEEEEE",
+                "bottomBarBackgroud" : "#2A2A2A",
+
                 "botoes":{
                     "background":"#FF3D00"
                 },

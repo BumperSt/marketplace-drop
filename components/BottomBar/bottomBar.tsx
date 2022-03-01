@@ -4,7 +4,7 @@ import { UseTheme } from "@/theme/useTheme";
 import themes from '@/theme/schema.json';
 import Switch from "react-switch";
 
-import { Container, CopDescription, CopDiv, CopTitle, DivColumn, Title,AlignRow, ToglleThemeDiv, LogoImage, IconImage } from "./bottomBarStyle"
+import { Container, CopDescription, CopDiv, CopTitle, DivColumn, Title,AlignRow, ToglleThemeDiv, LogoImage, IconImage, MoreInfoButton, AlingRowToggleTheme, MoonIcon, SunIcon } from "./bottomBarStyle"
 import { useEffect, useState } from "react";
 
 
@@ -55,35 +55,26 @@ export const BottomBar = ({setSelectedTheme} : props) => {
 
     return(
         <Container>
-            <Title>Quisque efficitur enim vel gravida sagittis.</Title>
             <LogoImage>
                 <Image title="Logo" alt="Logo Seliga no drop" layout="fill" src="/imagens/logo-bottomBar.webp"/>
             </LogoImage>
             
-            <DivColumn>
-                <IconImage style={{
-                    marginRight:'1rem'
-                }}>
-                    <Image title="Iconei Discord" alt="Redirecionar Discord"  layout="fill"src="/icons/discord.webp"/>
-                </IconImage>
-                
-                <IconImage>
-
-                <Image title="Iconei Instagram" alt="Redirecionar Instagram"  layout="fill" src="/icons/instagram.webp"/>
-                </IconImage>
-
-            </DivColumn>
+            <MoreInfoButton>Saiba Mais</MoreInfoButton>
 
 
             <CopDiv>
                 <CopTitle>Lorem ipsum.</CopTitle>
                 <AlignRow>
                     <CopDescription>2022. Ut ac risus sit amet nibh varius fermentum. Curabitur in velit sapien. Aenean eu ligula nisi.</CopDescription>
+                    <AlingRowToggleTheme>
+                        <SunIcon color="white"/>
+                        <ToglleThemeDiv>
+                            <Switch  onColor={theme.colors.bottomBarBackgroud} offColor={theme.colors.bottomBarBackgroud}  uncheckedIcon={false} checkedIcon={false} height={28} width={60} onChange={(e) => DefTheme(e)} checked={changeTheme} />   
+                        </ToglleThemeDiv>
+                        <MoonIcon color="white"/>
+                    </AlingRowToggleTheme>                            
 
-                    <ToglleThemeDiv>
-                            <Switch  onColor='#959595' offColor='#959595' uncheckedIcon={false} checkedIcon={false} height={28} width={100} onChange={(e) => DefTheme(e)} checked={changeTheme} />   
-                     
-                    </ToglleThemeDiv>
+
 
                 </AlignRow>
             </CopDiv>
