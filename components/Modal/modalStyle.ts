@@ -1,3 +1,4 @@
+import { BiArrowBack } from 'react-icons/bi'
 import styled from 'styled-components'
 
 export const ModalBackground = styled.div`
@@ -16,17 +17,23 @@ export const ModalBackground = styled.div`
     }
 `
 
+export const BackIcon = styled(BiArrowBack)`
+    position: absolute;
+    left: 10%;
+    
+`
+
 export const ModalContainer = styled.div`
-    background-color: ${({ theme }) => theme.colors.modal.background};
-    width: 90%;
+    background-color: ${({ theme }) => theme.colors.body};
     overflow: auto;
-    max-height: 80%;
     border-radius:10px;
     display: flex;
     flex-direction: column;
     padding: 1rem;
     align-items: center;
     text-align: center;
+    width: 100vw;
+    height: 100vh;
     @media (min-width: 768px) {
         margin-top: 5%;
         padding: .7rem;
@@ -38,13 +45,18 @@ export const ModalContainer = styled.div`
 export const ModalTitle = styled.h1`
     font-weight: bold;
     max-width: 100%;
+    font-size:36px;
+    line-height: 42px;
     @media (max-width: 300px){
         font-size: 20px;
     }
 `
 
 export const ModalSubTitle = styled.h1`
-    font-size: 14px;
+    font-size: 24px;
+    font-weight:500;
+    line-height: 28px;
+
     margin-block:.5rem;
     @media(min-width: 768px){
         font-size: 36px;
@@ -53,17 +65,18 @@ export const ModalSubTitle = styled.h1`
 `
 
 export const ModalInput = styled.input`
-    border-radius: 15px;
+    border-radius: 10px;
     margin-block:.3rem;
-    padding:.3rem;
+    padding:.5rem;
     font-size:14px;
-    width:80%;
+    font-weight:300;
+    width:90%;
+    border:0px;
+    background-color:${({theme}) => theme.colors.input.background};
     color:${({ theme }) => theme.colors.detalhes};
     font-weight: 300;
-    border: solid 1px ${({ theme }) => theme.colors.stroke};;
     @media (min-width: 768px) {
         margin-block:.2rem;
-        border: solid 5px ${({ theme }) => theme.colors.stroke};;
         border-radius: 25px;
         
         font-size: 24px;
@@ -74,9 +87,18 @@ export const ModalInput = styled.input`
 export const ModalButton = styled.button<{otherColor?:boolean}>`
     margin-block: 1rem;
     margin-inline: 1rem;
-    padding: 0.5rem;
-    font-weight: 600;
-    background-color: ${({otherColor, theme }) => otherColor && theme.colors.detalhes};
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    font-weight: 900;
+    border-radius:5px;
+    font-size:18px;
+    ${({otherColor}) => otherColor && `
+        background-color: rgba(0,0,0,0);
+        color:#2A2A2A;
+        border:solid 1px #959595;
+        border-radius: 15px;
+
+    `}
     @media (min-width: 768px) {
         margin-block: .5rem;
         padding-block: 0.2rem;
@@ -87,42 +109,19 @@ export const ModalButton = styled.button<{otherColor?:boolean}>`
     }
 `
 
-export const ModalTextDescription = styled.h1<{FirstColor?: boolean}>`
-    font-size: 14px;
-    ${({FirstColor,theme}) => FirstColor ? `
-            color: ${theme.colors.texts.description};
-        `:
-        `
-            color: ${theme.colors.modal.descriptionTextSecond};
-            margin-bottom:1rem;
-        `
-    } 
-    @media (min-width: 768px) {
-        font-size: 24px;
-        ${({FirstColor}) => FirstColor ? 
-            `
-            `
-            :`
-                margin-bottom:0rem;
-            `    
-        }
-    }
-    :hover{
-        cursor: pointer;
-    }
+export const LostPasswordText = styled.h1`
+    color:#0057FF;
+    font-weight: 400;
+    font-size:12px;
+    text-align: start;
+    width:85%;
+    margin-bottom:.5rem;
+`
+export const OurCreateNewText = styled.h1`
+    margin-block:.3rem;
+    color:${({theme }) => theme.colors.detalhes};
 `
 
-export const LineStyled = styled.hr`
-    width: 60%;
-    text-align:left;
-    margin-block:.3rem;
-    color:${({theme}) => theme.colors.bottomBar};
-    background-color:${({theme}) => theme.colors.bottomBar};
-    @media (min-width: 768px) {
-        margin-block:.2rem;
-        height: 4px;
-    }
-`
 export const InputsContainer = styled.div`
     display:flex;
     flex-direction:row;
@@ -146,4 +145,13 @@ export const AlignRowInputs = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+`
+
+export const AlingCenter = styled.div`
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 `

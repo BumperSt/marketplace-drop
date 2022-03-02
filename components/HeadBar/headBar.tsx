@@ -13,7 +13,7 @@ interface props {
 export const HeadBar = ({backHeaderType, backState} : props) => {
 
     const route = useRouter()
-    const [stateLoginModal, setStateLoginModal] = useState<Boolean>(false);
+    const [stateLoginModal, setStateLoginModal] = useState<Boolean>(true);
     const [logged, setLogged] = useState<Boolean>(false);
     const [openSearch, setOpenSearch] = useState<Boolean>(false);
 

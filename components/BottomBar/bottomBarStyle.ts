@@ -89,8 +89,7 @@ export const SwitchBall = styled.div<{checked:boolean}>`
     height:12px;
     background-color:white;
     border-radius:12px;
-
-    transition:all .2s ;
+    transition: margin .6s linear;
     ${({checked}) => checked && `
         margin-left: 70%;
     `}

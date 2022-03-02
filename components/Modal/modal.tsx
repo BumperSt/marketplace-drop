@@ -1,14 +1,15 @@
 import { useEffect, useRef } from "react";
-import { ModalBackground, ModalContainer } from "./modalStyle"
+import { BackIcon, ModalBackground, ModalContainer } from "./modalStyle"
 
 interface Props {
     setModalState:any,
-    children:any
+    children:any,
+    backModal:any
 }
 
 
 
-export const Modal = ({children, setModalState}:Props) => {
+export const Modal = ({children, setModalState, backModal}:Props) => {
 
     const ref = useRef(null)
 
@@ -29,8 +30,9 @@ export const Modal = ({children, setModalState}:Props) => {
 
     return(
         <ModalBackground >
-            
             <ModalContainer ref={ref}>
+                <BackIcon onClick={() => backModal()}size="32"/>
+
                 {children}
             </ModalContainer>
             

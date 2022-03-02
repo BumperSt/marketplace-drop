@@ -20,9 +20,9 @@ const HomePage = () => {
         <HeadBar />
         <HomeCarrousel/>
         
-        {tempStateInfo &&
+        {/* {tempStateInfo &&
           <ModalInfos setModalState={setTempStateInfo}/>
-        }
+        } */}
         
         <ListHorizontaltems ListType="Small"/>
         <ListHorizontaltems ListType="Large"/>
