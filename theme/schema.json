@@ -7,9 +7,11 @@
                 "body": "#FFFFFF",
                 "detalhes":"#474747",
                 "stroke":"#CDCDCD",
+                "fonts" : ["#2A2A2A"],
                 "shoesSizeBackground"  : "#FF3D00",
                 "vipAnuncioBackground" : "#EEEEEE",
                 "bottomBarBackgroud" : "#2A2A2A",
+                "profilePageButtonBackground" : "#F1F1F1",
                 "botoes":{
                     "background":"#FF3D00"
                 },
@@ -51,9 +53,11 @@
                 "body": "#0C0C0C",
                 "detalhes":"#474747",
                 "stroke":"#CDCDCD",
+                "fonts" : ["#2A2A2A"],
                 "shoesSizeBackground"  : "#FF3D00",
                 "vipAnuncioBackground" : "#EEEEEE",
                 "bottomBarBackgroud" : "#2A2A2A",
+                "profilePageButtonBackground" : "#F1F1F1",
 
                 "botoes":{
                     "background":"#FF3D00"

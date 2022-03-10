@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const AlingCollum = styled.div`
     display:flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     @media (min-width: 768px){
         flex-direction: column-reverse;
         width: 50%;
@@ -15,49 +15,20 @@ export const AlingCollum = styled.div`
 export const AlingCollumInputs = styled.div`
     display:flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
 `
 
 export const AlignTitleAndContent = styled.div`
     display:flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
+    align-self: center;
     align-items: center;
     
     text-align: start;
     margin-top: .5rem;
 
 
-`
-
-export const AlignRowSizes = styled.div`
-    display:flex;
-    flex-direction: row;
-    margin-top: .3rem;
-    max-width: 100%;
-    overflow-x: auto;
-    padding-block:.5rem;
-    @media (min-width: 768px){
-        max-width: 100%;
-        margin-top: 0rem;
-        padding-block:.25rem;
-
-    }
-`
-
-export const SizeButton = styled.button<{active:boolean}>`
-    margin-inline:.1rem;
-    padding-inline:.4rem;
-    padding-block:.2rem;
-    font-size: 13px;
-    @media (min-width: 768px){
-        padding-inline:.1rem;
-        padding-block:0rem;
-        font-size: 24px;
-    }
-    ${({active, theme})=> active && `
-        background-color:${theme.colors.detalhes}
-    `}
 `
 
 export const DivTitle = styled.h1`
@@ -102,8 +73,17 @@ export const PhotoDiv = styled.div`
 
 export const AlingRowInDesktop = styled.div`
     display:flex;
+    align-items: center;
     flex-direction: column;
     @media (min-width: 768px){
         flex-direction: row;
     }
+`
+
+export const PublisherButton = styled.button`
+    padding-inline:1rem;
+    padding-block:.5rem;
+    width:8rem;
+    align-self: center;
+    margin-top:1.5rem;
 `

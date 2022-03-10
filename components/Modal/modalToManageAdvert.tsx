@@ -1,20 +1,20 @@
 import { min } from "lodash"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import { HeadBar } from "../HeadBar/headBar"
 import { Input } from "../Inputs/input"
-import { AddPhotosIcon, AddPhotosTitle, AlignPhotos, AlignRowSizes, AlignTitleAndContent, AlingCollum, AlingCollumInputs, DivTitle, PhotoDiv, SizeButton ,AlingRowInDesktop} from "./mangeAdvertStyle"
+import { AddPhotosIcon, AddPhotosTitle, AlignPhotos, AlignTitleAndContent, AlingCollum, AlingCollumInputs, DivTitle, PhotoDiv ,AlingRowInDesktop, PublisherButton} from "./mangeAdvertStyle"
 import { Modal } from "./modal"
-import { ModalButton, ModalTitle } from "./modalStyle"
 
 
 interface Props {
-    setModalState:any,
+    closePage:any,
     modalType?:'create',
 }
 
 
 
-export const ModalToManageAdvert = ({setModalState, modalType}: Props) => {
+export const ModalToManageAdvert = ({closePage, modalType}: Props) => {
 
     const [advertName, setAdvertName] = useState("")
     const [advertSubTitle, setAdvertSubTitle] = useState("")
@@ -43,8 +43,9 @@ export const ModalToManageAdvert = ({setModalState, modalType}: Props) => {
     }, [sizeButtonPressed])
 
     return(
-        <Modal setModalState={setModalState}>
-            <ModalTitle>{modalType == 'create' ? 'Criar Anuncio' : 'Gerenciar Anuncio'}</ModalTitle>
+        <Modal backModal={closePage}>
+            <HeadBar backFunction={closePage}/>
+
             <AlingCollumInputs>
 
             <AlingRowInDesktop>
@@ -55,25 +56,10 @@ export const ModalToManageAdvert = ({setModalState, modalType}: Props) => {
                         <Input Style={{
                             width:'100%'
                         }} Title="Subtitulo" value={advertSubTitle} setValue={setAdvertSubTitle}/>
-                        <Input Style={{
-                            width:'100%'
-                        }} Title="Descrição" value={advertDescription} setValue={setAdvertDescription} StyleInput={{minHeight:'4.5rem'}}/>
+                       
                     </AlingCollumInputs>
 
                     <AlingCollum>
-                        <AlignTitleAndContent>
-
-                        <DivTitle>Tamanhos</DivTitle>
-                        <AlignRowSizes>
-                            {
-                                advertSizes&&
-                                advertSizes.map((size) => (
-                                    <SizeButton active={sizeButtonPressed.includes(size)} onClick={() => sizeButtonPressed.includes(size)  ?  setSizeButtonPressed(sizeButtonPressed.filter(item => item !== size)    ) : setSizeButtonPressed([...sizeButtonPressed, size])} key={size}>{size}</SizeButton>
-
-                                ))
-                            }
-                        </AlignRowSizes>
-                        </AlignTitleAndContent>
 
                         <AlignTitleAndContent>
                             <DivTitle>Fotos</DivTitle>
@@ -93,15 +79,17 @@ export const ModalToManageAdvert = ({setModalState, modalType}: Props) => {
                         
                             </AlignPhotos>
                         </AlignTitleAndContent>
-                        
-
+                        <Input Style={{
+                            alignSelf: 'center'
+                             }} Title="Preço (R$)" value={advertPrice} setValue={setAdvertPrice}/>
+                        <Input Style={{
+                            width:'100%'
+                        }} Title="Descrição" value={advertDescription} setValue={setAdvertDescription} StyleInput={{minHeight:'4.5rem'}}/>
+                        <PublisherButton>Publicar</PublisherButton>
                     </AlingCollum>
                 </AlingRowInDesktop>
-                <Input Style={{
-                        alignSelf: 'center'
-                }} Title="Preço (R$)" value={advertPrice} setValue={setAdvertPrice}/>
-                <ModalButton>Anunciar</ModalButton>
-                </AlingCollumInputs>
+
+            </AlingCollumInputs>
 
         </Modal>
     )

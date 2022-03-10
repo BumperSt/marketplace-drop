@@ -41,26 +41,26 @@ export const InputContainer = styled.div<{inputType : string, createAccont:boole
 `
 
 export const InputStyled = styled.input`
-    border-radius: 15px;
-    margin-block:.3rem;
-    padding:.3rem;
-    font-size:14px;
-    color:${({ theme }) => theme.colors.detalhes};
-    font-weight: 300;
-    border: solid 1px ${({ theme }) => theme.colors.stroke};;
+    color:${({theme}) => theme.colors.detalhes};
+    background-color:${({theme}) => theme.colors.vipAnuncioBackground};
     width: 100%;
-    
+    font-size: 14px;
+    border-radius: 15px;
+    padding-inline: .5rem;
+    font-weight: 600;
+    padding-block: .5rem;
+    border: 0px;
+    margin-block:.4rem;
     @media (min-width: 768px){
         font-size: 24px;
-        border: solid 5px ${({ theme }) => theme.colors.stroke};;
         padding:.2rem;
         border-radius: 25px;    
-
     }
 `
 
 export const InputTitle = styled.h1`
     font-size: 15px;
+    color:${({ theme }) => theme.colors.detalhes};
     font-weight: bold;
     color:black;
     width: 100%;

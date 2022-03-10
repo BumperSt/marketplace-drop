@@ -1,15 +1,15 @@
-import { AlingCenter, InputsContainer, LostPasswordText, ModalButton, ModalInput, ModalSubTitle, ModalTitle, OurCreateNewText } from "./modalStyle"
+import { AlingCenter, InputsContainer, LostPasswordText, ModalButton, ModalInput, ModalSelect, ModalSubTitle, ModalTitle, OurCreateNewText, TermsOfService } from "./modalStyle"
 import {Modal} from "./modal"
 import { useState } from "react"
 import { Input } from "../Inputs/input"
+import auth from "apiService/auth"
 
 interface Props {
-    setModalState:any,
-    tempSetLoged: any
+    closeModal: any
 }
 
 
-export const ModalLogin = ({setModalState, tempSetLoged}: Props) => {
+export const ModalLogin = ({closeModal}: Props) => {
 
     const [login, setLogin] = useState<string>("")
     const [password, setPassword] = useState<string>("")
@@ -18,9 +18,43 @@ export const ModalLogin = ({setModalState, tempSetLoged}: Props) => {
     const [confirmPassword, setConfirmPassword] = useState<string>("")
     const [modalType, setModalType] = useState<'Login' | 'Register' | 'LostPassword'>("Login")
 
+    const [fullName, setFullName] = useState<string>("")
+    const [phoneNumber, setPhoneNumber] = useState<string>("")
+    const [cpf, setCpf] = useState<string>("")
+
+
+    const Login = () => {
+        auth.login({
+            email,
+            password
+        }).then((response) => {
+            console.log(response)
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+
+    const Register = () => {
+        if(password == confirmPassword){
+            auth.register({
+                cpf,
+                fullName,
+                phone:phoneNumber,
+                email,
+                password,
+            }).then((response) => {
+                console.log(response);
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
+
+    }
+
+
     if(modalType == 'Login'){
         return(
-            <Modal backModal={() => setModalState(false)} setModalState={setModalState}>
+            <Modal backModal={() => closeModal()}>
                 <AlingCenter>
                     <ModalTitle>Aliquam eget dui turpis.</ModalTitle>
                     <ModalSubTitle>Cras in dui nunc.</ModalSubTitle>
@@ -28,7 +62,7 @@ export const ModalLogin = ({setModalState, tempSetLoged}: Props) => {
                     <ModalInput value={login} onChange={(e) => setLogin(e.target.value)} placeholder="Email"/>
                     <ModalInput value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="Senha"/>
                     <LostPasswordText onClick={() => setModalType('LostPassword')}>Esqueceu a senha? Clique aqui.</LostPasswordText>
-                    <ModalButton onClick={() => tempSetLoged(true)}>Acessar</ModalButton>
+                    <ModalButton onClick={() => Login()}>Acessar</ModalButton>
                     <OurCreateNewText>Ou</OurCreateNewText>
                     <ModalButton otherColor={true} onClick={() => setModalType('Register')}>Criar nova conta</ModalButton>
 
@@ -39,7 +73,7 @@ export const ModalLogin = ({setModalState, tempSetLoged}: Props) => {
         )
     }else if(modalType == 'Register'){
         return(
-            <Modal backModal={() => setModalType('Login')} setModalState={setModalState}>
+            <Modal backModal={() => setModalType('Login')}>
 
                     <ModalTitle style={{
                         fontSize:'24px',
@@ -48,23 +82,39 @@ export const ModalLogin = ({setModalState, tempSetLoged}: Props) => {
                         marginBlock:'2rem'
                     }}>Lorem ipsum dolor sit amet.</ModalTitle>
 
-                    <ModalInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Nome Completo"/>
-                    <ModalInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Telefone"/>
-                    <ModalInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Cpf"/>
+                    <ModalInput value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Nome Completo"/>
+                    <ModalInput value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder="Telefone"/>
+                    <ModalInput value={cpf} onChange={(e) => setCpf(e.target.value)} placeholder="Cpf"/>
+                    <InputsContainer>
+                        <ModalInput style={{width:'50%'}} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Data de nascimento"/>
+                        <ModalSelect style={{width:'45%'}}>
+                            <option value="" disabled selected>Genero</option>
+                            <option value="hurr">Durr</option>
+                        </ModalSelect>
+                    </InputsContainer>
+                    
+
                     <ModalInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
                     <ModalInput value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Senha"/>
                     <ModalInput value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirme a senha"/>
+                    <ModalSelect>
+                            <option value="" disabled selected>Tamanho (opcional)</option>
+                            <option value="hurr">Durr</option>
+                    </ModalSelect>
+                    <TermsOfService>
+                        <input type="checkbox" id="scales" name="scales" />
+                        <h1>Concordo com os <span>termos de serviço.</span></h1>
+                    </TermsOfService>
 
 
-
-                <ModalButton>Cadastrar</ModalButton>
+                <ModalButton onClick={()=> Register()}>Cadastrar</ModalButton>
     
             </Modal>
     
         )
     }else{
         return(
-            <Modal backModal={() => setModalType('Login')} setModalState={setModalState}>
+            <Modal backModal={() => setModalType('Login')}>
             <AlingCenter style={{
                 marginBottom:'5rem'
             }}>

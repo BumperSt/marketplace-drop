@@ -4,26 +4,31 @@ import { ModalLogin } from "../Modal/modalLogin";
 import { AlignRow, BackIcon, HeadBarContainer, LoggedTitle, LoggedTitleColor, LoginButton, LogoImagem, MenuIcon, SearchIcon } from "./headBarStyle";
 import {useRouter} from 'next/router'
 import { Search } from "../Search/search";
+import { PerfilPage } from "../Perfil/perfilPage";
 
 interface props {
-    backHeaderType?: boolean,
-    backState?: any,
+    backFunction?: any,
 }
 
-export const HeadBar = ({backHeaderType, backState} : props) => {
+export const HeadBar = ({backFunction} : props) => {
 
     const route = useRouter()
-    const [stateLoginModal, setStateLoginModal] = useState<Boolean>(true);
+    const [stateLoginModal, setStateLoginModal] = useState<Boolean>(false);
     const [logged, setLogged] = useState<Boolean>(false);
     const [openSearch, setOpenSearch] = useState<Boolean>(false);
+    const [openMenu, setOpenMenu] = useState<Boolean>(false);
 
-  useEffect(() => {
-    if(logged) {
+    const  closeLoginModal = () => {
         setStateLoginModal(false)
+        setLogged(true)
     }
-  }, [logged])
-  console.log(backHeaderType)
-  if(backHeaderType){
+
+    const closeMenu = () => {
+        setOpenMenu(false)
+    }
+
+
+  if(backFunction){
       return(
         <HeadBarContainer style={{
             width: '100%',
@@ -31,7 +36,7 @@ export const HeadBar = ({backHeaderType, backState} : props) => {
 
             paddingRight:'50%',
         }}>
-            <BackIcon onClick={() => backState(false) }size="32"/>
+            <BackIcon onClick={() => backFunction() }size="32"/>
             <LogoImagem style={{
                 transform: 'translateX(50%)'
             }}>
@@ -43,9 +48,21 @@ export const HeadBar = ({backHeaderType, backState} : props) => {
     return (
         <>
             <HeadBarContainer>
-    
-                <MenuIcon size='32'/>
-    
+                {
+                    !logged ?
+                    <MenuIcon onClick={()=> setStateLoginModal(true)} size='32'/>
+                    :
+                    <MenuIcon onClick={()=> setOpenMenu(true)} size='32'/>
+
+                
+
+                }
+                
+                {
+                    openMenu&&
+                    <PerfilPage closeModal={closeMenu}/>
+                }
+
                 <LogoImagem>
                     <Image onClick={() => route.push('/')} title="Logo" alt="Logo" layout="fill" src="/logos/LogoHeader.png"/>
                 </LogoImagem>
@@ -55,22 +72,10 @@ export const HeadBar = ({backHeaderType, backState} : props) => {
                     openSearch &&
                     <Search closeSearch={setOpenSearch}/>
                 }
-    
-                {/* {
-                    !logged ? 
-                    <LoginButton onClick={() => setStateLoginModal(true)}>Entrar</LoginButton>
-                    :
-                    <AlignRow onClick={() => route.push('userPanel')}>
-                        <LoggedTitle>Olá, <LoggedTitleColor>Jonas</LoggedTitleColor></LoggedTitle>
-                        <Image src="/temporary/headIcon.png" width="60" height="60"/>
-                    </AlignRow>
-    
-                } */}
-    
             </HeadBarContainer>
             
             {stateLoginModal && 
-                <ModalLogin tempSetLoged={setLogged} setModalState={setStateLoginModal} />
+                <ModalLogin closeModal={closeLoginModal}/>
             }
         </>
       );
