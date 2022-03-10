@@ -1,6 +1,6 @@
 import { EditInformations } from "@/components/EditProfile/editInformations"
 import { CenterDiv, ContainerEditProfile } from "@/components/EditProfile/editProfileStyle"
-import { HeadBarPanel } from "@/components/HeadBarPanel/headBarPanel"
+import { HeadBar } from "@/components/HeadBar/headBar"
 import { ViewUser } from "@/components/ViewUser/viewUser"
 import { useEffect, useState } from "react"
 
@@ -18,7 +18,7 @@ const UserPanel = () => {
     }, [])
     return(
         <ContainerEditProfile>
-            <HeadBarPanel/>
+            <HeadBar/>
             <CenterDiv>
 
                     <ViewUser disableInDesktop={true}/>

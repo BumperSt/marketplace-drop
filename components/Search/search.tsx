@@ -1,6 +1,5 @@
 import { AdvertCard } from "../AdvertCard/advertCard"
 import { HeadBar } from "../HeadBar/headBar"
-import { HeadBarPanel } from "../HeadBarPanel/headBarPanel"
 import { ContainerSearch, InputDiv, SearchContainer, SearchContentTitle, SearchIcon, SearchInput } from "./searchStyle"
 
 interface Props {
@@ -11,7 +10,7 @@ interface Props {
 export const Search = ({closeSearch} : Props) => {
     return(
         <SearchContainer>
-            <HeadBar backHeaderType={true} backState={closeSearch}/>
+            <HeadBar backFunction={closeSearch}/>
             <InputDiv>
                 <SearchIcon size='16'/>
                 <SearchInput placeholder="Lorem ipsum dolor sit amet..."/>

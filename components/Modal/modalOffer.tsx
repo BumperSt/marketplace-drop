@@ -16,7 +16,7 @@ export const ModalOffer = ({setModalState}: Props) => {
     const [starValue, setStarValue] = useState(0)
     
     return(
-        <Modal setModalState={setModalState}>
+        <Modal backModal={setModalState}>
             <AlingRowInDesktop>
                 <ShowAdvertImagens/>
                 <AlignColumn>

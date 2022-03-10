@@ -10,7 +10,7 @@ interface Props {
 
 export const ModalExcludeAdvert = ({setModalState, anuncio}: Props) => {
     return(
-        <Modal setModalState={setModalState}>
+        <Modal backModal={setModalState}>
             <ModalTitle>Nulla tempus interdum tellus vel placerat?</ModalTitle>
             <ModalSubTitle>Donec facilisis cursus augue, vel convallis dolor volutpat eu.</ModalSubTitle>
             <AdvertContainer key={anuncio.id}>

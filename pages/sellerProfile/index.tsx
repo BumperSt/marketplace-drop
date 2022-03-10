@@ -1,5 +1,5 @@
 import { AvaliationStarts } from "@/components/AvalationStars/avaliationStarts"
-import { HeadBarPanel } from "@/components/HeadBarPanel/headBarPanel"
+import { HeadBar } from "@/components/HeadBar/headBar"
 import { ListHorizontaltems } from "@/components/ListHorizontaltems/listHorizontaltems"
 import { SellerAvalaiton } from "@/components/SellerPage/sellerAvalaiton"
 import { CenterDiv, Container, OpinioDate, OpinionName, OpinionsDiv, OpinionText, OpnionDiv, PageTitles, SeeMoreOpinion, SellerDescription } from "@/components/SellerPage/sellerPageStyled"
@@ -15,7 +15,7 @@ const SellerPage = () => {
 
     return(
         <Container>
-            <HeadBarPanel/>
+            <HeadBar/>
             <CenterDiv>
                 <ViewUser style={{
                     boxShadow: 'none',
