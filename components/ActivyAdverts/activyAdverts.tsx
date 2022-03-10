@@ -51,7 +51,7 @@ export const ActivyAdverts = () => {
                         ))
                     }
                 </AdvertsScroll>
-                {
+                {/* {
                 openEditAdvert &&
                     <ModalToManageAdvert setModalState={setOpenEditAdvert}/>
                 }
@@ -63,7 +63,7 @@ export const ActivyAdverts = () => {
                 {
                     openPublisherAdvert && 
                     <ModalToManageAdvert modalType={'create'} setModalState={setOpenPublisherAdvert}/>
-                }
+                } */}
             </AdvertsContainer>
         </Container>
     )
