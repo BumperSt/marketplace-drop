@@ -2,10 +2,10 @@ import Image from "next/image"
 
 import { UseTheme } from "@/theme/useTheme";
 import themes from '@/theme/schema.json';
-import Switch from "react-switch";
 
-import { Container, CopDescription, CopDiv, CopTitle, DivColumn, Title,AlignRow, ToglleThemeDiv, LogoImage, IconImage, MoreInfoButton, AlingRowToggleTheme, MoonIcon, SunIcon, SwitchBall } from "./bottomBarStyle"
+import { Container, CopDescription, CopDiv, CopTitle, DivColumn, Title,AlignRow, LogoImage, IconImage, MoreInfoButton, AlingRowToggleTheme, MoonIcon, SunIcon } from "./bottomBarStyle"
 import { useEffect, useState } from "react";
+import { Switch } from "../Inputs/swith";
 
 
 interface props{
@@ -72,10 +72,8 @@ export const BottomBar = ({setSelectedTheme} : props) => {
                         theme&&
                         <AlingRowToggleTheme>
                         <SunIcon size="15" color="white"/>
-                        <ToglleThemeDiv  onClick={(e) => DefTheme(e)}>
-                            <SwitchBall checked={controlTheme}/>
-                            {/* <Switch height={0} onColor={theme.colors.bottomBarBackgroud} offColor={theme.colors.bottomBarBackgroud}  uncheckedIcon={false} checkedIcon={false}  onChange={(e) => DefTheme(e)} checked={changeTheme} />    */}
-                        </ToglleThemeDiv>
+                        <Switch onClick={DefTheme} checked={controlTheme}/>
+
                         <MoonIcon size="15" color="white"/>
                     </AlingRowToggleTheme>  
                     }

@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ModalLogin } from "../Modal/modalLogin";
-import { AlignRow, BackIcon, HeadBarContainer, LoggedTitle, LoggedTitleColor, LoginButton, LogoImagem, MenuIcon, SearchIcon } from "./headBarStyle";
+import { AlignRow, BackIcon, HeadBarContainer, LoggedTitle, LoggedTitleColor, LoginButton, LogoImagem, LogoutIcon, MenuIcon, SearchIcon } from "./headBarStyle";
 import {useRouter} from 'next/router'
 import { Search } from "../Search/search";
 import { PerfilPage } from "../Perfil/perfilPage";
+import UserContext from "@/context/userContext";
 
 interface props {
     backFunction?: any,
@@ -18,9 +19,23 @@ export const HeadBar = ({backFunction} : props) => {
     const [openSearch, setOpenSearch] = useState<Boolean>(false);
     const [openMenu, setOpenMenu] = useState<Boolean>(false);
 
+
+    const {user, logOut} = useContext(UserContext)
+
+
+    useEffect(() => {
+        if(user){
+            console.log(user)
+
+            setLogged(true)
+        }else{
+            setLogged(false)
+
+        }
+    }, [user])
+
     const  closeLoginModal = () => {
         setStateLoginModal(false)
-        setLogged(true)
     }
 
     const closeMenu = () => {
@@ -30,18 +45,18 @@ export const HeadBar = ({backFunction} : props) => {
 
   if(backFunction){
       return(
-        <HeadBarContainer style={{
-            width: '100%',
-            paddingLeft:'0px',
-
-            paddingRight:'50%',
-        }}>
+        <HeadBarContainer >
             <BackIcon onClick={() => backFunction() }size="32"/>
-            <LogoImagem style={{
-                transform: 'translateX(50%)'
-            }}>
+            <LogoImagem>
                 <Image onClick={() => route.push('/')} title="Logo" alt="Logo" layout="fill" src="/logos/LogoHeader.png"/>
             </LogoImagem>
+            {
+                logged &&
+                <LogoutIcon onClick={() => {
+                    logOut()
+                    backFunction()}}/>
+
+            }
         </HeadBarContainer>
       )
   }else{

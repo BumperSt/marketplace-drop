@@ -1,21 +1,28 @@
-import { InputContainer, InputStyled, InputTitle } from "./inputsStyles"
+import { InputContainer, InputStyled, InputTitle, TextAreaStyled } from "./inputsStyles"
 
 
 interface Props {
     Title: string,
     Style?: any,
     StyleInput?:any,
+    fontColor?: string,
     value: string,
     setValue: any,
-    type?:string,
-    createAccont?:boolean,
+    textArea?:boolean,
 }
 
-export const Input = ({Title, Style, value, setValue, StyleInput, type,createAccont}: Props) => {
+export const Input = ({Title, Style, value, setValue, StyleInput, fontColor, textArea}: Props) => {
     return(
-        <InputContainer createAccont={createAccont} inputType={type} style={Style}>
+        <InputContainer style={Style} fontColor={fontColor}>
             <InputTitle>{Title}</InputTitle>
-            <InputStyled style={StyleInput} value={value} onChange={(e) => setValue(e.target.value)}  ></InputStyled>
+            {
+                textArea ?
+                    <TextAreaStyled  style={StyleInput} value={value} onChange={(e) => setValue(e.target.value)}/>
+
+                :
+                    <InputStyled  style={StyleInput} value={value} onChange={(e) => setValue(e.target.value)}/>
+            }
+            
         </InputContainer>
     )
 }

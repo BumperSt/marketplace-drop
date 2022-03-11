@@ -10,4 +10,7 @@ const prefix = (route: string) => {
 export default {
   register: (data:IRegister) => api.post<ILoggedUser>(prefix('register'),data),
   login: (data:ILogin) => api.post<ILoggedUser>(prefix('login'),data),
+  logout: () => api.get('/logout'),
+  get: () => api.get('/user')
+
 }

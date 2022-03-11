@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     position: fixed;
+    overflow-y: auto;
     display: flex;
     background-color:white;
     flex-direction: column;
@@ -31,9 +32,9 @@ export const AndressContiner = styled.div`
     flex-direction: column;
     width: 90%;
     align-items: center;
-    min-height: 40%;
     padding:1rem;
     box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom:1rem;
 `
 
 export const AndressDiv = styled.div`

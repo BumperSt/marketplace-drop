@@ -1,4 +1,5 @@
 import { HeadBar } from "@/components/HeadBar/headBar"
+import { Input } from "@/components/Inputs/input"
 import { useState } from "react"
 import { AddButon, AlignAndressAndArrow, AndressContiner, AndressDiv, AndressName, AndressType, Arrow, Container, InputDiv, InputDivRow, InputEditAndress, InputName, SaveButton } from "./andressPageStyles"
 
@@ -10,9 +11,12 @@ export const AndressPage = ({closePage} : Props) => {
 
     const [editAndress , setEditAndress] = useState(false)
 
+    const [andressName, setAndressName] = useState("")
+
     const CloseEdit = () => {
         setEditAndress(false)
     }
+    
     return(
         <Container>
             {
@@ -20,23 +24,12 @@ export const AndressPage = ({closePage} : Props) => {
                 <>
                     <HeadBar backFunction={CloseEdit}/>
                     <AndressContiner>
-                        <InputDiv>
-                            <InputName>NOME</InputName>
-                            <InputEditAndress/>
-                        </InputDiv>
-                        <InputDiv>
-                            <InputName>CEP</InputName>
-                            <InputEditAndress/>
-                        </InputDiv>
-                        <InputDiv>
-                            <InputName>ENDEREÇO</InputName>
-                            <InputEditAndress/>
-                        </InputDiv>
-                        <InputDiv>
-                            <InputName>BAIRRO</InputName>
-                            <InputEditAndress/>
-                        </InputDiv>
-
+                        <Input Title="NOME" value={andressName} setValue={setAndressName}/>
+                        <Input Title="CEP" value={andressName} setValue={setAndressName}/>
+                        <Input Title="ENDEREÇO" value={andressName} setValue={setAndressName}/>
+                        <Input Title="BAIRRO" value={andressName} setValue={setAndressName}/>
+                        <Input Title="PAIS" value={andressName} setValue={setAndressName}/>
+                        <Input Title="Digite a senha para salvar" value={andressName} setValue={setAndressName}/>
                         <InputDivRow>
                             <InputDiv style={{width:'50%'}}>
                                 <InputName>CIDADE</InputName>

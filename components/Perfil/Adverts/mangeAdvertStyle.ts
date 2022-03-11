@@ -87,3 +87,34 @@ export const PublisherButton = styled.button`
     align-self: center;
     margin-top:1.5rem;
 `
+
+export const MarkToSell = styled.div`
+    
+    width: 90%;
+    margin-top:2rem;
+    margin-bottom:3rem;
+
+    display:flex;
+    flex-direction:row;
+    align-items:start;
+    font-size:12px;
+    padding-inline:.5rem;
+    div{
+        text-align:start;
+    }
+
+    h1:first-child{
+        font-weight:900;
+        font-size:14px;
+        margin-left: .5rem;
+
+    }
+    h1{
+        font-weight:400;
+        font-size:14px;
+        margin-left: .5rem;
+
+    }
+
+
+`

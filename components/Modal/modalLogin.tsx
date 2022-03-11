@@ -1,8 +1,10 @@
 import { AlingCenter, InputsContainer, LostPasswordText, ModalButton, ModalInput, ModalSelect, ModalSubTitle, ModalTitle, OurCreateNewText, TermsOfService } from "./modalStyle"
 import {Modal} from "./modal"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Input } from "../Inputs/input"
 import auth from "apiService/auth"
+import UserContext, { IUserContext } from "@/context/userContext"
+import { IUser } from "apiService/types/userTypes"
 
 interface Props {
     closeModal: any
@@ -14,7 +16,7 @@ export const ModalLogin = ({closeModal}: Props) => {
     const [login, setLogin] = useState<string>("")
     const [password, setPassword] = useState<string>("")
     const [email, setEmail] = useState<string>("")
-    const [confirmEmail, setConfirmEmail] = useState<string>("")
+    
     const [confirmPassword, setConfirmPassword] = useState<string>("")
     const [modalType, setModalType] = useState<'Login' | 'Register' | 'LostPassword'>("Login")
 
@@ -22,16 +24,22 @@ export const ModalLogin = ({closeModal}: Props) => {
     const [phoneNumber, setPhoneNumber] = useState<string>("")
     const [cpf, setCpf] = useState<string>("")
 
+    const {setUser} = useContext(UserContext)
+
 
     const Login = () => {
         auth.login({
             email,
             password
         }).then((response) => {
-            console.log(response)
+            setUser(response.data.user)
+            localStorage.setItem('@token', response.data.token)
+
+            closeModal()
         }).catch((error) => {
             console.log(error)
         })
+
     }
 
     const Register = () => {
@@ -43,6 +51,9 @@ export const ModalLogin = ({closeModal}: Props) => {
                 email,
                 password,
             }).then((response) => {
+                setUser(response.data.user)
+                localStorage.setItem('@token', response.data.token)
+
                 console.log(response);
             }).catch((error) => {
                 console.log(error);
@@ -59,7 +70,7 @@ export const ModalLogin = ({closeModal}: Props) => {
                     <ModalTitle>Aliquam eget dui turpis.</ModalTitle>
                     <ModalSubTitle>Cras in dui nunc.</ModalSubTitle>
         
-                    <ModalInput value={login} onChange={(e) => setLogin(e.target.value)} placeholder="Email"/>
+                    <ModalInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
                     <ModalInput value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="Senha"/>
                     <LostPasswordText onClick={() => setModalType('LostPassword')}>Esqueceu a senha? Clique aqui.</LostPasswordText>
                     <ModalButton onClick={() => Login()}>Acessar</ModalButton>

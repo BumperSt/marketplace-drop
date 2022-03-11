@@ -1,7 +1,7 @@
 import Image from "next/image"
-import { AdvertContainer, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn, AlingRow } from "../ActivyAdverts/activyAdvertsStyle"
-import { Modal } from "./modal"
-import { AlignRowButtons, ModalButton, ModalSubTitle, ModalTitle } from "./modalStyle"
+import { AdvertContainer, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn, AlingRow } from "./AdvertStyle"
+import { Modal } from "../../Modal/modal"
+import { AlignRowButtons, ModalButton, ModalSubTitle, ModalTitle } from "../../Modal/modalStyle"
 
 interface Props {
     setModalState:any,

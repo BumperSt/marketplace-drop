@@ -69,31 +69,7 @@ export const AlignRow = styled.div`
 
 `
 
-export const ToglleThemeDiv = styled.div`
-    align-items:center;
-    display:flex;
-    flex-direction: row;
-    border: solid 1px white;
-    border-radius: 40px;
-    padding: .2rem;
-    width: 50px;
-    margin-inline:.2rem;
-    @media (min-width: 768px){
-        height: 1rem;
 
-    }
-`
-
-export const SwitchBall = styled.div<{checked:boolean}>`
-    width:12px;
-    height:12px;
-    background-color:white;
-    border-radius:12px;
-    transition: margin .6s linear;
-    ${({checked}) => checked && `
-        margin-left: 70%;
-    `}
-`
 
 export const LogoImage = styled.div`
     position:relative;

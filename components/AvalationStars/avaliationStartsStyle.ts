@@ -16,8 +16,9 @@ export const Star = styled(AiFillStar)<{disabled:boolean}>`
 `
 
 export const AvaliationValue = styled.h1`
+    margin-left: .25rem;
     color:#FF7A00;
-    font-size:12px;
+    font-size:10px;
     @media (min-width: 768px) {
         font-size:36px;
     }

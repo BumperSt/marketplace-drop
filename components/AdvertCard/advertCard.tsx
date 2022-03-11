@@ -4,10 +4,11 @@ import {useRouter} from 'next/router'
 
 interface Props {
     type: 'advert' | 'vip' | 'searchAdvert'
-    advert:any
+    advert:any,
+    style?:any,
 }
 
-export const AdvertCard = ({advert, type} : Props) => {
+export const AdvertCard = ({advert, type, style} : Props) => {
     const route = useRouter()
 
     if(type == 'advert'){
@@ -21,7 +22,7 @@ export const AdvertCard = ({advert, type} : Props) => {
         )
     }else if(type == 'vip'){
         return(
-            <ItemCard>
+            <ItemCard style={style}>
                 <ItemBackgroud Large={true}>
                     <Image layout="fill" objectFit="cover" alt="teste" title="teste" src="/home/vip.png"></Image>
                 </ItemBackgroud>

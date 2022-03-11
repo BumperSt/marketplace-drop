@@ -72,7 +72,7 @@ export const ModalInput = styled.input`
     padding:.5rem;
     font-size:14px;
     font-weight:300;
-    width:90%;
+    width:85%;
     border:0px;
     background-color:${({theme}) => theme.colors.input.background};
     color:${({ theme }) => theme.colors.detalhes};
@@ -156,7 +156,7 @@ export const LostPasswordText = styled.h1`
     font-weight: 400;
     font-size:12px;
     text-align: start;
-    width:85%;
+    width:82%;
     margin-bottom:.5rem;
 `
 export const OurCreateNewText = styled.h1`
@@ -195,4 +195,8 @@ export const AlingCenter = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+`
+
+export const ItemCondicion = styled.div`
+
 `

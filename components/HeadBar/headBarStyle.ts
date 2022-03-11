@@ -1,4 +1,5 @@
 import { BiArrowBack, BiMenu, BiSearchAlt2 } from "react-icons/bi";
+import { RiShutDownLine } from "react-icons/ri";
 import styled from "styled-components";
 
 export const HeadBarContainer = styled.div<{otherBackgroundColor?: boolean}>`
@@ -86,7 +87,9 @@ export const MenuIcon = styled(BiMenu)`
 export const SearchIcon = styled(BiSearchAlt2)`
     
 `
+export const LogoutIcon = styled(RiShutDownLine)`
+
+`
 
 export const BackIcon = styled(BiArrowBack)`
-    margin-left: 10%;
 `
