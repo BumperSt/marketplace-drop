@@ -17,7 +17,7 @@ export const SelectStyledComponent = ({Title, value, setValue, options, fontColo
                 <option value="" disabled selected></option>
                 {
                     options.map(opt => (
-                        <option value={opt}>{opt}</option>
+                        <option key={opt} value={opt}>{opt}</option>
                     ))
                 }
             </SelectStyled>
