@@ -31,6 +31,8 @@ export const AndressContiner = styled.div`
     display:flex;
     flex-direction: column;
     width: 90%;
+    border-radius: 10px;
+
     align-items: center;
     padding:1rem;
     box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.2);

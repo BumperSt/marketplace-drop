@@ -41,4 +41,6 @@ export const GlobalStyles = createGlobalStyle`
     border-radius: 10px;
     font-weight: 700;
   }
+
+
 `

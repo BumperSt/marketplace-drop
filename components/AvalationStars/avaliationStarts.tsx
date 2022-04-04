@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { AlignRow, AvaliationValue, Star } from "./avaliationStartsStyle"
 
 interface Props{
-    avaliationValue:number,
+    avaliationValue?:number,
     size?:string|number,
     seeValue?:boolean,
     getStarSelected?:any,

@@ -47,8 +47,9 @@ export const HeadBar = ({backFunction} : props) => {
       return(
         <HeadBarContainer >
             <BackIcon onClick={() => backFunction() }size="32"/>
-            <LogoImagem>
-                <Image onClick={() => route.push('/')} title="Logo" alt="Logo" layout="fill" src="/logos/LogoHeader.png"/>
+            <LogoImagem onClick={() => {route.push('/')
+            backFunction()}}>
+                <Image  title="Logo" alt="Logo" layout="fill" src="/logos/LogoHeader.png"/>
             </LogoImagem>
             {
                 logged &&

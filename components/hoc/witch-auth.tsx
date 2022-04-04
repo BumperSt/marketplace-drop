@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react'
 import Router from 'next/router'
 import UserContext from 'context/userContext'
+import { LoadingPage } from '../LoadingPage/loadingPage'
 
 const withAuth = Page => {
     const Auth = (props) => {
@@ -15,7 +16,7 @@ const withAuth = Page => {
         if(user){
             return <Page {...props} />
         }else{
-            return <div>Loading...</div>
+            return <LoadingPage/>
         }
     }
 

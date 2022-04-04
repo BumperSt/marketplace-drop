@@ -51,7 +51,7 @@ export const TextAreaStyled = styled.textarea`
     width: 100%;
     font-size: 14px;
     min-height:4.5rem;
-    border-radius: 15px;
+    border-radius: 5px;
     padding-inline: .5rem;
     font-weight: 600;
     padding-block: .5rem;

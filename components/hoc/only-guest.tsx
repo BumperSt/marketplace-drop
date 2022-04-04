@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react'
 import Router from 'next/router'
 import UserContext from 'context/userContext'
+import { LoadingPage } from '../LoadingPage/loadingPage'
 
 const onlyGuest = Page => {
 
@@ -13,7 +14,7 @@ const onlyGuest = Page => {
         },[user])
 
         if(user){
-            return <div>Loading...</div>
+            return <LoadingPage/>
         }else{
             return <Page {...props} />
         }

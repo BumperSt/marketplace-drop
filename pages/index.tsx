@@ -1,14 +1,15 @@
 import { HeadBar } from "@/components/HeadBar/headBar"
-import { Container } from "@/components/HomePage/styleHomePage"
 import HomeCarrousel from "@/components/ImageCarrousel/homeCarrousel"
-import { LastAdvertsHorizontalList } from "@/components/LastAdvertsHorizontalList/LastAdvertsHorizontalList"
 import { ListHorizontalCategorys } from "@/components/ListHorizontalCategorys/ListHorizontalCategorys"
 import { ListHorizontaltems } from "@/components/ListHorizontaltems/listHorizontaltems"
 import Image from "next/image"
 import { useState } from "react"
+import styled from "styled-components"
 
 
-
+const Container = styled.div`
+  background-color: ${({ theme }) => theme.colors.body};
+`
 const HomePage = () => {
 
   const [tempStateInfo, setTempStateInfo] = useState(true)
@@ -25,7 +26,6 @@ const HomePage = () => {
         <ListHorizontaltems ListType="Small"/>
         <ListHorizontaltems ListType="Large"/>
         <ListHorizontalCategorys/>
-        <LastAdvertsHorizontalList/>
 
         <div style={{
           display:'flex',
@@ -35,7 +35,6 @@ const HomePage = () => {
 
         </div>
         
-        <LastAdvertsHorizontalList/>
 
     </Container>
   )

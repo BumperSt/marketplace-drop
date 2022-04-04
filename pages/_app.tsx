@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '@/theme/GlobalStyles';
 import { UseTheme } from '@/theme/useTheme';
-import SelectTheme from '@/components/SelectTheme/selectTheme';
 import Head from 'next/head';
 import { BottomBar } from '@/components/BottomBar/bottomBar';
 import UserContext, { IUserContext } from '@/context/userContext';
 import auth from 'apiService/auth';
 import { IUser } from 'apiService/types/userTypes';
+import { LoadingPage } from '@/components/LoadingPage/loadingPage';
 const Container = styled.div`
 
 `;
@@ -97,7 +97,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 )
   }else{
     return(
-      <h1>Cuy</h1>
+      <LoadingPage/>
     )
   }
 

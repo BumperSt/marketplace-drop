@@ -9,6 +9,7 @@ import { ModalToManageAdvert } from "./Adverts/modalToManageAdvert"
 import { AndressPage } from "./Andress/andressPage"
 
 import { AdIcon, AlingProfileAndIcon, Container, ProfileName, ProfilePageButton, StoreIcon, TemporaryCrown, TruckIcon, UserIcon } from "./perfilPageStyle"
+import { RegistrationData } from "./RegistrationData/registrationData"
 
 
 interface Props {
@@ -30,6 +31,8 @@ export const PerfilPage = ({closeModal}: Props) => {
                     <AndressPage closePage={closePage}/>
                 :openPage == 'Adverts'  ?
                     <AdvertsPage closePage={closePage}/>
+                :openPage == 'RegistrationData'?
+                    <RegistrationData closePage={closePage}/>
                 :
                     <HeadBar  backFunction={closeModal}/>
 
@@ -40,13 +43,14 @@ export const PerfilPage = ({closeModal}: Props) => {
                     <ProfileName>Sneaker Store</ProfileName>
                     <TemporaryCrown/>
                 </AlingProfileAndIcon>
-                <ProfilePageButton onClick={() => Router.push('store')}>
+                <ProfilePageButton onClick={() => {Router.push('store') 
+                closeModal()}}>
                     <StoreIcon/>Minha Loja
                 </ProfilePageButton>
                 <ProfilePageButton onClick={()=> setOpenPage('Adverts')}>
                     <AdIcon/>Meus anúncios
                 </ProfilePageButton>
-                <ProfilePageButton>
+                <ProfilePageButton  onClick={()=> setOpenPage('RegistrationData')}>
                     <UserIcon/>Dados cadastrais
                 </ProfilePageButton>
                 <ProfilePageButton onClick={()=> setOpenPage('Andress')}>
