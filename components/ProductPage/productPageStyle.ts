@@ -45,7 +45,7 @@ export const ProductImage = styled.div`
     display: flex;
     margin-top:.5rem;
     position: relative;
-    width:10rem;
+    width:80%;
     height:8rem;
 
     @media(min-width: 768px){
@@ -55,6 +55,8 @@ export const ProductImage = styled.div`
 
 export const ProductTitle = styled.h1`
     text-align: center;
+    font-weight: 700;
+    font-size:24px;
     max-width:80%;
     margin-top:.5rem;
     @media (min-width: 768px) {
@@ -65,12 +67,12 @@ export const ProductTitle = styled.h1`
 export const ProductPriceContainer = styled.div`
     padding-inline:.8rem;
     padding-block:.5rem;
-    margin-top: .5rem;
+    margin-block:.8rem;
+    border:solid 1px ${({ theme }) => theme.colors.stroke};
     background-color:white;
     display:flex;
     flex-direction: column;
-    border-radius:10px;
-    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius:15px;
     justify-content: center;
     width: 100%;
     overflow-y: auto;
@@ -85,42 +87,42 @@ export const PriceDiv = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     padding-block:.3rem;
+    justify-content: space-between;
     border-bottom: 1px solid black;
     :last-child{
         border-bottom: 0px ;
     }
 `
 
-export const SizeButton = styled.button`
+export const SizeButton = styled.div`
     margin-inline:.1rem;
     padding-inline:.4rem;
     padding-block:.2rem;
     font-size: 18px;
     font-weight: 700;
     border-radius: 5px;
+    background-color: ${({ theme }) => theme.colors.shoesSizeBackground};
+    color:white;
 `
 
 export const PriceValue = styled.h1`
     font-size:18px;
+    
+    
     font-weight: 700;
 `
 
-export const PlusIcon = styled(BsPlusLg)`
-    :hover{
-        cursor:pointer;
-    }
-`
 
 export const ProductDescreptionDiv = styled.div`
     padding-inline:.8rem;
     padding-block:.5rem;
-    background-color:${({ theme }) => theme.colors.productPrice.descreptionDiv};
+    margin-block:1rem;
+
     display:flex;
     flex-direction: column;
-    border-radius:10px;
-    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius:5px;
+    border:solid 1px ${({ theme }) => theme.colors.stroke};
     justify-content: center;
     overflow-y: auto;
     width: 100%;
@@ -129,6 +131,7 @@ export const ProductDescreptionDiv = styled.div`
 export const AlignPrices = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 `
 
 export const AlignColumn = styled.div`
@@ -149,15 +152,16 @@ export const AlignRowInDesktop = styled.div`
 
 
 export const DescreptionTitle = styled.h1`
-    font-weight: 500;
+    font-weight: 4000;
     font-size: 12px;
     @media (min-width: 768px) {
         font-size:24px;
     }
 `
 export const DescreptionText = styled(DescreptionTitle)`
-    font-weight: 400;
-    margin-top: .2rem;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: .1rem;
 `
 
 
