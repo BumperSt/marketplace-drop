@@ -13,20 +13,12 @@ export const AvaliationStarts = ({avaliationValue,size, seeValue, getStarSelecte
 
     const stars = [1, 2, 3, 4, 5]
 
-    const [avalationValueHere, setAvaliationValueHere] = useState(0)
-
-    useEffect(() => {
-        setAvaliationValueHere(avaliationValue)
-    }, [getStarSelected])
-
-
-
 
     return(
         <AlignRow>
             {
                 stars.map((star) => (
-                    <Star onClick={() =>  star == avalationValueHere ? setAvaliationValueHere(0) : setAvaliationValueHere(star)} key={star} size={size} disabled={getStarSelected ? (star) <= avalationValueHere : (star) <= avaliationValue}/>
+                    <Star onClick={() =>  star == avaliationValue ? getStarSelected(0) : getStarSelected(star)} key={star} size={size} disabled={getStarSelected ? (star) <= avaliationValue : (star) <= avaliationValue}/>
                 ))
             }
             {

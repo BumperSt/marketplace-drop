@@ -31,8 +31,8 @@ export const ConfirmationModal = ({setModalState}: Props) => {
                 alignItems: 'center',
                 padding:'1rem'
             }}>
-                <ModalTitle>Confirmação</ModalTitle>
-                <ModalSubTitle>Deseja realmente excluir o item?</ModalSubTitle>
+                <ModalTitle>Nulla tempus interdum tellus vel placerat?</ModalTitle>
+                <ModalSubTitle>Donec facilisis cursus augue, vel convallis dolor volutpat eu.</ModalSubTitle>
                 <Advert anuncio={{
                     'title' : 'NIKE SNEAKERS PRO STREET I',
                     'price' : '1599,99',

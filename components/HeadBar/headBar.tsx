@@ -47,7 +47,7 @@ export const HeadBar = ({backFunction, notLogo} : props) => {
   if(backFunction){
       return(
         <HeadBarContainer >
-            <BackIcon onClick={() => backFunction() }size="32"/>
+            <BackIcon onClick={() => backFunction() } size="32"/>
             {
                 !notLogo &&
             
@@ -58,9 +58,10 @@ export const HeadBar = ({backFunction, notLogo} : props) => {
             }
             {
                 logged &&
-                <LogoutIcon onClick={() => {
+                <LogoutIcon size="32" onClick={() => {
                     logOut()
-                    backFunction()}}/>
+                    backFunction()}}
+                    />
 
             }
         </HeadBarContainer>

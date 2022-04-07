@@ -65,6 +65,9 @@ export const LogoImagem = styled.div`
         width:2rem;
         
     }
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
     span {
     position: unset !important;
         img {

@@ -80,7 +80,7 @@ import { useState } from "react"
                         :actualPage == "anunciosAvaliações" &&
                         <AvaliationDiv>
                             <AvaliationTitle>Avalie o vendedor</AvaliationTitle>
-                            <AvaliationStarts getStarSelected={setStarValue} avaliationValue={starValue}  size={28} />
+                            <AvaliationStarts getStarSelected={(value) => setStarValue(value)} avaliationValue={starValue}  size={28} />
                             <Input placeholder="Escreva um comentário"  fontColor="secondary" value={avaliationDescreption} setValue={setAvaliationDescrepetion} textArea={true} />
                             <AvaliationPostButton>Postar</AvaliationPostButton>
                             <AvaliationComments>
