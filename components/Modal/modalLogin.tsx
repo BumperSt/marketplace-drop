@@ -1,10 +1,11 @@
-import { AlingCenter, InputsContainer, LostPasswordText, ModalButton, ModalInput, ModalSelect, ModalSubTitle, ModalTitle, OurCreateNewText, TermsOfService } from "./modalStyle"
+import { AlingCenter, BackIcon, InputsContainer, LostPasswordText, ModalButton, ModalInput, ModalSelect, ModalSubTitle, ModalTitle, OurCreateNewText, TermsOfService } from "./modalStyle"
 import {Modal} from "./modal"
 import { useContext, useState } from "react"
 import { Input } from "../Inputs/input"
 import auth from "apiService/auth"
 import UserContext, { IUserContext } from "@/context/userContext"
 import { IUser } from "apiService/types/userTypes"
+import { HeadBar } from "../HeadBar/headBar"
 
 interface Props {
     closeModal: any
@@ -66,6 +67,7 @@ export const ModalLogin = ({closeModal}: Props) => {
     if(modalType == 'Login'){
         return(
             <Modal backModal={() => closeModal()}>
+                <HeadBar notLogo={true} backFunction={closeModal}/>
                 <AlingCenter>
                     <ModalTitle>Aliquam eget dui turpis.</ModalTitle>
                     <ModalSubTitle>Cras in dui nunc.</ModalSubTitle>
@@ -85,12 +87,13 @@ export const ModalLogin = ({closeModal}: Props) => {
     }else if(modalType == 'Register'){
         return(
             <Modal backModal={() => setModalType('Login')}>
+                <HeadBar notLogo={true} backFunction={() => setModalType('Login')}/>
 
                     <ModalTitle style={{
                         fontSize:'24px',
                         maxWidth:'60%',
                         lineHeight:'28,13px',
-                        marginBlock:'2rem'
+                        marginBlock:'1rem'
                     }}>Lorem ipsum dolor sit amet.</ModalTitle>
 
                     <ModalInput value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Nome Completo"/>
@@ -118,7 +121,9 @@ export const ModalLogin = ({closeModal}: Props) => {
                     </TermsOfService>
 
 
-                <ModalButton onClick={()=> Register()}>Cadastrar</ModalButton>
+                <ModalButton style={{
+                    marginBottom:'5rem'
+                }} onClick={()=> Register()}>Cadastrar</ModalButton>
     
             </Modal>
     
@@ -126,6 +131,8 @@ export const ModalLogin = ({closeModal}: Props) => {
     }else{
         return(
             <Modal backModal={() => setModalType('Login')}>
+                <HeadBar notLogo={true} backFunction={() => setModalType('Login')}/>
+
             <AlingCenter style={{
                 marginBottom:'5rem'
             }}>

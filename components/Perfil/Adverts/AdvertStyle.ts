@@ -65,8 +65,8 @@ export const AdvertContainer = styled.div`
     text-align: start;
     justify-content: space-between;
 
-
-    padding: .5rem;
+    padding-block:.5rem;
+    padding-inline:.8rem;
     background-color:${({theme}) => theme.colors.vipAnuncioBackground};
     border-radius: 10px;
     margin-bottom: .5rem;
@@ -96,7 +96,6 @@ export const AdvertProductTitle = styled.h1`
     color:${({theme}) => theme.colors.fonts[0]};
     font-size: 13px;
     font-weight: 700;
-    margin-right: 1rem;
     margin-bottom: .2rem;
     @media (max-width: 300px){
         font-size:10px;

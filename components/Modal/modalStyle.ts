@@ -1,4 +1,4 @@
-import { BiArrowBack } from 'react-icons/bi'
+import { BiArrowBack, BiShare } from 'react-icons/bi'
 import styled from 'styled-components'
 
 export const ModalBackground = styled.div`
@@ -7,13 +7,13 @@ export const ModalBackground = styled.div`
     position: fixed;
     top: 0;
     left:0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color:rgba(0, 0, 0, 0.6);
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    
     z-index: 99;
     @media (min-width: 768px) {
         justify-content: flex-start;
@@ -21,8 +21,6 @@ export const ModalBackground = styled.div`
 `
 
 export const BackIcon = styled(BiArrowBack)`
-    position: absolute;
-    left: 10%;
     
 `
 
@@ -34,7 +32,7 @@ export const ModalContainer = styled.div`
     align-items: center;
     text-align: center;
     width: 100vw;
-    height: 100vh;
+   height: 100vh;
     @media (min-width: 768px) {
         margin-top: 5%;
         padding: .7rem;
@@ -54,7 +52,7 @@ export const ModalTitle = styled.h1`
     }
 `
 
-export const ModalSubTitle = styled.h1`
+export const ModalSubTitle = styled.p`
     font-size: 24px;
     font-weight:500;
     line-height: 28px;
@@ -72,7 +70,7 @@ export const ModalInput = styled.input`
     padding:.5rem;
     font-size:14px;
     font-weight:300;
-    width:85%;
+    width:90%;
     border:0px;
     background-color:${({theme}) => theme.colors.input.background};
     color:${({ theme }) => theme.colors.detalhes};
@@ -199,4 +197,17 @@ export const AlingCenter = styled.div`
 
 export const ItemCondicion = styled.div`
 
+`
+
+export const AlignRowHeaderDiv = styled.div`
+    display:flex;
+    width: 100%;
+    align-items: center;
+    padding-inline:5%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-block:.5rem;
+`
+
+export const ShareIcon = styled(BiShare)`
 `

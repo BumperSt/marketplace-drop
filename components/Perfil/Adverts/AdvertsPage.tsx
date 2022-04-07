@@ -6,6 +6,7 @@ import { ModalToManageAdvert } from "./modalToManageAdvert"
 import { ModalExcludeAdvert } from "./modalExcludeAdvert"
 import { HeadBar } from "@/components/HeadBar/headBar"
 import { Switch } from "@/components/Inputs/swith"
+import { Advert } from "./Advert"
 
 interface props {
     closePage:any
@@ -51,20 +52,7 @@ export const AdvertsPage = ({closePage}:props) => {
                     {
                         anuncios &&
                         anuncios.map((anuncio) => (
-                            <AdvertContainer key={anuncio.id} onClick={() => setOpenEditAdvert(true)}>
-                                <AlingRow>
-                                    <AdvertProductImage>
-                                        <Image layout="fill" objectFit="cover" src="/temporary/itens.png"/>
-                                    </AdvertProductImage>
-                                    <AlignColumn>
-                                        <AdvertProductTitle>{anuncio.title}</AdvertProductTitle>
-                                        <AdvertProductPrice>R$ {anuncio.price}</AdvertProductPrice>
-                                    </AlignColumn>
-                                    <Arrow size={20}/>
-                                </AlingRow>
-                                <AlignIcon>
-                                </AlignIcon>
-                            </AdvertContainer>
+                            <Advert anuncio={anuncio} key={anuncio.id} setOpenEditAdvert={setOpenEditAdvert}/>
                 
                         ))
                     }

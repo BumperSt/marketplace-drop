@@ -12,6 +12,7 @@ import { useState } from "react"
     const [actualPage, setActualPage] = useState("anunciosAtivos")
 
     const [avaliationDescreption, setAvaliationDescrepetion] = useState("")
+    const [starValue, setStarValue] = useState(0)
 
     return(
         <Container>
@@ -79,7 +80,7 @@ import { useState } from "react"
                         :actualPage == "anunciosAvaliações" &&
                         <AvaliationDiv>
                             <AvaliationTitle>Avalie o vendedor</AvaliationTitle>
-                            <AvaliationStarts size={28} />
+                            <AvaliationStarts getStarSelected={setStarValue} avaliationValue={starValue}  size={28} />
                             <Input placeholder="Escreva um comentário"  fontColor="secondary" value={avaliationDescreption} setValue={setAvaliationDescrepetion} textArea={true} />
                             <AvaliationPostButton>Postar</AvaliationPostButton>
                             <AvaliationComments>

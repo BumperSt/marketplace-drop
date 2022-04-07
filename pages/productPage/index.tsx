@@ -1,8 +1,9 @@
 import { HeadBar } from "@/components/HeadBar/headBar"
 import { ListHorizontaltems } from "@/components/ListHorizontaltems/listHorizontaltems"
 import { ModalOffer } from "@/components/Modal/modalOffer"
+import { OffersAvaliable } from "@/components/Modal/offersAvailable"
 import { Arrow } from "@/components/Perfil/Adverts/AdvertStyle"
-import { AlignColumn, AlignIcons, AlignPrices, AlignRowInDesktop, AlingCollumDesktop, AlingRowDesktop, BackIcon, Container, ContainerProductPage, DescreptionText, DescreptionTitle, PriceDiv, PriceValue, ProductDescreptionDiv, ProductImage, ProductPriceContainer, ProductTitle, ShareIcon, SizeButton } from "@/components/ProductPage/productPageStyle"
+import { AlignColumn, AlignIcons, AlignPrices, AlignRowInDesktop, AlingCollumDesktop, AlingRowDesktop, BackIcon, Container, ContainerProductPage, DescreptionText, DescreptionTitle, PriceDiv, PriceValue, ProductDescreptionDiv, ProductImage, ProductPriceContainer, ProductTitle, ShareIcon, SizeButton, StyledLine } from "@/components/ProductPage/productPageStyle"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useState } from "react"
@@ -11,7 +12,7 @@ const ProductPage = () => {
 
     const router = useRouter()
     const [openOfferModal, setOpenOfferModal] = useState(false)
-
+    const sizes = [46,44,42,40,38,36]
 
     return(
         <Container>
@@ -29,36 +30,23 @@ const ProductPage = () => {
                         </ProductImage>
                         <ProductTitle>MIKE LAIR 2 RED HOT SPECIAL EDITION</ProductTitle>                       
                         <ProductPriceContainer>
-                            <PriceDiv>
-                                <SizeButton>46</SizeButton>
-                                <PriceValue>R$ 999,99</PriceValue>
-                                <Arrow size={20} onClick={() => setOpenOfferModal(true)}/>
-                            </PriceDiv>
-                            <PriceDiv>
-                                <SizeButton>46</SizeButton>
-                                <PriceValue>R$ 999,99</PriceValue>
-                                <Arrow size={20} onClick={() => setOpenOfferModal(true)}/>
-                            </PriceDiv>
-                            <PriceDiv>
-                                <SizeButton>46</SizeButton>
-                                <PriceValue>R$ 999,99</PriceValue>
-                                <Arrow size={20} onClick={() => setOpenOfferModal(true)}/>
-                            </PriceDiv>
-                            <PriceDiv>
-                                <SizeButton>46</SizeButton>
-                                <PriceValue>R$ 999,99</PriceValue>
-                                <Arrow size={20} onClick={() => setOpenOfferModal(true)}/>
-                            </PriceDiv>
-                            <PriceDiv>
-                                <SizeButton>46</SizeButton>
-                                <PriceValue>R$ 999,99</PriceValue>
-                                <Arrow size={20} onClick={() => setOpenOfferModal(true)}/>
-                            </PriceDiv>
-                            <PriceDiv>
-                                <SizeButton>46</SizeButton>
-                                <PriceValue>R$ 999,99</PriceValue>
-                                <Arrow size={20} onClick={() => setOpenOfferModal(true)}/>
-                            </PriceDiv>
+                            {
+                                sizes.map((size, index) => (
+                                    <>
+                                        <PriceDiv key={index} onClick={() => setOpenOfferModal(true)}>
+                                            <SizeButton>{size}</SizeButton>
+                                            <PriceValue>R$ 999,99</PriceValue>
+                                            <Arrow size={20} />
+                                        </PriceDiv>
+                                        {
+                                            index !== (sizes.length-1) && <StyledLine/>
+                                        }
+                                    </>
+
+                                ))
+                            }
+    
+                       
                         </ProductPriceContainer>
 
                     </AlingCollumDesktop>
@@ -100,7 +88,7 @@ const ProductPage = () => {
             </ContainerProductPage>
             {
                 openOfferModal &&
-                <ModalOffer setModalState={setOpenOfferModal}/>
+                <OffersAvaliable setModalState={setOpenOfferModal}/>
             }
         </Container>
     )

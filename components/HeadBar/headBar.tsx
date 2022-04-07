@@ -9,9 +9,10 @@ import UserContext from "@/context/userContext";
 
 interface props {
     backFunction?: any,
+    notLogo?:boolean,
 }
 
-export const HeadBar = ({backFunction} : props) => {
+export const HeadBar = ({backFunction, notLogo} : props) => {
 
     const route = useRouter()
     const [stateLoginModal, setStateLoginModal] = useState<Boolean>(false);
@@ -47,10 +48,14 @@ export const HeadBar = ({backFunction} : props) => {
       return(
         <HeadBarContainer >
             <BackIcon onClick={() => backFunction() }size="32"/>
-            <LogoImagem onClick={() => {route.push('/')
-            backFunction()}}>
-                <Image  title="Logo" alt="Logo" layout="fill" src="/logos/LogoHeader.png"/>
-            </LogoImagem>
+            {
+                !notLogo &&
+            
+                <LogoImagem onClick={() => {route.push('/')
+                backFunction()}}>
+                    <Image  title="Logo" alt="Logo" layout="fill" src="/logos/LogoHeader.png"/>
+                </LogoImagem>
+            }
             {
                 logged &&
                 <LogoutIcon onClick={() => {

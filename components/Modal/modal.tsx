@@ -3,12 +3,13 @@ import { BackIcon, ModalBackground, ModalContainer } from "./modalStyle"
 
 interface Props {
     children:any,
-    backModal:any
+    backModal:any,
+    modalStyle?:any
 }
 
 
 
-export const Modal = ({children, backModal}:Props) => {
+export const Modal = ({children, backModal, modalStyle}:Props) => {
 
     const ref = useRef(null)
 
@@ -28,7 +29,7 @@ export const Modal = ({children, backModal}:Props) => {
 
     return(
         <ModalBackground >
-            <ModalContainer ref={ref}>
+            <ModalContainer style={modalStyle} ref={ref}>
 
                 {children}
             </ModalContainer>

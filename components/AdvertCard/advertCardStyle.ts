@@ -41,7 +41,6 @@ export const VipItemDiv = styled.div`
 export const VipItemTitle = styled.h1`
     font-weight:600;
     font-size:9px;
-    font-weight: 500;
     @media (min-width: 768px){
         font-size:24px;
     }
@@ -63,11 +62,15 @@ export const AlingRowVipSizeAndPrice = styled.div`
     
 `
 
-export const VipSize = styled.h1`
+export const VipSize = styled.div`
     background-color: ${({ theme }) => theme.colors.shoesSizeBackground};
+    display:flex;
+    justify-content: center;
+    align-items: center;
     color:white;
     font-size:9px;
-    padding:3px;
+    font-weight: 900;
+    padding: .15rem;
     margin-left: .3rem;
     border-radius:5px;
     

@@ -58,6 +58,8 @@ export const ProductTitle = styled.h1`
     font-weight: 700;
     font-size:24px;
     max-width:80%;
+    margin-bottom:.8rem;
+
     margin-top:.5rem;
     @media (min-width: 768px) {
         max-width: 100%;
@@ -67,7 +69,7 @@ export const ProductTitle = styled.h1`
 export const ProductPriceContainer = styled.div`
     padding-inline:.8rem;
     padding-block:.5rem;
-    margin-block:.8rem;
+    margin-bottom:.8rem;
     border:solid 1px ${({ theme }) => theme.colors.stroke};
     background-color:white;
     display:flex;
@@ -89,10 +91,17 @@ export const PriceDiv = styled.div`
     align-items: center;
     padding-block:.3rem;
     justify-content: space-between;
-    border-bottom: 1px solid black;
     :last-child{
         border-bottom: 0px ;
     }
+`
+
+export const StyledLine = styled.hr`
+    width: 90%;
+    align-self: center;
+    margin-bottom: .25rem;
+    height: 1px;
+    background-color: ${({ theme }) => theme.colors.stroke};
 `
 
 export const SizeButton = styled.div`
@@ -108,8 +117,9 @@ export const SizeButton = styled.div`
 
 export const PriceValue = styled.h1`
     font-size:18px;
-    
-    
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
     font-weight: 700;
 `
 
