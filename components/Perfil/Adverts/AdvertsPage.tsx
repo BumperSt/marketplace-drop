@@ -1,4 +1,4 @@
-import { ActivyAdvertsTitle, AdvertButton, AdvertsContainer, AdvertsScroll, Container, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn, AlignIcon, AdvertContainer,AlingRow, Arrow, SelectAdvertTypeText } from "./AdvertStyle"
+import { ActivyAdvertsTitle, AdvertButton, AdvertsContainer, AdvertsScroll, Container, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn, AlignIcon, AdvertContainer,AlingRow, Arrow, SelectAdvertTypeText, AlingRowSwithAndText } from "./AdvertStyle"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 
@@ -21,10 +21,6 @@ export const AdvertsPage = ({closePage}:props) => {
     const [disponibles, setDisponibles] = useState(false)
     const [openExcludeAdvert, setOpenExcludeAdvert] = useState(false)
 
-    const cu = () => {
-        setDisponibles(!disponibles)
-    }
-
     useEffect(() => {
         let tempAnuncions = []
         for (let index = 0; index < 20; index++) {
@@ -40,11 +36,11 @@ export const AdvertsPage = ({closePage}:props) => {
 
     return(
         <Container>       
-            <AlingRow>
+            <AlingRowSwithAndText>
                 <SelectAdvertTypeText>Disponíveis</SelectAdvertTypeText>
-                <Switch styleBall={{backgroundColor:'#2A2A2A'}} styleDiv={{border:'solid 1px #2A2A2A'}}  onClick={cu} checked={disponibles}/>
+                <Switch styleBall={{backgroundColor:'#2A2A2A'}} styleDiv={{border:'solid 1px #2A2A2A'}}  onClick={() => setDisponibles(!disponibles)} checked={disponibles}/>
                 <SelectAdvertTypeText>Vendidos</SelectAdvertTypeText>
-            </AlingRow>
+            </AlingRowSwithAndText>
             
             <AdvertsContainer>
                 <AdvertsScroll>

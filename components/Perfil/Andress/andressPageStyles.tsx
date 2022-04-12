@@ -16,7 +16,6 @@ export const Container = styled.div`
         width: 100%;
         height: 100%;
         margin:0rem;
-        justify-content: center;
 
     }
 `
@@ -24,9 +23,9 @@ export const Container = styled.div`
 export const AlignAndressAndArrow = styled.div`
     display:flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
-
 `
 
 export const AndressCollum = styled.div`
@@ -56,9 +55,13 @@ export const AndressDiv = styled.div`
     width: 100%;
     display:flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin-block: 1rem;
     @media (min-width: 768px){
         margin-block: .3rem;
+        width:50%;
+
     }
     
 `
@@ -70,6 +73,7 @@ export const AndressType = styled.h1`
     text-align:start;
     justify-self: start;
     color:${({theme}) => theme.colors.detalhes};
+    
 `
 
 export const AndressName = styled.h1`

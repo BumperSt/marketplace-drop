@@ -3,7 +3,7 @@ import { AvaliationStarts } from "@/components/AvalationStars/avaliationStarts"
 import { HeadBar } from "@/components/HeadBar/headBar"
 import withAuth from "@/components/hoc/witch-auth"
 import { Input } from "@/components/Inputs/input"
-import { Container, FaceIcon, HeadDiv, InstaIcon, PageContent, ProfilePictureImage, CollumDiv, SocialIcons, StoreName, StorePageButton, StoreWallpaper, WppIcon, RowDiv, FilterButton, AdvertsDiv, AvaliationDiv, AvaliationTitle, AvaliationPostButton, AvaliationComments, AvaliationCommentDiv, AvaliationCommentTitle, AvaliationComment, UserNameComment, AlignRow } from "@/components/StorePage/storePageStyles"
+import { Container, FaceIcon, HeadDiv, InstaIcon, PageContent, ProfilePictureImage, CollumDiv, SocialIcons, StoreName, StorePageButton, StoreWallpaper, WppIcon, RowDiv, FilterButton, AdvertsDiv, AvaliationDiv, AvaliationTitle, AvaliationPostButton, AvaliationComments, AvaliationCommentDiv, AvaliationCommentTitle, AvaliationComment, UserNameComment, AlignRow, RowFilter, AlingCollumInDesktop } from "@/components/StorePage/storePageStyles"
 import Image from "next/image"
 import { useState } from "react"
 
@@ -31,9 +31,9 @@ import { useState } from "react"
                         alignSelf: 'flex-end'
                     }}>
                         <SocialIcons>
-                            <InstaIcon/>
-                            <FaceIcon/>
-                            <WppIcon/>
+                            <InstaIcon size='25'/>
+                            <FaceIcon size='25'/>
+                            <WppIcon size='25'/>
                         </SocialIcons>
                     </CollumDiv>
                 </CollumDiv>
@@ -50,14 +50,12 @@ import { useState } from "react"
                     <StorePageButton>enviar mensagem</StorePageButton>
                 </RowDiv>
                 <CollumDiv>
-                    <RowDiv style={{
-                        justifyContent: 'space-around'
-                    }}>
+                    <RowFilter>
 
                         <FilterButton onClick={() => setActualPage("anunciosAtivos")} active={actualPage === "anunciosAtivos"}>4 anúncios ativos</FilterButton>
                         <FilterButton onClick={() => setActualPage("anunciosVendidos")}  active={actualPage === "anunciosVendidos"}>2 vendidos</FilterButton>
                         <FilterButton onClick={() => setActualPage("anunciosAvaliações")} active={actualPage === "anunciosAvaliações"}>4 avaliações</FilterButton>                        
-                    </RowDiv>
+                    </RowFilter>
                     {
                         actualPage == "anunciosAtivos" ?
                         <AdvertsDiv>
@@ -72,17 +70,19 @@ import { useState } from "react"
                         <AdvertsDiv>
                             <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
                             <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
-
                             <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
-
                             <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
                         </AdvertsDiv>
                         :actualPage == "anunciosAvaliações" &&
                         <AvaliationDiv>
-                            <AvaliationTitle>Avalie o vendedor</AvaliationTitle>
-                            <AvaliationStarts getStarSelected={(value) => setStarValue(value)} avaliationValue={starValue}  size={28} />
-                            <Input placeholder="Escreva um comentário"  fontColor="secondary" value={avaliationDescreption} setValue={setAvaliationDescrepetion} inputType='textarea' />
-                            <AvaliationPostButton>Postar</AvaliationPostButton>
+                            <AlingCollumInDesktop>
+                                <AvaliationTitle>Avalie o vendedor</AvaliationTitle>
+                                <AvaliationStarts getStarSelected={(value) => setStarValue(value)} avaliationValue={starValue}  size={28} />
+                                <Input Style={{
+                                    width: '100%',
+                                }}placeholder="Escreva um comentário"  fontColor="secondary" value={avaliationDescreption} setValue={setAvaliationDescrepetion} inputType='textarea' />
+                                <AvaliationPostButton>Postar</AvaliationPostButton>
+                            </AlingCollumInDesktop>
                             <AvaliationComments>
                                 <AvaliationCommentDiv>
                                     <AlignRow>

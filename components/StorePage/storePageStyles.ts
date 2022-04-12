@@ -45,6 +45,19 @@ export const RowDiv = styled.div`
     flex-direction: row;
 `
 
+export const RowFilter = styled.div`
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding:.5rem;
+    @media(min-width:768px){
+        width:8rem;
+        padding:.25rem;
+
+    }
+`
+
 
 export const CollumDiv = styled.div`
     display:flex;
@@ -60,12 +73,20 @@ export const SocialIcons = styled.div`
 
 export const FaceIcon = styled(FaFacebookF)`
     margin-inline: .5rem;
+    :hover{
+        cursor: pointer;
+    }
 `
 export const InstaIcon = styled(FaInstagram)`
+    :hover{
+        cursor: pointer;
+    }
 `
 
 export const WppIcon = styled(FaWhatsapp)`
-
+    :hover{
+        cursor: pointer;
+    }
 `
 
 export const StorePageButton = styled.button`
@@ -75,11 +96,18 @@ export const StorePageButton = styled.button`
     color:black;
     border-radius: 5px;
     padding: .5rem;
+    @media(min-width:768px){
+        font-size:14px;
+        padding-block: .25rem;
+        padding-inline: .5rem;
+    }
+    :hover{
+        cursor: pointer;
+    }
 `
 
 export const FilterButton = styled.button<{active?: boolean}>`
     border:${({active, theme}) => active && `solid 1px ${theme.colors.stroke}`};
-    margin-top: .5rem;
     background-color:white;
     color:black;
     border-radius: 5px;
@@ -87,6 +115,9 @@ export const FilterButton = styled.button<{active?: boolean}>`
     padding-inline: .5rem;
     padding-block: .3rem;
     font-size: 10px;
+    @media(min-width:768px){
+        font-size:14px;
+    }
 `
 
 export const AdvertsDiv = styled.div`
@@ -102,13 +133,31 @@ export const AvaliationDiv = styled.div`
     flex-direction: column; 
     text-align  : center;
     align-items: center;
-    
+    @media(min-width:768px){
+        flex-direction: row;
+    }
+`
+
+export const AlingCollumInDesktop = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    @media(min-width:768px){
+        width: 50%;
+        border-right: 3px solid ${({ theme }) => theme.colors.vipAnuncioBackground};
+    }
 `
 
 export const AvaliationTitle = styled.h1`
     font-size:14px;
     font-weight: 600;
     margin-block: .5rem;
+    @media(min-width: 768px){
+        font-size:24px;
+        margin-block: .25rem;
+
+    }
 `
 
 export const AvaliationPostButton = styled.button`
@@ -116,6 +165,12 @@ export const AvaliationPostButton = styled.button`
     padding-block: .5rem;
     margin-block:.8rem;
     border-radius: 5px;
+    @media(min-width:768px){
+        font-size:18px;
+        align-items: flex-end;
+        padding-inline: .5rem;
+        padding-block: .2rem;
+    }
 `
 
 
@@ -124,6 +179,9 @@ export const AvaliationComments = styled.div`
     display:flex;
     flex-direction: column;
     text-align: start;
+    @media(min-width:768px){
+        margin-left: 2rem;
+    }
 `
 
 export const AvaliationCommentDiv = styled.div`
@@ -136,7 +194,6 @@ export const AvaliationCommentDiv = styled.div`
 
 export const AlignRow = styled.div`
     display:flex;
-    justify-content: space-between;
     flex-direction: row;
 `
 
@@ -144,14 +201,24 @@ export const AlignRow = styled.div`
 export const AvaliationCommentTitle = styled.div`
     font-size:11px;
     font-weight: 500;
+    margin-right: .25rem;
+    @media(min-width:768px){
+        font-size:18px;
+    }
 `
 export const UserNameComment = styled.span`
     font-size:11px;
     font-weight: 900;
+    @media(min-width:768px){
+        font-size:18px;
+    }
 `
 
 export const AvaliationComment = styled.h1`
     padding-block: .1rem;
     font-size:11px;
     font-weight: 500;
+    @media(min-width:768px){
+        font-size:18px;
+    }
 `

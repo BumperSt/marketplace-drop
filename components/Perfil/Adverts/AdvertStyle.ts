@@ -1,7 +1,6 @@
 import styled from "styled-components"
-import { FiEdit } from "react-icons/fi";
-import { RiDeleteBinLine } from "react-icons/ri";
 import { MdArrowForwardIos } from "react-icons/md";
+
 export const Container = styled.div`
     position: fixed;
     overflow-y: auto;
@@ -17,9 +16,7 @@ export const Container = styled.div`
         width: 100%;
         height: 100%;
         margin:0rem;
-        justify-content: center;
-
-
+        
     }
 `
 
@@ -44,8 +41,13 @@ export const AdvertsContainer = styled.div`
     @media (min-width: 768px){
         box-shadow:none;
         border:solid 1px ${({theme}) => theme.colors.stroke};
-        border-radius: 10px;
+        border-top: 0px;
+        margin:0px;
+        border-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
         width: 90%;
+        
     }
 `
 
@@ -164,12 +166,28 @@ export const AlingRow = styled.div`
     display:flex;
     flex-direction:row;
     align-items:center;
-
 `
+
+export const AlingRowSwithAndText = styled.div`
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    @media(min-width: 768px){
+        border: 1px solid ${({theme}) => theme.colors.stroke};
+        border-bottom: 0px;
+        width: 90%;
+        justify-content: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding-top: .5rem;
+    }
+`
+
 
 export const SelectAdvertTypeText = styled.h1`
     font-weight: 900;
     margin-inline: .25rem;
     font-size: 14px;
-    color:${({ theme}) => theme.colors.fonts[0]}
+    color:${({ theme}) => theme.colors.fonts[0]};
+    
 `

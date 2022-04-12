@@ -3,7 +3,8 @@ import { ListHorizontaltems } from "@/components/ListHorizontaltems/listHorizont
 import { ModalOffer } from "@/components/Modal/modalOffer"
 import { OffersAvaliable } from "@/components/Modal/offersAvailable"
 import { Arrow } from "@/components/Perfil/Adverts/AdvertStyle"
-import { AlignColumn, AlignIcons, AlignPrices, AlignRowInDesktop, AlingCollumDesktop, AlingRowDesktop, BackIcon, Container, ContainerProductPage, DescreptionText, DescreptionTitle, PriceDiv, PriceValue, ProductDescreptionDiv, ProductImage, ProductPriceContainer, ProductTitle, ShareIcon, SizeButton, StyledLine } from "@/components/ProductPage/productPageStyle"
+import { AlignColumn, AlignDescreptionColumn, AlignIcons, AlignPrices, AlingCollumDesktop, AlingRowDesktop, AlingRowDesktopDescreption, BackIcon, Container, ContainerProductPage, DescreptionText, DescreptionTitle, PriceDiv, PriceValue, ProductDescreptionDiv, ProductImage, ProductPriceContainer, ProductTitle, ShareIcon, SizeButton, StyledLine } from "@/components/ProductPage/productPageStyle"
+import useWindowDimensions from "helpers/screenSize"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useState } from "react"
@@ -13,21 +14,29 @@ const ProductPage = () => {
     const router = useRouter()
     const [openOfferModal, setOpenOfferModal] = useState(false)
     const sizes = [46,44,42,40,38,36]
+    const { height, width } = useWindowDimensions();
 
     return(
         <Container>
             <HeadBar/>
             <ContainerProductPage>
-                <AlignIcons>
-                    <BackIcon onClick={() => router.back()} size={30}/>
-                    <ShareIcon size={26}/>
-                </AlignIcons>
+            {
+                width < 768 &&
+                <>
+                    <AlignIcons>
+                        <BackIcon onClick={() => router.back()} size={30}/>
+                        <ShareIcon size={26}/>
+                    </AlignIcons>
+                        
+                    <ProductImage>
+                        <Image src="/temporary/itens.png" layout="fill"/>
+                    </ProductImage>
+                </>
+                }
+                
                 <AlingRowDesktop>
-
+                    
                     <AlingCollumDesktop  margin={true}>
-                        <ProductImage>
-                            <Image src="/temporary/itens.png" layout="fill"/>
-                        </ProductImage>
                         <ProductTitle>MIKE LAIR 2 RED HOT SPECIAL EDITION</ProductTitle>                       
                         <ProductPriceContainer>
                             {
@@ -44,16 +53,20 @@ const ProductPage = () => {
                                     </>
 
                                 ))
-                            }
-    
-                       
+                            }    
                         </ProductPriceContainer>
-
                     </AlingCollumDesktop>
+
                     <AlingCollumDesktop>
+                        {
+                            width > 768 &&
+                            <ProductImage>
+                                <Image src="/temporary/itens.png" layout="fill"/>
+                            </ProductImage>
+                        }
                         <ProductDescreptionDiv>
                             <AlignPrices>
-                                    <AlingRowDesktop>
+                                    <AlingRowDesktopDescreption>
                                         <AlignColumn>
                                             <DescreptionTitle>RETAIL</DescreptionTitle>
                                             <DescreptionText>R$ 1599,99</DescreptionText>
@@ -62,30 +75,35 @@ const ProductPage = () => {
                                             <DescreptionTitle>Maximo</DescreptionTitle>
                                             <DescreptionText>R$ 1599,99</DescreptionText>
                                         </AlignColumn>
-                                    </AlingRowDesktop>
+                                    </AlingRowDesktopDescreption>
                                     <AlignColumn  style={{textAlign: 'center'}}>
                                         <DescreptionTitle>LANÇAMENTO</DescreptionTitle>
                                         <DescreptionText>31/12/21</DescreptionText>
                                     </AlignColumn>
-                                    <AlingRowDesktop>
-                                        <AlignColumn  style={{textAlign: 'center'}}>
+                                    <AlingRowDesktopDescreption>
+                                        <AlignColumn  style={{textAlign: 'end'}}>
                                             <DescreptionTitle>STYLE</DescreptionTitle>
                                             <DescreptionText>532D23-012</DescreptionText>
                                         </AlignColumn>
-                                        <AlignColumn style={{textAlign: 'center'}}>
+                                        <AlignColumn style={{textAlign: 'end'}}>
                                             <DescreptionTitle>Minimo</DescreptionTitle>
                                             <DescreptionText>R$ 499,99</DescreptionText>
                                         </AlignColumn>
-                                    </AlingRowDesktop>
+                                    </AlingRowDesktopDescreption>
                             </AlignPrices>                              
-                            <AlignColumn>
+                            <AlignDescreptionColumn>
                                 <DescreptionTitle>DESCRIÇÃO</DescreptionTitle>
-                                <DescreptionText>In non libero ut elit congue accumsan. Vestibulum nec metus sodales, mattis nisl eu, gravida nisl.</DescreptionText>
-                            </AlignColumn>
+                                <DescreptionText style={{
+                                    marginLeft:'0rem',
+                                }}>In non libero ut elit congue accumsan. Vestibulum nec metus sodales, mattis nisl eu, gravida nisl.</DescreptionText>
+                            </AlignDescreptionColumn>
                         </ProductDescreptionDiv>
                     </AlingCollumDesktop>
                 </AlingRowDesktop>
+
             </ContainerProductPage>
+            <ListHorizontaltems ListType="Large"/>
+
             {
                 openOfferModal &&
                 <OffersAvaliable setModalState={setOpenOfferModal}/>

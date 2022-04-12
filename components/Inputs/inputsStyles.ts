@@ -58,7 +58,9 @@ export const TextAreaStyled = styled.textarea`
     border: 0px;
     @media (min-width: 768px){
         font-size: 24px;
-        padding:.2rem;
+        padding:.3rem;
+        min-height:2rem;
+        font-size: 14px;
         border-radius: 25px;    
     }
 `
