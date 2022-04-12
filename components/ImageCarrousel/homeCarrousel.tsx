@@ -2,10 +2,6 @@ import Image from "next/image"
 import { Carousel } from "react-responsive-carousel"
 import { AlingCarrouselBalls, CarrouselBall, ClickNextImage, ClickNextImageDiv, Container, ImageContent } from "./homeCarrouselStyle"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import styled from "styled-components";
-
-
-
 
 const HomeCarrousel = () => {
     return(

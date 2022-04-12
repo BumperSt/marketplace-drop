@@ -81,7 +81,7 @@ import { useState } from "react"
                         <AvaliationDiv>
                             <AvaliationTitle>Avalie o vendedor</AvaliationTitle>
                             <AvaliationStarts getStarSelected={(value) => setStarValue(value)} avaliationValue={starValue}  size={28} />
-                            <Input placeholder="Escreva um comentário"  fontColor="secondary" value={avaliationDescreption} setValue={setAvaliationDescrepetion} textArea={true} />
+                            <Input placeholder="Escreva um comentário"  fontColor="secondary" value={avaliationDescreption} setValue={setAvaliationDescrepetion} inputType='textarea' />
                             <AvaliationPostButton>Postar</AvaliationPostButton>
                             <AvaliationComments>
                                 <AvaliationCommentDiv>
