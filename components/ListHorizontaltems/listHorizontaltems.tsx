@@ -20,7 +20,7 @@ export const ListHorizontaltems = ({ListType}: Props) => {
                     <ListItemsTitle>Últimos drops</ListItemsTitle>
                     <ItemsScrollList>
                         {
-                            [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].map((item) => (
+                            [1,2,3,4,5].map((item) => (
                                 <AdvertCard type="advert" advert={{}} key={item}/>
                             ))
                         }
@@ -31,7 +31,7 @@ export const ListHorizontaltems = ({ListType}: Props) => {
                     <ListItemsTitle>Anúncios VIP</ListItemsTitle>
                     <ItemsScrollList>
                         {
-                            [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].map((item) => (
+                            [1,2,3,4,5].map((item) => (
                                 <AdvertCard type="vip" advert={{}} key={item}/>
                             ))
                         }

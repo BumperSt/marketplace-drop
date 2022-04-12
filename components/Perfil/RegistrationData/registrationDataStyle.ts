@@ -9,6 +9,15 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+    margin-top:3rem;
+    @media (min-width: 768px){
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin:0rem;
+        justify-content: center;
+
+    }
 `
 
 export const RegistrationDataCollum = styled.div`
@@ -27,6 +36,22 @@ export const RegistrationDataContiner = styled.div`
     border-radius: 10px;
     box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.2);
     margin-bottom:1rem;
+    @media (min-width: 768px){
+        box-shadow:none;
+        border:solid 1px ${({theme}) => theme.colors.stroke};
+        border-radius: 10px;
+    }
+`
+
+export const RegistrationTitle =styled.h1`
+    font-weight: 600;
+    font-size: 24px;
+    color:${({ theme }) => theme.colors.fonts[0]};
+    margin-block:2rem;
+    @media (min-width: 768px){
+        display:none;
+    }
+ 
 `
 
 export const RegistrationDataDiv = styled.div`
@@ -34,7 +59,10 @@ export const RegistrationDataDiv = styled.div`
     display:flex;
     flex-direction: row;
     margin-block: 1rem;
-    
+    @media (min-width: 768px){
+        margin-block: .3rem;
+
+    }
     
 `
 

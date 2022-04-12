@@ -1,4 +1,5 @@
 import { FaStore, FaTruckMoving, FaUserAlt } from "react-icons/fa"
+import { FiLogOut } from "react-icons/fi"
 import { GiImperialCrown } from "react-icons/gi"
 import { RiAdvertisementFill } from "react-icons/ri"
 
@@ -12,11 +13,20 @@ export const Container = styled.div`
     height: 100%;
 `
 
+export const ContainerOpenInDesktop = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 75%;
+    align-items: center;
+`
+
 export const ProfileName = styled.h1`
     font-weight: 600;
     font-size: 24px;
     color:${({ theme }) => theme.colors.fonts[0]};
     margin-block:2rem;
+ 
 
 `
 
@@ -27,7 +37,7 @@ export const AlingProfileAndIcon = styled.div`
 
 `
 
-export const ProfilePageButton = styled.button`
+export const ProfilePageButton = styled.button<{active?:boolean}>`
     color:${({ theme }) => theme.colors.fonts[0]};
     background-color: ${({ theme}) => theme.colors.profilePageButtonBackground};
     width: 80%;
@@ -38,11 +48,24 @@ export const ProfilePageButton = styled.button`
     padding-block: 1rem;
     padding-inline: .5rem;
     margin-top: 1rem;
+    @media (min-width: 768px){
+        background-color: white;
+        border-radius: 10px;
+        padding-block:.4rem;
+        margin-block: .2rem;
+        ${({active}) => active && 'border:solid 1px #cdcdcd;'}
+        :hover{
+            border:solid 1px #cdcdcd;
+        }
+    }
 `
 
 export const StoreIcon = styled(FaStore)`
     fill: ${({ theme}) => theme.colors.shoesSizeBackground};
     margin-right: .8rem;
+    @media (min-width: 768px){
+        margin-right: .3rem;
+    }
 `
 export const TemporaryCrown = styled(GiImperialCrown)`
     margin-inline:.5rem;
@@ -51,12 +74,36 @@ export const TemporaryCrown = styled(GiImperialCrown)`
 export const UserIcon = styled(FaUserAlt)`
     margin-right: .8rem;
     fill:${({ theme}) => theme.colors.shoesSizeBackground};
+    @media (min-width: 768px){
+        margin-right: .3rem;
+    }
 `
 export const AdIcon = styled(RiAdvertisementFill)`
     margin-right: .8rem;
     fill:${({ theme}) => theme.colors.shoesSizeBackground};
+    @media (min-width: 768px){
+        margin-right: .3rem;
+    }
 `
 export const TruckIcon = styled(FaTruckMoving)`
     margin-right: .8rem;
     fill:${({ theme}) => theme.colors.shoesSizeBackground};
+    @media (min-width: 768px){
+        margin-right: .3rem;
+    }
+`
+export const LogoutIcon = styled(FiLogOut)`
+    stroke: #EA0000;
+    margin-right: .3rem;
+`
+
+export const AlingMenuInCollum = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    @media (min-width: 768px){
+        padding-block:.5rem;
+        border-right: 1px #CDCDCD solid;
+    }
 `

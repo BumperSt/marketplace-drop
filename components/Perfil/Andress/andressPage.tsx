@@ -22,7 +22,6 @@ export const AndressPage = ({closePage} : Props) => {
             {
                 editAndress ?
                 <>
-                    <HeadBar backFunction={CloseEdit}/>
                     <AndressContiner>
                         <Input Title="NOME" value={andressName} setValue={setAndressName}/>
                         <Input Title="CEP" value={andressName} setValue={setAndressName}/>
@@ -54,14 +53,12 @@ export const AndressPage = ({closePage} : Props) => {
                 </>
                 :
                 <>
-                    <HeadBar backFunction={closePage}/>
-
                     <AndressContiner>
                         <AndressDiv>
                                 <AndressType>PADRÃO</AndressType>
                                 <AlignAndressAndArrow>
                                     <AndressName>Rua dos Snekaers, 113 -a</AndressName>
-                                    <Arrow onClick={()=> setEditAndress(true)}/>
+                                    <Arrow size='25' onClick={()=> setEditAndress(true)}/>
                                 </AlignAndressAndArrow>
                         </AndressDiv>
 
@@ -69,7 +66,7 @@ export const AndressPage = ({closePage} : Props) => {
                                 <AndressType>CASA</AndressType>
                                 <AlignAndressAndArrow>
                                     <AndressName>Rua dos Snekaers, 113 -a</AndressName>
-                                    <Arrow/>
+                                    <Arrow size='25'/>
                                 </AlignAndressAndArrow>
                         </AndressDiv>
 
@@ -77,7 +74,7 @@ export const AndressPage = ({closePage} : Props) => {
                             <AndressType>TRABALHO</AndressType>
                             <AlignAndressAndArrow>
                                 <AndressName>Rua dos Snekaers, 113 -a</AndressName>
-                                <Arrow/>
+                                <Arrow size='25'/>
                             </AlignAndressAndArrow>
                             
                         </AndressDiv>

@@ -125,21 +125,37 @@ export const ToglleThemeDiv = styled.div`
     border: solid 1px #CDCDCD;
     border-radius: 40px;
     padding: .1rem;
+    
     width: 50px;
     margin-inline:.2rem;
+    :hover{
+        cursor: pointer;
+    }
     @media (min-width: 768px){
-        height: 1rem;
+        height: .5rem;
+        width: 1rem;
+        padding: .1rem;
 
     }
 `
 
 export const SwitchBall = styled.div<{checked:boolean}>`
+
     width:16px;
     height:16px;
     background-color:#EEEEEE;
     border-radius:12px;
-    transition: margin .6s linear;
+    transition: all .6s linear;
+
     ${({checked}) => checked && `
         margin-left: 62.5%;
     `}
+
+    @media(min-width: 768px){
+        ${({checked}) => checked && `
+            margin-left: 50%;
+            transform: translateX(50%);
+        `}
+    }
+ 
 `

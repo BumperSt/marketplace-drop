@@ -1,4 +1,5 @@
 import { BiArrowBack, BiMenu, BiSearchAlt2 } from "react-icons/bi";
+import { IoIosArrowBack } from "react-icons/io";
 import { RiShutDownLine } from "react-icons/ri";
 import styled from "styled-components";
 
@@ -12,21 +13,32 @@ export const HeadBarContainer = styled.div<{otherBackgroundColor?: boolean}>`
     flex-direction: row;
     padding: .7rem;
     background-color: ${({theme,otherBackgroundColor }) => otherBackgroundColor ? theme.colors.sellerPage.background : theme.colors.body};
-
-    @media (min-width: 768px) {
-        padding: .5rem;
-
-    }
     align-items: center;
     justify-content: space-between;
+    @media (min-width: 768px) {
+        padding-inline:.5rem;
+        padding-block:.2rem;
+
+    }
+`
+
+export const AlingLoginAndInput = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40%;
+    
+    
+    height: .8rem;
 `
 
 export const LoginButton = styled.button`
     padding-inline: 1rem;
+    font-weight: 900;
     @media (min-width: 768px){
         padding-inline: 1rem;
         padding-block: .2rem;
-        font-size: 36px;
+        font-size: 18px;
     }
 `
 
@@ -80,6 +92,13 @@ export const LogoImagem = styled.div`
         height: unset !important;
         }
     }
+    @media (min-width: 768px) {
+        position: relative;
+        left:0%;
+        width:3rem;
+        transform: translateX(-20%);
+
+    }
 `
 
 export const MenuIcon = styled(BiMenu)`
@@ -94,5 +113,20 @@ export const LogoutIcon = styled(RiShutDownLine)`
 
 `
 
-export const BackIcon = styled(BiArrowBack)`
+export const BackIcon = styled(IoIosArrowBack)`
+    :hover{
+        cursor: pointer;
+    }
+`
+
+export const UserImage=  styled.div`
+    width: 1.3rem;
+    height: 1rem;
+    position: relative;
+    span{
+        border-radius: 50%;
+    }
+    :hover{
+        cursor: pointer;
+    }
 `

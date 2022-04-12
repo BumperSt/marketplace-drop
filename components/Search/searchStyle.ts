@@ -33,6 +33,14 @@ export const InputDiv = styled.div`
     align-items:center;
     border-radius: 15px;
     margin-top: 1rem;
+    @media (min-width: 768px){
+        width: 100%;
+        margin: 0rem;
+        padding-inline:.25rem;
+        height: .8rem;
+        margin-right: .8rem;
+
+    }
 `
 
 export const SearchContentTitle = styled.h1`
@@ -57,7 +65,9 @@ export const SearchInput = styled.input `
     font-family: roboto;
     font-style: italic;
     @media (min-width: 768px) {
-        font-size: 36px;
+        font-weight: 400;
+        font-size: 24px;
+        padding-block:.25rem;
     }
 `
 export const ContainerSearch = styled.div`

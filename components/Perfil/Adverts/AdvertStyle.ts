@@ -11,7 +11,16 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+    margin-top:3rem;
+    @media (min-width: 768px){
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin:0rem;
+        justify-content: center;
 
+
+    }
 `
 
 export const ActivyAdvertsTitle = styled.h1`
@@ -33,7 +42,10 @@ export const AdvertsContainer = styled.div`
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
     justify-content: center;
     @media (min-width: 768px){
-        width: 80%;
+        box-shadow:none;
+        border:solid 1px ${({theme}) => theme.colors.stroke};
+        border-radius: 10px;
+        width: 90%;
     }
 `
 
@@ -41,6 +53,11 @@ export const AdvertButton = styled.button`
     margin-block: 1rem;    
     padding-block: 0.5rem;
     padding-inline: 0.9rem;
+    @media(min-width: 768px){
+        font-size:13px;
+        padding-block: 0.25rem;
+        padding-inline: 0.5rem;
+    }
 
 `
 
@@ -52,7 +69,9 @@ export const AdvertsScroll = styled.div`
     flex-direction: column;
     padding-inline:.5rem;
     align-items: center;
-
+    @media (min-width: 768px){
+        max-height:6rem;
+    }
 `
 
 
@@ -64,13 +83,20 @@ export const AdvertContainer = styled.div`
     align-items: center;
     text-align: start;
     justify-content: space-between;
-
     padding-block:.5rem;
     padding-inline:.8rem;
     background-color:${({theme}) => theme.colors.vipAnuncioBackground};
     border-radius: 10px;
     margin-bottom: .5rem;
     min-width: 90%;
+    @media (min-width: 768px){
+        padding-block:.2rem;
+        padding-inline:.3rem;
+
+    }
+    :hover{
+        cursor: pointer;
+    }
 
 `
 
@@ -79,15 +105,14 @@ export const AdvertProductImage = styled.div`
     margin-right: .5rem;
     width: 2rem;
     height: 2rem;
-    
-    @media (max-width: 768px) {
+
+    @media (min-width: 768px){
+        width: 1rem;
+        height: 1rem;
+
         span{
             border-radius: 60px;
         }
-    }
-    @media (min-width: 768px){
-        width: 2rem;
-
     }
     position: relative;
 `
@@ -101,7 +126,8 @@ export const AdvertProductTitle = styled.h1`
         font-size:10px;
     }
     @media (min-width: 768px){
-        font-size: 24px;
+        font-size: 13px;
+        margin-bottom: .1rem;
     }
 `
 
@@ -114,7 +140,7 @@ export const AdvertProductPrice = styled.h1`
         font-size:10px;
     }
     @media (min-width: 768px){
-        font-size: 24px;
+        font-size: 13px;
     }
 `
 
@@ -124,6 +150,7 @@ export const AlignColumn = styled.div`
 `
 export const Arrow = styled(MdArrowForwardIos)`
     fill:${({theme}) => theme.colors.detalhes};
+    
 `
 
 
@@ -137,6 +164,7 @@ export const AlingRow = styled.div`
     display:flex;
     flex-direction:row;
     align-items:center;
+
 `
 
 export const SelectAdvertTypeText = styled.h1`

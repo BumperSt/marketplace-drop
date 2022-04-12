@@ -9,6 +9,10 @@ import styled from "styled-components"
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.body};
+  @media (min-width: 768px){
+    padding-inline:1rem;
+
+  }
 `
 const HomePage = () => {
 
@@ -19,8 +23,10 @@ const HomePage = () => {
   }
 
   return (
+    <>
+    <HeadBar />
+
     <Container>
-        <HeadBar />
         <HomeCarrousel/>
 
         <ListHorizontaltems ListType="Small"/>
@@ -37,6 +43,7 @@ const HomePage = () => {
         
 
     </Container>
+    </>
   )
 }
 

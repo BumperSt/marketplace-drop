@@ -8,11 +8,11 @@ interface Props {
     fontColor?: string,
     value: string,
     setValue: any,
-    textArea?:boolean,
+    inputType?:'text' | 'textarea' | 'password',
     placeholder?:string,
 }
 
-export const Input = ({Title, Style, value, setValue, StyleInput, fontColor, textArea, placeholder}: Props) => {
+export const Input = ({Title, Style, value, setValue, StyleInput, fontColor, inputType, placeholder}: Props) => {
     return(
         <InputContainer style={Style} fontColor={fontColor}>
             {
@@ -21,11 +21,14 @@ export const Input = ({Title, Style, value, setValue, StyleInput, fontColor, tex
 
             }
             {
-                textArea ?
+                inputType== 'textarea' ?
                     <TextAreaStyled placeholder={placeholder} style={StyleInput} value={value} onChange={(e) => setValue(e.target.value)}/>
-
+            
+                : inputType == 'password' ?
+                    <InputStyled placeholder={placeholder}  type={inputType} style={StyleInput} value={value} onChange={(e) => setValue(e.target.value)}/>
                 :
-                    <InputStyled  style={StyleInput} value={value} onChange={(e) => setValue(e.target.value)}/>
+                    <InputStyled placeholder={placeholder} style={StyleInput} value={value} onChange={(e) => setValue(e.target.value)}/>
+
             }
             
         </InputContainer>

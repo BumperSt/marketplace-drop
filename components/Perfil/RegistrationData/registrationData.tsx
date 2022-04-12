@@ -1,6 +1,6 @@
 import { HeadBar } from "@/components/HeadBar/headBar";
 import { ProfileName } from "../perfilPageStyle";
-import { AlignRegistrationAndArrow, Container, RegistrationDataContiner, RegistrationDataDiv, RegistrationDataName, RegistrationDataType } from "./registrationDataStyle";
+import { AlignRegistrationAndArrow, Container, RegistrationDataContiner, RegistrationDataDiv, RegistrationDataName, RegistrationDataType, RegistrationTitle } from "./registrationDataStyle";
 import { useContext, useEffect } from "react";
 import UserContext from "context/userContext";
 import { Arrow } from "../Adverts/AdvertStyle";
@@ -20,14 +20,13 @@ export const RegistrationData = ({closePage} : Props) => {
 
     return (
         <Container>
-            <HeadBar backFunction={closePage}/>
-            <ProfileName>Dados cadastrais</ProfileName>
+            <RegistrationTitle>Dados cadastrais</RegistrationTitle>
             <RegistrationDataContiner>
                 <RegistrationDataDiv>
                         <RegistrationDataType>NOME</RegistrationDataType>
                         <AlignRegistrationAndArrow>
                             <RegistrationDataName>{user.fullName}</RegistrationDataName>
-                            <Arrow/>
+                            <Arrow size='25'/>
                         </AlignRegistrationAndArrow>
                 </RegistrationDataDiv>
 
@@ -35,7 +34,7 @@ export const RegistrationData = ({closePage} : Props) => {
                         <RegistrationDataType>E-MAIL</RegistrationDataType>
                         <AlignRegistrationAndArrow>
                             <RegistrationDataName>{user.email}</RegistrationDataName>
-                            <Arrow/>
+                            <Arrow size='25'/>
                         </AlignRegistrationAndArrow>
                 </RegistrationDataDiv>
 
@@ -43,7 +42,7 @@ export const RegistrationData = ({closePage} : Props) => {
                     <RegistrationDataType>DATA DE NASC.</RegistrationDataType>
                     <AlignRegistrationAndArrow>
                         <RegistrationDataName>DD/MM/YYYY</RegistrationDataName>
-                        <Arrow/>
+                        <Arrow size='25'/>
                     </AlignRegistrationAndArrow>                    
                 </RegistrationDataDiv>
                 
@@ -51,7 +50,7 @@ export const RegistrationData = ({closePage} : Props) => {
                     <RegistrationDataType>GÊNERO</RegistrationDataType>
                     <AlignRegistrationAndArrow>
                         <RegistrationDataName>Masculino</RegistrationDataName>
-                        <Arrow/>
+                        <Arrow size='25'/>
                     </AlignRegistrationAndArrow>                    
                 </RegistrationDataDiv>
 
@@ -60,7 +59,7 @@ export const RegistrationData = ({closePage} : Props) => {
                     <RegistrationDataType>TELEFONE</RegistrationDataType>
                     <AlignRegistrationAndArrow>
                         <RegistrationDataName>{user.phone[0]}</RegistrationDataName>
-                        <Arrow/>
+                        <Arrow size='25'/>
                     </AlignRegistrationAndArrow>                    
                 </RegistrationDataDiv>
 
@@ -71,7 +70,7 @@ export const RegistrationData = ({closePage} : Props) => {
                         <RegistrationDataName>42</RegistrationDataName>
                         <RegistrationDataName>44</RegistrationDataName>
 
-                        <Arrow/>
+                        <Arrow size='25'/>
                         
                     </AlignRegistrationAndArrow>                    
                 </RegistrationDataDiv>

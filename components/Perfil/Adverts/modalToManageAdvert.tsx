@@ -95,7 +95,7 @@ export const ModalToManageAdvert = ({closePage, modalType}: Props) => {
                             </AlignPhotos>
                         </AlignTitleAndContent>
                         <Input fontColor="secondary" Title="Preço (R$)" value={advertPrice} setValue={setAdvertPrice}/>
-                        <Input  fontColor="secondary" Title="Descrição" value={advertDescription} setValue={setAdvertDescription} textArea={true} />
+                        <Input  fontColor="secondary" Title="Descrição" value={advertDescription} setValue={setAdvertDescription} inputType={'textarea'} />
                         <PublisherButton>Publicar</PublisherButton>
                         <MarkToSell>
                                 <input type="checkbox" id="scales" name="scales" />

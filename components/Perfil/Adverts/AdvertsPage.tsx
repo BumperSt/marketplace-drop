@@ -40,7 +40,6 @@ export const AdvertsPage = ({closePage}:props) => {
 
     return(
         <Container>       
-            <HeadBar backFunction={closePage}/>
             <AlingRow>
                 <SelectAdvertTypeText>Disponíveis</SelectAdvertTypeText>
                 <Switch styleBall={{backgroundColor:'#2A2A2A'}} styleDiv={{border:'solid 1px #2A2A2A'}}  onClick={cu} checked={disponibles}/>

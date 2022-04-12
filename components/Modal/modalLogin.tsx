@@ -1,11 +1,12 @@
-import { AlingCenter, BackIcon, InputsContainer, LostPasswordText, ModalButton, ModalInput, ModalSelect, ModalSubTitle, ModalTitle, OurCreateNewText, TermsOfService } from "./modalStyle"
+import { AlingCenter, AlingEyePassword, BackIcon, Form, InputsContainer, LostPasswordText, ModalButton, ModalInput, ModalSelect, ModalSubTitle, ModalTitle, NotViewEye, OurCreateNewText, TermsOfService, ViewEye } from "./modalStyle"
 import {Modal} from "./modal"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Input } from "../Inputs/input"
 import auth from "apiService/auth"
 import UserContext, { IUserContext } from "@/context/userContext"
 import { IUser } from "apiService/types/userTypes"
 import { HeadBar } from "../HeadBar/headBar"
+import { disableBodyScroll, enableBodyScroll,  } from 'body-scroll-lock';
 
 interface Props {
     closeModal: any
@@ -25,8 +26,19 @@ export const ModalLogin = ({closeModal}: Props) => {
     const [phoneNumber, setPhoneNumber] = useState<string>("")
     const [cpf, setCpf] = useState<string>("")
 
+    const [viewPassword, setViewPassword] = useState('password')
+
     const {setUser} = useContext(UserContext)
 
+
+    const closeModalHere = () => {
+        closeModal()
+        enableBodyScroll(document.body)
+    }
+
+    useEffect(() => {
+        disableBodyScroll(document.body)
+    }, [])
 
     const Login = () => {
         auth.login({
@@ -36,7 +48,7 @@ export const ModalLogin = ({closeModal}: Props) => {
             setUser(response.data.user)
             localStorage.setItem('@token', response.data.token)
 
-            closeModal()
+            closeModalHere()
         }).catch((error) => {
             console.log(error)
         })
@@ -64,18 +76,40 @@ export const ModalLogin = ({closeModal}: Props) => {
     }
 
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+
     if(modalType == 'Login'){
         return(
-            <Modal backModal={() => closeModal()}>
-                <HeadBar notLogo={true} backFunction={closeModal}/>
+            <Modal backModal={() => closeModalHere()}>
+                <HeadBar notLogo={true} backFunction={closeModalHere}/>
                 <AlingCenter>
                     <ModalTitle>Aliquam eget dui turpis.</ModalTitle>
                     <ModalSubTitle>Cras in dui nunc.</ModalSubTitle>
-        
-                    <ModalInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
-                    <ModalInput value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="Senha"/>
-                    <LostPasswordText onClick={() => setModalType('LostPassword')}>Esqueceu a senha? Clique aqui.</LostPasswordText>
-                    <ModalButton onClick={() => Login()}>Acessar</ModalButton>
+                    <Form onSubmit={handleSubmit}>
+                        <ModalInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
+                        <AlingEyePassword>
+                            <ModalInput style={{
+                                width: '100%',
+                                margin:0
+                            }} type={viewPassword} value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="Senha"/>
+                            {
+                                viewPassword == 'password' ?
+                                <NotViewEye size='46' onClick={() => setViewPassword('text')}/>
+
+                                :
+                                <ViewEye size='46' onClick={() => setViewPassword('password')}/>
+
+                            }
+                            
+                        </AlingEyePassword>
+                        <LostPasswordText onClick={() => setModalType('LostPassword')}>Esqueceu a senha? Clique aqui.</LostPasswordText>
+                        <ModalButton  type="submit" onClick={() => Login()}>Acessar</ModalButton>
+                    </Form>
+
+                    
+                 
                     <OurCreateNewText>Ou</OurCreateNewText>
                     <ModalButton otherColor={true} onClick={() => setModalType('Register')}>Criar nova conta</ModalButton>
 
@@ -95,36 +129,38 @@ export const ModalLogin = ({closeModal}: Props) => {
                         lineHeight:'28,13px',
                         marginBlock:'1rem'
                     }}>Lorem ipsum dolor sit amet.</ModalTitle>
+                    <Form onSubmit={handleSubmit}>
 
-                    <ModalInput value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Nome Completo"/>
-                    <ModalInput value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder="Telefone"/>
-                    <ModalInput value={cpf} onChange={(e) => setCpf(e.target.value)} placeholder="Cpf"/>
-                    <InputsContainer>
-                        <ModalInput style={{width:'50%'}} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Data de nascimento"/>
-                        <ModalSelect style={{width:'45%'}}>
-                            <option value="" disabled selected>Genero</option>
-                            <option value="hurr">Durr</option>
+                        
+                        <ModalInput value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Nome Completo"/>
+                        <ModalInput value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder="Telefone"/>
+                        <ModalInput value={cpf} onChange={(e) => setCpf(e.target.value)} placeholder="Cpf"/>
+                        <InputsContainer>
+                            <ModalInput style={{width:'50%'}} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Data de nascimento"/>
+                            <ModalSelect style={{width:'45%'}}>
+                                <option value="" disabled selected>Genero</option>
+                                <option value="hurr">Durr</option>
+                            </ModalSelect>
+                        </InputsContainer>
+                        
+
+                        <ModalInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
+                        <ModalInput value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Senha"/>
+                        <ModalInput value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirme a senha"/>
+                        <ModalSelect>
+                                <option value="" disabled selected>Tamanho (opcional)</option>
+                                <option value="hurr">Durr</option>
                         </ModalSelect>
-                    </InputsContainer>
-                    
-
-                    <ModalInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
-                    <ModalInput value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Senha"/>
-                    <ModalInput value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirme a senha"/>
-                    <ModalSelect>
-                            <option value="" disabled selected>Tamanho (opcional)</option>
-                            <option value="hurr">Durr</option>
-                    </ModalSelect>
-                    <TermsOfService>
-                        <input type="checkbox" id="scales" name="scales" />
-                        <h1>Concordo com os <span>termos de serviço.</span></h1>
-                    </TermsOfService>
+                        <TermsOfService>
+                            <input type="checkbox" id="scales" name="scales" />
+                            <h1>Concordo com os <span>termos de serviço.</span></h1>
+                        </TermsOfService>
 
 
-                <ModalButton style={{
-                    marginBottom:'5rem'
-                }} onClick={()=> Register()}>Cadastrar</ModalButton>
-    
+                    <ModalButton type="submit" style={{
+                        marginBottom:'5rem'
+                    }} onClick={()=> Register()}>Cadastrar</ModalButton>
+                </Form>
             </Modal>
     
         )

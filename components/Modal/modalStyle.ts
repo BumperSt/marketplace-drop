@@ -1,3 +1,4 @@
+import { AiFillEye, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { BiArrowBack, BiShare } from 'react-icons/bi'
 import styled from 'styled-components'
 
@@ -13,10 +14,9 @@ export const ModalBackground = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
-    
     z-index: 99;
     @media (min-width: 768px) {
-        justify-content: flex-start;
+        background-color:rgba(0, 0, 0, 0);
     }
 `
 
@@ -32,13 +32,10 @@ export const ModalContainer = styled.div`
     align-items: center;
     text-align: center;
     width: 100vw;
-   height: 100vh;
+    height: 100vh;
     @media (min-width: 768px) {
-        margin-top: 5%;
-        padding: .7rem;
-        max-width: 80%;
-        border-radius:10px;
-
+        max-width: 100%;
+        max-height: 100%;
     }
 `
 
@@ -77,7 +74,9 @@ export const ModalInput = styled.input`
     font-weight: 300;
     @media (min-width: 768px) {
         margin-block:.2rem;
-        border-radius: 25px;
+        border-radius: 15px;
+        width:50%;
+        padding:.25rem;
         
         font-size: 24px;
 
@@ -125,8 +124,7 @@ export const TermsOfService = styled.div`
 
 
 export const ModalButton = styled.button<{otherColor?:boolean}>`
-    margin-block: 1rem;
-    margin-inline: 1rem;
+    margin: 1rem;
     padding-block: 0.5rem;
     padding-inline: 1rem;
     font-weight: 900;
@@ -140,12 +138,12 @@ export const ModalButton = styled.button<{otherColor?:boolean}>`
 
     `}
     @media (min-width: 768px) {
-        margin-block: .5rem;
+        margin-block: .25rem;
         padding-block: 0.2rem;
-        padding-inline: 0.8rem;
+        padding-inline: 0.5rem;
         border-radius:60px;
         align-self:center;
-        font-size: 36px;
+        font-size: 24px;
     }
 `
 
@@ -155,11 +153,23 @@ export const LostPasswordText = styled.h1`
     font-size:12px;
     text-align: start;
     width:82%;
-    margin-bottom:.5rem;
+    margin-block: .5rem;
+    :hover{
+        cursor:pointer
+    }
+    @media (min-width: 768px) {
+        width:50%;
+        font-size: 24px;
+    }
 `
 export const OurCreateNewText = styled.h1`
     margin-block:.3rem;
     color:${({theme }) => theme.colors.detalhes};
+    @media (min-width: 768px) {
+        margin-block:.2rem;
+        font-size: 24px;
+    }   
+
 `
 
 export const InputsContainer = styled.div`
@@ -201,7 +211,7 @@ export const ItemCondicion = styled.div`
 
 export const AlignRowHeaderDiv = styled.div`
     display:flex;
-    width: 100%;
+    width: 95%;
     align-items: center;
     padding-inline:5%;
     flex-direction: row;
@@ -209,5 +219,42 @@ export const AlignRowHeaderDiv = styled.div`
     padding-block:.5rem;
 `
 
+export const AlingEyePassword = styled.div`
+    display:flex;
+    
+    flex-direction: row;
+    border-radius: 15px;
+    align-items: center;
+    padding:0px;
+    width: 90%;
+    @media (min-width: 768px) {
+        width: 50%;
+    }
+    
+    background-color:${({theme}) => theme.colors.input.background};
+
+`
+
+
 export const ShareIcon = styled(BiShare)`
+`
+export const ViewEye = styled(AiOutlineEye)`
+    margin-right: .25rem;
+    :hover{
+        cursor: pointer;
+    }
+`
+
+export const NotViewEye = styled(AiOutlineEyeInvisible)`
+    margin-right: .25rem;
+    :hover{
+        cursor: pointer;
+    }
+`
+
+export const Form = styled.form`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 `

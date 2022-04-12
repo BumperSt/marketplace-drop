@@ -1,14 +1,17 @@
+import UserContext from "@/context/userContext"
+import useWindowDimensions from "helpers/screenSize"
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { HeadBar } from "../HeadBar/headBar"
 import { Modal } from "../Modal/modal"
 import { ModalButton } from "../Modal/modalStyle"
 import { AdvertsPage } from "./Adverts/AdvertsPage"
 import { ModalToManageAdvert } from "./Adverts/modalToManageAdvert"
 import { AndressPage } from "./Andress/andressPage"
+import { disableBodyScroll, enableBodyScroll,  } from 'body-scroll-lock';
 
-import { AdIcon, AlingProfileAndIcon, Container, ProfileName, ProfilePageButton, StoreIcon, TemporaryCrown, TruckIcon, UserIcon } from "./perfilPageStyle"
+import { AdIcon, AlingProfileAndIcon, Container, ContainerOpenInDesktop, LogoutIcon, ProfileName, ProfilePageButton, StoreIcon, TemporaryCrown, TruckIcon, UserIcon, AlingMenuInCollum } from "./perfilPageStyle"
 import { RegistrationData } from "./RegistrationData/registrationData"
 
 
@@ -19,47 +22,166 @@ interface Props {
 export const PerfilPage = ({closeModal}: Props) => {
 
     const [openPage, setOpenPage] = useState('')
+    const { height, width } = useWindowDimensions();
+    const {user, logOut} = useContext(UserContext)
+    const [modalDesktopStyle, setModalDesktopStyle] = useState({
+        width: '6rem',
+        height: 'auto',
+        border:'solid 2px #CDCDCD',
+        borderRadius: '15px',
+    })
+
+    const GetPageMenu = () => {
+        const Pages = [
+            {
+                'title':'Meus anúncios',
+                'pageName':'Adverts',
+                'icon':<AdIcon size='25'/>
+            },
+            {
+                'title':'Dados cadastrais',
+                'pageName':'RegistrationData',
+                'icon':<UserIcon size='25'/>
+            },
+            {
+                'title':'Endereços',
+                'pageName':'Andress',
+                'icon':<TruckIcon size='25'/>
+            }
+        ]
+        return <>
+            <ProfilePageButton active={openPage == '' && myUrl.includes('store')}  onClick={() => {
+                Router.push('store')
+                closeModal()
+                enableBodyScroll(document.body)
+
+            }}>
+                <StoreIcon size='25'/>Minha Loja
+            </ProfilePageButton>
+            {
+                Pages.map((page, index) => (
+                    <ProfilePageButton active={openPage == page.pageName} key={index} onClick={() => {setOpenPage(page.pageName)}}>
+                        {page.icon}{page.title}
+                    </ProfilePageButton>
+                ))
+            }
+        </>
+        
+    }
+
+    useEffect(() => {
+        if(openPage != ''){
+            disableBodyScroll(document.body)
+            setModalDesktopStyle({
+                width: '100%',
+                height: '100%',
+                border:'none',
+                borderRadius: '0px',
+                
+            })
+        }else{
+            enableBodyScroll(document.body)
+            setModalDesktopStyle({
+                width: '6rem',
+                height: 'auto',
+                border:'solid 2px #CDCDCD',
+                borderRadius: '15px',
+            })
+        }
+    }, [openPage])
+
+    let myUrl = window.location.pathname
     const Router = useRouter()
+    
     const closePage  = () => {
         setOpenPage('')
+        enableBodyScroll(document.body)
     }
     
-    return(
-        <Modal backModal={closeModal}>
-            {
-                openPage == 'Andress' ?
-                    <AndressPage closePage={closePage}/>
-                :openPage == 'Adverts'  ?
-                    <AdvertsPage closePage={closePage}/>
-                :openPage == 'RegistrationData'?
-                    <RegistrationData closePage={closePage}/>
-                :
-                    <HeadBar  backFunction={closeModal}/>
+    if(width < 768){
+        return(
+            <Modal backModal={closeModal}>
+                {
+                    openPage != '' ?
+                        <HeadBar backFunction={closePage}/>
+                    :
+                        <HeadBar  backFunction={closeModal}/>
 
-            }
+                }
+                {
+                    openPage == 'Andress' ?
+                        <AndressPage closePage={closePage}/>
+                    :openPage == 'Adverts'  ?
+                        <AdvertsPage closePage={closePage}/>
+                    :openPage == 'RegistrationData'&&
+                        <RegistrationData closePage={closePage}/>
+                    
+                }
+                <Container>
+                    <AlingProfileAndIcon>
+                        <ProfileName>Sneaker Store</ProfileName>
+                        <TemporaryCrown/>
+                    </AlingProfileAndIcon>
 
-            <Container>
-                <AlingProfileAndIcon>
-                    <ProfileName>Sneaker Store</ProfileName>
-                    <TemporaryCrown/>
-                </AlingProfileAndIcon>
-                <ProfilePageButton onClick={() => {Router.push('store') 
-                closeModal()}}>
-                    <StoreIcon/>Minha Loja
-                </ProfilePageButton>
-                <ProfilePageButton onClick={()=> setOpenPage('Adverts')}>
-                    <AdIcon/>Meus anúncios
-                </ProfilePageButton>
-                <ProfilePageButton  onClick={()=> setOpenPage('RegistrationData')}>
-                    <UserIcon/>Dados cadastrais
-                </ProfilePageButton>
-                <ProfilePageButton onClick={()=> setOpenPage('Andress')}>
-                    <TruckIcon/>Endereços
-                </ProfilePageButton>
+                    {
+                     GetPageMenu()
+                    }
+                    <ModalButton >Vender agora</ModalButton>
+                    
+                </Container>
+            </Modal>
+        )
+    }else{
+        return(
+            <Modal modalStyleDesktop={openPage != '' ? modalDesktopStyle : {
+                ...modalDesktopStyle,
+                position:'absolute',
+                top: '1.7rem',
+                right:'.5rem'
+            } } backModal={closeModal}>
+                {
+                    openPage == '' ?
+                    <Container>
 
-                <ModalButton >Vender agora</ModalButton>
-                
-            </Container>
-        </Modal>
-    )
+                        {
+                            GetPageMenu()
+
+                        }
+                        <ProfilePageButton style={{
+                            color:'red'
+                        }}onClick={()=> {logOut() 
+                            closeModal()}}>
+                            <LogoutIcon size='25'/>Sair
+                        </ProfilePageButton>
+                    </Container>
+                    :
+                    
+                    <Container>
+                        <HeadBar backFunction={closePage}/>
+                        <ContainerOpenInDesktop>
+                            <AlingMenuInCollum>
+      
+                                {
+                                    GetPageMenu()
+                                }
+
+                            </AlingMenuInCollum>
+                            {
+                                openPage == 'Andress' ?
+                                    <AndressPage closePage={closePage}/>
+                                :openPage == 'Adverts'  ?
+                                    <AdvertsPage closePage={closePage}/>
+                                :openPage == 'RegistrationData'&&
+                                    <RegistrationData closePage={closePage}/>
+                            
+                            }
+                        </ContainerOpenInDesktop>
+                    </Container>
+                }
+            
+
+            </Modal>
+        )
+    }
+    
 }

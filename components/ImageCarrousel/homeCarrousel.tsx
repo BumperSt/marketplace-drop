@@ -1,22 +1,53 @@
 import Image from "next/image"
-import { AlingCarrouselBalls, CarrouselBall, ClickNextImage, Container, ImageContent } from "./homeCarrouselStyle"
+import { Carousel } from "react-responsive-carousel"
+import { AlingCarrouselBalls, CarrouselBall, ClickNextImage, ClickNextImageDiv, Container, ImageContent } from "./homeCarrouselStyle"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const HomeCarrousel = () => {
     return(
-        <Container>
-            <ImageContent>
-                <Image  layout="fill" src={'/temporary/itensLarge.jpg'}/>
-                <ClickNextImage size="52" color="white" />
-                <ClickNextImage  size="52"color="white" rigth={true}/>
-                <AlingCarrouselBalls>
-                    <CarrouselBall active={true}/>
-                    <CarrouselBall/>
-                    <CarrouselBall/>
-                    <CarrouselBall/>
+        <div class="carousel-wrapper">
+            <Carousel
+                showArrows={false} showThumbs={false} infiniteLoop useKeyboardArrows autoPlay
+                renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
+                    (
+                        <ClickNextImageDiv>
+                            <ClickNextImage  onClick={clickHandler} size="32" color="white" />
+                        </ClickNextImageDiv>
+                        
 
-                </AlingCarrouselBalls>
-            </ImageContent>
-        </Container>
+                    )
+                    
+                }
+                renderArrowNext={(clickHandler, hasNext, labelNext) =>
+                    (
+                        <ClickNextImageDiv  rigth={true}>
+
+                            <ClickNextImage onClick={clickHandler} size="32" color="white"/>
+                        </ClickNextImageDiv>
+
+                    )
+                }
+                renderIndicator={(   clickHandler: (e: React.MouseEvent | React.KeyboardEvent) => void,
+                    isSelected: boolean,
+                    index: number,
+                    label: string) =>
+                    (               
+                        <CarrouselBall onClick={clickHandler} active={isSelected}/>
+
+                    )
+                }
+            >
+                <ImageContent>
+                    <Image layout="fill" src={'/temporary/itensLarge.jpg'}/>
+                </ImageContent>
+                <ImageContent>
+                    <Image layout="fill" src={'/temporary/itensLarge.jpg'}/>
+                </ImageContent>
+                <ImageContent>
+                    <Image layout="fill" src={'/temporary/itensLarge.jpg'}/>
+                </ImageContent>
+            </Carousel>
+        </div>
     )
 }
 

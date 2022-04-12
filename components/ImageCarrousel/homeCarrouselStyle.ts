@@ -11,21 +11,38 @@ export const ImageContent = styled.div`
     display:flex;
     position: relative;
     width: 100%;
+    @media (min-width: 768px){
+        height: 7rem;
+    }
     height: 10rem;
 `
-
-export const ClickNextImage = styled(IoIosArrowBack)<{rigth?:boolean}>`
-    z-index: 1;
+export const ClickNextImageDiv = styled.div<{rigth?:boolean}>`
+    display:flex;
     position: absolute;
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+    padding: 0.05rem;;
     top: 50%;
-    transform: translateY(-50%);
-    :span{
-        fill:white;
-    }
-    ${({rigth}) => rigth && `
-        right: 0%;
+    ${({rigth}) => rigth ? `
+        right: 2%;
+        
+
         transform: translateY(-50%) rotate(180deg);
+    `:`
+        
+
+        transform: translateY(-50%);
+        left:2%;
     `}
+`
+export const ClickNextImage = styled(IoIosArrowBack)`
+    svg{
+        stroke:black;
+    }    
+
     :hover{
         cursor: pointer;
     }
@@ -47,6 +64,10 @@ export const CarrouselBall = styled.div<{active?:boolean}>`
     border: solid 2px #474747;
     width: .5rem;
     height: .5rem;
+    @media (min-width: 768px){
+        width: .3rem;
+        height: .3rem;
+    }
     margin-inline:.25rem;
     ${({active}) => active&& `
         background-color:white;

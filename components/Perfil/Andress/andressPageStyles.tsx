@@ -10,6 +10,15 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+    margin-top:3rem;
+    @media (min-width: 768px){
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin:0rem;
+        justify-content: center;
+
+    }
 `
 
 export const AlignAndressAndArrow = styled.div`
@@ -32,11 +41,15 @@ export const AndressContiner = styled.div`
     flex-direction: column;
     width: 90%;
     border-radius: 10px;
-
     align-items: center;
     padding:1rem;
     box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.2);
     margin-bottom:1rem;
+    @media (min-width: 768px){
+        box-shadow:none;
+        border:solid 1px ${({theme}) => theme.colors.stroke};
+        border-radius: 10px;
+    }
 `
 
 export const AndressDiv = styled.div`
@@ -44,7 +57,9 @@ export const AndressDiv = styled.div`
     display:flex;
     flex-direction: row;
     margin-block: 1rem;
-    
+    @media (min-width: 768px){
+        margin-block: .3rem;
+    }
     
 `
 
@@ -70,6 +85,12 @@ export const AddButon = styled.button`
     padding-block:.5rem;
     font-size:14px;
     font-weight:900;
+    @media(min-width: 768px){
+        margin-top: 1rem;
+        font-size:13px;
+        padding-block: 0.25rem;
+        padding-inline: 0.5rem;
+    }
 `
 
 export const Arrow = styled(MdArrowForwardIos)`

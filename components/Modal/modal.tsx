@@ -1,15 +1,18 @@
+import useWindowDimensions from "helpers/screenSize";
 import { useEffect, useRef } from "react";
 import { BackIcon, ModalBackground, ModalContainer } from "./modalStyle"
 
 interface Props {
     children:any,
     backModal:any,
-    modalStyle?:any
+    modalStyle?:any,
+    modalStyleDesktop?:any
 }
 
 
 
-export const Modal = ({children, backModal, modalStyle}:Props) => {
+export const Modal = ({children, backModal, modalStyle, modalStyleDesktop}:Props) => {
+    const { height, width } = useWindowDimensions();
 
     const ref = useRef(null)
 
@@ -29,7 +32,7 @@ export const Modal = ({children, backModal, modalStyle}:Props) => {
 
     return(
         <ModalBackground >
-            <ModalContainer style={modalStyle} ref={ref}>
+            <ModalContainer style={width < 768 ? modalStyle : modalStyleDesktop} ref={ref}>
 
                 {children}
             </ModalContainer>

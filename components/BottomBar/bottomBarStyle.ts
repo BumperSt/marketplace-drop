@@ -9,6 +9,12 @@ export const Container = styled.div`
     margin-top: 1rem;
     padding:1rem;
     align-items: center;
+    @media (min-width: 768px){
+        padding:.25rem;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-inline:1rem;
+    }
     
 `
 
@@ -35,7 +41,10 @@ export const DivColumn = styled.div`
 export const CopDiv = styled.div`
     text-align: start;
     margin-top: .8rem;
+    @media (min-width: 768px){
+        margin: 0rem;
 
+    }
 `
 
 export const CopTitle = styled.h1`
@@ -56,7 +65,7 @@ export const CopDescription = styled.h1`
     font-size:9px;
     max-width:60%;
     @media (min-width: 768px){
-        font-size: 36px;
+        font-size: 24px;
     }
     color:#CDCDCD;
 `
@@ -66,8 +75,12 @@ export const AlignRow = styled.div`
     flex-direction:row;
     justify-content: space-between;
     align-items: center;
-
+    @media (min-width: 768px){
+        justify-content: start;
+    }
 `
+
+
 
 
 
@@ -76,6 +89,11 @@ export const LogoImage = styled.div`
     width:5rem;
     height:2rem;
     margin-block: .8rem;
+    @media(min-width: 768px){
+        margin: 0rem;
+        width:4rem;
+        height:2rem;
+    }
 `
 
 export const IconImage = styled.div`

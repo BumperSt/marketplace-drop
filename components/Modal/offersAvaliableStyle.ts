@@ -4,7 +4,7 @@ import styled from "styled-components"
 export const ProductTitle = styled.h1`
     font-weight:700;
     font-size:14px;
-    margin-left:.5rem;
+    margin-left:.8rem;
 `
 
 export const OffersContainer = styled.div`
@@ -28,12 +28,11 @@ export const PriceDiv = styled.div`
     flex-direction: row;
     align-items: center;
     padding-inline:.5rem;
-
+    width: 90%;
+    align-self: center;
     padding-block:.3rem;
     justify-content: space-between;
-    :last-child{
-        border-bottom: 0px ;
-    }
+    
 `
 export const SizeButton = styled.div`
     margin-inline:.1rem;
@@ -47,7 +46,7 @@ export const SizeButton = styled.div`
 `
 
 export const StyledLine = styled.hr`
-    width: 100%;
+    width: 95%;
     align-self: center;
     margin-bottom: .25rem;
     height: 1px;

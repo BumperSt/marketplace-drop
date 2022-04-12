@@ -17,14 +17,13 @@ export const Advert = ({anuncio, setOpenEditAdvert} : Props) => {
                     <AdvertProductTitle>{anuncio.title}</AdvertProductTitle>
                     <AdvertProductPrice>R$ {anuncio.price}</AdvertProductPrice>
                 </AlignColumn>
+            </AlingRow>
                 {
                     setOpenEditAdvert &&
                         <Arrow size={20}/>
                 }
                 
-            </AlingRow>
-            <AlignIcon>
-            </AlignIcon>
+     
         </AdvertContainer>
     )
 }
