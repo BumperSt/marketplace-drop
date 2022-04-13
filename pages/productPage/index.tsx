@@ -102,7 +102,7 @@ const ProductPage = () => {
                 </AlingRowDesktop>
 
             </ContainerProductPage>
-            <ListHorizontaltems ListType="Large"/>
+            <ListHorizontaltems title="Anúncios patrocinados" ListType="Large"/>
 
             {
                 openOfferModal &&

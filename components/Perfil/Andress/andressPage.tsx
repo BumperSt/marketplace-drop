@@ -1,13 +1,14 @@
 import { HeadBar } from "@/components/HeadBar/headBar"
 import { Input } from "@/components/Inputs/input"
-import { useState } from "react"
-import { AddButon, AlignAndressAndArrow, AndressContiner, AndressDiv, AndressName, AndressType, Arrow, Container, InputDiv, InputDivRow, InputEditAndress, InputName, SaveButton } from "./andressPageStyles"
+import { useEffect, useState } from "react"
+import { AddButon, AlignAndressAndArrow, AndressContiner, AndressDiv, AndressEditContainter, AndressName, AndressType, Arrow, Container, InputDiv, InputDivRow, InputEditAndress, InputName, SaveButton } from "./andressPageStyles"
 
-interface Props {
-    closePage: any
+interface props {
+    setEditOn:any
 }
 
-export const AndressPage = ({closePage} : Props) => {
+
+export const AndressPage = ({setEditOn} : props) => {
 
     const [editAndress , setEditAndress] = useState(false)
 
@@ -16,13 +17,20 @@ export const AndressPage = ({closePage} : Props) => {
     const CloseEdit = () => {
         setEditAndress(false)
     }
+
+    useEffect(() =>{
+        if(editAndress){
+            setEditOn(() =>  CloseEdit   )
+        }
+    }, [editAndress])
+
     
     return(
         <Container>
             {
                 editAndress ?
                 <>
-                    <AndressContiner>
+                    <AndressEditContainter>
                         <Input Title="NOME" value={andressName} setValue={setAndressName}/>
                         <Input Title="CEP" value={andressName} setValue={setAndressName}/>
                         <Input Title="ENDEREÇO" value={andressName} setValue={setAndressName}/>
@@ -49,7 +57,7 @@ export const AndressPage = ({closePage} : Props) => {
                         </InputDiv>
                         <SaveButton>Salvar</SaveButton>
 
-                    </AndressContiner>
+                    </AndressEditContainter>
                 </>
                 :
                 <>

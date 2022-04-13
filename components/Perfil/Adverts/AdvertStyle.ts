@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { MdArrowForwardIos } from "react-icons/md";
 
 export const Container = styled.div`
-    position: fixed;
     overflow-y: auto;
     display: flex;
     background-color:white;
@@ -10,11 +9,10 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    margin-top:3rem;
     @media (min-width: 768px){
         position: relative;
         width: 100%;
-        height: 100%;
+        height: auto;
         margin:0rem;
         
     }
@@ -47,7 +45,8 @@ export const AdvertsContainer = styled.div`
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         width: 90%;
-        
+        padding-block:.2rem;
+
     }
 `
 
@@ -57,6 +56,8 @@ export const AdvertButton = styled.button`
     padding-inline: 0.9rem;
     @media(min-width: 768px){
         font-size:13px;
+        margin-block: .2rem;    
+
         padding-block: 0.25rem;
         padding-inline: 0.5rem;
     }
@@ -94,6 +95,7 @@ export const AdvertContainer = styled.div`
     @media (min-width: 768px){
         padding-block:.2rem;
         padding-inline:.3rem;
+        margin-bottom: .25rem;
 
     }
     :hover{

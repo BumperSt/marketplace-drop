@@ -5,10 +5,11 @@ import { ItemBackgroud, ItemCard } from "../AdvertCard/advertCardStyle"
 import {ItemsScrollList, ListHorizontaltemsContainer, ListItemContainer, ListItemsTitle } from "./listHorizontaltemsStyle"
 
 interface Props {
+    title: string,
     ListType:'Large' | 'Small'
 }
 
-export const ListHorizontaltems = ({ListType}: Props) => {
+export const ListHorizontaltems = ({ListType, title}: Props) => {
 
     const router = useRouter()
 
@@ -17,7 +18,7 @@ export const ListHorizontaltems = ({ListType}: Props) => {
             {
                 ListType == 'Small' ?
                 <ListItemContainer>
-                    <ListItemsTitle>Últimos drops</ListItemsTitle>
+                    <ListItemsTitle>{title}</ListItemsTitle>
                     <ItemsScrollList>
                         {
                             [1,2,3,4,5].map((item) => (
@@ -28,7 +29,7 @@ export const ListHorizontaltems = ({ListType}: Props) => {
                 </ListItemContainer>
                 :
                 <ListItemContainer>
-                    <ListItemsTitle>Anúncios VIP</ListItemsTitle>
+                    <ListItemsTitle>{title}</ListItemsTitle>
                     <ItemsScrollList>
                         {
                             [1,2,3,4,5].map((item) => (

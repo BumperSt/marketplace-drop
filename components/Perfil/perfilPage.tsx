@@ -23,6 +23,7 @@ export const PerfilPage = ({closeModal}: Props) => {
 
     const [openPage, setOpenPage] = useState('')
     const { height, width } = useWindowDimensions();
+    const [editOn, setEditOn] = useState(null)
     const {user, logOut} = useContext(UserContext)
     const [modalDesktopStyle, setModalDesktopStyle] = useState({
         width: '6rem',
@@ -90,45 +91,57 @@ export const PerfilPage = ({closeModal}: Props) => {
         }
     }, [openPage])
 
+    useEffect(() => {
+        console.log(editOn)
+    }, [editOn])
+
     let myUrl = window.location.pathname
     const Router = useRouter()
     
+
+    const closeEdit = () => {
+        setEditOn(false)
+        editOn()
+    }
+
     const closePage  = () => {
         setOpenPage('')
         enableBodyScroll(document.body)
     }
+
     
     if(width < 768){
         return(
             <Modal backModal={closeModal}>
                 {
                     openPage != '' ?
-                        <HeadBar backFunction={closePage}/>
+                        <HeadBar backFunction={editOn ? closeEdit:closePage}/>
                     :
                         <HeadBar  backFunction={closeModal}/>
 
                 }
                 {
                     openPage == 'Andress' ?
-                        <AndressPage closePage={closePage}/>
+                        <AndressPage setEditOn={setEditOn}/>
                     :openPage == 'Adverts'  ?
-                        <AdvertsPage closePage={closePage}/>
-                    :openPage == 'RegistrationData'&&
-                        <RegistrationData closePage={closePage}/>
+                        <AdvertsPage setEditOn={setEditOn}/>
+                    :openPage == 'RegistrationData'?
+                        <RegistrationData setEditOn={setEditOn}/>
+                    :
+                    <Container>
+                        <AlingProfileAndIcon>
+                            <ProfileName>Sneaker Store</ProfileName>
+                            <TemporaryCrown/>
+                        </AlingProfileAndIcon>
+                        {
+                        GetPageMenu()
+                        }
+                        <ModalButton >Vender agora</ModalButton>
+                    
+                    </Container>
                     
                 }
-                <Container>
-                    <AlingProfileAndIcon>
-                        <ProfileName>Sneaker Store</ProfileName>
-                        <TemporaryCrown/>
-                    </AlingProfileAndIcon>
-
-                    {
-                     GetPageMenu()
-                    }
-                    <ModalButton >Vender agora</ModalButton>
-                    
-                </Container>
+ 
             </Modal>
         )
     }else{
@@ -168,11 +181,11 @@ export const PerfilPage = ({closeModal}: Props) => {
                             </AlingMenuInCollum>
                             {
                                 openPage == 'Andress' ?
-                                    <AndressPage closePage={closePage}/>
+                                    <AndressPage  setEditOn={setEditOn}/>
                                 :openPage == 'Adverts'  ?
-                                    <AdvertsPage closePage={closePage}/>
+                                    <AdvertsPage  setEditOn={setEditOn}/>
                                 :openPage == 'RegistrationData'&&
-                                    <RegistrationData closePage={closePage}/>
+                                    <RegistrationData setEditOn={setEditOn}/>
                             
                             }
                         </ContainerOpenInDesktop>

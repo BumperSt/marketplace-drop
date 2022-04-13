@@ -113,8 +113,10 @@ export const PriceDiv = styled.div`
         border-bottom: 0px ;
     }
     @media(min-width: 768px){
-        padding-inline:1rem;
-
+        padding-inline:2rem;
+    }
+    :hover{
+        cursor:pointer;
     }
 `
 

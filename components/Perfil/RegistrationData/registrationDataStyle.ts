@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    position: fixed;
     overflow-y: auto;
     display: flex;
     background-color:white;
@@ -9,7 +8,6 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    margin-top:3rem;
     @media (min-width: 768px){
         position: relative;
         width: 100%;

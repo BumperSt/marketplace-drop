@@ -29,14 +29,15 @@ const HomePage = () => {
     <Container>
         <HomeCarrousel/>
 
-        <ListHorizontaltems ListType="Small"/>
-        <ListHorizontaltems ListType="Large"/>
+        <ListHorizontaltems title='Últimos drops' ListType="Small"/>
+        <ListHorizontaltems title='Anúncios VIP' ListType="Large"/>
         <ListHorizontalCategorys/>
 
         <div style={{
           display:'flex',
           marginTop:'1rem'
         }}>
+
           <Image width="1249" height="900" src="/temporary/itensLarge.jpg"/>
 
         </div>

@@ -18,10 +18,7 @@ export const ContainerOpenInDesktop = styled.div`
     flex-direction: row;
     width: 100%;
     align-items: center;
-    @media(min-width: 768px){
-        margin-top: 1rem;
-    }
-    
+
 `
 
 export const ProfileName = styled.h1`
@@ -107,7 +104,7 @@ export const AlingMenuInCollum = styled.div`
     width: 70%;
     height: 100%;
     @media (min-width: 768px){
-        padding-block:2rem;
+        height:auto;
         border-right: 1px #CDCDCD solid;
     }
 `

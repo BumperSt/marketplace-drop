@@ -9,11 +9,11 @@ import { Switch } from "@/components/Inputs/swith"
 import { Advert } from "./Advert"
 
 interface props {
-    closePage:any
+    setEditOn:any
 }
 
 
-export const AdvertsPage = ({closePage}:props) => {
+export const AdvertsPage = ({setEditOn}:props) => {
 
     const [anuncios, SetAnuncions] = useState(null)
     const [openEditAdvert, setOpenEditAdvert] = useState(false)
@@ -32,6 +32,20 @@ export const AdvertsPage = ({closePage}:props) => {
         }
         SetAnuncions(tempAnuncions)
     }, [])
+
+
+    const CloseEdit = () => {
+        setOpenEditAdvert(false)
+    }
+
+    useEffect(() =>{
+        if(openEditAdvert){
+            setEditOn(() =>  CloseEdit   )
+        }else{
+            setEditOn(false )
+
+        }
+    }, [openEditAdvert])
 
 
     return(
@@ -55,7 +69,7 @@ export const AdvertsPage = ({closePage}:props) => {
                 <AdvertButton onClick={() => setOpenPublisherAdvert(true)}>Anunciar</AdvertButton>
                 {
                     openEditAdvert &&
-                        <ModalToManageAdvert closePage={() => setOpenEditAdvert(false)}/>
+                        <ModalToManageAdvert  closePage={CloseEdit}/>
                 }
                 {/* {
                 openEditAdvert &&

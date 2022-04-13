@@ -7,10 +7,10 @@ import { Arrow } from "../Adverts/AdvertStyle";
 
 
 interface Props {
-    closePage: any
+    setEditOn: any
 }
 
-export const RegistrationData = ({closePage} : Props) => {
+export const RegistrationData = ({setEditOn} : Props) => {
 
     const {user} = useContext(UserContext)
 
@@ -18,6 +18,7 @@ export const RegistrationData = ({closePage} : Props) => {
         console.log(user)
     }, [user])
 
+    
     return (
         <Container>
             <RegistrationTitle>Dados cadastrais</RegistrationTitle>

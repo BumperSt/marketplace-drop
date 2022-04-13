@@ -2,19 +2,19 @@ import { MdArrowForwardIos } from "react-icons/md"
 import styled from "styled-components"
 
 export const Container = styled.div`
-    position: fixed;
     overflow-y: auto;
     display: flex;
     background-color:white;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100%;
-    margin-top:3rem;
+    height: 100vh;
+    overflow: auto;
+
     @media (min-width: 768px){
         position: relative;
         width: 100%;
-        height: 100%;
+        height: auto;
         margin:0rem;
 
     }
@@ -44,12 +44,19 @@ export const AndressContiner = styled.div`
     padding:1rem;
     box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.2);
     margin-bottom:1rem;
+    
     @media (min-width: 768px){
         box-shadow:none;
         border:solid 1px ${({theme}) => theme.colors.stroke};
         border-radius: 10px;
     }
 `
+export const AndressEditContainter = styled(AndressContiner)`
+    background-color: white;
+    
+`
+
+
 
 export const AndressDiv = styled.div`
     width: 100%;
