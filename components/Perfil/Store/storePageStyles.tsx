@@ -3,7 +3,8 @@ import styled from "styled-components"
 import { InternalContainer } from "../ContainerModel/ContainerModelStyle"
 
 
-export const AlignAndressAndArrow = styled.div`
+
+export const AlignStoreAndArrow = styled.div`
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -11,7 +12,7 @@ export const AlignAndressAndArrow = styled.div`
     width: 100%;
 `
 
-export const AndressCollum = styled.div`
+export const StoreCollum = styled.div`
     text-align: start;
     display:flex;
     flex-direction: column;
@@ -19,7 +20,7 @@ export const AndressCollum = styled.div`
 `
 
 
-export const AndressEditContainter = styled(InternalContainer)`
+export const StoreEditContainter = styled(InternalContainer)`
     background-color: white;
     width: 90%;
     @media (min-width: 768px){
@@ -30,7 +31,7 @@ export const AndressEditContainter = styled(InternalContainer)`
 
 
 
-export const AndressDiv = styled.div`
+export const StoreDiv = styled.div`
     width: 100%;
     display:flex;
     flex-direction: row;
@@ -44,17 +45,16 @@ export const AndressDiv = styled.div`
     
 `
 
-export const AndressType = styled.h1`
+export const StoreType = styled.h1`
     font-size:14px;
     font-weight:400;
     min-width:30%;
     text-align:start;
-    justify-self: start;
     color:${({theme}) => theme.colors.detalhes};
     
 `
 
-export const AndressName = styled.h1`
+export const StoreName = styled.h1`
     font-size:14px;
     font-weight:500;
     color:${({theme}) => theme.colors.detalhes};
@@ -79,32 +79,6 @@ export const Arrow = styled(MdArrowForwardIos)`
     fill:${({theme}) => theme.colors.detalhes};
 `
 
-
-export const InputEditAndress = styled.input`
-    color:${({theme}) => theme.colors.detalhes};
-    background-color:${({theme}) => theme.colors.vipAnuncioBackground};
-    width: 100%;
-    font-size: 14px;
-    border-radius: 15px;
-    padding-inline: .5rem;
-    font-weight: 600;
-    padding-block: .5rem;
-    border: 0px;
-`
-
-export const InputName = styled.h1`
-    margin-top: .5rem;
-    font-size:12px;
-    padding-block:.5rem;
-    text-align: start;
-    color:${({theme}) => theme.colors.detalhes};
-`
-
-export const InputDivRow = styled.div`
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-`
 
 export const SaveButton = styled(AddButon)`
     align-self: end;

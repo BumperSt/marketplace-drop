@@ -1,4 +1,4 @@
-import { ActivyAdvertsTitle, AdvertButton, AdvertsContainer, AdvertsScroll, Container, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn, AlignIcon, AdvertContainer,AlingRow, Arrow, SelectAdvertTypeText, AlingRowSwithAndText } from "./AdvertStyle"
+import { ActivyAdvertsTitle, AdvertButton, AdvertsScroll, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn, AlignIcon, AdvertContainer,AlingRow, Arrow, SelectAdvertTypeText, AlingRowSwithAndText } from "./AdvertStyle"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 
@@ -7,6 +7,8 @@ import { ModalExcludeAdvert } from "./modalExcludeAdvert"
 import { HeadBar } from "@/components/HeadBar/headBar"
 import { Switch } from "@/components/Inputs/swith"
 import { Advert } from "./Advert"
+import { ContainerModel } from "../ContainerModel/ContainerModel"
+import { InternalContainer } from "../ContainerModel/ContainerModelStyle"
 
 interface props {
     setEditOn:any
@@ -49,14 +51,14 @@ export const AdvertsPage = ({setEditOn}:props) => {
 
 
     return(
-        <Container>       
+        <ContainerModel  editOn={openEditAdvert}>       
             <AlingRowSwithAndText>
                 <SelectAdvertTypeText>Disponíveis</SelectAdvertTypeText>
                 <Switch styleBall={{backgroundColor:'#2A2A2A'}} styleDiv={{border:'solid 1px #2A2A2A'}}  onClick={() => setDisponibles(!disponibles)} checked={disponibles}/>
                 <SelectAdvertTypeText>Vendidos</SelectAdvertTypeText>
             </AlingRowSwithAndText>
             
-            <AdvertsContainer>
+            <InternalContainer pageName={'adverts'}>
                 <AdvertsScroll>
                     {
                         anuncios &&
@@ -83,7 +85,7 @@ export const AdvertsPage = ({setEditOn}:props) => {
                     openPublisherAdvert && 
                     <ModalToManageAdvert modalType={'create'} setModalState={setOpenPublisherAdvert}/>
                 } */}
-            </AdvertsContainer>
-        </Container>
+            </InternalContainer>
+        </ContainerModel>
     )
 }

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {BsPlusCircleFill, BsFillDashCircleFill} from 'react-icons/bs'
 import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
 export const InputContainer = styled.div<{fontColor?: string}>`
     display:flex;
@@ -25,8 +24,9 @@ export const InputContainer = styled.div<{fontColor?: string}>`
         `
     }
     @media (min-width: 768px) {
-        margin-top: .3rem;
-        width: 50%;
+        padding-inline: 0rem;
+        margin-top: 0rem;
+        width: 100%;
     }
 `
 
@@ -86,6 +86,9 @@ export const InputTitle = styled.h1`
     padding-block:.5rem;
     width: 100%;
     text-align: start;
+    @media(min-width: 768px){
+        padding-block:.2rem;
+    }
 `
 
 export const ConditionDiv = styled.div`
@@ -99,10 +102,13 @@ export const ConditionDiv = styled.div`
     padding-block:.5rem;
     min-width:8rem;
     h1{
+        
+
         font-size: 24px;
         font-weight: 900;
         color:${({ theme}) => theme.colors.fonts[1]}
     }
+
 `
 
 export const PlusIcon = styled(FiPlusCircle)`

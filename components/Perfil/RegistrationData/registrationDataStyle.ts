@@ -1,21 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-    overflow-y: auto;
-    display: flex;
-    background-color:white;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    @media (min-width: 768px){
-        position: relative;
-        width: 100%;
-        height: 100%;
-        margin:0rem;
 
-    }
-`
 
 export const RegistrationDataCollum = styled.div`
     text-align: start;
@@ -24,21 +9,6 @@ export const RegistrationDataCollum = styled.div`
     width: 100%;
 `
 
-export const RegistrationDataContiner = styled.div`
-    display:flex;
-    flex-direction: column;
-    width: 90%;
-    align-items: center;
-    padding:1rem;
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom:1rem;
-    @media (min-width: 768px){
-        box-shadow:none;
-        border:solid 1px ${({theme}) => theme.colors.stroke};
-        border-radius: 10px;
-    }
-`
 
 export const RegistrationTitle =styled.h1`
     font-weight: 600;

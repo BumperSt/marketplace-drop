@@ -13,6 +13,7 @@ import { disableBodyScroll, enableBodyScroll,  } from 'body-scroll-lock';
 
 import { AdIcon, AlingProfileAndIcon, Container, ContainerOpenInDesktop, LogoutIcon, ProfileName, ProfilePageButton, StoreIcon, TemporaryCrown, TruckIcon, UserIcon, AlingMenuInCollum } from "./perfilPageStyle"
 import { RegistrationData } from "./RegistrationData/registrationData"
+import { StoreEditPage } from "./Store/storePage"
 
 
 interface Props {
@@ -35,6 +36,11 @@ export const PerfilPage = ({closeModal}: Props) => {
     const GetPageMenu = () => {
         const Pages = [
             {
+                'title': 'Minha Loja',
+                'pageName' : 'Store',
+                'icon': <StoreIcon size='25'/>
+            },
+            {
                 'title':'Meus anúncios',
                 'pageName':'Adverts',
                 'icon':<AdIcon size='25'/>
@@ -51,14 +57,7 @@ export const PerfilPage = ({closeModal}: Props) => {
             }
         ]
         return <>
-            <ProfilePageButton active={openPage == '' && myUrl.includes('store')}  onClick={() => {
-                Router.push('store')
-                closeModal()
-                enableBodyScroll(document.body)
 
-            }}>
-                <StoreIcon size='25'/>Minha Loja
-            </ProfilePageButton>
             {
                 Pages.map((page, index) => (
                     <ProfilePageButton active={openPage == page.pageName} key={index} onClick={() => {setOpenPage(page.pageName)}}>
@@ -127,6 +126,8 @@ export const PerfilPage = ({closeModal}: Props) => {
                         <AdvertsPage setEditOn={setEditOn}/>
                     :openPage == 'RegistrationData'?
                         <RegistrationData setEditOn={setEditOn}/>
+                    :openPage == 'Store' ?
+                        <StoreEditPage setEditOn={setEditOn}/>
                     :
                     <Container>
                         <AlingProfileAndIcon>
@@ -180,12 +181,15 @@ export const PerfilPage = ({closeModal}: Props) => {
 
                             </AlingMenuInCollum>
                             {
-                                openPage == 'Andress' ?
-                                    <AndressPage  setEditOn={setEditOn}/>
-                                :openPage == 'Adverts'  ?
-                                    <AdvertsPage  setEditOn={setEditOn}/>
-                                :openPage == 'RegistrationData'&&
-                                    <RegistrationData setEditOn={setEditOn}/>
+                               openPage == 'Andress' ?
+                               <AndressPage setEditOn={setEditOn}/>
+                           :openPage == 'Adverts'  ?
+                               <AdvertsPage setEditOn={setEditOn}/>
+                           :openPage == 'RegistrationData'?
+                               <RegistrationData setEditOn={setEditOn}/>
+                           :openPage == 'Store' &&
+                               <StoreEditPage setEditOn={setEditOn}/>
+                           
                             
                             }
                         </ContainerOpenInDesktop>

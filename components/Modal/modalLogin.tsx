@@ -29,7 +29,7 @@ export const ModalLogin = ({closeModal}: Props) => {
     const [viewPassword, setViewPassword] = useState('password')
 
     const {setUser} = useContext(UserContext)
-
+    const [error, setError] = useState(null)
 
     const closeModalHere = () => {
         closeModal()
@@ -51,6 +51,7 @@ export const ModalLogin = ({closeModal}: Props) => {
             closeModalHere()
         }).catch((error) => {
             console.log(error)
+            setError(error.message)
         })
 
     }

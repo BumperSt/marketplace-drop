@@ -1,9 +1,11 @@
 import { HeadBar } from "@/components/HeadBar/headBar";
 import { ProfileName } from "../perfilPageStyle";
-import { AlignRegistrationAndArrow, Container, RegistrationDataContiner, RegistrationDataDiv, RegistrationDataName, RegistrationDataType, RegistrationTitle } from "./registrationDataStyle";
+import { AlignRegistrationAndArrow, RegistrationDataDiv, RegistrationDataName, RegistrationDataType, RegistrationTitle } from "./registrationDataStyle";
 import { useContext, useEffect } from "react";
 import UserContext from "context/userContext";
 import { Arrow } from "../Adverts/AdvertStyle";
+import { ContainerModel } from "../ContainerModel/ContainerModel";
+import { InternalContainer } from "../ContainerModel/ContainerModelStyle";
 
 
 interface Props {
@@ -20,9 +22,9 @@ export const RegistrationData = ({setEditOn} : Props) => {
 
     
     return (
-        <Container>
+        <ContainerModel  editOn={false}>
             <RegistrationTitle>Dados cadastrais</RegistrationTitle>
-            <RegistrationDataContiner>
+            <InternalContainer >
                 <RegistrationDataDiv>
                         <RegistrationDataType>NOME</RegistrationDataType>
                         <AlignRegistrationAndArrow>
@@ -76,7 +78,7 @@ export const RegistrationData = ({setEditOn} : Props) => {
                     </AlignRegistrationAndArrow>                    
                 </RegistrationDataDiv>
 
-            </RegistrationDataContiner>
-        </Container>
+            </InternalContainer>
+        </ContainerModel>
     );
 }

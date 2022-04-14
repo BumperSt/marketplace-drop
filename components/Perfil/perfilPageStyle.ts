@@ -17,7 +17,7 @@ export const ContainerOpenInDesktop = styled.div`
     display: flex;
     flex-direction: row;
     width: 100%;
-    align-items: center;
+    align-items: start;
 
 `
 
@@ -104,7 +104,6 @@ export const AlingMenuInCollum = styled.div`
     width: 70%;
     height: 100%;
     @media (min-width: 768px){
-        height:auto;
         border-right: 1px #CDCDCD solid;
     }
 `

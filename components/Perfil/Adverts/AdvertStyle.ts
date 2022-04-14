@@ -1,22 +1,6 @@
 import styled from "styled-components"
 import { MdArrowForwardIos } from "react-icons/md";
 
-export const Container = styled.div`
-    overflow-y: auto;
-    display: flex;
-    background-color:white;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    @media (min-width: 768px){
-        position: relative;
-        width: 100%;
-        height: auto;
-        margin:0rem;
-        
-    }
-`
 
 export const ActivyAdvertsTitle = styled.h1`
     @media (max-width: 300px){
@@ -25,30 +9,6 @@ export const ActivyAdvertsTitle = styled.h1`
     font-weight: 700;
 `
 
-export const AdvertsContainer = styled.div`
-    padding-inline:.8rem;
-    padding-block:.5rem;
-    margin-top: .5rem;
-    background-color:white;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius:10px;
-    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
-    justify-content: center;
-    @media (min-width: 768px){
-        box-shadow:none;
-        border:solid 1px ${({theme}) => theme.colors.stroke};
-        border-top: 0px;
-        margin:0px;
-        border-radius: 0px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        width: 90%;
-        padding-block:.2rem;
-
-    }
-`
 
 export const AdvertButton = styled.button`
     margin-block: 1rem;    
