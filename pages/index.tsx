@@ -14,6 +14,14 @@ const Container = styled.div`
 
   }
 `
+
+const ImagemBanner = styled.div`
+  margin-top: 1rem;
+  width:100%;
+  position: relative;
+  height: 7rem;
+`
+
 const HomePage = () => {
 
   const [tempStateInfo, setTempStateInfo] = useState(true)
@@ -29,18 +37,17 @@ const HomePage = () => {
     <Container>
         <HomeCarrousel/>
 
-        <ListHorizontaltems title='Últimos drops' ListType="Small"/>
-        <ListHorizontaltems title='Anúncios VIP' ListType="Large"/>
+        <ListHorizontaltems type='advert' title='Últimos drops' ListType="Small"/>
+        <ListHorizontaltems type="vip" title='Anúncios VIP' ListType="Large"/>
         <ListHorizontalCategorys/>
 
-        <div style={{
-          display:'flex',
-          marginTop:'1rem'
-        }}>
 
-          <Image width="1249" height="900" src="/temporary/itensLarge.jpg"/>
+        <ImagemBanner>
+          <Image layout="fill" src="/temporary/banner.png"/>
+        </ImagemBanner>
+        <ListHorizontaltems type="lastAdverts" title='Últimos Anúncios' ListType="Large"/>
+        <ListHorizontaltems type="lastAdverts" title='Últimos Anúncios' ListType="Large"/>
 
-        </div>
         
 
     </Container>

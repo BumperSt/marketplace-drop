@@ -14,7 +14,7 @@ export const ListHorizontalCategorys = () => {
                 <ListItemsTitle>Categorias</ListItemsTitle>
                 <ItemsScrollList>
                     {
-                        [1,2].map((item) => (
+                        [1,2,3,4].map((item) => (
                             <ItemCard key={item} onClick={() => router.push('/productPage')}>
                                 <ItemBackgroud>
                                     <CategoryImageDiv>
@@ -23,7 +23,7 @@ export const ListHorizontalCategorys = () => {
                                         </CategoryImage>
                                     </CategoryImageDiv>
                                     
-                                    <Image alt="teste" title="teste" width="200" height="150" src="/home/category.png"></Image>
+                                    <Image alt="teste" title="teste" layout="fill"src="/home/category.png"></Image>
                                 </ItemBackgroud>
                             </ItemCard>
                         ))

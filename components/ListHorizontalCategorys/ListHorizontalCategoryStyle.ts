@@ -45,9 +45,13 @@ export const ItemsScrollList = styled.div`
 
 
 export const ItemBackgroud = styled.div`
-    width: 7rem;
-    height:  auto;
     position: relative;
+    width: 7rem;
+    height:5.5rem;
+    @media(min-width: 768px){
+        width: 6rem;
+        height: 4.5rem;
+    }
 `
 
 export const CategoryImageDiv = styled.div`
@@ -64,12 +68,21 @@ export const CategoryImageDiv = styled.div`
     z-index:1;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+    @media (min-width: 768px){
+        
+        width:1rem;
+        height:1rem;
+    }
 `
 
 export const CategoryImage = styled.div`
     width:1.5rem;
     height:1.25rem;
     position:relative;
+    @media (min-width: 768px){
+        width:.8rem;
+        height:.8rem;
+    }
 `
 export const ItemCard  = styled.div`
     display: flex;
@@ -78,6 +91,10 @@ export const ItemCard  = styled.div`
     margin-right: 1rem;
     :hover{
         cursor:pointer;
+    }
+    @media (min-width: 768px){
+        margin-right: .5rem;
+
     }
     
 `

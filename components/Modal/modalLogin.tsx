@@ -47,7 +47,6 @@ export const ModalLogin = ({closeModal}: Props) => {
         }).then((response) => {
             setUser(response.data.user)
             localStorage.setItem('@token', response.data.token)
-
             closeModalHere()
         }).catch((error) => {
             console.log(error)

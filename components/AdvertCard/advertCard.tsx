@@ -3,7 +3,7 @@ import { AlignVipSize, AlingRowVipSizeAndPrice, ItemBackgroud, ItemCard, ItemTit
 import {useRouter} from 'next/router'
 
 interface Props {
-    type: 'advert' | 'vip' | 'searchAdvert'
+    type: 'advert' | 'vip' | 'searchAdvert' | 'lastAdverts'
     advert:any,
     style?:any,
 }
@@ -33,6 +33,8 @@ export const AdvertCard = ({advert, type, style} : Props) => {
                         <AlignVipSize>
                             <VipSize>12</VipSize>
                             <VipSize>12</VipSize>
+
+                            <VipSize>12</VipSize>
                         </AlignVipSize>
                         
                     </AlingRowVipSizeAndPrice>
@@ -56,6 +58,27 @@ export const AdvertCard = ({advert, type, style} : Props) => {
                     transform: 'translateX(-.3rem)',
                     fontWeight:'500',
                 }}>Lorem Ipuso</ItemTitle>
+            </ItemCard>
+        )
+    }else if(type == 'lastAdverts'){
+        return(
+            <ItemCard style={style}>
+                <ItemBackgroud Large={true}>
+                    <Image layout="fill" objectFit="cover" alt="teste" title="teste" src="/home/vip.png"></Image>
+                </ItemBackgroud>
+                <VipItemDiv>
+                    <VipItemTitle>CONSECTETUR ADIPISCING ELIT</VipItemTitle>
+                    <AlingRowVipSizeAndPrice>
+                        <VipItemPrice>R$ 1299,99</VipItemPrice>    
+                        <AlignVipSize>
+                            <VipSize>12</VipSize>
+
+                            <VipSize>12</VipSize>
+                            <VipSize>12</VipSize>
+                        </AlignVipSize>
+                        
+                    </AlingRowVipSizeAndPrice>
+                </VipItemDiv>
             </ItemCard>
         )
     }

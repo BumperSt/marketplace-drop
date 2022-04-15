@@ -6,10 +6,11 @@ import {ItemsScrollList, ListHorizontaltemsContainer, ListItemContainer, ListIte
 
 interface Props {
     title: string,
+    type:'advert' | 'vip' | 'searchAdvert' | 'lastAdverts'
     ListType:'Large' | 'Small'
 }
 
-export const ListHorizontaltems = ({ListType, title}: Props) => {
+export const ListHorizontaltems = ({ListType, title, type}: Props) => {
 
     const router = useRouter()
 
@@ -22,7 +23,7 @@ export const ListHorizontaltems = ({ListType, title}: Props) => {
                     <ItemsScrollList>
                         {
                             [1,2,3,4,5].map((item) => (
-                                <AdvertCard type="advert" advert={{}} key={item}/>
+                                <AdvertCard type={type} advert={{}} key={item}/>
                             ))
                         }
                     </ItemsScrollList>
@@ -33,7 +34,7 @@ export const ListHorizontaltems = ({ListType, title}: Props) => {
                     <ItemsScrollList>
                         {
                             [1,2,3,4,5].map((item) => (
-                                <AdvertCard type="vip" advert={{}} key={item}/>
+                                <AdvertCard type={type}  advert={{}} key={item}/>
                             ))
                         }
                     </ItemsScrollList>
