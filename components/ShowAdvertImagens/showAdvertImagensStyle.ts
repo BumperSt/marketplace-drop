@@ -20,7 +20,6 @@ export const ListImage = styled.div`
     @media (min-width: 768px){
         flex-direction:row;
         margin-left: 0rem;
-        justify-content: space-between;
         width: 7.5rem;
 
     }
@@ -30,11 +29,14 @@ export const ImageDiv = styled.div`
     position:relative;
     span{border-radius: 10px;}
     margin-block: .5rem;
-    @media(min-width: 768px){
-        margin-block:.1rem;
-    }
+
     width: 9rem;
     height: 8rem;
+    @media(min-width: 768px){
+        margin-block:.1rem;
+        width: 7rem;
+        height: 6rem;
+    }
 `
 export const SmallImageDiv = styled.div`
     display:flex;
@@ -44,8 +46,10 @@ export const SmallImageDiv = styled.div`
     width: 1.7rem;
     height: 1.5rem;
     @media (min-width: 768px) {
-        width: 2.2rem;
-        height: 2rem;
+        width:1.5rem;
+        height: 1.3rem;
+        margin-block: .2rem;
+        margin-inline: .2rem;
 
     }
 `

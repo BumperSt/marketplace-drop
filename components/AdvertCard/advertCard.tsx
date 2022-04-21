@@ -72,7 +72,6 @@ export const AdvertCard = ({advert, type, style} : Props) => {
                         <VipItemPrice>R$ 1299,99</VipItemPrice>    
                         <AlignVipSize>
                             <VipSize>12</VipSize>
-
                             <VipSize>12</VipSize>
                             <VipSize>12</VipSize>
                         </AlignVipSize>

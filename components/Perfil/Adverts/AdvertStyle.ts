@@ -114,6 +114,9 @@ export const AlignColumn = styled.div`
 `
 export const Arrow = styled(MdArrowForwardIos)`
     fill:${({theme}) => theme.colors.detalhes};
+    :hover{
+        cursor: pointer;
+    }
     
 `
 
@@ -123,11 +126,33 @@ export const AlignIcon = styled.div`
     flex-direction:row;
 `
 
-
 export const AlingRow = styled.div`
     display:flex;
     flex-direction:row;
     align-items:center;
+`
+
+export const AlingRowDesktop = styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    @media(min-width: 768px){
+        flex-direction:row-reverse;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top:.5rem;
+        padding-inline:1rem
+    }
+`
+
+export const AlingRowInDesktop = styled.div`
+    display:flex;
+    flex-direction: row-reverse;
+    align-items:center;
+    @media(min-width: 768px){
+        flex-direction:row;
+    }
 `
 
 export const AlingRowSwithAndText = styled.div`
@@ -152,4 +177,9 @@ export const SelectAdvertTypeText = styled.h1`
     font-size: 14px;
     color:${({ theme}) => theme.colors.fonts[0]};
     
+`
+
+export const ReverseCollumInDesktop = styled.div`
+    display:flex;
+    flex-direction: column;
 `

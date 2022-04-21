@@ -9,6 +9,8 @@ import UserContext, { IUserContext } from '@/context/userContext';
 import auth from 'apiService/auth';
 import { IUser } from 'apiService/types/userTypes';
 import { LoadingPage } from '@/components/LoadingPage/loadingPage';
+import { disableBodyScroll, enableBodyScroll,  } from 'body-scroll-lock';
+
 const Container = styled.div`
 
 `;
@@ -71,6 +73,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       setFirstLoad(true)
     }
   }, [user])
+
+  useEffect(() => {
+    enableBodyScroll(document.body);
+
+  }, [])
 
 
   if(firstLoad) {

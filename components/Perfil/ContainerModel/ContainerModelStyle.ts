@@ -13,6 +13,7 @@ export const Container = styled.div<{editOn:boolean}>`
         width: 100%;
         height: auto;
         margin:0rem;
+        
         ${({editOn}) => editOn && `
             flex-direction: row;
             justify-content: space-around;  

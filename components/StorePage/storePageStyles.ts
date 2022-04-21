@@ -11,38 +11,69 @@ export const HeadDiv= styled.div`
     display:flex;
     position: relative;
     flex-direction: column;
+    padding-inline: 1rem;
+    @media(min-width:768px){
+        flex-direction: row;
+        padding-block: .5rem;
+    }
+`
+
+export const RowReverseInDesktop = styled.div`
+    display:flex;
+    flex-direction: row;
 `
 
 export const PageContent = styled.div`
     display:flex;
     flex-direction: column;
+
     margin-top: .25rem;
-    padding-inline: 1rem;
 `
 
 export const StoreWallpaper = styled.div`
     width: 100%;
     height: 5rem;
     position: relative;
+    @media(min-width: 768px){
+        height:3rem;
+    }
 `
+
+
 
 export const ProfilePictureImage = styled.div`
     position: absolute;
     width: 4rem;
     height: 4rem;
     border:solid 3px white;
-    bottom: .25rem;
     border-radius: 100%;
+    top: -20%;
+    left: 1rem;
+    transform: translateY(-25%);
+    @media(min-width: 768px){
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 60%;
+        transform: translateY(-50%);
+
+
+    }
 `
 
 export const StoreName = styled.h1`
     font-size:24px;
     font-weight: 600;
     color:${({theme }) => theme.colors.fonts[0]};
+
 `
 export const RowDiv = styled.div`
     display:flex;
     flex-direction: row;
+    align-items: center;
+    @media(min-width: 768px){
+        flex-direction: row;
+
+    }
 `
 
 export const RowFilter = styled.div`
@@ -69,6 +100,7 @@ export const SocialIcons = styled.div`
     display:flex;
     flex-direction: row;
     padding-block: .5rem;
+    
 `
 
 export const FaceIcon = styled(FaFacebookF)`
@@ -90,7 +122,6 @@ export const WppIcon = styled(FaWhatsapp)`
 `
 
 export const StorePageButton = styled.button`
-    margin-top: .5rem;
     background-color:white;
     border:solid 1px ${({ theme }) => theme.colors.stroke};
     color:black;
@@ -124,7 +155,15 @@ export const AdvertsDiv = styled.div`
     display:flex;
     flex-direction:row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: .5rem;
+    @media(min-width: 768px){
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-inline:1rem;
+    }
     
 `
 
@@ -135,6 +174,7 @@ export const AvaliationDiv = styled.div`
     align-items: center;
     @media(min-width:768px){
         flex-direction: row;
+        padding-inline:1rem;
     }
 `
 

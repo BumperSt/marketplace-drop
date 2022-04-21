@@ -6,12 +6,13 @@ interface Props {
     children:any,
     backModal:any,
     modalStyle?:any,
-    modalStyleDesktop?:any
+    modalStyleDesktop?:any,
+    background?:boolean
 }
 
 
 
-export const Modal = ({children, backModal, modalStyle, modalStyleDesktop}:Props) => {
+export const Modal = ({children, backModal, modalStyle, modalStyleDesktop,background}:Props) => {
     const { height, width } = useWindowDimensions();
 
     const ref = useRef(null)
@@ -31,7 +32,7 @@ export const Modal = ({children, backModal, modalStyle, modalStyleDesktop}:Props
     
 
     return(
-        <ModalBackground >
+        <ModalBackground background={background} >
             <ModalContainer style={width < 768 ? modalStyle : modalStyleDesktop} ref={ref}>
 
                 {children}

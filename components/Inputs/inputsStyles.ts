@@ -5,6 +5,7 @@ export const InputContainer = styled.div<{fontColor?: string}>`
     flex-direction: column;
     align-items: center;
     text-align: start;
+    
     width: 100%;
     padding-inline: .5rem;
     margin-top:.5rem;
@@ -25,6 +26,7 @@ export const InputContainer = styled.div<{fontColor?: string}>`
     }
     @media (min-width: 768px) {
         padding-inline: 0rem;
+        
         margin-top: 0rem;
         width: 100%;
     }
@@ -107,6 +109,12 @@ export const ConditionDiv = styled.div`
         font-size: 24px;
         font-weight: 900;
         color:${({ theme}) => theme.colors.fonts[1]}
+    }
+    @media(min-width: 768px){
+        padding-block:0rem;
+        padding-inline: 0rem;
+        max-width: 50%;
+
     }
 
 `

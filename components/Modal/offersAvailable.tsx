@@ -1,5 +1,5 @@
 import {Modal} from "./modal"
-import { AlignColumn, AlignRow, BuyButton, DescreptionText, DescreptionTitle, ProductDescreptionDiv, ProductPrice, ProductSize, ProductSubTitle, ShareIcon, ToReportDiv, ToReportIcon, ToReportText, AlignCollum, AlignCollumReverseDesktop, AlingRowInDesktop, Container, Tag, AboutSeller, AboutSellerTitle, SeeStore, StoreName } from "./modalOfferStyles"
+import { AlignColumn, AlignRow, BuyButton, DescreptionText, DescreptionTitle, ProductDescreptionDiv, ProductPrice, ProductSize, ProductSubTitle, ToReportDiv, ToReportIcon, ToReportText, AlignCollum, AlignCollumReverseDesktop, AlingRowInDesktop, Container, Tag, AboutSeller, AboutSellerTitle, SeeStore, StoreName } from "./modalOfferStyles"
 import Image from "next/image"
 import { AvaliationStarts } from "../AvalationStars/avaliationStarts"
 import ShowAdvertImagens from "../ShowAdvertImagens/showAdvertImagens"
@@ -28,7 +28,11 @@ export const OffersAvaliable = ({setModalState}: Props) => {
         marginTop:'20%',
         height:"auto",
         borderRadius: "15px",
-    }} backModal={setModalState}>
+    }} modalStyleDesktop={{
+        width: "35vw",
+        marginTop:'1rem',
+        maxHeight:"80vh",
+    }} background={true} backModal={setModalState}>
         <AlignRowHeaderDiv>
             <div style={{
                 display:'flex',

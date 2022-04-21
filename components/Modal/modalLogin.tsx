@@ -1,4 +1,4 @@
-import { AlingCenter, AlingEyePassword, BackIcon, Form, InputsContainer, LostPasswordText, ModalButton, ModalInput, ModalSelect, ModalSubTitle, ModalTitle, NotViewEye, OurCreateNewText, TermsOfService, ViewEye } from "./modalStyle"
+import { AlingCenter, AlingEyePassword, BackIcon, ErrorText, Form, InputsContainer, LostPasswordText, ModalButton, ModalInput, ModalSelect, ModalSubTitle, ModalTitle, NotViewEye, OurCreateNewText, TermsOfService, ViewEye } from "./modalStyle"
 import {Modal} from "./modal"
 import { useContext, useEffect, useState } from "react"
 import { Input } from "../Inputs/input"
@@ -7,6 +7,7 @@ import UserContext, { IUserContext } from "@/context/userContext"
 import { IUser } from "apiService/types/userTypes"
 import { HeadBar } from "../HeadBar/headBar"
 import { disableBodyScroll, enableBodyScroll,  } from 'body-scroll-lock';
+import { Circles  } from 'react-loading-icons'
 
 interface Props {
     closeModal: any
@@ -31,6 +32,8 @@ export const ModalLogin = ({closeModal}: Props) => {
     const {setUser} = useContext(UserContext)
     const [error, setError] = useState(null)
 
+    const [loading, setLoading] = useState(false)
+
     const closeModalHere = () => {
         closeModal()
         enableBodyScroll(document.body)
@@ -41,16 +44,21 @@ export const ModalLogin = ({closeModal}: Props) => {
     }, [])
 
     const Login = () => {
+        setLoading(true)
+        setError('')
         auth.login({
             email,
             password
         }).then((response) => {
+            setLoading(false)
+
             setUser(response.data.user)
             localStorage.setItem('@token', response.data.token)
             closeModalHere()
-        }).catch((error) => {
-            console.log(error)
-            setError(error.message)
+        }).catch((response) => {
+            setLoading(false)
+
+            setError('Credenciais inválidas')
         })
 
     }
@@ -92,7 +100,8 @@ export const ModalLogin = ({closeModal}: Props) => {
                         <AlingEyePassword>
                             <ModalInput style={{
                                 width: '100%',
-                                margin:0
+                                margin:0,
+                                
                             }} type={viewPassword} value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="Senha"/>
                             {
                                 viewPassword == 'password' ?
@@ -104,6 +113,16 @@ export const ModalLogin = ({closeModal}: Props) => {
                             }
                             
                         </AlingEyePassword>
+                        {
+                            loading &&
+                                <Circles style={{
+                                    marginBlock:'.5rem'
+                                }} height={50} fill="black"/>
+                        }
+                        {
+                            error &&
+                                <ErrorText>{error}</ErrorText>
+                        }
                         <LostPasswordText onClick={() => setModalType('LostPassword')}>Esqueceu a senha? Clique aqui.</LostPasswordText>
                         <ModalButton  type="submit" onClick={() => Login()}>Acessar</ModalButton>
                     </Form>

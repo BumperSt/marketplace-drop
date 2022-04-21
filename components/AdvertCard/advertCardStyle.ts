@@ -7,6 +7,7 @@ export const ItemCard  = styled.div`
     flex-direction: column;
     box-sizing: border-box;
     margin-right: 1rem;
+    margin-top: .5rem;
     :hover{
         cursor:pointer;
     }

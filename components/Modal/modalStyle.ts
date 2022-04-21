@@ -1,8 +1,9 @@
 import { AiFillEye, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { BiArrowBack, BiShare } from 'react-icons/bi'
+import { IoIosArrowBack } from 'react-icons/io'
 import styled from 'styled-components'
 
-export const ModalBackground = styled.div`
+export const ModalBackground = styled.div<{background: boolean}>`
 
 
     position: fixed;
@@ -16,11 +17,14 @@ export const ModalBackground = styled.div`
     align-items: center;
     z-index: 99;
     @media (min-width: 768px) {
-        background-color:rgba(0, 0, 0, 0);
+        background-color: ${({background}) => background ? 'rgba(0, 0, 0, 0.6)' : 'transparent'};
     }
 `
 
-export const BackIcon = styled(BiArrowBack)`
+export const BackIcon = styled(IoIosArrowBack)`
+    :hover{
+        cursor: pointer;
+    }
     
 `
 
@@ -67,17 +71,17 @@ export const ModalInput = styled.input`
     padding:.5rem;
     font-size:14px;
     font-weight:300;
-    width:90%;
+    width:100%;
     border:0px;
     background-color:${({theme}) => theme.colors.input.background};
     color:${({ theme }) => theme.colors.detalhes};
     font-weight: 300;
     @media (min-width: 768px) {
         margin-block:.2rem;
-        border-radius: 15px;
-        width:50%;
-        padding:.25rem;
         
+        border-radius: 15px;
+        width:100%;
+        padding:.25rem;
         font-size: 24px;
 
     }
@@ -152,13 +156,12 @@ export const LostPasswordText = styled.h1`
     font-weight: 400;
     font-size:12px;
     text-align: start;
-    width:82%;
-    margin-block: .5rem;
+    width:100%;
     :hover{
         cursor:pointer
     }
     @media (min-width: 768px) {
-        width:50%;
+        width:100%;
         font-size: 24px;
     }
 `
@@ -217,6 +220,10 @@ export const AlignRowHeaderDiv = styled.div`
     flex-direction: row;
     justify-content: space-between;
     padding-block:.5rem;
+    @media(min-width:768px){
+        padding-block:0rem;
+        margin-top: .5rem;
+    }
 `
 
 export const AlingEyePassword = styled.div`
@@ -226,9 +233,9 @@ export const AlingEyePassword = styled.div`
     border-radius: 15px;
     align-items: center;
     padding:0px;
-    width: 90%;
+    width: 100%;
     @media (min-width: 768px) {
-        width: 50%;
+        margin-bottom: .1rem;
     }
     
     background-color:${({theme}) => theme.colors.input.background};
@@ -236,8 +243,6 @@ export const AlingEyePassword = styled.div`
 `
 
 
-export const ShareIcon = styled(BiShare)`
-`
 export const ViewEye = styled(AiOutlineEye)`
     margin-right: .25rem;
     :hover{
@@ -256,5 +261,21 @@ export const Form = styled.form`
     display:flex;
     flex-direction: column;
     align-items: center;
+    width:90%;
+    @media(min-width: 768px){
+
+        width: 45%;
+    }
+`
+
+export const ErrorText = styled.p`
+    color:red;
+    font-size:15px;
+    padding-block:.5rem;
+    text-align: start;
     width: 100%;
+    @media(min-width: 768px){
+        padding-block:.1rem;
+    }
+
 `

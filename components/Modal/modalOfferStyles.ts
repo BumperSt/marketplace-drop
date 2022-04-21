@@ -9,8 +9,13 @@ export const Container = styled.div`
     display:flex;
     flex-direction: column;
     width: 100%;
-    padding-inline:8%;
+    padding-inline:1rem;
     text-align: start;
+    @media (min-width: 768px) {
+        padding-inline:.5rem;
+        padding-block:.5rem;
+
+    }
 `
 
 export const AlignColumn = styled.div`
@@ -38,6 +43,9 @@ export const AlignRow = styled.div`
     flex-direction:row;
     width: 100%;
     margin-top: .5rem;
+    @media(min-width: 768px){
+        margin-top: .1rem;
+    }
 
 `
 
@@ -48,20 +56,12 @@ export const ProductTitle = styled.h1`
     font-weight: 700;
     max-width: 75%;
     @media (min-width:768px){
-        font-size: 48px;
-        max-width: 100%;
+        font-size: 38px;
+        min-width: 100%;
 
     }
 `
 
-export const ShareIcon = styled(FiShare2)`
-    color:${({ theme }) => theme.colors.detalhes};
-    z-index: 50;
-    @media (min-width:768px){
-        display:none;
-    }
-
-`
 
 export const ProductSubTitle = styled.h1`
     font-size: 12px;
@@ -80,13 +80,20 @@ export const ProductSize = styled.div`
     padding-inline:.3rem;
     padding-block:.2rem;
     margin-right:.1rem;
+    @media (min-width:768px){
+        padding-inline:.2rem;
+        padding-block:.15rem;
+    }
 `
 
 export const ProductPrice = styled.h1`
     font-size: 36px;
     margin-top: .5rem;
     @media (min-width:768px){
-        font-size: 72px;
+        font-size: 48px;
+        margin-top: .5rem;
+        font-weight: 700;
+
     }
 `
 
@@ -98,7 +105,10 @@ export const BuyButton = styled.button`
     align-self: center; 
     margin-top: 0.5rem;
     @media (min-width: 768px) {
-        font-size:36px;
+        font-size:14px;
+        padding-block: .4rem;
+        padding-inline: .7rem;
+
     }
 `
 
@@ -114,8 +124,11 @@ export const DescreptionTitle = styled.h1`
     font-weight: 600;
     font-size: 12px;
     margin-bottom:.5rem;
+    color:#474747;
     @media (min-width:768px){
         font-size: 36px;
+        margin-bottom:.25rem;
+
     }
 `
 
@@ -125,9 +138,11 @@ export const DescreptionTitle = styled.h1`
 export const DescreptionText = styled(DescreptionTitle)`
     font-weight: 400;
     font-size: 12px;
-
+    color:#474747;
     @media (min-width:768px){
-        font-size: 24px;
+        font-size: 18px;
+        font-weight: 600;
+
     }
 `
 
@@ -155,6 +170,19 @@ export const ToReportText = styled.h1`
 export const AlignCollum = styled.div`
     display:flex;
     flex-direction:column;
+    @media(min-width:768px){
+        flex-direction:row;
+        justify-content: space-between;
+    }
+`
+
+export const AlignCollumInDestkop = styled.div`
+    display:flex;
+    flex-direction:column;
+    @media(min-width:768px){
+        padding-inline:.5rem;
+    }
+
 `
 
 export const AlignCollumReverseDesktop = styled.div`
@@ -170,10 +198,10 @@ export const AlingRowInDesktop = styled.div`
     display:flex;
     flex-direction:column;
     @media(min-width: 768px){
-        flex-direction:row-reverse;
-        width:100%;
+        flex-direction:column;
+        width:50%;
+        
         justify-content:center;
-        text-align: center;
     }
 `
 
@@ -189,6 +217,13 @@ export const Tag = styled.div`
     padding-inline:.4rem;
     border-radius: 15px;
     margin-right: .5rem;   
+    @media(min-width: 768px){
+        font-size: 12px;
+        padding-inline:0.3rem;
+        padding-block:0.2rem;
+        margin-right: .25rem;   
+
+    }
 `
 
 export const AboutSeller = styled.div`
@@ -203,10 +238,16 @@ export const AboutSeller = styled.div`
 export const AboutSellerTitle = styled.h1`
     font-size: 12px;
     font-weight: 700;
+    @media(min-width:768px){
+        font-size:14px;
+    }
 `
 export const StoreName = styled.h1`
     font-size:10px;
     font-weight:600;
+    @media(min-width:768px){
+        font-size:18px;
+    }
 `
 
 export const SeeStore = styled.button`
@@ -216,5 +257,16 @@ export const SeeStore = styled.button`
     font-size: 10px;
     font-weight: 900;
     width: 40%;
+    @media(min-width:768px){
+        font-size:14px;
+    }
     
+`
+
+export const AlingColumeverseDesktop = styled.div`
+    display:flex;
+    flex-direction: column;
+    @media(min-width: 768px){
+        flex-direction: column-reverse;
+    }
 `

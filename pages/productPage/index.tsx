@@ -3,11 +3,12 @@ import { ListHorizontaltems } from "@/components/ListHorizontaltems/listHorizont
 import { ModalOffer } from "@/components/Modal/modalOffer"
 import { OffersAvaliable } from "@/components/Modal/offersAvailable"
 import { Arrow } from "@/components/Perfil/Adverts/AdvertStyle"
-import { AlignColumn, AlignDescreptionColumn, AlignIcons, AlignPrices, AlingCollumDesktop, AlingRowDesktop, AlingRowDesktopDescreption, BackIcon, Container, ContainerProductPage, DescreptionText, DescreptionTitle, PriceDiv, PriceValue, ProductDescreptionDiv, ProductImage, ProductPriceContainer, ProductTitle, ShareIcon, SizeButton, StyledLine } from "@/components/ProductPage/productPageStyle"
+import { AlignColumn, AlignDescreptionColumn, AlignIcons, AlignPrices, AlingCollumDesktop, AlingRowDesktop, AlingRowDesktopDescreption, BackIcon, Container, ContainerProductPage, DescreptionText, DescreptionTitle, PriceDiv, PriceValue, ProductDescreptionDiv, ProductImage, ProductPriceContainer, ProductTitle, ShareButtonDiv, ShareIcon, ShareText, SizeButton, StyledLine } from "@/components/ProductPage/productPageStyle"
 import useWindowDimensions from "helpers/screenSize"
 import Image from "next/image"
 import { useRouter } from "next/router"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { disableBodyScroll, enableBodyScroll,  } from 'body-scroll-lock';
 
 const ProductPage = () => {
 
@@ -15,6 +16,15 @@ const ProductPage = () => {
     const [openOfferModal, setOpenOfferModal] = useState(false)
     const sizes = [46,44,42,40,38,36]
     const { height, width } = useWindowDimensions();
+
+    useEffect(() => {
+        if(openOfferModal){
+            disableBodyScroll(document.body);
+        }else{
+            enableBodyScroll(document.body);
+        
+        }
+    }, [ openOfferModal])
 
     return(
         <Container>
@@ -97,12 +107,17 @@ const ProductPage = () => {
                                     marginLeft:'0rem',
                                 }}>In non libero ut elit congue accumsan. Vestibulum nec metus sodales, mattis nisl eu, gravida nisl.</DescreptionText>
                             </AlignDescreptionColumn>
+                            
                         </ProductDescreptionDiv>
+                        <ShareButtonDiv >
+                            <ShareIcon size={24}/>
+                            <ShareText>Compartilhar este drop</ShareText>
+                        </ShareButtonDiv>
                     </AlingCollumDesktop>
                 </AlingRowDesktop>
 
             </ContainerProductPage>
-            <ListHorizontaltems title="Anúncios patrocinados" ListType="Large"/>
+            <ListHorizontaltems type="lastAdverts" title="Anúncios patrocinados" ListType="Large"/>
 
             {
                 openOfferModal &&

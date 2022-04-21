@@ -1,6 +1,7 @@
 import { BsPlusLg } from "react-icons/bs";
 import { FiShare2 } from "react-icons/fi";
 import { IoMdArrowBack } from "react-icons/io";
+import { RiShareFill } from "react-icons/ri";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -37,8 +38,8 @@ export const BackIcon = styled(IoMdArrowBack)`
 
 `
 
-export const ShareIcon = styled(FiShare2)`
-    color:${({ theme }) => theme.colors.detalhes};
+export const ShareIcon = styled(RiShareFill)`
+    color:'black';
     z-index: 50;
     :hover{
         cursor: pointer;
@@ -265,6 +266,30 @@ export const AlingCollumDesktop = styled.div<{margin?:boolean}>`
     align-items: center;
     @media(min-width: 768px){
         width: auto;
+        margin-inline:.2rem;
     }
     
+`
+
+
+export const ShareButtonDiv = styled(ProductDescreptionDiv)`
+    flex-direction:row;
+    align-items: center;
+    margin-top:1rem;
+    width:auto;
+    :hover{
+        cursor: pointer;
+    }
+`
+
+export const AlingReportAndShareIcon = styled.div`
+    display:flex;
+    flex-direction: column;
+    padding-inline:1.5rem;
+`
+
+export const ShareText = styled.a`
+    font-weight: 500;
+    margin-inline: .1rem;
+    font-size:14px;
 `

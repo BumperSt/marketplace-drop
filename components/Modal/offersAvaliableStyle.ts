@@ -43,6 +43,13 @@ export const SizeButton = styled.div`
     border-radius: 5px;
     background-color: ${({ theme }) => theme.colors.shoesSizeBackground};
     color:white;
+    @media(min-width: 768px){
+        font-size:14px;
+        font-weight: 900;
+        padding-inline:.1rem;
+        padding-block:.05rem;
+
+    }
 `
 
 export const StyledLine = styled.hr`
@@ -63,12 +70,13 @@ export const ProductImage = styled.div`
     span{
         border-radius: 4px;
     }
+    @media(min-width: 768px){
+        width:1rem;
+        height:.8rem;  
+    }
 `
 
 export const PriceValue = styled.h1`
     font-size:18px;
-    position: absolute;
-    left:50%;
-    transform:translateX(-50%);
     font-weight: 700;
 `

@@ -5,17 +5,24 @@ export const AlingCollum = styled.div`
     display:flex;
     flex-direction: column;
     width: 90%;
+    
     @media (min-width: 768px){
-        flex-direction: column-reverse;
+        flex-direction: column;
         width: 50%;
-        align-self: start;
     }
 `
 
 export const AlingCollumInputs = styled.div`
     display:flex;
     flex-direction: column;
-    width: 90%;
+    padding-inline: .5rem;
+    width: 100%;
+    @media (min-width: 768px){
+        width: 50%;
+        margin-right: .5rem;
+        padding:0;
+
+    }
 `
 
 export const AlignTitleAndContent = styled.div`
@@ -47,6 +54,11 @@ export const AlignPhotos = styled.div`
     max-width: 100%;
     overflow-x: auto;
     padding-block:.5rem;
+    @media(min-width: 768px){
+        margin-top:0rem
+    
+    }    padding-block:.25rem;
+
 
 `
 
@@ -77,15 +89,21 @@ export const AlingRowInDesktop = styled.div`
     flex-direction: column;
     @media (min-width: 768px){
         flex-direction: row;
+        align-items: start;
+
     }
 `
 
 export const PublisherButton = styled.button`
     padding-inline:1rem;
     padding-block:.5rem;
-    width:8rem;
     align-self: center;
-    margin-top:1.5rem;
+    @media(min-width: 768px){
+        
+
+        padding-inline:1rem;
+        padding-block:.25rem;
+    }
 `
 
 export const MarkToSell = styled.div`
@@ -114,6 +132,9 @@ export const MarkToSell = styled.div`
         font-size:14px;
         margin-left: .5rem;
 
+    }
+    @media(min-width: 768px){
+        margin:0px;
     }
 
 

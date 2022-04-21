@@ -20,6 +20,8 @@ export const AvaliationValue = styled.h1`
     color:#FF7A00;
     font-size:10px;
     @media (min-width: 768px) {
-        font-size:36px;
+        font-size:18px;
+        margin-left: .1rem;
+
     }
 `

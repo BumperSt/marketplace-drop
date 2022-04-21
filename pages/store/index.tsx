@@ -13,42 +13,40 @@ import { useState } from "react"
 
     const [avaliationDescreption, setAvaliationDescrepetion] = useState("")
     const [starValue, setStarValue] = useState(0)
-
+    
     return(
         <Container>
             <HeadBar/>
-            <HeadDiv>
                 <StoreWallpaper>
                     <Image src="/home/wallpaper.png" layout="fill"/>
                 </StoreWallpaper>
-                <CollumDiv style={{
-                    paddingInline: '1rem',
+            <HeadDiv>
+                <RowDiv style={{
+                    justifyContent:' flex-end'
                 }}>
                     <ProfilePictureImage>
                         <Image src="/home/Profile.png" layout="fill"/>
                     </ProfilePictureImage>
-                    <CollumDiv style={{
-                        alignSelf: 'flex-end'
-                    }}>
+                    <CollumDiv>
                         <SocialIcons>
                             <InstaIcon size='25'/>
                             <FaceIcon size='25'/>
                             <WppIcon size='25'/>
                         </SocialIcons>
                     </CollumDiv>
-                </CollumDiv>
+                </RowDiv>
 
-            </HeadDiv>
-            <PageContent>
-                <RowDiv style={{
-                        justifyContent: 'space-between'
-                    }}>
+                <RowDiv style={{justifyContent: 'space-between'}}>
                     <CollumDiv>
                         <StoreName>Sneaker Store</StoreName>
                         <AvaliationStarts size={12} seeValue={true} avaliationValue={4.7}/>
                     </CollumDiv>
                     <StorePageButton>enviar mensagem</StorePageButton>
                 </RowDiv>
+
+            </HeadDiv>
+            <PageContent>
+             
                 <CollumDiv>
                     <RowFilter>
 
@@ -59,19 +57,43 @@ import { useState } from "react"
                     {
                         actualPage == "anunciosAtivos" ?
                         <AdvertsDiv>
-                            <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
-                            <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
 
-                            <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
 
-                            <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+
+                            <AdvertCard advert={{}} type="vip"/>
+
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+
+                            <AdvertCard advert={{}} type="vip"/>
+
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+
+                            <AdvertCard advert={{}} type="vip"/>
+
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+
+                            <AdvertCard advert={{}} type="vip"/>
+
+                            <AdvertCard advert={{}} type="vip"/>
                         </AdvertsDiv>
                         :actualPage == "anunciosVendidos" ?
                         <AdvertsDiv>
-                            <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
-                            <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
-                            <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
-                            <AdvertCard style={{margin:'0px', marginTop:'1rem'}}advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
+                            <AdvertCard advert={{}} type="vip"/>
                         </AdvertsDiv>
                         :actualPage == "anunciosAvaliações" &&
                         <AvaliationDiv>
