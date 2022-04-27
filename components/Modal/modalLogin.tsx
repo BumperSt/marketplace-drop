@@ -91,7 +91,7 @@ export const ModalLogin = ({closeModal}: Props) => {
     if(modalType == 'Login'){
         return(
             <Modal backModal={() => closeModalHere()}>
-                <HeadBar notLogo={true} backFunction={closeModalHere}/>
+                <HeadBar backIcon={true} notLogo={true} backFunction={closeModalHere}/>
                 <AlingCenter>
                     <ModalTitle>Aliquam eget dui turpis.</ModalTitle>
                     <ModalSubTitle>Cras in dui nunc.</ModalSubTitle>
@@ -140,7 +140,7 @@ export const ModalLogin = ({closeModal}: Props) => {
     }else if(modalType == 'Register'){
         return(
             <Modal backModal={() => setModalType('Login')}>
-                <HeadBar notLogo={true} backFunction={() => setModalType('Login')}/>
+                <HeadBar backIcon={true} notLogo={true} backFunction={() => setModalType('Login')}/>
 
                     <ModalTitle style={{
                         fontSize:'24px',
@@ -186,7 +186,7 @@ export const ModalLogin = ({closeModal}: Props) => {
     }else{
         return(
             <Modal backModal={() => setModalType('Login')}>
-                <HeadBar notLogo={true} backFunction={() => setModalType('Login')}/>
+                <HeadBar backIcon={true} notLogo={true} backFunction={() => setModalType('Login')}/>
 
             <AlingCenter style={{
                 marginBottom:'5rem'

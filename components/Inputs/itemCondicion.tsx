@@ -20,7 +20,7 @@ export const SelectItemCondition = ({Title, Style, value, setValue, StyleInput, 
             <InputTitle>{Title}</InputTitle>
             <ConditionDiv>
                 <LessIcon onClick={() => setValue(-0.5)}/>
-                <h1>{value}</h1>
+                <h1>{value.toFixed(1)}</h1>
                 <PlusIcon onClick={() => setValue(0.5)}/>
             </ConditionDiv>
             

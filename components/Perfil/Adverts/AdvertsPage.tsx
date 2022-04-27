@@ -2,7 +2,6 @@ import { ActivyAdvertsTitle, AdvertButton, AdvertsScroll, AdvertProductImage, Ad
 import { useEffect, useState } from "react"
 import Image from "next/image"
 
-import { ModalToManageAdvert } from "./modalToManageAdvert"
 import { ModalExcludeAdvert } from "./modalExcludeAdvert"
 import { HeadBar } from "@/components/HeadBar/headBar"
 import { Switch } from "@/components/Inputs/swith"
@@ -13,6 +12,7 @@ import { AddPhotosIcon, AddPhotosTitle, AlignPhotos, AlignTitleAndContent, Aling
 import { SelectStyledComponent } from "@/components/Inputs/selectInput"
 import { Input } from "@/components/Inputs/input"
 import { SelectItemCondition } from "@/components/Inputs/itemCondicion"
+import products from "apiService/products"
 
 interface props {
     setEditOn:any
@@ -29,10 +29,31 @@ export const AdvertsPage = ({setEditOn}:props) => {
     const [advertName, setAdvertName] = useState("")
     const [advertSubTitle, setAdvertSubTitle] = useState("")
     const [advertDescription, setAdvertDescription] = useState("")
-    const [advertPrice, setAdvertPrice] = useState("")
+    const [advertPrice, setAdvertPrice] = useState('')
     const [advertPhotos, setAdvertPhotos] = useState(null)
     const [itemCondition, setItemCondition] = useState(5.5)
     const [conditionSelected, setConditionSelected] = useState("")
+    const [itemSize, setItemSize] = useState('')
+
+    const createAdvert = () => {
+        products.create({
+            name: advertName,
+            description: advertDescription,
+            value: parseFloat(advertPrice),
+            size: parseInt(itemSize),
+            condition: conditionSelected,
+            condition_value: itemCondition,
+            category: "",
+            hasBox: false,
+            inHands: true
+
+        }).then((res) => {
+            console.log(res)
+        }).catch((err) => {
+            console.error(err)
+        })
+    }
+
     useEffect(() => {
         let tempAnuncions = []
         for (let index = 0; index < 20; index++) {
@@ -87,7 +108,7 @@ export const AdvertsPage = ({setEditOn}:props) => {
                                         <SelectItemCondition  fontColor="secondary" Title="Qual a condição do item?" value={itemCondition} setValue={changeValue}/>
 
                                 }
-                                <SelectStyledComponent fontColor="secondary" options={['42', '44']} Title="Tamanho" value={advertSubTitle} setValue={setAdvertSubTitle}/>
+                                <SelectStyledComponent fontColor="secondary" options={['42', '44']} Title="Tamanho" value={itemSize} setValue={setItemSize}/>
 
                             </AlingCollumInputs>
 
@@ -123,7 +144,9 @@ export const AdvertsPage = ({setEditOn}:props) => {
                         <AlingRowDesktop>
                                     <PublisherButton>Publicar</PublisherButton>
                                         <MarkToSell>
-                                                <input type="checkbox" id="scales" name="scales" />
+                                                <input style={{
+                                                    cursor: 'pointer',
+                                                }} type="checkbox" id="scales" name="scales" />
                                                 <div>
                                                     <h1>Marcar como vendido </h1>
                                                     <h1>Isso irá desativar o anúncio.</h1>

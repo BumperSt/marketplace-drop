@@ -3,7 +3,7 @@ export interface NewCategory {
     sizeOptions:number[]
 }
 
-export interface ICategory  {
+export interface ICategory{
     name: string,
     sizeOptions: number[],
     _id: string,

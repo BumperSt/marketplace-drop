@@ -77,7 +77,7 @@ export const SelectStyled = styled.select`
     padding-block: .5rem;
     border: 0px;
     @media (min-width: 768px){
-        font-size: 24px;
+        font-size: 18px;
         padding:.2rem;
         border-radius: 25px;    
     }
@@ -89,7 +89,9 @@ export const InputTitle = styled.h1`
     width: 100%;
     text-align: start;
     @media(min-width: 768px){
+
         padding-block:.2rem;
+
     }
 `
 
@@ -113,7 +115,8 @@ export const ConditionDiv = styled.div`
     @media(min-width: 768px){
         padding-block:0rem;
         padding-inline: 0rem;
-        max-width: 50%;
+        min-width: 100%;
+
 
     }
 
@@ -123,6 +126,9 @@ export const PlusIcon = styled(FiPlusCircle)`
     margin-inline:.5rem;
     stroke:white;
     fill:${({ theme}) => theme.colors.shoesSizeBackground};
+    :hover{
+        cursor: pointer;
+    }    
 `
 
 export const LessIcon = styled(FiMinusCircle)`
@@ -130,7 +136,9 @@ export const LessIcon = styled(FiMinusCircle)`
     stroke:white;
 
     fill:${({ theme}) => theme.colors.shoesSizeBackground};
-
+    :hover{
+        cursor:pointer;
+    }
 `
 
 

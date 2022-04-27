@@ -31,7 +31,7 @@ export const AndressPage = ({setEditOn} : props) => {
 
     const getPage = () => {
         if(editAndress && width > 768 || !editAndress && width > 768 || !editAndress && width < 768){
-            return  <InternalContainer>
+            return  <InternalContainer pageName="andress">
             <AndressDiv>
                     <AndressType>PADRÃO</AndressType>
                     <AlignAndressAndArrow>

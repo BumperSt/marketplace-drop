@@ -223,6 +223,8 @@ export const AlignRowHeaderDiv = styled.div`
     @media(min-width:768px){
         padding-block:0rem;
         margin-top: .5rem;
+        padding-inline:0rem;
+
     }
 `
 

@@ -23,7 +23,9 @@ export const AndressEditContainter = styled(InternalContainer)`
     background-color: white;
     width: 90%;
     @media (min-width: 768px){
-        width: 50%;
+        width: 40%;
+        border: 0px;
+        
     }
     
 `

@@ -42,10 +42,7 @@ export const AlignRow = styled.div`
     display:flex;
     flex-direction:row;
     width: 100%;
-    margin-top: .5rem;
-    @media(min-width: 768px){
-        margin-top: .1rem;
-    }
+
 
 `
 
@@ -55,9 +52,11 @@ export const ProductTitle = styled.h1`
     font-size: 18px;
     font-weight: 700;
     max-width: 75%;
+    margin-block:.5rem;
     @media (min-width:768px){
         font-size: 38px;
         min-width: 100%;
+        margin-block:.25rem;
 
     }
 `
@@ -81,8 +80,10 @@ export const ProductSize = styled.div`
     padding-block:.2rem;
     margin-right:.1rem;
     @media (min-width:768px){
-        padding-inline:.2rem;
-        padding-block:.15rem;
+        font-size: 14px;
+
+        padding-inline:.1rem;
+        padding-block:.05rem;
     }
 `
 
@@ -91,7 +92,7 @@ export const ProductPrice = styled.h1`
     margin-top: .5rem;
     @media (min-width:768px){
         font-size: 48px;
-        margin-top: .5rem;
+        margin-block: .25rem;
         font-weight: 700;
 
     }
@@ -106,8 +107,8 @@ export const BuyButton = styled.button`
     margin-top: 0.5rem;
     @media (min-width: 768px) {
         font-size:14px;
-        padding-block: .4rem;
-        padding-inline: .7rem;
+        padding-block: .3rem;
+        padding-inline: .5rem;
 
     }
 `

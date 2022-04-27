@@ -12,9 +12,10 @@ import { Input } from "../Inputs/input";
 interface props {
     backFunction?: any,
     notLogo?:boolean,
+    backIcon?:boolean,
 }
 
-export const HeadBar = ({backFunction, notLogo} : props) => {
+export const HeadBar = ({backFunction, notLogo, backIcon} : props) => {
 
     const route = useRouter()
     const [stateLoginModal, setStateLoginModal] = useState<Boolean>(false);
@@ -95,6 +96,7 @@ export const HeadBar = ({backFunction, notLogo} : props) => {
                         </LogoImagem>
             
                         <SearchIcon onClick={() => setOpenSearch(true)} size='32'/>
+
                         {
                             openSearch &&
                             <Search closeSearch={setOpenSearch}/>
@@ -111,16 +113,23 @@ export const HeadBar = ({backFunction, notLogo} : props) => {
         if(backFunction){
             return(
                 <HeadBarContainer >
-                    <BackIcon onClick={() => backFunction() } size="32"/>
-                    {
-                
-                        <LogoImagem onClick={() => {
-                            route.push('/') 
-                            backFunction()
-                        }}>
-                            <Image  title="Logo" alt="Logo" layout="fill" src="/logos/logoBlack.png"/>
-                        </LogoImagem>
-                    }
+                    <div>
+                {
+                    <LogoImagem onClick={() => {
+                        route.push('/') 
+                        backFunction()
+                    }}>
+                        <Image  title="Logo" alt="Logo" layout="fill" src="/logos/logoBlack.png"/>
+                    </LogoImagem>
+                }
+                {
+                    backIcon &&
+                        <BackIcon onClick={() => backFunction() } size="32"/>
+                }
+                        
+                    </div>
+
+
                     {
                         logged &&
                         <LogoutIcon size="32" onClick={() => {

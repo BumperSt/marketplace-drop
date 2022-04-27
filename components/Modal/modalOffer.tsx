@@ -32,8 +32,19 @@ export const ModalOffer = ({setModalState}: Props) => {
             height:"auto",
         }} backModal={setModalState}>
             <AlignRowHeaderDiv>
-
-                <BackIcon onClick={() => setModalState(false) }size="32"/>
+                <div style={{
+                    display:"flex",
+                    flexDirection:"row",
+                    alignItems:"center",
+                    cursor:"pointer",
+                }} onClick={() => setModalState(false) }>
+                    <BackIcon size="32"/>
+                    <p style={{
+                         fontSize:"18px",
+                        fontWeight:"bold",
+                    }}>VOLTAR</p>
+                </div>
+                
                 {
                     width < 768 &&
                     <ShareIcon size="32"/>

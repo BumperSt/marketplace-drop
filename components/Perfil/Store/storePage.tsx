@@ -28,6 +28,10 @@ export const StoreEditPage = ({setEditOn} : props) => {
            }
     }, [editStore])
 
+    const editStoreField = (field) => {
+        
+    }
+
 
     const getPage = () => {
             return  <InternalContainer >

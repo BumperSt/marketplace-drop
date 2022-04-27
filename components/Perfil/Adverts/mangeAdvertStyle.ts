@@ -8,7 +8,9 @@ export const AlingCollum = styled.div`
     
     @media (min-width: 768px){
         flex-direction: column;
-        width: 50%;
+        width: 100%;
+        padding-inline: .5rem;
+
     }
 `
 
@@ -18,9 +20,8 @@ export const AlingCollumInputs = styled.div`
     padding-inline: .5rem;
     width: 100%;
     @media (min-width: 768px){
-        width: 50%;
-        margin-right: .5rem;
         padding:0;
+        padding-inline: .5rem;
 
     }
 `
@@ -34,7 +35,11 @@ export const AlignTitleAndContent = styled.div`
     
     text-align: start;
     margin-top: .5rem;
+    @media(min-width: 768px){
+        width: 100%;
+        margin-top: 0rem;
 
+    }
 
 `
 
@@ -55,9 +60,11 @@ export const AlignPhotos = styled.div`
     overflow-x: auto;
     padding-block:.5rem;
     @media(min-width: 768px){
-        margin-top:0rem
-    
-    }    padding-block:.25rem;
+        margin-top:0rem;
+        width: 100%;
+        padding-block:.25rem;
+
+    }    
 
 
 `
@@ -90,6 +97,7 @@ export const AlingRowInDesktop = styled.div`
     @media (min-width: 768px){
         flex-direction: row;
         align-items: start;
+        padding-inline: .2rem;
 
     }
 `

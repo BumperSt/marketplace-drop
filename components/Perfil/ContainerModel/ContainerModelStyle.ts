@@ -13,15 +13,15 @@ export const Container = styled.div<{editOn:boolean}>`
         width: 100%;
         height: auto;
         margin:0rem;
-        
+        align-items: flex-start;
+
         ${({editOn}) => editOn && `
             flex-direction: row;
-            justify-content: space-around;  
         `}
     }
 `
 
-export const InternalContainer = styled.div<{pageName?: 'adverts'}>`
+export const InternalContainer = styled.div<{pageName?: 'adverts' | 'andress'}>`
     padding-inline:.8rem;
     padding-block:.5rem;
     margin-top: .5rem;
@@ -38,11 +38,19 @@ export const InternalContainer = styled.div<{pageName?: 'adverts'}>`
         margin:0px;
         width: 90%;
         padding-block:.2rem;
-        ${({pageName}) => pageName === 'adverts'&&`        
+        ${({pageName}) => pageName === 'adverts' &&`        
             border-radius: 0px;
             border-top: 0px;
             border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;`
+            border-bottom-right-radius: 10px;
+        `
+        };
+        ${({pageName}) => pageName === 'andress' &&`        
+            border-radius: 0px;
+            border: 0px;
+            
+            width: 50%;
+        `
         };
 
     }

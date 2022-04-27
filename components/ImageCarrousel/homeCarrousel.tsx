@@ -7,7 +7,7 @@ const HomeCarrousel = () => {
     return(
         <div >
             <Carousel
-                showArrows={false} showThumbs={false} infiniteLoop useKeyboardArrows autoPlay
+                showArrows={false} showStatus={false} showThumbs={false} infiniteLoop useKeyboardArrows autoPlay
                 renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
                     (
                         <ClickNextImageDiv>
@@ -27,24 +27,24 @@ const HomeCarrousel = () => {
 
                     )
                 }
-                renderIndicator={(   clickHandler: (e: React.MouseEvent | React.KeyboardEvent) => void,
-                    isSelected: boolean,
-                    index: number,
-                    label: string) =>
-                    (               
-                        <CarrouselBall onClick={clickHandler} active={isSelected}/>
+                // renderIndicator={(   clickHandler: (e: React.MouseEvent | React.KeyboardEvent) => void,
+                //     isSelected: boolean,
+                //     index: number,
+                //     label: string) =>
+                //     (               
+                //         <CarrouselBall onClick={clickHandler} active={isSelected}/>
 
-                    )
-                }
+                //     )
+                // }
             >
                 <ImageContent>
-                    <Image layout="fill" src={'/temporary/itensLarge.jpg'}/>
+                    <Image layout="fill" src={'/temporary/Rectangle 13.png'}/>
                 </ImageContent>
                 <ImageContent>
-                    <Image layout="fill" src={'/temporary/itensLarge.jpg'}/>
+                    <Image layout="fill" src={'/temporary/Rectangle 13.png'}/>
                 </ImageContent>
                 <ImageContent>
-                    <Image layout="fill" src={'/temporary/itensLarge.jpg'}/>
+                    <Image layout="fill" src={'/temporary/Rectangle 13.png'}/>
                 </ImageContent>
             </Carousel>
         </div>
