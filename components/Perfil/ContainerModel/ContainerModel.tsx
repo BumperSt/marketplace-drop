@@ -1,8 +1,15 @@
 import { Container } from "./ContainerModelStyle"
 
-export const ContainerModel = ({children, editOn}) => {
+interface ContainerModel {
+    editOn?: boolean,
+    style?: any,
+    children?: any
+}
+
+
+export const ContainerModel  = ({children, editOn , style} : ContainerModel) => {
     return(
-        <Container editOn={editOn}>
+        <Container style={style}>
             {children}
         </Container>
     )

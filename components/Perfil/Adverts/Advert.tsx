@@ -18,12 +18,10 @@ export const Advert = ({anuncio, setOpenEditAdvert} : Props) => {
                     <AdvertProductPrice>R$ {anuncio.price}</AdvertProductPrice>
                 </AlignColumn>
             </AlingRow>
-                {
-                    setOpenEditAdvert &&
-                        <Arrow size={20}/>
-                }
-                
-     
+            {
+                setOpenEditAdvert &&
+                    <Arrow size={20}/>
+            }
         </AdvertContainer>
     )
 }

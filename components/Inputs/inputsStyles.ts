@@ -148,7 +148,7 @@ export const ToglleThemeDiv = styled.div`
     flex-direction: row;
     border: solid 1px #CDCDCD;
     border-radius: 40px;
-    padding: .1rem;
+    padding: .05rem;
     
     width: 50px;
     margin-inline:.2rem;
@@ -156,9 +156,8 @@ export const ToglleThemeDiv = styled.div`
         cursor: pointer;
     }
     @media (min-width: 768px){
-        height: .5rem;
         width: 1rem;
-        padding: .1rem;
+        padding: .025rem;
 
     }
 `
@@ -172,13 +171,16 @@ export const SwitchBall = styled.div<{checked:boolean}>`
     transition: all .6s linear;
 
     ${({checked}) => checked && `
-        margin-left: 62.5%;
+        margin-left: 63.5%;
     `}
 
     @media(min-width: 768px){
+        width:20px;
+        height:20px;
         ${({checked}) => checked && `
             margin-left: 50%;
             transform: translateX(50%);
+       
         `}
     }
  

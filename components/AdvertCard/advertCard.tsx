@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { AlignVipSize, AlingRowVipSizeAndPrice, ItemBackgroud, ItemCard, ItemTitle, VipItemDiv, VipItemPrice, VipItemTitle, VipSize } from "./advertCardStyle"
 import {useRouter} from 'next/router'
+import useWindowDimensions from "helpers/screenSize"
 
 interface Props {
     type: 'advert' | 'vip' | 'searchAdvert' | 'lastAdverts'
@@ -10,6 +11,7 @@ interface Props {
 
 export const AdvertCard = ({advert, type, style} : Props) => {
     const route = useRouter()
+    const { height, width } = useWindowDimensions();
 
     if(type == 'advert'){
         return(
@@ -33,8 +35,10 @@ export const AdvertCard = ({advert, type, style} : Props) => {
                         <AlignVipSize>
                             <VipSize>12</VipSize>
                             <VipSize>12</VipSize>
-
-                            <VipSize>12</VipSize>
+                            {
+                                width > 768 &&
+                                <VipSize>12</VipSize>
+                            }
                         </AlignVipSize>
                         
                     </AlingRowVipSizeAndPrice>
@@ -73,7 +77,10 @@ export const AdvertCard = ({advert, type, style} : Props) => {
                         <AlignVipSize>
                             <VipSize>12</VipSize>
                             <VipSize>12</VipSize>
-                            <VipSize>12</VipSize>
+                            {
+                                width > 768 &&
+                                <VipSize>12</VipSize>
+                            }
                         </AlignVipSize>
                         
                     </AlingRowVipSizeAndPrice>

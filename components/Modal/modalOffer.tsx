@@ -1,5 +1,5 @@
 import {Modal} from "./modal"
-import { AlignColumn, AlignRow, BuyButton, DescreptionText, DescreptionTitle, ProductDescreptionDiv, ProductPrice, ProductSize, ProductSubTitle, ProductTitle, ToReportDiv, ToReportIcon, ToReportText, AlignCollum, AlignCollumReverseDesktop, AlingRowInDesktop, Container, Tag, AboutSeller, AboutSellerTitle, SeeStore, StoreName, AlingColumeverseDesktop, AlignCollumInDestkop } from "./modalOfferStyles"
+import { AlignColumn, AlignRow, BuyButton, DescreptionText, DescreptionTitle, ProductDescreptionDiv, ProductPrice, ProductSize, ProductSubTitle, ProductTitle, ToReportDiv, ToReportIcon, ToReportText, AlignCollum, AlignCollumReverseDesktop, AlingRowInDesktop, Container, Tag, AboutSeller, AboutSellerTitle, SeeStore, StoreName, AlingColumeverseDesktop, AlignCollumInDestkop, SeeStorePhoto } from "./modalOfferStyles"
 import Image from "next/image"
 import { AvaliationStarts } from "../AvalationStars/avaliationStarts"
 import ShowAdvertImagens from "../ShowAdvertImagens/showAdvertImagens"
@@ -39,10 +39,14 @@ export const ModalOffer = ({setModalState}: Props) => {
                     cursor:"pointer",
                 }} onClick={() => setModalState(false) }>
                     <BackIcon size="32"/>
-                    <p style={{
-                         fontSize:"18px",
-                        fontWeight:"bold",
-                    }}>VOLTAR</p>
+                    {
+                        width > 768 &&
+                            <p style={{
+                                fontSize:"18px",
+                            fontWeight:"bold",
+                        }}>VOLTAR</p>
+                    }
+                    
                 </div>
                 
                 {
@@ -108,9 +112,15 @@ export const ModalOffer = ({setModalState}: Props) => {
                 <BuyButton>Enviar mensagem</BuyButton>
                 <AboutSeller>
                     <AboutSellerTitle>Sobre o vendedor</AboutSellerTitle>
-                    <AlignRow>
+                    <AlignRow style={{
+                        marginTop:".1rem"
+                    }}>
+                        <SeeStorePhoto>
+                            <Image src="/temporary/profile.png" layout="fill"/>
+                        </SeeStorePhoto>
                         <AlignColumn style={{
-                            padding: '0'
+                            padding: '0',
+                            marginLeft: '.25rem'
                         }}>
                             <StoreName>Sneaker Store</StoreName>
                             <AvaliationStarts size={15} avaliationValue={4.7} seeValue={true}/>

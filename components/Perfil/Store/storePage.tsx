@@ -25,7 +25,7 @@ export const StoreEditPage = ({setEditOn} : props) => {
     useEffect(() =>{
         if(editStore){
             setEditOn(() =>  CloseEdit   )
-           }
+        }
     }, [editStore])
 
     const editStoreField = (field) => {
@@ -76,11 +76,11 @@ export const StoreEditPage = ({setEditOn} : props) => {
     
     return(
         <ContainerModel editOn={editStore}>
-                {
-                    getPage()                  
-                }
+
             {
-                editStore &&
+                !editStore ?
+                getPage() 
+                :
                 <StoreEditContainter>
                         <Input Title="NOME" value={StoreState} setValue={setStoreState}/>
                         <Input Title="Digite a senha para salvar" value={StoreState} setValue={setStoreState}/>

@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { useRouter } from "next/router"
 import { AdvertCard } from "../AdvertCard/advertCard"
 import { ItemBackgroud, ItemCard } from "../AdvertCard/advertCardStyle"

@@ -7,13 +7,13 @@ import { HeadBar } from "../HeadBar/headBar"
 import { Modal } from "../Modal/modal"
 import { ModalButton } from "../Modal/modalStyle"
 import { AdvertsPage } from "./Adverts/AdvertsPage"
-import { ModalToManageAdvert } from "./Adverts/modalToManageAdvert"
 import { AndressPage } from "./Andress/andressPage"
 import { disableBodyScroll, enableBodyScroll,  } from 'body-scroll-lock';
 
 import { AdIcon, AlingProfileAndIcon, Container, ContainerOpenInDesktop, LogoutIcon, ProfileName, ProfilePageButton, StoreIcon, TemporaryCrown, TruckIcon, UserIcon, AlingMenuInCollum } from "./perfilPageStyle"
 import { RegistrationData } from "./RegistrationData/registrationData"
 import { StoreEditPage } from "./Store/storePage"
+import { ModalToManageAdvert } from "./Adverts/modalToManageAdvert"
 
 
 interface Props {
@@ -22,9 +22,23 @@ interface Props {
 
 export const PerfilPage = ({closeModal}: Props) => {
 
-    const [openPage, setOpenPage] = useState('')
+
+    const  [pageOpen, setPageOpen ] = useState('')
+    const pageOpenValue = {pageOpen, setPageOpen }
+
+
+    useEffect(() => {
+        setPageOpen('')
+    },[])
+
+    
+    useEffect(() => {
+        console.log(pageOpen)
+    },[pageOpen])
+
     const { height, width } = useWindowDimensions();
     const [editOn, setEditOn] = useState(null)
+    const [backFunction, setBackFunction] = useState(null)
     const {user, logOut} = useContext(UserContext)
     const [modalDesktopStyle, setModalDesktopStyle] = useState({
         width: '6rem',
@@ -32,6 +46,11 @@ export const PerfilPage = ({closeModal}: Props) => {
         border:'solid 2px #CDCDCD',
         borderRadius: '15px',
     })
+
+
+    useEffect(() => {
+        console.log(backFunction)
+    }, [backFunction])
 
     const GetPageMenu = () => {
         const Pages = [
@@ -60,7 +79,7 @@ export const PerfilPage = ({closeModal}: Props) => {
 
             {
                 Pages.map((page, index) => (
-                    <ProfilePageButton active={openPage == page.pageName} key={index} onClick={() => {setOpenPage(page.pageName)}}>
+                    <ProfilePageButton active={pageOpen == page.pageName} key={index} onClick={() => {setPageOpen(page.pageName)}}>
                         {page.icon}{page.title}
                     </ProfilePageButton>
                 ))
@@ -70,7 +89,7 @@ export const PerfilPage = ({closeModal}: Props) => {
     }
 
     useEffect(() => {
-        if(openPage != ''){
+        if(pageOpen != ''){
             disableBodyScroll(document.body)
             setModalDesktopStyle({
                 width: '100%',
@@ -88,7 +107,7 @@ export const PerfilPage = ({closeModal}: Props) => {
                 borderRadius: '15px',
             })
         }
-    }, [openPage])
+    }, [pageOpen])
 
     useEffect(() => {
         console.log(editOn)
@@ -104,7 +123,7 @@ export const PerfilPage = ({closeModal}: Props) => {
     }
 
     const closePage  = () => {
-        setOpenPage('')
+        setPageOpen('')
         enableBodyScroll(document.body)
     }
 
@@ -113,48 +132,50 @@ export const PerfilPage = ({closeModal}: Props) => {
         return(
             <Modal backModal={closeModal}>
                 {
-                    openPage != '' ?
+                    pageOpen == 'Adverts' ?
+                        <HeadBar searchIcon={true} backFunction={editOn ? closeEdit:closePage}/>
+                    :
+                    pageOpen != '' ?
                         <HeadBar backFunction={editOn ? closeEdit:closePage}/>
                     :
                         <HeadBar  backFunction={closeModal}/>
 
                 }
-                {
-                    openPage == 'Andress' ?
-                        <AndressPage setEditOn={setEditOn}/>
-                    :openPage == 'Adverts'  ?
-                        <AdvertsPage setEditOn={setEditOn}/>
-                    :openPage == 'RegistrationData'?
-                        <RegistrationData setEditOn={setEditOn}/>
-                    :openPage == 'Store' ?
-                        <StoreEditPage setEditOn={setEditOn}/>
-                    :
-                    <Container>
-                        <AlingProfileAndIcon>
-                            <ProfileName>Sneaker Store</ProfileName>
-                            <TemporaryCrown/>
-                        </AlingProfileAndIcon>
-                        {
-                        GetPageMenu()
-                        }
-                        <ModalButton >Vender agora</ModalButton>
-                    
-                    </Container>
-                    
-                }
- 
+                    {
+                        pageOpen == 'Andress' ?
+                            <AndressPage setEditOn={setEditOn}/>
+                        :pageOpen == 'Adverts' ?
+                            <AdvertsPage  setEditOn={setEditOn}/>
+                        :pageOpen == 'RegistrationData'?
+                            <RegistrationData setEditOn={setEditOn}/>
+                        :pageOpen == 'Store' ?
+                            <StoreEditPage setEditOn={setEditOn}/>
+                        :
+                        <Container>
+                            <AlingProfileAndIcon>
+                                <ProfileName>Sneaker Store</ProfileName>
+                                <TemporaryCrown/>
+                            </AlingProfileAndIcon>
+                            {
+                            GetPageMenu()
+                            }
+                            <ModalButton >Vender agora</ModalButton>
+                        
+                        </Container>
+                    }
+
             </Modal>
         )
     }else{
         return(
-            <Modal modalStyleDesktop={openPage != '' ? modalDesktopStyle : {
+            <Modal modalStyleDesktop={pageOpen != '' ? modalDesktopStyle : {
                 ...modalDesktopStyle,
                 position:'absolute',
                 top: '1.7rem',
                 right:'.5rem'
             } } backModal={closeModal}>
                 {
-                    openPage == '' ?
+                    pageOpen == '' ?
                     <Container>
 
                         {
@@ -169,9 +190,10 @@ export const PerfilPage = ({closeModal}: Props) => {
                         </ProfilePageButton>
                     </Container>
                     :
-                    
+
                     <Container>
                         <HeadBar backFunction={closePage}/>
+
                         <ContainerOpenInDesktop>
                             <AlingMenuInCollum>
       
@@ -180,20 +202,24 @@ export const PerfilPage = ({closeModal}: Props) => {
                                 }
 
                             </AlingMenuInCollum>
+
                             {
-                               openPage == 'Andress' ?
+                            pageOpen == 'Andress' ?
                                <AndressPage setEditOn={setEditOn}/>
-                           :openPage == 'Adverts'  ?
-                               <AdvertsPage setEditOn={setEditOn}/>
-                           :openPage == 'RegistrationData'?
-                               <RegistrationData setEditOn={setEditOn}/>
-                           :openPage == 'Store' &&
+                            :pageOpen == 'Adverts' || pageOpen === 'ManageAdvert'  ?
+                                <AdvertsPage setEditOn={setEditOn}/>
+                            :pageOpen == 'RegistrationData'?
+                                <RegistrationData setEditOn={setEditOn}/>
+                            :pageOpen == 'Store' &&
                                <StoreEditPage setEditOn={setEditOn}/>
                            
                             
                             }
+
                         </ContainerOpenInDesktop>
+
                     </Container>
+
                 }
             
 

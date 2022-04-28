@@ -100,7 +100,7 @@ export const ProductPrice = styled.h1`
 
 export const BuyButton = styled.button`
     border-radius: 10px;
-    padding-inline: 1rem;
+    padding-inline: .7rem;
     padding-block: .5rem;
     font-weight: 900;
     align-self: center; 
@@ -214,7 +214,7 @@ export const Tag = styled.div`
     color:white;
     font-weight: 500;
     font-size: 12px;
-    padding-block:.5rem;
+    padding-block:.2rem;
     padding-inline:.4rem;
     border-radius: 15px;
     margin-right: .5rem;   
@@ -262,6 +262,21 @@ export const SeeStore = styled.button`
         font-size:14px;
     }
     
+`
+
+export const SeeStorePhoto = styled.div`
+    width:1.7rem;
+    height:1rem;
+    
+    position:relative;
+    span{
+            border-radius: 60px;
+        }
+
+    @media (min-width: 768px){
+        width:.8rem;
+        height:.8rem;
+    }
 `
 
 export const AlingColumeverseDesktop = styled.div`

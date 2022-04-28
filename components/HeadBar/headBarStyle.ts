@@ -1,5 +1,5 @@
 import { BiArrowBack, BiMenu, BiSearchAlt2 } from "react-icons/bi";
-import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowRoundBack } from "react-icons/io";
 import { RiShutDownLine } from "react-icons/ri";
 import styled from "styled-components";
 
@@ -117,6 +117,12 @@ export const BackIcon = styled(IoIosArrowBack)`
     :hover{
         cursor: pointer;
     }
+`
+
+export const BackIconDiv = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
 `
 
 export const UserImage=  styled.div`

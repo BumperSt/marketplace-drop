@@ -19,7 +19,7 @@ const ImagemBanner = styled.div`
   margin-top: 1rem;
   width:100%;
   position: relative;
-  height: 7rem;
+  height: 6rem;
 `
 
 const HomePage = () => {

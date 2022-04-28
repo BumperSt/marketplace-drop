@@ -7,6 +7,7 @@ import { Container, CopDescription, CopDiv, CopTitle, DivColumn, Title,AlignRow,
 import { useEffect, useState } from "react";
 import { Switch } from "../Inputs/swith";
 import useWindowDimensions from "helpers/screenSize";
+import { useRouter } from "next/router";
 
 
 interface props{
@@ -15,6 +16,7 @@ interface props{
 
 export const BottomBar = ({setSelectedTheme} : props) => {
     
+    const route = useRouter()
 
     const {theme, themeLoaded, setTheme} = UseTheme();
 
@@ -49,8 +51,8 @@ export const BottomBar = ({setSelectedTheme} : props) => {
     if(width < 768){
         return(
             <Container>
-                <LogoImage>
-                    <Image title="Logo" alt="Logo Seliga no drop" layout="fill" src="/imagens/logo-bottomBar.webp"/>
+                <LogoImage onClick={() => {route.push('/') }}>
+                    <Image title="Logo" alt="Logo Seliga no drop" layout="fill" src="/logos/LOGOTIPO WHITE4K (Neag Design).png"/>
                 </LogoImage>
                 
                 <MoreInfoButton>Saiba Mais</MoreInfoButton>

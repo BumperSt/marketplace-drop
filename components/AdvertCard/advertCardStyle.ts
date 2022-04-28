@@ -90,7 +90,7 @@ export const VipSize = styled.div`
     font-size:9px;
     font-weight: 900;
     padding: .15rem;
-    margin-left: .3rem;
+    margin-left: .1rem;
     border-radius:5px;
     @media (min-width: 768px){
         font-size:10px;

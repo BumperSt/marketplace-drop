@@ -1,6 +1,6 @@
 import { AiFillEye, AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { BiArrowBack, BiShare } from 'react-icons/bi'
-import { IoIosArrowBack } from 'react-icons/io'
+import { IoIosArrowBack, IoIosArrowRoundBack } from 'react-icons/io'
 import styled from 'styled-components'
 
 export const ModalBackground = styled.div<{background: boolean}>`
@@ -21,7 +21,7 @@ export const ModalBackground = styled.div<{background: boolean}>`
     }
 `
 
-export const BackIcon = styled(IoIosArrowBack)`
+export const BackIcon = styled(IoIosArrowRoundBack)`
     :hover{
         cursor: pointer;
     }
@@ -77,7 +77,7 @@ export const ModalInput = styled.input`
     color:${({ theme }) => theme.colors.detalhes};
     font-weight: 300;
     @media (min-width: 768px) {
-        margin-block:.2rem;
+        margin-block:.1rem;
         
         border-radius: 15px;
         width:100%;
@@ -88,8 +88,8 @@ export const ModalInput = styled.input`
 `
 
 export const ModalSelect = styled.select`
-    border-radius: 10px;
-    margin-block:.3rem;
+       border-radius: 10px;
+    margin-block:.4rem;
     padding:.5rem;
     font-size:14px;
     font-weight:300;
@@ -99,8 +99,9 @@ export const ModalSelect = styled.select`
     color:${({ theme }) => theme.colors.detalhes};
     font-weight: 300;
     @media (min-width: 768px) {
-        margin-block:.2rem;
-        border-radius: 25px;
+        margin-block:.1rem;
+        border-radius: 15px;
+        padding:.25rem;
         
         font-size: 24px;
 
@@ -108,13 +109,16 @@ export const ModalSelect = styled.select`
 `
 
 export const TermsOfService = styled.div`
-    width: 90%;
-    margin-block:1rem;
+    width: 100%;
+    margin-top:.5rem;
+
+    margin-bottom:1rem;
     display:flex;
+    padding-inline: 0.2rem;
     flex-direction:row;
     align-items:center;
     font-size:12px;
-    h1{
+    p{
         margin-left: .5rem;
         font-size:12px;
         font-weight:500;
@@ -123,8 +127,24 @@ export const TermsOfService = styled.div`
             font-size:12px;
         }
     }
-
+    @media(min-width: 768px){
+        padding-inline: 0.1rem;
+        p{
+            margin-left: .25rem;
+            font-size:18px;
+            font-weight:500;
+            span{
+                color:#0057FF;
+                font-size:18px;
+            }
+        }
+    }
+    :hover{
+        cursor: pointer;
+    }
 `
+
+
 
 
 export const ModalButton = styled.button<{otherColor?:boolean}>`
@@ -134,6 +154,8 @@ export const ModalButton = styled.button<{otherColor?:boolean}>`
     font-weight: 900;
     border-radius:5px;
     font-size:18px;
+    margin-bottom: 2rem;
+
     ${({otherColor}) => otherColor && `
         background-color: rgba(0,0,0,0);
         color:#2A2A2A;
@@ -148,6 +170,7 @@ export const ModalButton = styled.button<{otherColor?:boolean}>`
         border-radius:60px;
         align-self:center;
         font-size: 24px;
+        margin-bottom: 2rem;
     }
 `
 
@@ -160,7 +183,10 @@ export const LostPasswordText = styled.h1`
     :hover{
         cursor:pointer
     }
+    margin-block: .3rem;
+
     @media (min-width: 768px) {
+        margin-block: .2rem;
         width:100%;
         font-size: 24px;
     }
@@ -181,9 +207,7 @@ export const InputsContainer = styled.div`
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
-    @media (min-width: 768px) {
-        margin-top: .5rem;
-    }   
+
 
 `
 
@@ -265,15 +289,15 @@ export const Form = styled.form`
     align-items: center;
     width:90%;
     @media(min-width: 768px){
-
-        width: 45%;
+        margin-top: .25rem;
+        width: 50%;
     }
 `
 
 export const ErrorText = styled.p`
     color:red;
     font-size:15px;
-    padding-block:.5rem;
+    margin-top:.3rem;
     text-align: start;
     width: 100%;
     @media(min-width: 768px){

@@ -1,27 +1,23 @@
 import styled from "styled-components"
 
-export const Container = styled.div<{editOn:boolean}>`
+export const Container = styled.div`
     overflow-y: auto;
     display: flex;
     background-color:white;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100%;
+    
     @media (min-width: 768px){
         position: relative;
         width: 100%;
         height: auto;
         margin:0rem;
         align-items: flex-start;
-
-        ${({editOn}) => editOn && `
-            flex-direction: row;
-        `}
     }
 `
 
-export const InternalContainer = styled.div<{pageName?: 'adverts' | 'andress'}>`
+export const InternalContainer = styled.div<{pageName?: "adverts" | "andress" | "registrationData"}>`
     padding-inline:.8rem;
     padding-block:.5rem;
     margin-top: .5rem;
@@ -32,6 +28,9 @@ export const InternalContainer = styled.div<{pageName?: 'adverts' | 'andress'}>`
     border-radius:10px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
     justify-content: center;
+    min-width: 80%;
+    margin-bottom: ${({pageName}) => pageName == 'registrationData' ? '5rem' : '0rem'};
+
     @media (min-width: 768px){
         box-shadow:none;
         border:solid 1px ${({theme}) => theme.colors.stroke};
@@ -48,8 +47,10 @@ export const InternalContainer = styled.div<{pageName?: 'adverts' | 'andress'}>`
         ${({pageName}) => pageName === 'andress' &&`        
             border-radius: 0px;
             border: 0px;
-            
+            margin-bottom: .5rem;
             width: 50%;
+            margin-bottom: 3rem;
+
         `
         };
 

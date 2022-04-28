@@ -19,6 +19,8 @@ export const AlingCollumInputs = styled.div`
     flex-direction: column;
     padding-inline: .5rem;
     width: 100%;
+    height: 100%;
+
     @media (min-width: 768px){
         padding:0;
         padding-inline: .5rem;
@@ -106,6 +108,7 @@ export const PublisherButton = styled.button`
     padding-inline:1rem;
     padding-block:.5rem;
     align-self: center;
+    margin-block: 1.5rem;
     @media(min-width: 768px){
         
 
@@ -117,7 +120,6 @@ export const PublisherButton = styled.button`
 export const MarkToSell = styled.div`
     
     width: 90%;
-    margin-top:2rem;
     margin-bottom:3rem;
 
     display:flex;

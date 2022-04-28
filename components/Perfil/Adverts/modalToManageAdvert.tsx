@@ -1,21 +1,20 @@
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { HeadBar } from "../../HeadBar/headBar"
 import { Input } from "../../Inputs/input"
 import { SelectItemCondition } from "../../Inputs/itemCondicion"
 import { SelectStyledComponent } from "../../Inputs/selectInput"
 import { AddPhotosIcon, AddPhotosTitle, AlignPhotos, AlignTitleAndContent, AlingCollum, AlingCollumInputs, DivTitle, PhotoDiv ,AlingRowInDesktop, PublisherButton, MarkToSell} from "./mangeAdvertStyle"
-import { Modal } from "../../Modal/modal"
 
+import { ActivyAdvertsTitle, AdvertButton, AdvertsScroll, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn, AlignIcon, AdvertContainer,AlingRow, Arrow, SelectAdvertTypeText, AlingRowSwithAndText, ReverseCollumInDesktop, AlingRowDesktop } from "./AdvertStyle"
+import { ContainerModel } from "../ContainerModel/ContainerModel"
+import productsApi from "apiService/productsApi"
 
 interface Props {
-    closePage:any,
-    modalType?:'create',
 }
 
 
 
-export const ModalToManageAdvert = ({closePage, modalType}: Props) => {
+export const ModalToManageAdvert = ({}: Props) => {
 
     const [advertName, setAdvertName] = useState("")
     const [advertSubTitle, setAdvertSubTitle] = useState("")
@@ -24,6 +23,28 @@ export const ModalToManageAdvert = ({closePage, modalType}: Props) => {
     const [advertPhotos, setAdvertPhotos] = useState(null)
     const [itemCondition, setItemCondition] = useState(5.5)
     const [conditionSelected, setConditionSelected] = useState("")
+    const [itemSize, setItemSize] = useState('')
+
+
+
+    const createAdvert = () => {
+        productsApi.create({
+            name: advertName,
+            description: advertDescription,
+            value: parseFloat(advertPrice),
+            size: parseInt(itemSize),
+            condition: conditionSelected,
+            condition_value: itemCondition,
+            category: "",
+            hasBox: false,
+            inHands: true
+
+        }).then((res) => {
+            console.log(res)
+        }).catch((err) => {
+            console.error(err)
+        })
+    }
 
 
     useEffect(() => {
@@ -55,11 +76,10 @@ export const ModalToManageAdvert = ({closePage, modalType}: Props) => {
 
 
     return(
-        <Modal backModal={closePage}>
-            <HeadBar backFunction={closePage}/>
-
-            <AlingCollumInputs>
-
+        <ContainerModel style={{
+            flexDirection: 'row',
+        }}>       
+        <AlingCollumInputs>
             <AlingRowInDesktop>
                     <AlingCollumInputs>
                         <SelectStyledComponent fontColor="secondary" options={['Nike', 'Adidas']} Title="Tipo de produto" value={advertSubTitle} setValue={setAdvertSubTitle}/>
@@ -70,7 +90,7 @@ export const ModalToManageAdvert = ({closePage, modalType}: Props) => {
                                 <SelectItemCondition  fontColor="secondary" Title="Qual a condição do item?" value={itemCondition} setValue={changeValue}/>
 
                         }
-                        <SelectStyledComponent fontColor="secondary" options={['42', '44']} Title="Tamanho" value={advertSubTitle} setValue={setAdvertSubTitle}/>
+                        <SelectStyledComponent fontColor="secondary" options={['42', '44']} Title="Tamanho" value={itemSize} setValue={setItemSize}/>
 
                     </AlingCollumInputs>
 
@@ -94,21 +114,28 @@ export const ModalToManageAdvert = ({closePage, modalType}: Props) => {
                         
                             </AlignPhotos>
                         </AlignTitleAndContent>
-                        <Input fontColor="secondary" Title="Preço (R$)" value={advertPrice} setValue={setAdvertPrice}/>
-                        <Input  fontColor="secondary" Title="Descrição" value={advertDescription} setValue={setAdvertDescription} inputType={'textarea'} />
-                        <PublisherButton>Publicar</PublisherButton>
-                        <MarkToSell>
-                                <input type="checkbox" id="scales" name="scales" />
-                                <div>
-                                    <h1>Marcar como vendido </h1>
-                                    <h1>Isso irá desativar o anúncio.</h1>
-                                </div>
-                        </MarkToSell>
+                        <ReverseCollumInDesktop>
+                            <Input fontColor="secondary" Title="Preço (R$)" value={advertPrice} setValue={setAdvertPrice}/>
+                            <Input  fontColor="secondary" Title="Descrição" value={advertDescription} setValue={setAdvertDescription} inputType={'textarea'} />
+                        </ReverseCollumInDesktop>
+
+                    
+                    
                     </AlingCollum>
                 </AlingRowInDesktop>
-
-            </AlingCollumInputs>
-
-        </Modal>
+                <AlingRowDesktop>
+                            <PublisherButton onClick={() => createAdvert()}>Publicar</PublisherButton>
+                                <MarkToSell>
+                                        <input style={{
+                                            cursor: 'pointer',
+                                        }} type="checkbox" id="scales" name="scales" />
+                                        <div>
+                                            <h1>Marcar como vendido </h1>
+                                            <h1>Isso irá desativar o anúncio.</h1>
+                                        </div>
+                                </MarkToSell>
+                        </AlingRowDesktop>
+            </AlingCollumInputs>            
+    </ContainerModel>
     )
 }

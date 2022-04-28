@@ -86,8 +86,8 @@ export const AlignRow = styled.div`
 
 export const LogoImage = styled.div`
     position:relative;
-    width:5rem;
-    height:2rem;
+    width:6rem;
+    height: 2rem;
     margin-block: .8rem;
     @media(min-width: 768px){
         margin: 0rem;

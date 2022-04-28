@@ -29,6 +29,8 @@ export const ModalLogin = ({closeModal}: Props) => {
     const [birthDate, setBirthDate] = useState<string>("")
     const [viewPassword, setViewPassword] = useState('password')
 
+    const [termsOfServiceAceept, setTermsOfServiceAceept] = useState(false)
+    
     const {setUser} = useContext(UserContext)
     const [error, setError] = useState(null)
 
@@ -105,10 +107,10 @@ export const ModalLogin = ({closeModal}: Props) => {
                             }} type={viewPassword} value={password} onChange={(e) => setPassword(e.target.value)}  placeholder="Senha"/>
                             {
                                 viewPassword == 'password' ?
-                                <NotViewEye size='46' onClick={() => setViewPassword('text')}/>
+                                <NotViewEye size='32' onClick={() => setViewPassword('text')}/>
 
                                 :
-                                <ViewEye size='46' onClick={() => setViewPassword('password')}/>
+                                <ViewEye size='32' onClick={() => setViewPassword('password')}/>
 
                             }
                             
@@ -143,10 +145,7 @@ export const ModalLogin = ({closeModal}: Props) => {
                 <HeadBar backIcon={true} notLogo={true} backFunction={() => setModalType('Login')}/>
 
                     <ModalTitle style={{
-                        fontSize:'24px',
-                        maxWidth:'60%',
-                        lineHeight:'28,13px',
-                        marginBlock:'1rem'
+                        maxWidth:'350px'
                     }}>Lorem ipsum dolor sit amet.</ModalTitle>
                     <Form onSubmit={handleSubmit}>
 
@@ -170,15 +169,13 @@ export const ModalLogin = ({closeModal}: Props) => {
                                 <option value="" disabled selected>Tamanho (opcional)</option>
                                 <option value="hurr">Durr</option>
                         </ModalSelect>
-                        <TermsOfService>
-                            <input type="checkbox" id="scales" name="scales" />
-                            <h1>Concordo com os <span>termos de serviço.</span></h1>
+                        <TermsOfService onClick={() => setTermsOfServiceAceept(!termsOfServiceAceept)}>
+                            <input checked={termsOfServiceAceept} onChange={(e) => setTermsOfServiceAceept(e.target.checked)} type="checkbox" id="scales" name="scales" />
+                            <p>Concordo com os <span>termos de serviço.</span></p>
                         </TermsOfService>
 
 
-                    <ModalButton type="submit" style={{
-                        marginBottom:'5rem'
-                    }} onClick={()=> Register()}>Cadastrar</ModalButton>
+                    <ModalButton type="submit"  onClick={()=> Register()}>Cadastrar</ModalButton>
                 </Form>
             </Modal>
     
@@ -189,7 +186,8 @@ export const ModalLogin = ({closeModal}: Props) => {
                 <HeadBar backIcon={true} notLogo={true} backFunction={() => setModalType('Login')}/>
 
             <AlingCenter style={{
-                marginBottom:'5rem'
+                marginBottom:'5rem',
+                width:'90%'
             }}>
                 <ModalTitle style={{
                     marginBottom: '1.5rem'

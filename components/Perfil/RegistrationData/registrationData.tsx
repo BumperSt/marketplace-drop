@@ -22,9 +22,9 @@ export const RegistrationData = ({setEditOn} : Props) => {
 
     
     return (
-        <ContainerModel  editOn={false}>
+        <ContainerModel>
             <RegistrationTitle>Dados cadastrais</RegistrationTitle>
-            <InternalContainer >
+            <InternalContainer pageName="registrationData" >
                 <RegistrationDataDiv>
                         <RegistrationDataType>NOME</RegistrationDataType>
                         <AlignRegistrationAndArrow>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import { ModalLogin } from "../Modal/modalLogin";
-import { AlignRow, AlingLoginAndInput, BackIcon, HeadBarContainer, LoggedTitle, LoggedTitleColor, LoginButton, LogoImagem, LogoutIcon, MenuIcon, SearchIcon, UserImage } from "./headBarStyle";
+import { AlignRow, AlingLoginAndInput, BackIcon, HeadBarContainer, BackIconDiv, LoggedTitleColor, LoginButton, LogoImagem, LogoutIcon, MenuIcon, SearchIcon, UserImage } from "./headBarStyle";
 import {useRouter} from 'next/router'
 import { Search } from "../Search/search";
 import { PerfilPage } from "../Perfil/perfilPage";
@@ -13,9 +13,11 @@ interface props {
     backFunction?: any,
     notLogo?:boolean,
     backIcon?:boolean,
+    searchIcon?:boolean,
+    logouButton?:boolean,
 }
 
-export const HeadBar = ({backFunction, notLogo, backIcon} : props) => {
+export const HeadBar = ({backFunction, notLogo, backIcon, logouButton, searchIcon} : props) => {
 
     const route = useRouter()
     const [stateLoginModal, setStateLoginModal] = useState<Boolean>(false);
@@ -62,12 +64,26 @@ export const HeadBar = ({backFunction, notLogo, backIcon} : props) => {
                             <Image  title="Logo" alt="Logo" layout="fill" src="/logos/LogoHeader.png"/>
                         </LogoImagem>
                     }
+                    
                     {
-                        logged &&
+                        searchIcon &&
+                        <>
+                            <SearchIcon onClick={() => setOpenSearch(true)} size='32'/>
+
+                        </>
+                        
+                    }
+                    
+                    {
+                            openSearch &&
+                            <Search closeSearch={setOpenSearch}/>
+                        }
+                    {
+                        logouButton &&
                         <LogoutIcon size="32" onClick={() => {
                             logOut()
                             backFunction()}}
-                            />
+                        />
 
                     }
                 </HeadBarContainer>
@@ -113,21 +129,21 @@ export const HeadBar = ({backFunction, notLogo, backIcon} : props) => {
         if(backFunction){
             return(
                 <HeadBarContainer >
-                    <div>
-                {
-                    <LogoImagem onClick={() => {
-                        route.push('/') 
-                        backFunction()
-                    }}>
-                        <Image  title="Logo" alt="Logo" layout="fill" src="/logos/logoBlack.png"/>
-                    </LogoImagem>
-                }
-                {
-                    backIcon &&
-                        <BackIcon onClick={() => backFunction() } size="32"/>
-                }
+                <BackIconDiv>
+                        {
+                            <LogoImagem onClick={() => {
+                                route.push('/') 
+                                backFunction()
+                            }}>
+                                <Image  title="Logo" alt="Logo" layout="fill" src="/logos/logoBlack.png"/>
+                            </LogoImagem>
+                        }
+                        {
+                            backIcon &&
+                                <BackIcon onClick={() => backFunction() } size="32"/>
+                        }
                         
-                    </div>
+                </BackIconDiv>
 
 
                     {

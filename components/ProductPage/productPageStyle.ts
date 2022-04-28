@@ -1,7 +1,5 @@
-import { BsPlusLg } from "react-icons/bs";
-import { FiShare2 } from "react-icons/fi";
-import { IoMdArrowBack } from "react-icons/io";
-import { RiShareFill } from "react-icons/ri";
+import { BiShareAlt } from "react-icons/bi";
+import { IoIosArrowRoundBack, IoMdArrowBack } from "react-icons/io";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -29,7 +27,7 @@ export const AlignIcons = styled.div`
     width: 100%;
 `
 
-export const BackIcon = styled(IoMdArrowBack)`
+export const BackIcon = styled(IoIosArrowRoundBack)`
     color:${({ theme }) => theme.colors.detalhes};
     z-index: 50;
     :hover{
@@ -38,7 +36,7 @@ export const BackIcon = styled(IoMdArrowBack)`
 
 `
 
-export const ShareIcon = styled(RiShareFill)`
+export const ShareIcon = styled(BiShareAlt)`
     color:'black';
     z-index: 50;
     :hover{

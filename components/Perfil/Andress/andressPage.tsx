@@ -1,7 +1,9 @@
 import { HeadBar } from "@/components/HeadBar/headBar"
 import { Input } from "@/components/Inputs/input"
+import UserContext from "@/context/userContext"
+import addres from "apiService/addres"
 import useWindowDimensions from "helpers/screenSize"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { ContainerModel } from "../ContainerModel/ContainerModel"
 import { InternalContainer } from "../ContainerModel/ContainerModelStyle"
 import { AddButon, AlignAndressAndArrow, AndressDiv, AndressEditContainter, AndressName, AndressType, Arrow, InputDivRow, InputEditAndress, InputName, SaveButton } from "./andressPageStyles"
@@ -15,12 +17,24 @@ export const AndressPage = ({setEditOn} : props) => {
 
     const [editAndress , setEditAndress] = useState(false)
     const { height, width } = useWindowDimensions();
-
+    const {user} = useContext(UserContext)
     const [andressName, setAndressName] = useState("")
-
+    const [zipCode, setZipCode] = useState(0 || null)
+    const [complemento, setComplemento] = useState("")
+    const [state, setState] = useState("")
+    const [city, setCity] = useState("")
+    const [addresses, setAddresses] = useState(null)
     const CloseEdit = () => {
         setEditAndress(false)
     }
+
+
+    useEffect(() => {
+        if(user){
+            console.log(user)
+            setAddresses(user.addresses)
+        }
+    }, [user])
 
     useEffect(() =>{
         if(editAndress){
@@ -28,35 +42,38 @@ export const AndressPage = ({setEditOn} : props) => {
            }
     }, [editAndress])
 
+    const addAndress = () => {
+        addres.addAddress({
+            name: andressName,
+            zipCode: zipCode,
+            complement: complemento,
+            state: state,
+            city: city
+        }).then((res) => {
+            console.log(res)
+            setAddresses(res.data.addresses)
+        })
+
+      
+    }
+
 
     const getPage = () => {
         if(editAndress && width > 768 || !editAndress && width > 768 || !editAndress && width < 768){
-            return  <InternalContainer pageName="andress">
-            <AndressDiv>
-                    <AndressType>PADRÃO</AndressType>
-                    <AlignAndressAndArrow>
-                        <AndressName>Rua dos Snekaers, 113 -a</AndressName>
-                        <Arrow size='25' onClick={()=> setEditAndress(true)}/>
-                    </AlignAndressAndArrow>
-            </AndressDiv>
-
-            <AndressDiv>
-                    <AndressType>CASA</AndressType>
-                    <AlignAndressAndArrow>
-                        <AndressName>Rua dos Snekaers, 113 -a</AndressName>
-                        <Arrow size='25'/>
-                    </AlignAndressAndArrow>
-            </AndressDiv>
-
-            <AndressDiv>
-                <AndressType>TRABALHO</AndressType>
-                <AlignAndressAndArrow>
-                    <AndressName>Rua dos Snekaers, 113 -a</AndressName>
-                    <Arrow size='25'/>
-                </AlignAndressAndArrow>
-                
-            </AndressDiv>
-            <AddButon>Adicionar</AddButon>
+            return  <InternalContainer  pageName="andress">
+                {
+                    addresses?.map((andres, index) => (
+                        <AndressDiv key={index}>
+                            <AndressType>{andres.name}</AndressType>
+                            <AlignAndressAndArrow>
+                                <AndressName>{andres.complement}</AndressName>
+                                <Arrow size='25' onClick={()=> setEditAndress(true)}/>
+                            </AlignAndressAndArrow>
+                        </AndressDiv>
+                    ) )
+                }
+        
+            <AddButon onClick={() => setEditAndress(true)}>Adicionar</AddButon>
 
         </InternalContainer>
         }
@@ -64,7 +81,7 @@ export const AndressPage = ({setEditOn} : props) => {
 
     
     return(
-        <ContainerModel  editOn={editAndress}>
+        <ContainerModel   editOn={editAndress}>
                   {
                     getPage()                  
                 }
@@ -72,10 +89,10 @@ export const AndressPage = ({setEditOn} : props) => {
                 editAndress &&
                 <AndressEditContainter>
                         <Input Title="NOME" value={andressName} setValue={setAndressName}/>
-                        <Input Title="CEP" value={andressName} setValue={setAndressName}/>
-                        <Input Title="ENDEREÇO" value={andressName} setValue={setAndressName}/>
-                        <Input Title="BAIRRO" value={andressName} setValue={setAndressName}/>
-                        <Input Title="PAIS" value={andressName} setValue={setAndressName}/>
+                        <Input Title="CEP" value={zipCode} setValue={setZipCode}/>
+                        <Input Title="ENDEREÇO" value={complemento} setValue={setComplemento}/>
+                        <Input Title="ESTADO" value={state} setValue={setState}/>
+                        <Input Title="CIDADE" value={city} setValue={setCity}/>
                         <Input Title="Digite a senha para salvar" value={andressName} setValue={setAndressName}/>
                         <InputDivRow>
                             <Input Style={{width:'50%'}} Title="CIDADE" value={andressName} setValue={setAndressName}/>
@@ -83,7 +100,7 @@ export const AndressPage = ({setEditOn} : props) => {
                         </InputDivRow>
                         <Input Title="Digite a senha para salvar" value={andressName} setValue={setAndressName}/>
 
-                        <SaveButton>Salvar</SaveButton>
+                        <SaveButton  onClick={() => addAndress()}>Salvar</SaveButton>
 
                     </AndressEditContainter>
                 }
