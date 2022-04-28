@@ -93,7 +93,7 @@ export const ModalSelect = styled.select`
     padding:.5rem;
     font-size:14px;
     font-weight:300;
-    width:90%;
+    width:100%;
     border:0px;
     background-color:${({theme}) => theme.colors.input.background};
     color:${({ theme }) => theme.colors.detalhes};
@@ -179,7 +179,7 @@ export const InputsContainer = styled.div`
     display:flex;
     flex-direction:row;
     flex-wrap: wrap;
-    width: 90%;
+    width: 100%;
     justify-content: space-between;
     @media (min-width: 768px) {
         margin-top: .5rem;

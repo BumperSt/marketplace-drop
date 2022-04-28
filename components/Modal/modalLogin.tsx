@@ -26,7 +26,7 @@ export const ModalLogin = ({closeModal}: Props) => {
     const [fullName, setFullName] = useState<string>("")
     const [phoneNumber, setPhoneNumber] = useState<string>("")
     const [cpf, setCpf] = useState<string>("")
-
+    const [birthDate, setBirthDate] = useState<string>("")
     const [viewPassword, setViewPassword] = useState('password')
 
     const {setUser} = useContext(UserContext)
@@ -155,7 +155,7 @@ export const ModalLogin = ({closeModal}: Props) => {
                         <ModalInput value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder="Telefone"/>
                         <ModalInput value={cpf} onChange={(e) => setCpf(e.target.value)} placeholder="Cpf"/>
                         <InputsContainer>
-                            <ModalInput style={{width:'50%'}} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Data de nascimento"/>
+                            <ModalInput style={{width:'50%'}} value={birthDate} onChange={(e) => setBirthDate(e.target.value)} placeholder="Data de nascimento"/>
                             <ModalSelect style={{width:'45%'}}>
                                 <option value="" disabled selected>Genero</option>
                                 <option value="hurr">Durr</option>
