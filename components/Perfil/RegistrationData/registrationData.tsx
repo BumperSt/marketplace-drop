@@ -70,8 +70,7 @@ export const RegistrationData = ({setEditOn} : Props) => {
                 <RegistrationDataDiv>
                     <RegistrationDataType>TAMANHOS</RegistrationDataType>
                     <AlignRegistrationAndArrow>
-                        <RegistrationDataName>42</RegistrationDataName>
-                        <RegistrationDataName>44</RegistrationDataName>
+                        <RegistrationDataName>42 44</RegistrationDataName>
 
                         <Arrow size='25'/>
                         

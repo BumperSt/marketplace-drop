@@ -16,8 +16,8 @@ export const SelectStyledComponent = ({Title, value, setValue, options, fontColo
             <SelectStyled value={value} onChange={(e) => setValue(e.target.value)}  >
                 <option value="" disabled selected></option>
                 {
-                    options.map(opt => (
-                        <option key={opt} value={opt}>{opt}</option>
+                    options.map((option, index) => (
+                        <option key={index} value={option}>{option}</option>
                     ))
                 }
             </SelectStyled>

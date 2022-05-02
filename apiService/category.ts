@@ -9,7 +9,7 @@ const prefix = (route: string) => {
 }
 
 export default {
-  list: () => api.get<ICategory>(prefix('list')),
+  list: () => api.get<ICategory[]>(prefix('list')),
   getOne: (id:string) => api.get<ICategory>(prefix(`?id${id}`)),
   create: (data:NewCategory) => api.post('category', data),
   update: (id:string) => api.patch(prefix(id)),

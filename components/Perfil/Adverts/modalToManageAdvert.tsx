@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Input } from "../../Inputs/input"
 import { SelectItemCondition } from "../../Inputs/itemCondicion"
 import { SelectStyledComponent } from "../../Inputs/selectInput"
@@ -8,6 +8,8 @@ import { AddPhotosIcon, AddPhotosTitle, AlignPhotos, AlignTitleAndContent, Aling
 import { ActivyAdvertsTitle, AdvertButton, AdvertsScroll, AdvertProductImage, AdvertProductPrice, AdvertProductTitle, AlignColumn, AlignIcon, AdvertContainer,AlingRow, Arrow, SelectAdvertTypeText, AlingRowSwithAndText, ReverseCollumInDesktop, AlingRowDesktop } from "./AdvertStyle"
 import { ContainerModel } from "../ContainerModel/ContainerModel"
 import productsApi from "apiService/productsApi"
+import category from "apiService/category"
+import { forEach } from "lodash"
 
 interface Props {
 }
@@ -16,16 +18,26 @@ interface Props {
 
 export const ModalToManageAdvert = ({}: Props) => {
 
+    const fileInput = useRef(null)
+
     const [advertName, setAdvertName] = useState("")
-    const [advertSubTitle, setAdvertSubTitle] = useState("")
+    const [categorysName, setCategorysName] = useState(null)
+    const [categorySelected, setCategorySelected] = useState(null)
+    const [selectedCategory, setSelectedCategory] = useState("")
+    const [categorys, setCategorys] = useState(null)
     const [advertDescription, setAdvertDescription] = useState("")
     const [advertPrice, setAdvertPrice] = useState("")
-    const [advertPhotos, setAdvertPhotos] = useState(null)
+    const [advertPhotos, setAdvertPhotos] = useState([])
     const [itemCondition, setItemCondition] = useState(5.5)
     const [conditionSelected, setConditionSelected] = useState("")
     const [itemSize, setItemSize] = useState('')
 
-
+    const handleFileInput = (e) => {
+        // handle validations
+        console.log(e.target.files[0])
+        console.log(URL.createObjectURL(e.target.files[0]))
+        setAdvertPhotos([...advertPhotos, URL.createObjectURL(e.target.files[0])])
+    }
 
     const createAdvert = () => {
         productsApi.create({
@@ -35,12 +47,12 @@ export const ModalToManageAdvert = ({}: Props) => {
             size: parseInt(itemSize),
             condition: conditionSelected,
             condition_value: itemCondition,
-            category: "",
+            category: categorySelected._id,
             hasBox: false,
             inHands: true
 
         }).then((res) => {
-            console.log(res)
+            console.log(res.data)
         }).catch((err) => {
             console.error(err)
         })
@@ -48,16 +60,31 @@ export const ModalToManageAdvert = ({}: Props) => {
 
 
     useEffect(() => {
-        let tempArray = []
-        let photoArray = []
-        for (let index = 32; index <= 46;) {
-            tempArray.push(index)
-            photoArray.push({'url' : '/temporary/advertPhoto.png', 'key':index-20})
-            index += 2
+        category.list().then((res) => {
+            setCategorys(res.data)
+            let categoryTempArray = []
+            res.data.forEach(element => {
+                categoryTempArray.push(element.name)
+            });
+            setCategorysName(categoryTempArray)
+        }).catch((err) => {
+            console.error(err)
+        })
 
-        }
-        setAdvertPhotos(photoArray)
     }, [])
+
+    useEffect(() => {
+        if(selectedCategory !== ""){
+            categorys.forEach(element => {
+                if(element.name === selectedCategory){
+                    setCategorySelected(element)
+                    return true
+                }
+            })
+        }
+    }, [selectedCategory])
+
+
 
     const changeValue = (valueToChange) => {
         let valueToSet = itemCondition + valueToChange
@@ -82,15 +109,23 @@ export const ModalToManageAdvert = ({}: Props) => {
         <AlingCollumInputs>
             <AlingRowInDesktop>
                     <AlingCollumInputs>
-                        <SelectStyledComponent fontColor="secondary" options={['Nike', 'Adidas']} Title="Tipo de produto" value={advertSubTitle} setValue={setAdvertSubTitle}/>
-                        <Input fontColor="secondary" Title="Nome" value={advertName} setValue={setAdvertName}/>
-                        <SelectStyledComponent fontColor="secondary" options={['Usado', 'Novo']} Title="Condição" value={conditionSelected} setValue={setConditionSelected}/>
                         {
-                            conditionSelected == 'Usado' &&
+                            categorysName &&
+                                <SelectStyledComponent fontColor="secondary" options={categorysName} Title="Tipo de produto" value={selectedCategory} setValue={setSelectedCategory}/>
+                        }
+                        
+                        <Input fontColor="secondary" Title="Nome" value={advertName} setValue={setAdvertName}/>
+                        <SelectStyledComponent fontColor="secondary" options={['usado', 'novo']} Title="Condição" value={conditionSelected} setValue={setConditionSelected}/>
+                        {
+                            conditionSelected == 'usado' &&
                                 <SelectItemCondition  fontColor="secondary" Title="Qual a condição do item?" value={itemCondition} setValue={changeValue}/>
 
                         }
-                        <SelectStyledComponent fontColor="secondary" options={['42', '44']} Title="Tamanho" value={itemSize} setValue={setItemSize}/>
+                        {
+                            categorySelected &&
+                            <SelectStyledComponent fontColor="secondary" options={categorySelected.sizeOptions} Title="Tamanho" value={itemSize} setValue={setItemSize}/>
+                        }
+                        
 
                     </AlingCollumInputs>
 
@@ -99,15 +134,19 @@ export const ModalToManageAdvert = ({}: Props) => {
                         <AlignTitleAndContent>
                             <DivTitle>Fotos</DivTitle>
                             <AlignPhotos>
-                                <PhotoDiv>
+                                <PhotoDiv onClick={() => fileInput.current && fileInput.current.click()}>
+
                                     <AddPhotosIcon size="35"/>
+                                    <input style={{
+                                        display: 'none',
+                                    }} ref={fileInput} type="file" onChange={handleFileInput}/>
                                     <AddPhotosTitle>JPG, PNG</AddPhotosTitle>
                                 </PhotoDiv>
                                 {
                                     advertPhotos&&
-                                    advertPhotos.map((photo) => (
-                                        <PhotoDiv key={photo.key}>
-                                            <Image  src={photo.url} width="69" height="59"/>
+                                    advertPhotos.map((photo, index) => (
+                                        <PhotoDiv key={index}>
+                                            <Image  src={photo} width="69" height="59"/>
                                         </PhotoDiv>
                                     ))
                                 }

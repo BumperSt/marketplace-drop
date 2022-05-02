@@ -43,6 +43,7 @@ export const AdvertsPage = ({setEditOn}:props) => {
 
     useEffect(() => {
         productsApi.readOwn().then((res) => {
+            console.log(res)
             SetAnuncions(res.data)
         }).catch((err) => {
             console.log(err)

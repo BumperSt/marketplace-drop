@@ -14,8 +14,8 @@ export const Advert = ({anuncio, setOpenEditAdvert} : Props) => {
                     <Image layout="fill" objectFit="cover" src="/temporary/itens.png"/>
                 </AdvertProductImage>
                 <AlignColumn>
-                    <AdvertProductTitle>{anuncio.title}</AdvertProductTitle>
-                    <AdvertProductPrice>R$ {anuncio.price}</AdvertProductPrice>
+                    <AdvertProductTitle>{anuncio.name}</AdvertProductTitle>
+                    <AdvertProductPrice>R$ {anuncio.value}</AdvertProductPrice>
                 </AlignColumn>
             </AlingRow>
             {

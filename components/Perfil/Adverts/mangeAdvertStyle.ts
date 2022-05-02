@@ -90,6 +90,9 @@ export const PhotoDiv = styled.div`
     align-items: center;
     border-radius: 6px;
     margin-right: .5rem;
+    :hover{
+        cursor:pointer;
+    }
 `
 
 export const AlingRowInDesktop = styled.div`

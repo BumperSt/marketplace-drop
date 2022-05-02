@@ -50,8 +50,8 @@ export const AdvertContainer = styled.div`
     padding-inline:.8rem;
     background-color:${({theme}) => theme.colors.vipAnuncioBackground};
     border-radius: 10px;
-    margin-bottom: .5rem;
-    min-width: 90%;
+    margin-bottom: .5rem;   
+    min-width:100%;
     @media (min-width: 768px){
         padding-block:.2rem;
         padding-inline:.3rem;
@@ -86,6 +86,8 @@ export const AdvertProductTitle = styled.h1`
     font-size: 13px;
     font-weight: 700;
     margin-bottom: .2rem;
+    
+
     @media (max-width: 300px){
         font-size:10px;
     }
@@ -114,6 +116,7 @@ export const AlignColumn = styled.div`
 `
 export const Arrow = styled(MdArrowForwardIos)`
     fill:${({theme}) => theme.colors.detalhes};
+     
     :hover{
         cursor: pointer;
     }
@@ -130,6 +133,9 @@ export const AlingRow = styled.div`
     display:flex;
     flex-direction:row;
     align-items:center;
+    
+    
+
 `
 
 export const AlingRowDesktop = styled.div`

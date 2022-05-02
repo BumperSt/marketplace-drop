@@ -57,8 +57,13 @@ export const StoreType = styled.h1`
 export const StoreName = styled.h1`
     font-size:14px;
     font-weight:500;
+    max-width: 15ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color:${({theme}) => theme.colors.detalhes};
-
+    @media(min-width: 768px){
+        max-width: 300ch;
+    }
 `
 
 export const AddButon = styled.button`

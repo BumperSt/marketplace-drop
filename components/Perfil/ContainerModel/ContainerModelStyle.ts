@@ -28,8 +28,8 @@ export const InternalContainer = styled.div<{pageName?: "adverts" | "andress" | 
     border-radius:10px;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
     justify-content: center;
-    min-width: 80%;
-    margin-bottom: ${({pageName}) => pageName == 'registrationData' ? '5rem' : '0rem'};
+    min-width: 90vw;
+    margin-bottom: ${({pageName}) => pageName == 'registrationData' ? '5rem' : pageName == 'adverts' ? '5rem' : '0rem'};
 
     @media (min-width: 768px){
         box-shadow:none;
